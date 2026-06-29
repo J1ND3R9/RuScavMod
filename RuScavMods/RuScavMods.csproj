@@ -52,6 +52,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\Libraries\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\Libraries\UnityEngine.dll</HintPath>
     </Reference>
@@ -66,6 +69,7 @@
   <ItemGroup>
     <None Include="RuScavMods\Translations\com.HerobrinesProsthetics.json" />
     <None Include="RuScavMods\Translations\com.rushellxyz.newclothing.json" />
+    <None Include="RuScavMods\Translations\com.rushellxyz.newfirearms.json" />
     <None Include="RuScavMods\Translations\ICEneco.ICEnecoCustomItemAPI.json" />
     <None Include="RuScavMods\Translations\org.bepinex.plugins.qol_unknown.json" />
   </ItemGroup>

@@ -7,7 +7,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Text.RegularExpressions;
+using TMPro;
+using UnityEngine;
 using static RuScavMods.TranslationFile;
 
 namespace RuScavMods
@@ -142,6 +146,10 @@ namespace RuScavMods
         public Dictionary<string, string> RunSettings { get; set; } = new Dictionary<string, string>();
         [JsonProperty("options")]
         public Dictionary<string, OptionTranslation> Options { get; set; } = new Dictionary<string, OptionTranslation>();
+        [JsonProperty("quotes")]
+        public Dictionary<string, string> Quotes { get; set; } = new Dictionary<string, string>();
+        [JsonProperty("tutorials")]
+        public Dictionary<string, string> Tutorials { get; set; } = new Dictionary<string, string>();
     }
     public static class TranslationManager
     {
@@ -151,6 +159,8 @@ namespace RuScavMods
         public static Dictionary<string, string> GlobalKeybinds { get; } = new Dictionary<string, string>();
         public static Dictionary<string, string> GlobalRunSettings { get; } = new Dictionary<string, string>();
         public static Dictionary<string, OptionTranslation> GlobalOptions { get; } = new Dictionary<string, OptionTranslation>();
+        public static Dictionary<string, string> GlobalQuotes { get; set; } = new Dictionary<string, string>();
+        public static Dictionary<string, string> GlobalTutorials { get; set; } = new Dictionary<string, string>();
         public static void Add(TranslationFile translationFile)
         {
             if (translationFile == null) return;
@@ -210,6 +220,22 @@ namespace RuScavMods
                 foreach (var kvp in translationFile.Options)
                 {
                     GlobalOptions[kvp.Key] = kvp.Value;
+                }
+            }
+
+            if (translationFile.Quotes != null)
+            {
+                foreach (var kvp in translationFile.Quotes)
+                {
+                    GlobalQuotes[kvp.Key] = kvp.Value;
+                }
+            }
+
+            if (translationFile.Tutorials != null)
+            {
+                foreach (var kvp in translationFile.Tutorials)
+                {
+                    GlobalTutorials[kvp.Key] = kvp.Value;
                 }
             }
         }
@@ -345,62 +371,207 @@ namespace RuScavMods
                 }
             }
         }
-    }                                                    
-       //     ▓▒                                                     
-       //    ░░░░░░░░░                                               
-       //    ▓░  ░ ░░░░░▒             ▒▒▒▒▒▒░▒░                      expie UwU
-       //    ▒░░ ░░ ░ ░ ░░░░   ▒▒▒░░░░░░░ ░░░░░                      
-       //    ▒░ ░ ░░░░░░ ░░░░░░ ░ ░ ░ ░ ░ ░ ░░                 время 7 часов утра      
-       //    ▓░░░▒▒▒▒▒▒░ ░ ░ ░ ░░░ ░ ░ ░ ░ ░░░               а я рот ебал        
-       //     ░▒    ▒█▓░░ ░ ░ ░ ░▒▒▒▒░░ ░░░░░                        реверс инженеринг
-       //     ▓▒   ███▓░░░ ░░░░▒▓░  █▓░░░░░                       во все   
-       //   ▓░░█▓▓████▓░ ░░ ░░▓▒   ░██▒░░░            щели               
-       //   ▓░░█▓██░ ▒▒░░ ░ ░░░ ██████░▒▒▒▒                          
-       //    ▒░▒░▓▓░ ▒▒ ░░ ░ ░▒ ▓█▓▒█▓░ ░▒                  я часа 4 пытался         
-       //     ▓▒▓▓▒▒░░░ ░ ░░░░▒     █░░▒▒                            
-       //       ▒▒░░ ░ ░ ░ ░ ░ ░▒▓█▓░▓              изменить не тот словарь                 
-       //         ▓░░ ░░░ ░ ░ ░░░█                             чтобы за 3 минуты      
-       //       ░▒▒▓░░▒▒░░░░░░ ░░░░▓                                 
-       //  ▓▒░░▒░ ░░▒▓▒░▒▒▒▒░░▓▒░ ░ ░▒▒                              когда я понял что я не то делал
-       // ▒░░░ ░ ░ ░░░▒▒▒▒▒▒▒░░░ ░ ░ ░░░▒▓▓▒░           сделать правильно             
-       // ▓░ ░░ ░░░░░░▒▓░░░░░ ░ ░░░░░ ░ ░ ░ ░▒                       
-       //▒░░░ ░░ ░░▒▒░░▒▓░░░ ░ ░ ░░▓░░ ░░ ░░░░▒▓▒▒▒                  
-       //    ▓ ░ ░░▒▓▒░░▒▒░░░ ░░ ░ ▓▒░░ ░░░▒▓▒▒░░▒       ░▒  ▒       
-       //             ▒░ ░░ ░░ ░ ░░▒█▒░░ ░░▒▓░░ ░▒▓▒░▒▒              
-       //             ░░░ ░ ▒░░ ░ ░▒▓░▒▒▒░░░░ ░░ ░░ ▒░              
-       //              ▒░░ ░▓▒░░ ░ ░█░ ░ ░░ ░░ ░░ ░░     ░▒          
-       //              ▒░ ░░▓▓░░░░░ ░▓▓░░ ░░ ░░░░▓                   
-       //            ░▒░░░░▒  ░░ ░░░▓▒░▒  ░░░░░░░░░▒░             убейте меня...   
-       //             ░ ░                                                                                                                                                                                                      
+    }
+
+    [HarmonyPatch(typeof(Locale), nameof(Locale.GetPauseQuote))]
+    [HarmonyPriority(Priority.Last)]
+    internal class GlobalPauseQuoteTranslationPatch
+    {
+        private static void Postfix(ref string __result)
+        {
+            if (TranslationManager.GlobalQuotes.Count == 0) return;
+            if (TranslationManager.GlobalQuotes.TryGetValue(__result, out var quote))
+            {
+                __result = quote;
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(TutorialHandler), "Update")]
+    [HarmonyPriority(Priority.Last)]
+    internal class GlobalTutorialsTranslationPatch
+    {
+        private static void Postfix()
+        {
+            if (TutorialHandler.main == null) return;
+            if (TranslationManager.GlobalTutorials.TryGetValue(TutorialHandler.main.courseText.text, out var tutorialName))
+            {
+                TutorialHandler.main.courseText.text = tutorialName;
+            }
+        }
+    }
+    //     ▓▒                                                     
+    //    ░░░░░░░░░                                               
+    //    ▓░  ░ ░░░░░▒             ▒▒▒▒▒▒░▒░   omg!!! hi expie!!!!!! what are u doing here?!??!?????
+    //    ▒░░ ░░ ░ ░ ░░░░   ▒▒▒░░░░░░░ ░░░░░                      
+    //    ▒░ ░ ░░░░░░ ░░░░░░ ░ ░ ░ ░ ░ ░ ░░    its not new layer, silly!!!! go back!!!!!!!                
+    //    ▓░░░▒▒▒▒▒▒░ ░ ░ ░ ░░░ ░ ░ ░ ░ ░░░                    
+    //     ░▒    ▒█▓░░ ░ ░ ░ ░▒▒▒▒░░ ░░░░░                     
+    //     ▓▒   ███▓░░░ ░░░░▒▓░  █▓░░░░░                      
+    //   ▓░░█▓▓████▓░ ░░ ░░▓▒   ░██▒░░░                        
+    //   ▓░░█▓██░ ▒▒░░ ░ ░░░ ██████░▒▒▒▒                          
+    //    ▒░▒░▓▓░ ▒▒ ░░ ░ ░▒ ▓█▓▒█▓░ ░▒                      
+    //     ▓▒▓▓▒▒░░░ ░ ░░░░▒     █░░▒▒                            
+    //       ▒▒░░ ░ ░ ░ ░ ░ ░▒▓█▓░▓                           
+    //         ▓░░ ░░░ ░ ░ ░░░█                         
+    //       ░▒▒▓░░▒▒░░░░░░ ░░░░▓                                 
+    //  ▓▒░░▒░ ░░▒▓▒░▒▒▒▒░░▓▒░ ░ ░▒▒                              
+    // ▒░░░ ░ ░ ░░░▒▒▒▒▒▒▒░░░ ░ ░ ░░░▒▓▓▒░                     
+    // ▓░ ░░ ░░░░░░▒▓░░░░░ ░ ░░░░░ ░ ░ ░ ░▒                       
+    //▒░░░ ░░ ░░▒▒░░▒▓░░░ ░ ░ ░░▓░░ ░░ ░░░░▒▓▒▒▒                  
+    //    ▓ ░ ░░▒▓▒░░▒▒░░░ ░░ ░ ▓▒░░ ░░░▒▓▒▒░░▒       ░▒  ▒       
+    //             ▒░ ░░ ░░ ░ ░░▒█▒░░ ░░▒▓░░ ░▒▓▒░▒▒              
+    //             ░░░ ░ ▒░░ ░ ░▒▓░▒▒▒░░░░ ░░ ░░ ▒░              
+    //              ▒░░ ░▓▒░░ ░ ░█░ ░ ░░ ░░ ░░ ░░     ░▒          
+    //              ▒░ ░░▓▓░░░░░ ░▓▓░░ ░░ ░░░░▓                   
+    //            ░▒░░░░▒  ░░ ░░░▓▒░▒  ░░░░░░░░░▒░        
+    //             ░ ░                                                                                                                                                                                                      
     internal static class QoLTranslator
     {
+        private static readonly Type ModOptionsMenu = AccessTools.TypeByName("QoL_Unknown.ModOptionsMenu");
+        private static readonly Type ModOptionDefinition = AccessTools.TypeByName("QoL_Unknown.ModOptionDefinition");
+        private static readonly Type ModCustomSettingDefinition = AccessTools.TypeByName("QoL_Unknown.ModCustomSettingDefinition");
+        private static readonly Type QoLModuleManager = AccessTools.TypeByName("QoL_Unknown.QoLModuleManager");
+        private static readonly Type QoLModuleDef = AccessTools.TypeByName("QoL_Unknown.QoLModuleDef");
+
+        private static readonly IDictionary DefinitionsById = (IDictionary)AccessTools.Field(ModOptionsMenu, "DefinitionsById").GetValue(null);
+        private static readonly IList CustomDefinitions = (IList)AccessTools.Field(ModOptionsMenu, "CustomDefinitions").GetValue(null);
+        private static readonly IList Modules = (IList)AccessTools.Field(QoLModuleManager, "Modules").GetValue(null);
+
+        private static readonly FieldInfo ModOptionDefinitionLabel = AccessTools.Field(ModOptionDefinition, "Label");
+        private static readonly FieldInfo ModOptionDefinitionDescription = AccessTools.Field(ModOptionDefinition, "Description");
+        private static readonly FieldInfo ModCustomSettingDefinitionId = AccessTools.Field(ModCustomSettingDefinition, "Id");
+        private static readonly FieldInfo ModCustomSettingDefinitionLabel = AccessTools.Field(ModCustomSettingDefinition, "Label");
+        private static readonly FieldInfo ModCustomSettingDefinitionDescription = AccessTools.Field(ModCustomSettingDefinition, "Description");
+        private static readonly FieldInfo QoLModuleDefID = AccessTools.Field(QoLModuleDef, "ID");
+        private static readonly FieldInfo QoLModuleDefName = AccessTools.Field(QoLModuleDef, "Name");
+        private static readonly FieldInfo QoLModuleDefDescription = AccessTools.Field(QoLModuleDef, "Description");
+
         public static void TranslateOptions()
         {
             var log = Plugin.Log;
+            var harmony = new Harmony("zzz_com.Floydba.ruscavmods.qolunknowntranslate");
             try
             {
-                var modOptionsMenuType = AccessTools.TypeByName("QoL_Unknown.ModOptionsMenu");
-                var optionType = AccessTools.TypeByName("QoL_Unknown.ModOptionDefinition");
-
-                var definitionsField = AccessTools.Field(modOptionsMenuType, "DefinitionsById");
-                var dict = (IDictionary)definitionsField.GetValue(null);
-
-                var labelField = AccessTools.Field(optionType, "Label");
-                var descField = AccessTools.Field(optionType, "Description");
-                foreach (var pair in TranslationManager.GlobalOptions)
-                {
-                    if (!dict.Contains(pair.Key))
-                        continue;
-                    object option = dict[pair.Key];
-
-                    labelField.SetValue(option, pair.Value.Label);
-                    descField.SetValue(option, pair.Value.Description);
-                }
+                TranslateDictionary(DefinitionsById, ModOptionDefinitionLabel, ModOptionDefinitionDescription);
+                TranslateList(CustomDefinitions, ModCustomSettingDefinitionId, ModCustomSettingDefinitionLabel, ModCustomSettingDefinitionDescription);
+                TranslateList(Modules, QoLModuleDefID, QoLModuleDefName, QoLModuleDefDescription);
+                TranslateSaveSlots(harmony);
             }
             catch (Exception ex)
             {
                 log.LogError($"Ошибка перевода настроек QoL_Unknown: " + ex.Message);
                 return;
+            }
+        }
+        private static void TranslateSaveSlots(Harmony harmony)
+        {
+            var saveSaveMenuPatcher = AccessTools.TypeByName("QoL_Unknown.SaveSaveMenuPatcher");
+            var saveMenuPatcher = AccessTools.TypeByName("QoL_Unknown.SaveMenuPatcher");
+            if (saveSaveMenuPatcher == null || saveMenuPatcher == null) return;
+
+            var refreshSlotsOriginal = AccessTools.Method(saveSaveMenuPatcher, "RefreshSlots");
+            var buildSaveUIOriginal = AccessTools.Method(saveSaveMenuPatcher, "BuildSaveUI");
+            var buildSlotTooltipOriginal = AccessTools.Method(saveMenuPatcher, "BuildSlotTooltip");
+
+            harmony.Patch(
+                refreshSlotsOriginal,
+                postfix: new HarmonyMethod(typeof(Patches), nameof(Patches.RefreshSlotsPostfix)));
+            harmony.Patch(
+                buildSaveUIOriginal,
+                postfix: new HarmonyMethod(typeof(Patches), nameof(Patches.BuildSaveUIPostfix)));
+            harmony.Patch(
+                buildSlotTooltipOriginal,
+                postfix: new HarmonyMethod(typeof(Patches), nameof(Patches.BuildSlotTooltipPostfix)));
+
+        }
+
+        private static void TranslateDictionary(
+            IDictionary dict,
+            FieldInfo labelField,
+            FieldInfo descField
+            )
+        {
+            foreach (var pair in TranslationManager.GlobalOptions)
+            {
+                if (!dict.Contains(pair.Key))
+                    continue;
+                var item = dict[pair.Key];
+
+                labelField.SetValue(item, pair.Value.Label);
+                descField.SetValue(item, pair.Value.Description);
+            }
+        }
+
+        private static void TranslateList(
+            IList list,
+            FieldInfo idField,
+            FieldInfo labelField,
+            FieldInfo descField
+            )
+        {
+            foreach (var item in list)
+            {
+                var id = (string)idField.GetValue(item);
+
+                if (!TranslationManager.GlobalOptions.TryGetValue(id, out var translation))
+                    continue;
+
+                labelField.SetValue(item, translation.Label);
+                descField.SetValue(item, translation.Description);
+            }
+        }
+
+        private static class Patches
+        {
+            private static readonly Type SaveSaveMenuPatcher = AccessTools.TypeByName("QoL_Unknown.SaveSaveMenuPatcher");
+            private static readonly Type SaveMenuPatcher = AccessTools.TypeByName("QoL_Unknown.SaveMenuPatcher");
+            private static readonly FieldInfo SlotContainerField = AccessTools.Field(SaveSaveMenuPatcher, "slotContainer");
+            public static void RefreshSlotsPostfix()
+            {
+                Transform slotContainer = (Transform)SlotContainerField.GetValue(null);
+                if (slotContainer == null) return;
+
+                for (int i = 1; i < slotContainer.childCount; i++)
+                {
+                    var info = slotContainer.GetChild(i)
+                        ?.Find("Content")
+                        ?.Find("Info");
+
+                    if (info == null) continue;
+
+                    TextMeshProUGUI textMesh = info.GetComponent<TextMeshProUGUI>();
+
+                    textMesh.text = textMesh.text
+                        .Replace("Slot", "Слот")
+                        .Replace("Empty", "Пустой")
+                        .Replace("m Deep", "м Глубина")
+                        .Replace("m deep", "м глубина")
+                        .Replace("Corrupt", "Повреждено")
+                        .Replace("run time", "время забега");
+                }
+            }
+            public static void BuildSaveUIPostfix()
+            {
+                Transform slotContainer = (Transform)SlotContainerField.GetValue(null);
+                var header = slotContainer.Find("Header");
+
+                if (header != null)
+                {
+                    var text = header.GetComponent<TextMeshProUGUI>();
+                    text.text = "СЛОТЫ СОХРАНЕНИЙ";
+                }
+            }
+            public static void BuildSlotTooltipPostfix(ref string tipName, ref string tipDesc)
+            {
+                tipName = "Продолжить";
+                tipDesc = tipDesc
+                    .Replace("Resume your", "Продолжить")
+                    .Replace("m expedition with Experiment #", "м экспедицию Эксперимента #")
+                    .Replace("Seed", "Сид")
+                    .Replace("In-game time", "Время в игре")
+                    .Replace("Unknown", "[УДАЛЕНО]")
+                    .Replace("No expedition data in Slot", "Нет экспедиции в слоте");
             }
         }
     }
