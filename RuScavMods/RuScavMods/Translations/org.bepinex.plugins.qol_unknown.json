@@ -1,0 +1,61 @@
+// https://www.nexusmods.com/scavprototype/mods/7
+{
+  "options": {
+    "qol.video.intensity": {
+      "label": "Интенсивность",
+      "description": "Регулирует максимальную яркость внутриигровых источников света. Аналогичен ползунку яркости в V6 (с более ширкоим диапозоном)"
+    },
+    "qol.video.effects": {
+      "label": "Эффекты %",
+      "description": "Регулирует интенсивность эффектов на экране."
+    },
+    "qol.video.antiepilepsy": {
+      "label": "Анти-эпилепсия",
+      "description": "Уменьшает мерцание и стробоскопический эффект."
+    },
+    "qol.video.uiscale": {
+      "label": "Размер интерфейса",
+      "description": "Изменяет масштаб интерфейса в меню и оверлеях."
+    },
+    "qol.video.fpscounter": {
+      "label": "Счётчик ФПС",
+      "description": "Включает счётчик ФПС."
+    },
+    "qol.game.pauseonunfocus": {
+      "label": "Пауза при потере фокуса",
+      "description": "Ставит игру на паузу, когда игра теряет фокус."
+    },
+    "qol.game.v6ilmenite": {
+      "label": "Генерация ильменита V6",
+      "description": "Приводит к появлению ильменита в более ранних слоях, аналогично V6."
+    },
+    "qol.game.skipexitanimation": {
+      "label": "Пропуск анимации выхода",
+      "description": "Мгновенно возвращаться в главное меню без анимации выхода."
+    },
+    "qol.game.autosaveonexit": {
+      "label": "Размер интерфейса",
+      "description": "Изменяет масштаб интерфейса в меню и оверлеях."
+    },
+    "qol.game.deleteautosaveondeath": {
+      "label": "Размер интерфейса",
+      "description": "Изменяет масштаб интерфейса в меню и оверлеях."
+    },
+    "qol.game.disableradline": {
+      "label": "Размер интерфейса",
+      "description": "Изменяет масштаб интерфейса в меню и оверлеях."
+    },
+    "qol.game.disablelineofsight": {
+      "label": "Размер интерфейса",
+      "description": "Изменяет масштаб интерфейса в меню и оверлеях."
+    },
+    "qol.game.minigameqol": {
+      "label": "Размер интерфейса",
+      "description": "Изменяет масштаб интерфейса в меню и оверлеях."
+    },
+    "qol.game.skillallocation": {
+      "label": "Размер интерфейса",
+      "description": "Изменяет масштаб интерфейса в меню и оверлеях."
+    }
+  }
+}

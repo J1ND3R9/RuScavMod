@@ -1,0 +1,300 @@
+// https://www.nexusmods.com/scavprototype/mods/40
+{
+  "runSettings": {
+    "runsetdisablebrainmods": "Отключить нейромоды",
+    "runsetdisablebrainmodsdsc": "Нейромоды и ящики с ними не будут появляться в этом забеге. Продавцы также не будут их продавать."
+  },
+  "modKeyBind": {
+    "gamesetprosthetics_mod_UI": "Открыть меню кибернетики",
+    "gamesetprosthetics_mod_flashlight": "Включить фонарь",
+    "gamesetprosthetics_mod_hook": "Использовать вживленную крюк-кошку",
+    "runsetwoodenstart": "Буратино",
+    "runsetwoodenstartdsc": "Начни с деревянными протезами на всех конечностях, кибернетическом глазом (без батарейки) и хрупким ножом. Твой интеллект будет 13 заместо 7 в одиночной игре."
+  },
+  "talks": {
+    "tastes_like_poo": {
+      "pattern": "That tastes like poo",
+      "translation": "На вкус как дерьмо"
+    }
+  },
+  "alerts": {
+    "prosthetic_battery_removed": {
+      "pattern": "Battery removed",
+      "translation": "Батарея извлечена."
+    },
+    "prosthetic_battery_installed": {
+      "pattern": "Battery installed",
+      "translation": "Батарея установлена."
+    },
+    "prosthetic_cant_wear_with_two": {
+      "regex": true,
+      "pattern": "^Can't wear (.+) with two prosthetic (.+).$",
+      "translation": "Нельзя надеть $1 с двумя протезами $2."
+    },
+    "prosthetic_cant_modify_another_player_augment": {
+      "pattern": "Can't modify another player's augment",
+      "translation": "Нельзя установить имплант в гнездо другого игрока."
+    },
+    "prosthetic_cant_modify_another_player": {
+      "pattern": "Can't modify another player's prosthetic",
+      "translation": "Нельзя модифицировать протез другого игрока."
+    },
+    "prosthetic_cant_remove_another_player": {
+      "pattern": "Can't remove another player's prosthetic",
+      "translation": "Нельзя удалить протез другого игрока."
+    },
+    "prosthetic_augment_battery_already_installed": {
+      "pattern": "Augment already has a battery",
+      "translation": "В имплант уже установлена батарея."
+    },
+    "prosthetic_augment_battery_not_installed": {
+      "pattern": "Install an augment first",
+      "translation": "Сначала установи имплант."
+    },
+    "prosthetic_augment_arm_augment_on_leg": {
+      "pattern": "Arm augment can't be installed on a leg",
+      "translation": "Нельзя установить имплант для руки на ногу."
+    },
+    "prosthetic_augment_leg_augment_on_arm": {
+      "pattern": "Leg augment can't be installed on an arm",
+      "translation": "Нельзя установить имплант для ноги на руку."
+    },
+    "prosthetic_augment_arm_slot_occupied": {
+      "pattern": "Arm mod slot already occupied",
+      "translation": "Гнездо для имплантов на руке уже занято."
+    },
+    "prosthetic_augment_leg_slot_occupied": {
+      "pattern": "Leg mod slot already occupied",
+      "translation": "Гнездо для имплантов на ноге уже занято."
+    },
+    "prosthetic_augment_installing_hint": {
+      "pattern": "Apply directly to an upper arm or thigh",
+      "translation": "Применяется только на плечо или бедро."
+    },
+    "prosthetic_grapplinghook_attach_battery": {
+      "pattern": "Grappling hook attached  - insert a battery to power",
+      "translation": "Крюк-кошка установлена. Не забудь вставить батарейку."
+    },
+    "prosthetic_grapplinghook_attach": {
+      "pattern": "Grappling hook attached",
+      "translation": "Крюк-кошка установлена."
+    },
+    "prosthetic_multihacking_attach_battery": {
+      "pattern": "Multi-Hacking attached  - insert a battery to power",
+      "translation": "\"Мульти-взлом\" установлен. Не забудь вставить батарейку."
+    },
+    "prosthetic_multihacking_attach": {
+      "pattern": "Multi-Hacking attached",
+      "translation": "\"Мульти-взлом\" установлен."
+    },
+    "prosthetic_steady_hand_attach_battery": {
+      "pattern": "Steady Hand attached  - insert a battery to power",
+      "translation": "\"Твёрдая рука\" установлена. Не забудь вставить батарейку."
+    },
+    "prosthetic_steady_hand_attach": {
+      "pattern": "Steady Hand attached",
+      "translation": "\"Твёрдая рука\" установлена."
+    },
+    "prosthetic_already_installed": {
+      "pattern": "Already installed on this limb",
+      "translation": "Уже установлено на этой конечности."
+    },
+    "prosthetic_augment_already_attach": {
+      "pattern": "Limb already has an augment slot",
+      "translation": "На конечности уже есть гнездо для имплантов."
+    },
+    "prosthetic_augment_slot_implanted": {
+      "pattern": "Augment slot implanted",
+      "translation": "Гнездо для имплантов вырезано."
+    },
+    "steve_jobs_no": {
+      "pattern": "Steve Jobs says NO to slow mo in multiplayer",
+      "translation": "Стив Джобс говорит НЕТ замедлению времени в мультиплеере."
+    },
+    "limb_already_prosthetic": {
+      "pattern": "This limb is already a prosthetic",
+      "translation": "Эта конечность уже протезирована."
+    },
+    "prosthetic_cant_use_tools": {
+      "pattern": "This prosthetic can't use tools.",
+      "translation": "Этот протез не может использовать инструменты."
+    },
+    "prosthetic_titanium_chain_incomplete": {
+      "pattern": "Chain incomplete  - disassembled into a titanium sheet",
+      "translation": "Ты не завершил цепь, протез разобран в титановый лист."
+    },
+    "prosthetic_titanium_too_damaged": {
+      "pattern": "Too damaged to safely remove  - fix it first",
+      "translation": "Протез слишком повреждён для безопасного удаления."
+    },
+    "prosthetic_takeoff_wrench": {
+      "pattern": "Use a wrench to take off a prosthetic",
+      "translation": "Для снятия протеза используй гаечный ключ."
+    },
+    "prosthetic_wood_biochem": {
+      "pattern": "Wooden prosthetic  - biochem heals it, a wrench takes it off",
+      "translation": "Биохимическая жидкость чинит деревянный протез. Снимается с помощью гаечного ключа."
+    },
+    "hook_cant_hold": {
+      "pattern": "You cant hold this with a hook, you can only hold containers on a hook",
+      "translation": "Крюком можно держать только контейнеры."
+    },
+    "prosthetic_on_prosthetic": {
+      "pattern": "Can't attach a prosthetic to another prosthetic",
+      "translation": "Нельзя присоединить протез к другому протезу."
+    },
+    "limb_is_missing": {
+      "pattern": "Limb is missing",
+      "translation": "Конечность ампутирована."
+    },
+    "limb_not_missing": {
+      "pattern": "Limb is not missing",
+      "translation": "Конечность не ампутирована."
+    },
+    "prosthetic_for_legs": {
+      "pattern": "This prosthetic is for legs",
+      "translation": "Этот протез для ног."
+    },
+    "prosthetic_for_arms": {
+      "pattern": "This prosthetic is for arms",
+      "translation": "Этот протез для рук."
+    },
+    "prosthetic_jaw_already_installed": {
+      "pattern": "Already wearing a copper jaw",
+      "translation": "У тебя уже установлена медная челюсть."
+    },
+    "prosthetic_jaw_installing": {
+      "pattern": "Not missing a jaw",
+      "translation": "У тебя есть челюсть."
+    },
+    "prosthetic_eye_socket_installing_full": {
+      "pattern": "No empty eye sockets left",
+      "translation": "Все слоты для глаз заняты."
+    },
+    "prosthetic_eye_installing": {
+      "pattern": "Not missing an eye",
+      "translation": "У тебя есть оба глаза."
+    },
+    "prosthetic_head_installing": {
+      "pattern": "Apply on the head",
+      "translation": "Устанавливается только в голову."
+    },
+    "prosthetic_leg_installing": {
+      "pattern": "Drag onto a prosthetic leg to install",
+      "translation": "Устанавливается только в протез ноги."
+    },
+    "prosthetic_arm_installing": {
+      "pattern": "Drag onto a prosthetic arm to install",
+      "translation": "Устанавливается только в протез руки."
+    },
+    "identified_nothing_in_hand": {
+      "pattern": "Nothing in hand to scan",
+      "translation": "Нечего сканировать. Предмет должен быть в руке."
+    },
+    "identified_with_recipe": {
+      "regex": true,
+      "pattern": "^Recipe scanned: (.+)$",
+      "translation": "Рецепт просканирован: $1"
+    },
+    "identified_no_recipe": {
+      "regex": true,
+      "pattern": "^Identified: (.+) \\(no recipe in the database\\)$",
+      "translation": "Идентифицировано: $1 (рецепта нет в базе данных)"
+    }
+  },
+
+  "items": {
+    "prosthetic_arm_scrap": {
+      "name": "Рука из металлолома",
+      "description": "Примитивная рука, сделанная из металлолома. Возможно, одной только плоти и костей для этого места недостаточно."
+    },
+    "prosthetic_leg_scrap": {
+      "name": "Нога из металлолома",
+      "decsription": "Примитивная нога, сделанная из металлолома. Кровотечения и инфекции больше не страшны, однако никто не отменял поломку."
+    },
+    "prosthetic_arm_wood": {
+      "name": "Деревянная рука",
+      "decsription": "Дешёвая деревянная рука. Всё, что на ней есть - это крюк. Давай отплывём на Таити."
+    },
+    "prosthetic_leg_wood": {
+      "name": "Деревянная нога",
+      "decsription": "Дешёвая деревянная нога. Чувствуешь уже себя пиратом?"
+    },
+    "prosthetic_arm_titanium": {
+      "name": "Титановая рука",
+      "decsription": "Титановая рука высшего качества. На ощупь довольно прочная."
+    },
+    "prosthetic_leg_titanium": {
+      "name": "Титановая нога",
+      "decsription": "Титановая нога высшего качества. Лучше любой другой ноги во всём."
+    },
+    "prosthetic_jaw_copper": {
+      "name": "Медная челюсть",
+      "description": "Челюсть из меди. Придаёт любой пище металлический привкус."
+    },
+    "prosthetic_eye": {
+      "name": "Кибернетический глаз",
+      "description": "Глаз на батарейках. Возвращает зрение, пока заряжен. Клавиша 'F' включает свет в одном глазу или в обоих.\n\nВ панели здоровья: любой инструмент извлекает батарейку. Гаечный ключ извлекает весь глаз."
+    },
+    "augment_steadyhand": {
+      "name": "Модиф. \"Твёрдая рука\"",
+      "description": "Гироскоп, монтируемый в запястье. Пока заряжен уменьшает отдачу оружия вдвое, а рядом с иконкой удерживаемого предмета отображает количество патронов в магазине. Использует маленькую или среднюю батарею."
+    },
+    "augment_powergrip": {
+      "name": "Модиф. \"Мертвая хватка\"",
+      "description": "Сервозахват, монтируемый в ладонь. Пока заряжен уменьшает вес удерживаемых предметов вдвое, ты также бъешь и бросаешь дальше, а также никогда не уронишь то, что держишь. Использует маленькую или среднюю батарею."
+    },
+    "augment_hacking": {
+      "name": "Модиф. \"Мульти-взлом\"",
+      "description": "Набор инструментов для взлома, монтируемый в руку. Пока заряжен позволяет пропускать мини-игры с замками, клавиатурой и терминалами крови. За каждый взлом будет определённая плата. Использует маленькую или среднюю батарею. При питании от малой батареи невозможно взломать терминал крови."
+    },
+    "augment_powersteps": {
+      "name": "Модиф. \"Тяжёлая походка\"",
+      "description": "Сервопоршни, монтируемые в бедра. Пока заряжен и активирован скорость бега и высота прыжка увеличиваются на 12.5% на каждую ногу. Одно нажатие клавиши на хотбаре активирует обе ноги. Использует любую батарею."
+    },
+    "augment_implant_tool": {
+      "name": "Установщик имплантов",
+      "description": "Вырезает одно гнездо для имплантов в биологической руке или ноге. Позволяет устанавливать модификации избегая полного протезирования. Применяется в панели здоровья на плече или бедре.\n\n<color=\"red\">Одноразовый. Гнездо исчезает при ампутации"
+    },
+    "neuromod_painblock": {
+      "name": "Нейромод \"Анальгетик\"",
+      "description": "Подавляет нервные болевые сигналы. При установке вся боль уменьшается вдвое.\n\n<color=\"red\">Извлечение этого нейромода опасно. Возможен нейрошок и рвота."
+    },
+    "neuromod_crackedpainmod": {
+      "name": "Нейромод \"Мазохист\"",
+      "description": "Повреждённый нейромод боли, явно вырванный с кого-то другого. С ним любая боль становится на 10% сильнее, однако ты начинаешь получать от неё удовольствие. Чем сильнее боль, тем выше становится твоё настроение.\n\n<color=\"red\">Извлечение этого нейромода опасно. При удалении наносит 5 урона по мозгу, 15 урона по голове и вызывает нейрошок."
+    },
+    "neuromod_trapdetect": {
+      "name": "Нейромод \"Детектор\"",
+      "description": "Выделяет красным свечением все расположенные поблизости ловушки. Капканы, мины, катушки и прочее.\n\n<color=\"red\">Извлечение этого нейромода опасно. Возможен нейрошок и рвота."
+    },
+    "neuromod_sonicscreamer": {
+      "name": "Нейромод \"Ультразвуковой излучатель\"",
+      "description": "Испускает высокочастотный звуковой импульс, который заставляет всех существ в радиусе 25 блоков бежать на 2 секунды.\n\n<color=\"red\">3 применения. Расходуется при активации. Можно безопасно снять, нейромод вернется."
+    },
+    "neuromod_adrenalinesurge": {
+      "name": "Нейромод \"Баланс\"",
+      "description": "Если ты в сознании, но не на ногах, нейромод вызовет резкий всплекс адреналина и мгновенно поднимет тебя на ноги. Вызывает ужасную боль.\n\n<color=\"red\">Неограниченное количество применений. Время восстановления - 1 минута. Можно безопасно снять, нейромод вернется."
+    },
+    "neuromod_sandivistian": {
+      "name": "Нейромод \"Сандевистан\"",
+      "description": "<color=\"red\">3 применения.</color> Усилитель рефлексов военного уровня. Замедляет восприятие времени. После 10 секунд использования вызывает сильную тошноту.\n\n<color=\"red\">Нельзя снять во время действия. На последнем использовании ломается через 10 секунд."
+    },
+    "neuromod_scanningchip": {
+      "name": "Нейромод \"Сканирование\"",
+      "description": "Возьми предмет в руки и нажми кнопку активации, чтобы просканировать его в течение 3 секунд. После сканирования открывает рецепт предмета и помечает предмет как распознанный.\n\n<color=\"green\">Можно безопасно снять, побочных эффектов нет."
+    },
+    "makeshiftbonesaw": {
+      "name": "Импровизированная пила для костей",
+      "description": "Примитивная самодельная пила для костей. Своё дело делает, но не похоже что её на долго хватит.\n\n<color=\"red\">Может использоваться в панели здоровья для ампутации любых конечностей, даже если нет инфекций или повреждений."
+    },
+    "bonesaw": {
+      "name": "Пила для костей",
+      "description": "Настоящая хирургическая пила для костей.\n\n<color=\"red\">Может использоваться в панели здоровья для ампутации любых конечностей, даже если нет инфекций или повреждений."
+    },
+    "plasticfork": {
+      "name": "Пластиковая вилка",
+      "description": "Думаю, было бы забавно выколоть глаз своему другу или себе, чтобы освободить место для классного глазно протеза, правда же?"
+    }
+  }
+}
