@@ -63,15 +63,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ReflectPatches\KrokoshaMPTranslator.cs" />
+    <Compile Include="ReflectPatches\QoLTranslator.cs" />
     <Compile Include="RuScavMods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TranslationFile.cs" />
+    <Compile Include="TranslationManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="RuScavMods\Translations\com.HerobrinesProsthetics.json" />
     <None Include="RuScavMods\Translations\com.rushellxyz.newclothing.json" />
     <None Include="RuScavMods\Translations\com.rushellxyz.newfirearms.json" />
     <None Include="RuScavMods\Translations\ICEneco.ICEnecoCustomItemAPI.json" />
+    <None Include="RuScavMods\Translations\noah.casualtiesunknown.additionaldescriptions.json" />
     <None Include="RuScavMods\Translations\org.bepinex.plugins.qol_unknown.json" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

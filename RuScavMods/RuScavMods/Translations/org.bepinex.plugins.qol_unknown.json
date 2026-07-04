@@ -16,14 +16,15 @@
     },
     "save_while_ragdolled": {
       "pattern": "Cannot save while ragdolled!",
-      "translation": "Нельзя сохраниться пока не в сознании!"
+      "translation": "Нельзя сохраниться пока не на ногах!"
     },
     "save_slot_empty": {
       "pattern": "Slot is empty!",
       "translation": "Слот пустой."
     }
   },
-  "options": {
+
+  "modules": {
     "qol.video.intensity": {
       "label": "Интенсивность",
       "description": "Регулирует максимальную яркость внутриигровых источников света. Аналогичен ползунку яркости в V6 (с более ширкоим диапозоном)"
@@ -122,11 +123,11 @@
     },
     "qol_vis_los": {
       "label": "Фикс углов обзора",
-      "description": "Настраивает шейдер LOS таким образом, чтобы блоки не отображались контуром в темноте"
+      "description": "Отключает отображение контуров плиток в темноте"
     },
     "qol_craft_bulk": {
       "label": "Массовый крафтинг",
-      "description": "Добавляет количество предметов для крафта и функцию авто-крафта"
+      "description": "Добавляет кол-во предметов для крафта и функцию авто-крафта"
     },
     "qol_ui_preview": {
       "label": "Предпросмотр крафта",
@@ -134,7 +135,7 @@
     },
     "qol_ui_scroll": {
       "label": "Контейнер скролл",
-      "description": "Добавлят поддержку скроллить через колесико мыши в контейнерах"
+      "description": "Добавляет поддержку скроллить колесико мыши в контейнерах"
     },
     "qol_inv_sortbtn": {
       "label": "Кнопка сортировки",
@@ -142,19 +143,19 @@
     },
     "qol_inv_quickstash": {
       "label": "Быстрое поднятие",
-      "description": "Используйте кнопку \"Быстрое поднятие\" чтобы моментально подобрать предмет."
+      "description": "Исп. кнопку \"Быстрое поднятие\" чтобы подобрать предмет"
     },
     "qol_inv_liquid": {
       "label": "Кейбинды инвентаря",
-      "description": "Добавляет взаимодействия с клавишей Shift и настраивемый модификатор интеракций с инвентарем"
+      "description": "Добав. взаимодействия с Shift и интеракции с инвентарём"
     },
     "qol_game_pusher": {
       "label": "Физика воды",
-      "description": "Вода с размером 1.5 блока больше вас не толкает."
+      "description": "Вода с размером 1.5 плитки больше вас не толкает"
     },
     "qol_game_soundcannon_indicator": {
       "label": "Индикатор звуковой ловушки",
-      "description": "Предупреждает о заряде звуковой ловушки с помощью речи персонажа и стрелки."
+      "description": "Предупреждает о заряде звуковой ловушки"
     },
     "qol_game_modifiers": {
       "label": "Модификаторы слоёв",
@@ -177,12 +178,14 @@
       "description": "Автоматически сохраняет игру через определённый интервал"
     }
   },
+
   "talks": {
     "soundcannon_alert1": {
       "pattern": "..what's that noise?",
       "translation": "..что это за звук?"
     }
   },
+
   "quotes": {
     "Sleep, those little slices of death. How I loathe them.": "Сон - это отрывки смерти. Как же я их ненавижу.",
     "Also try Custom Structures!": "Также попробуйте Custom Structures!",
@@ -194,20 +197,20 @@
     "I am lost but not forever,": "Я потерялся, но не навсегда,",
     "I am where I am meant to be.": "я там, где и должен быть.",
     "Imagine now unbearably, how unutterly cold the universe would be if one is all alone.": "Попробуй представить эту невыносимую мысль: как невыразимо холодна Вселенная, если в ней нет никого, кроме тебя.",
-    "There's really no hard limit to how long these pause menu names can be and to be quite honest I'm rather curious to see how far we can go. Adolphus W. Green (1844–1917) started as the Principal of the Groton School in 1864. By 1865, he became second assistant librarian - oh wait nevermind there' a limit.": "На самом деле нет никакого жесткого лимита на длину названий в меню паузы. Мне и самому интересно, сколько текста сюда поместится. Скажи-ка, дядя, ведь не даром Москва, спаленная пожаром, Французу отдана? Ведь были ж схватки боевые, да, говорят, еще какие! Недаром помнит вся Росс... ой, забейте, лимит есть.",
+    "There's really no hard limit to how long these pause menu names can be and to be quite honest I'm rather curious to see how far we can go. Adolphus W. Green (1844–1917) started as the Principal of the Groton School in 1864. By 1865, he became second assistant librarian - oh wait nevermind there' a limit.": "На самом деле нет никакого жесткого лимита на длину цитат в меню паузы. Мне и самому интересно, сколько текста сюда поместится. Скажи-ка, дядя, ведь не даром Москва, спаленная пожаром, Французу отдана? Ведь были ж схватки боевые, да, говорят, еще какие! Недаром помнит вся Росс... ой, забейте, лимит есть.",
     "Astralsounds": "Astralsounds.",
     "Everything will be okay.": "Всё будет хорошо.",
     "Remember to do an act of good today.": "Не забудь сделать сегодня доброе дело.",
     "Pause and hydrate. It'll help.": "Сделай паузу и попей воды. Это поможет.",
     "Don't forget to eat, now...": "Только не забудь поесть...",
-    "Little one.": "Зверушка.",
+    "Little one.": "Зверушка.", // Мне кажется так звучит лучше, чем "малютка" или "малыш".
     "You're almost there. Just a couple more steps.": "Ты уже почти у цели. Еще буквально пара шагов.",
     "To the north, a new future.": "Там, на севере - новое будущее",
     "To reach the antechamber.": "Добраться до преддверия.",
     "To remember, to forget. To forget, to remember.": "Помнить, чтобы забыть. Забыть, чтобы помнить.",
     "Take care of yourself. You deserve it.": "Береги себя. Ты этого заслуживаешь.",
     "From now on you’re going to have to think. There’s a reason why we’re born with brains in our heads, not rocks.": "С этого момента тебе придется начать думать. Мы не просто так родились с мозгами в голове, а не с камнями.",
-    "Remember the past, live in the present, and fear not the future, for it doesn't exist and never shall. There is only now.": "Помни прошлое, живи настоящим и не страшись грядущего, ведь оно призрачно и никогда не настанет. Существует лишь этот миг.",
+    "Remember the past, live in the present, and fear not the future, for it doesn't exist and never shall. There is only now": "Помни прошлое, живи настоящим и не страшись грядущего, ведь оно призрачно и никогда не настанет. Существует лишь этот миг.",
     "Change itself is nether good nor bad, but knowledge is always useful.": "Сами по себе перемены не несут ни добра, ни зла, но знание полезно в любом случае",
     "Then I shall keep myself, to myself.": "Тогда я предоставлю себя самому себе.",
     "Do questions not taste best in the absence of answers?": "Вопросы прекраснее всего, когда остаются без ответа.",
@@ -230,4 +233,4 @@
     "Don't be afraid. Jump.": "Не бойся. Прыгай.",
     "Un du evarínya ono varda.": "Un du evarínya ono varda."
   }
-}
+} 

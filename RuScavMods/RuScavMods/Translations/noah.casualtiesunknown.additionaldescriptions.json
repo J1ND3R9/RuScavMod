@@ -1,0 +1,422 @@
+{
+  "items": {
+    "scubadivinggear": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "mp3player": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "epda": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "watch": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "carcasssplint": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "antisepticmush": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "drillrepairkit": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "sleepingpills": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "combatpen": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "filterstraw": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "liquidcentrifuge": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "autopump": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "blueprint": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "lockpickingkit": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "purpleherb": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "mushtail": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "glowplantfruit": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "musharm": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "rippeddressing": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "rag": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "adhesivebandage": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "bandage": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "sterilizedbandage": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "plasticbandage": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "bloodbaghuman": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "bloodbag": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "lrd": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "bruisekit": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "analgesicgauze": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "roselight": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "gravbag": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "neuralbooster": {
+      "description_pattern": [ "First use: +10 brain health, clears stroke, +20 mood, 10m energized, and permanent mobility boost.", "Warning: using another neural booster or braingrow during 20m RNRS will mindwipe you.", "Later uses: blind, -20 brain health, 0.855L/m internal bleed, sickness 100, +5C, vomit/ragdoll, and all muscles x0.2." ],
+      "description_replace": [ "Первое использование: +10 хп мозгу, излечивает инсульт, +20 к настроению, 10 минут энергии и буст к мобильности навсегда.", "Предупреждение: использование другого нейробустера или мозгороста во время 20 минутного ББРН сотрет ваш мозг.", "Последующие использования: слепота, -20 хп мозга, 0.855Л/м внутреннего кровотечения, +100 тошнота, +5 к температуре, рвота/рэгдул и хп всех мышц x0.2." ]
+    },
+    "xalorissponge": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "bulbskin": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "fat": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "popcorn": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "cookies": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "chocolatebar": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "chips": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "hardcandy": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "stonefruitopen": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "candybar": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "foliage": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "dryfoliage": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "bloodsac": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "cactusflesh": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "browncap": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "funguschunk": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "mushpear": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "mushball": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "frigiantfruit": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "geofruit": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "banana": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "geigefruit": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "internalorgans": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "experimentflesh": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "dogfood": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "cereal": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "foliagemeal": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "paprikash": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "pancake": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "bread": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "blobflesh": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "animalflesh": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "nutrientbar": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "pemmican": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "steak": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "pizzaslice": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "burger": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "fleshchunk": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "cake": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "bucketofchicken": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "paincream": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "soap": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "woundglue": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "chestdrain": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "wrench": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "plasmacutter": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "boneweldingtool": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "tweezers": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "aed": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "manualdefibrillator": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "alginate": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "icepack": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "splint": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "medicalsuture": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "tourniquet": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "naltrexone": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "naloxone": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "vasopressin": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "sodiumnitroprusside": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "amiodarone": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "keratinbooster": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "antiserum": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "antivenom": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "antibiotics": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "streptokinase": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "bloodcoagulant": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "procoagulant": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "antirad": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "antidepressants": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "mindwipe": {
+      "description_pattern": [],
+      "description_replace": []
+    },
+    "braingrow": {
+      "description_pattern": [],
+      "description_replace": []
+    }
+  },
+  "liquids": {
+    "disinfectantdsc": {
+      "description_pattern": [ "Apply: strong disinfectant.", "Drink: severe sickness and pain." ],
+      "description_replace": [ "Применение: сильная дизинфекция.", "Выпить: сильная тошнота и боль." ]
+    }
+  }
+}
