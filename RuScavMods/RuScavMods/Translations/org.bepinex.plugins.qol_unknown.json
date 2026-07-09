@@ -1,189 +1,17 @@
 // https://www.nexusmods.com/scavprototype/mods/7
 {
-  "alerts": {
-    "save_slot": {
-      "regex": true,
-      "pattern": "^Saved to Slot (.+)$",
-      "translation": "Сохранено в слот #$1"
-    },
-    "save_failed": {
-      "pattern": "Save failed!",
-      "translation": "Ошибка сохранения!"
-    },
-    "save_while_dead": {
-      "pattern": "Cannot save while dead!",
-      "translation": "Нельзя сохраниться мёртвым!"
-    },
-    "save_while_ragdolled": {
-      "pattern": "Cannot save while ragdolled!",
-      "translation": "Нельзя сохраниться пока не на ногах!"
-    },
-    "save_slot_empty": {
-      "pattern": "Slot is empty!",
-      "translation": "Слот пустой."
-    }
-  },
+  "type": "native",
 
-  "modules": {
-    "qol.video.intensity": {
-      "label": "Интенсивность",
-      "description": "Регулирует максимальную яркость внутриигровых источников света. Аналогичен ползунку яркости в V6 (с более ширкоим диапозоном)"
-    },
-    "qol.video.effects": {
-      "label": "Эффекты %",
-      "description": "Регулирует интенсивность эффектов на экране."
-    },
-    "qol.video.antiepilepsy": {
-      "label": "Анти-эпилепсия",
-      "description": "Уменьшает мерцание и стробоскопический эффект."
-    },
-    "qol.video.uiscale": {
-      "label": "Размер интерфейса",
-      "description": "Изменяет масштаб интерфейса в меню и оверлеях."
-    },
-    "qol.video.fpscounter": {
-      "label": "Счётчик ФПС",
-      "description": "Включает счётчик ФПС."
-    },
-    "qol.game.pauseonunfocus": {
-      "label": "Пауза при потере фокуса",
-      "description": "Ставит игру на паузу, когда игра теряет фокус."
-    },
-    "qol.game.v6ilmenite": {
-      "label": "Генерация ильменита V6",
-      "description": "Приводит к появлению ильменита в более ранних слоях, аналогично V6."
-    },
-    "qol.game.skipexitanimation": {
-      "label": "Пропуск анимации выхода",
-      "description": "Мгновенно возвращаться в главное меню без анимации выхода."
-    },
-    "qol.game.autosaveonexit": {
-      "label": "Автосохранение при выходе",
-      "description": "Обновляет слот автосохранения при использовании \"save-and-exit\"."
-    },
-    "qol.game.deleteautosaveondeath": {
-      "label": "Удаление автосохранения при смерти",
-      "description": "Удаляет слот автосохранения при появлении экрана смерти."
-    },
-    "qol.game.disableradline": {
-      "label": "Отключить таймер",
-      "description": "Выключает появление радиационной линии при истечении таймера. Она пропадёт даже если уже активна."
-    },
-    "qol.game.disablelineofsight": {
-      "label": "Отключить углы обзора нечипированного",
-      "description": "Отключает ограниченные углы обзора у нечипированного. Вау."
-    },
-    "qol.game.minigameqol": {
-      "label": "Быстрые мини-игры",
-      "description": "Делает взломы замков быстрее и укорачивает коды до 5-9 цифр."
-    },
-    "qol.game.skillallocation": {
-      "label": "Распределение скиллпоинтов",
-      "description": "Включает настройки распределения скиллпоинтов QoL для начальных статов."
-    },
-    "qol.game.skillallocation.str": {
-      "label": "Начальная STR",
-      "description": "Устанавливает начальное значение скилла, используемое патчем по распределению скиллпоинтов QoL."
-    },
-    "qol.game.skillallocation.res": {
-      "label": "Начальная RES",
-      "description": "Устанавливает начальное значение скилла, используемое патчем по распределению скиллпоинтов QoL."
-    },
-    "qol.game.skillallocation.int": {
-      "label": "Начальный INT",
-      "description": "Устанавливает начальное значение скилла, используемое патчем по распределению скиллпоинтов QoL."
-    },
-    "qol.game.downloadlocale": {
-      "label": "Скачать локализацию",
-      "description": "Скачивает и устанавливат дополнительную локализацию из репозитория. ПРИ ИСПОЛЬЗОВАНИИ В ИГРЕ ПРИВЕДЁТ К СБРОСУ СЛОЯ."
-    },
-    "qol.game.entitydensity": {
-      "label": "Частота отдельных объектов",
-      "description": "Изменяет частоту спавна любого объекта."
-    },
-    "qol.game.structuredensity": {
-      "label": "Частота отдельных структур",
-      "description": "Изменяет частоту спавна любой структуры."
-    },
-    "qol.game.layermodifierdensity": {
-      "label": "Частота модификаторов слоя",
-      "description": "Изменяет частоту модификаторов слоя."
-    },
-    "qol.audio.soundoverride": {
-      "label": "Изменение громкости отдельных звуков",
-      "description": "Изменяет громкость отдельно любого звука."
-    },
-    "qol.game.discordpresence": {
-      "label": "Discord Presence",
-      "description": "Редактировать шаблон Discord Rich Presence."
-    },
-    "qol_ui_discord": {
-      "label": "Discord RPC",
-      "description": "Интеграция Discord Rich Presence"
-    },
-    "qol_vis_los": {
-      "label": "Фикс углов обзора",
-      "description": "Отключает отображение контуров плиток в темноте"
-    },
-    "qol_craft_bulk": {
-      "label": "Массовый крафтинг",
-      "description": "Добавляет кол-во предметов для крафта и функцию авто-крафта"
-    },
-    "qol_ui_preview": {
-      "label": "Предпросмотр крафта",
-      "description": "Улучшает предпросмотр предметов в меню крафта"
-    },
-    "qol_ui_scroll": {
-      "label": "Контейнер скролл",
-      "description": "Добавляет поддержку скроллить колесико мыши в контейнерах"
-    },
-    "qol_inv_sortbtn": {
-      "label": "Кнопка сортировки",
-      "description": "Добавляет кнопку для сортировки инвентаря"
-    },
-    "qol_inv_quickstash": {
-      "label": "Быстрое поднятие",
-      "description": "Исп. кнопку \"Быстрое поднятие\" чтобы подобрать предмет"
-    },
-    "qol_inv_liquid": {
-      "label": "Кейбинды инвентаря",
-      "description": "Добав. взаимодействия с Shift и интеракции с инвентарём"
-    },
-    "qol_game_pusher": {
-      "label": "Физика воды",
-      "description": "Вода с размером 1.5 плитки больше вас не толкает"
-    },
-    "qol_game_soundcannon_indicator": {
-      "label": "Индикатор звуковой ловушки",
-      "description": "Предупреждает о заряде звуковой ловушки"
-    },
-    "qol_game_modifiers": {
-      "label": "Модификаторы слоёв",
-      "description": "Включает/выключает настройки модификаторов слоёв"
-    },
-    "qol_audio_safety": {
-      "label": "Безопасность для ушей",
-      "description": "Уменьшает громкость некоторых звуков"
-    },
-    "qol_save_menu": {
-      "label": "Меню сохранений",
-      "description": "Добавляет меню выбора сохранений в меню паузы"
-    },
-    "qol_timer": {
-      "label": "Таймер",
-      "description": "Добавляет таймер в меню паузы"
-    },
-    "qol_autosave": {
-      "label": "Автосохранения",
-      "description": "Автоматически сохраняет игру через определённый интервал"
-    }
+  "alerts": {
+    "^Saved to Slot (.+)$": "Сохранено в слот #$1",
+    "Save failed!": "Ошибка сохранения!",
+    "Cannot save while dead!": "Нельзя сохраниться мёртвым!",
+    "Cannot save while ragdolled!": "Нельзя сохраниться пока не на ногах!",
+    "Slot is empty!": "Слот пустой."
   },
 
   "talks": {
-    "soundcannon_alert1": {
-      "pattern": "..what's that noise?",
-      "translation": "..что это за звук?"
-    }
+    "..what's that noise?": "..что это за звук?"
   },
 
   "quotes": {
@@ -232,5 +60,159 @@
     "When they speak, they shake the very earth.": "Которого глас тогда поколебал землю.",
     "Don't be afraid. Jump.": "Не бойся. Прыгай.",
     "Un du evarínya ono varda.": "Un du evarínya ono varda."
+  },
+  "modules": {
+    "qol.video.intensity": {
+      "name": "Интенсивность",
+      "description": "Регулирует максимальную яркость внутриигровых источников света. Аналогичен ползунку яркости в V6 (с более ширкоим диапозоном)"
+    },
+    "qol.video.effects": {
+      "name": "Эффекты %",
+      "description": "Регулирует интенсивность эффектов на экране."
+    },
+    "qol.video.antiepilepsy": {
+      "name": "Анти-эпилепсия",
+      "description": "Уменьшает мерцание и стробоскопический эффект."
+    },
+    "qol.video.uiscale": {
+      "name": "Размер интерфейса",
+      "description": "Изменяет масштаб интерфейса в меню и оверлеях."
+    },
+    "qol.video.fpscounter": {
+      "name": "Счётчик ФПС",
+      "description": "Включает счётчик ФПС."
+    },
+    "qol.game.pauseonunfocus": {
+      "name": "Пауза при потере фокуса",
+      "description": "Ставит игру на паузу, когда игра теряет фокус."
+    },
+    "qol.game.v6ilmenite": {
+      "name": "Генерация ильменита V6",
+      "description": "Приводит к появлению ильменита в более ранних слоях, аналогично V6."
+    },
+    "qol.game.skipexitanimation": {
+      "name": "Пропуск анимации выхода",
+      "description": "Мгновенно возвращаться в главное меню без анимации выхода."
+    },
+    "qol.game.autosaveonexit": {
+      "name": "Автосохранение при выходе",
+      "description": "Обновляет слот автосохранения при использовании \"save-and-exit\"."
+    },
+    "qol.game.deleteautosaveondeath": {
+      "name": "Удаление автосохранения при смерти",
+      "description": "Удаляет слот автосохранения при появлении экрана смерти."
+    },
+    "qol.game.disableradline": {
+      "name": "Отключить таймер",
+      "description": "Выключает появление радиационной линии при истечении таймера. Она пропадёт даже если уже активна."
+    },
+    "qol.game.disablelineofsight": {
+      "name": "Отключить углы обзора нечипированного",
+      "description": "Отключает ограниченные углы обзора у нечипированного. Вау."
+    },
+    "qol.game.minigameqol": {
+      "name": "Быстрые мини-игры",
+      "description": "Делает взломы замков быстрее и укорачивает коды до 5-9 цифр."
+    },
+    "qol.game.skillallocation": {
+      "name": "Распределение скиллпоинтов",
+      "description": "Включает настройки распределения скиллпоинтов QoL для начальных статов."
+    },
+    "qol.game.skillallocation.str": {
+      "name": "Начальная STR",
+      "description": "Устанавливает начальное значение скилла, используемое патчем по распределению скиллпоинтов QoL."
+    },
+    "qol.game.skillallocation.res": {
+      "name": "Начальная RES",
+      "description": "Устанавливает начальное значение скилла, используемое патчем по распределению скиллпоинтов QoL."
+    },
+    "qol.game.skillallocation.int": {
+      "name": "Начальный INT",
+      "description": "Устанавливает начальное значение скилла, используемое патчем по распределению скиллпоинтов QoL."
+    },
+    "qol.game.downloadlocale": {
+      "name": "Скачать локализацию",
+      "description": "Скачивает и устанавливат дополнительную локализацию из репозитория. ПРИ ИСПОЛЬЗОВАНИИ В ИГРЕ ПРИВЕДЁТ К СБРОСУ СЛОЯ."
+    },
+    "qol.game.entitydensity": {
+      "name": "Частота отдельных объектов",
+      "description": "Изменяет частоту спавна любого объекта."
+    },
+    "qol.game.structuredensity": {
+      "name": "Частота отдельных структур",
+      "description": "Изменяет частоту спавна любой структуры."
+    },
+    "qol.game.layermodifierdensity": {
+      "name": "Частота модификаторов слоя",
+      "description": "Изменяет частоту модификаторов слоя."
+    },
+    "qol.audio.soundoverride": {
+      "name": "Изменение громкости отдельных звуков",
+      "description": "Изменяет громкость отдельно любого звука."
+    },
+    "qol.game.discordpresence": {
+      "name": "Discord Presence",
+      "description": "Редактировать шаблон Discord Rich Presence."
+    },
+    "qol_ui_discord": {
+      "name": "Discord RPC",
+      "description": "Интеграция Discord Rich Presence"
+    },
+    "qol_vis_los": {
+      "name": "Фикс углов обзора",
+      "description": "Отключает отображение контуров плиток в темноте"
+    },
+    "qol_craft_bulk": {
+      "name": "Массовый крафтинг",
+      "description": "Добавляет кол-во предметов для крафта и функцию авто-крафта"
+    },
+    "qol_ui_preview": {
+      "name": "Предпросмотр крафта",
+      "description": "Улучшает предпросмотр предметов в меню крафта"
+    },
+    "qol_ui_scroll": {
+      "name": "Контейнер скролл",
+      "description": "Добавляет поддержку скроллить колесико мыши в контейнерах"
+    },
+    "qol_inv_sortbtn": {
+      "name": "Кнопка сортировки",
+      "description": "Добавляет кнопку для сортировки инвентаря"
+    },
+    "qol_inv_quickstash": {
+      "name": "Быстрое поднятие",
+      "description": "Исп. кнопку \"Быстрое поднятие\" чтобы подобрать предмет"
+    },
+    "qol_inv_liquid": {
+      "name": "Кейбинды инвентаря",
+      "description": "Добав. взаимодействия с Shift и интеракции с инвентарём"
+    },
+    "qol_game_pusher": {
+      "name": "Физика воды",
+      "description": "Вода с размером 1.5 плитки больше вас не толкает"
+    },
+    "qol_game_soundcannon_indicator": {
+      "name": "Индикатор звуковой ловушки",
+      "description": "Предупреждает о заряде звуковой ловушки"
+    },
+    "qol_game_modifiers": {
+      "name": "Модификаторы слоёв",
+      "description": "Включает/выключает настройки модификаторов слоёв"
+    },
+    "qol_audio_safety": {
+      "name": "Безопасность для ушей",
+      "description": "Уменьшает громкость некоторых звуков"
+    },
+    "qol_save_menu": {
+      "name": "Меню сохранений",
+      "description": "Добавляет меню выбора сохранений в меню паузы"
+    },
+    "qol_timer": {
+      "name": "Таймер",
+      "description": "Добавляет таймер в меню паузы"
+    },
+    "qol_autosave": {
+      "name": "Автосохранения",
+      "description": "Автоматически сохраняет игру через определённый интервал"
+    }
   }
 } 

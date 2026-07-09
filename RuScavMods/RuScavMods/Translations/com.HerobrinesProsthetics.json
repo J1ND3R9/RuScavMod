@@ -1,5 +1,7 @@
 // https://www.nexusmods.com/scavprototype/mods/40
 {
+  "type": "native",
+
   "buildings": {
     "neuromod_box": "Коробка с нейромодом",
     "neuromod_boxdsc": "Герметичный ящик корпорации аугментаций. Усиленная металлическая обшивка, примитивный кодовый замок. Вмещает один нейромод. Было бы хорошо его взломать."
@@ -16,54 +18,51 @@
     "gamesetprosthetics_mod_hook": "Использовать вживленную крюк-кошку"
   },
   "talks": {
-    "tastes_like_poo": {
-      "pattern": "That tastes like poo",
-      "translation": "На вкус как дерьмо"
-    }
+    "That tastes like poo": "На вкус как дерьмо"
   },
   "alerts": {
-    "prosthetic_battery_removed": {
+    "Battery removed": {
       "pattern": "Battery removed",
       "translation": "Батарея извлечена."
     },
-    "prosthetic_battery_installed": {
+    "Battery installed": {
       "pattern": "Battery installed",
       "translation": "Батарея установлена."
     },
-    "prosthetic_cant_wear_with_two": {
+    "^Can't wear (.+) with two prosthetic (.+).$": {
       "regex": true,
       "pattern": "^Can't wear (.+) with two prosthetic (.+).$",
       "translation": "Нельзя надеть $1 с двумя протезами $2."
     },
-    "prosthetic_cant_modify_another_player_augment": {
+    "Can't modify another player's augment": {
       "pattern": "Can't modify another player's augment",
       "translation": "Нельзя установить имплант в гнездо другого игрока."
     },
-    "prosthetic_cant_modify_another_player": {
+    "Can't modify another player's prosthetic": {
       "pattern": "Can't modify another player's prosthetic",
       "translation": "Нельзя модифицировать протез другого игрока."
     },
-    "prosthetic_cant_remove_another_player": {
+    "Can't remove another player's prosthetic": {
       "pattern": "Can't remove another player's prosthetic",
       "translation": "Нельзя удалить протез другого игрока."
     },
-    "prosthetic_augment_battery_already_installed": {
+    "Augment already has a battery": {
       "pattern": "Augment already has a battery",
       "translation": "В имплант уже установлена батарея."
     },
-    "prosthetic_augment_battery_not_installed": {
+    "Install an augment first": {
       "pattern": "Install an augment first",
       "translation": "Сначала установи имплант."
     },
-    "prosthetic_augment_arm_augment_on_leg": {
+    "Arm augment can't be installed on a leg": {
       "pattern": "Arm augment can't be installed on a leg",
       "translation": "Нельзя установить имплант для руки на ногу."
     },
-    "prosthetic_augment_leg_augment_on_arm": {
+    "Leg augment can't be installed on an arm": {
       "pattern": "Leg augment can't be installed on an arm",
       "translation": "Нельзя установить имплант для ноги на руку."
     },
-    "prosthetic_augment_arm_slot_occupied": {
+    "Arm mod slot already occupied": {
       "pattern": "Arm mod slot already occupied",
       "translation": "Гнездо для имплантов на руке уже занято."
     },
@@ -167,40 +166,40 @@
       "pattern": "Already wearing a copper jaw",
       "translation": "У тебя уже установлена медная челюсть."
     },
-    "prosthetic_jaw_installing": {
+    "Not missing a jaw": {
       "pattern": "Not missing a jaw",
       "translation": "У тебя есть челюсть."
     },
-    "prosthetic_eye_socket_installing_full": {
+    "No empty eye sockets left": {
       "pattern": "No empty eye sockets left",
       "translation": "Все слоты для глаз заняты."
     },
-    "prosthetic_eye_installing": {
+    "Not missing an eye": {
       "pattern": "Not missing an eye",
       "translation": "У тебя есть оба глаза."
     },
-    "prosthetic_head_installing": {
+    "Apply on the head": {
       "pattern": "Apply on the head",
       "translation": "Устанавливается только в голову."
     },
-    "prosthetic_leg_installing": {
+    "Drag onto a prosthetic leg to install": {
       "pattern": "Drag onto a prosthetic leg to install",
       "translation": "Устанавливается только в протез ноги."
     },
-    "prosthetic_arm_installing": {
+    "Drag onto a prosthetic arm to install": {
       "pattern": "Drag onto a prosthetic arm to install",
       "translation": "Устанавливается только в протез руки."
     },
-    "identified_nothing_in_hand": {
+    "Nothing in hand to scan": {
       "pattern": "Nothing in hand to scan",
       "translation": "Нечего сканировать. Предмет должен быть в руке."
     },
-    "identified_with_recipe": {
+    "^Recipe scanned: (.+)$": {
       "regex": true,
       "pattern": "^Recipe scanned: (.+)$",
       "translation": "Рецепт просканирован: $1"
     },
-    "identified_no_recipe": {
+    "^Identified: (.+) \\(no recipe in the database\\)$": {
       "regex": true,
       "pattern": "^Identified: (.+) \\(no recipe in the database\\)$",
       "translation": "Идентифицировано: $1 (рецепта нет в базе данных)"

@@ -44,6 +44,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libraries\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="QoL.Unknown">
+      <HintPath>E:\SteamLibrary\steamapps\common\Casualties Unknown Demo\BepInEx\plugins\QoL.Unknown.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -63,19 +66,42 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ReflectPatches\KrokoshaMPTranslator.cs" />
-    <Compile Include="ReflectPatches\QoLTranslator.cs" />
+    <Compile Include="ModPatches\AdditionalDescriptions\AdditionalDescriptionsTranslator.cs" />
+    <Compile Include="ModPatches\QoLUnknown\Camera\PlayerCameraPatches.cs" />
+    <Compile Include="ModPatches\QoLUnknown\SaveMenu\BuildSaveMenuPatch.cs" />
+    <Compile Include="ModPatches\QoLUnknown\SaveMenu\BuildSlotTooltipPatch.cs" />
+    <Compile Include="ModPatches\QoLUnknown\SaveMenu\CreateSeedInputPatch.cs" />
+    <Compile Include="ModPatches\QoLUnknown\SaveMenu\CreateSeedInputTextPatch.cs" />
+    <Compile Include="ModPatches\QoLUnknown\SaveMenu\RefreshSlotsPatch.cs" />
+    <Compile Include="ModPatches\QoLUnknown\Settings\ModOptionsTranslator.cs" />
+    <None Include="RuScavMods\Translations\CUTarkovMedicalMod.json" />
+    <Compile Include="VanillaPatches\AlertTranslationPatches.cs" />
+    <Compile Include="VanillaPatches\GetStringTranslationPatches.cs" />
+    <Compile Include="VanillaPatches\ItemTranslationPatches.cs" />
+    <Compile Include="VanillaPatches\LocaleTranslationPatches.cs" />
+    <Compile Include="VanillaPatches\MoodleManagerPatches.cs" />
+    <Compile Include="VanillaPatches\TalkTranslationPatches.cs" />
+    <Compile Include="VanillaPatches\TutorialTranslationPatches.cs" />
+    <Compile Include="ModPatches\KrokoshaMP\KrokoshaMPTranslator.cs" />
+    <Compile Include="ModPatches\QoLUnknown\QoLTranslator.cs" />
     <Compile Include="RuScavMods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TranslationFile.cs" />
-    <Compile Include="TranslationManager.cs" />
+    <None Include="RuScavMods\Translations\com.rushellxyz.cigs.json" />
+    <None Include="RuScavMods\Translations\com.rushellxyz.razor.json" />
+    <None Include="RuScavMods\Translations\lefty.expsneeze.json" />
+    <Compile Include="TranslationClasses\Definitions\CuCoreTranslationFile.cs" />
+    <Compile Include="TranslationClasses\Definitions\NativeTranslationFile.cs" />
+    <Compile Include="TranslationClasses\Definitions\TranslationType.cs" />
+    <Compile Include="TranslationClasses\Managers\CuCoreTranslationManager.cs" />
+    <Compile Include="TranslationClasses\Managers\NativeTranslationManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="RuScavMods\Translations\com.HerobrinesProsthetics.json" />
     <None Include="RuScavMods\Translations\com.rushellxyz.newclothing.json" />
     <None Include="RuScavMods\Translations\com.rushellxyz.newfirearms.json" />
     <None Include="RuScavMods\Translations\ICEneco.ICEnecoCustomItemAPI.json" />
-    <None Include="RuScavMods\Translations\noah.casualtiesunknown.additionaldescriptions.json" />
+    <None Include="RuScavMods\Translations\gunsaw.json" />
+    <None Include="RuScavMods\Translations\expiepettingmod.casualtiesunknown.mod.json" />
     <None Include="RuScavMods\Translations\org.bepinex.plugins.qol_unknown.json" />
   </ItemGroup>
   <ItemGroup />

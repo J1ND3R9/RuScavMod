@@ -1,5 +1,7 @@
 // https://www.nexusmods.com/scavprototype/mods/43
 {
+  "type": "native",
+
   "items": {
     "armwarmers": {
       "name": "Нарукавники",

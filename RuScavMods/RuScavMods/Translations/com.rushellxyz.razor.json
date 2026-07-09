@@ -1,0 +1,36 @@
+{
+  "type": "native",
+  "items": {
+    "razorblade": {
+      "name": "Бритвенное лезвие",
+      "description": "Когда даже инстинкты дают сбой."
+    }
+  },
+  "talks": {
+    "OWCH!": "АУЧ!",
+    "What the fuck did i do..": "Что сейчас за хуйню я сделал...",
+    "euhh...": "Эээ...",
+    "Why am i doing this..": "Зачем я это сделал...",
+    "Fuuck..": "Бляяя...",
+    "owh..": "Оу...",
+    "nghh..": "Сс...",
+    "That's not that bad actualy..": "На самом деле, это не так уж и плохо...",
+    "haha.. fuck..": "Хах... Блять...",
+    "Fuck yeahh..": "Чёрт, да...",
+    "This so.. ouuhh..": "Это так... О-о-о...",
+    "Goooood..": "Хорошооооо...",
+    "This hurts so good..": "Мне так нравится эта... боль...",
+    "I want to cut these funny strings on my hand..": "Я хочу продолжать резать эти смешные струны на моей руке...",
+    "Hahahahaha..": "Хахахаха...",
+    "Yes.. YES..!": "Да... БЛЯТЬ, ДА..!",
+    "Get this fucker.. this is what you deserve..": "Получай, уебище... Это то, чего ты заслуживаешь...",
+    "I needed this more than any hug..": "Мне ЭТО нужно больше, чем обнимашки...",
+    "AAH!": "ААА!",
+    "I shouldn't use that so much": "Я не должен был исползовать его так много.",
+    "WAAH!?": "АА?!",
+    "That wasn't me": "Это был не я.",
+    "I think someone is cutting me.": "Я думаю кто-то меня режет.",
+    "Someone is cutting me!": "Кто-то режет меня!",
+    "That hurt": "Это больно."
+  }
+}

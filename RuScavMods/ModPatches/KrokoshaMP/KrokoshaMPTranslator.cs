@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace RuScavMods
+namespace RuScavMods.ModPatches.KrokoshaMP
 {
     internal static class KrokoshaMPTranslator
     {
@@ -402,7 +402,7 @@ namespace RuScavMods
             }
             catch (Exception ex)
             {
-                log.LogError($"Ошибка перевода QoL_Unknown: " + ex.Message);
+                log.LogError($"Ошибка перевода KrokoshaMP: " + ex.Message);
                 return;
             }
         }
