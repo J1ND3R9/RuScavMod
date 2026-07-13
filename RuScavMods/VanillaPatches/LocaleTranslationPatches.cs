@@ -16,8 +16,6 @@ namespace RuScavMods.Patches
             var currentLang = Locale.currentLang;
             if (currentLang == null) return;
             NativeTranslationManager.ApplyLocaleTranslation(currentLang);
-            if (Plugin.IsCUCoreLibInstalled)
-                CuCoreTranslationManager.ApplyLocaleTranslation(currentLang);
         }
         private static readonly List<string> CustomQuotes = new List<string>
             {

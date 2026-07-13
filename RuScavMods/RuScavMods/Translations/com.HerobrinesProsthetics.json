@@ -8,204 +8,66 @@
   },
   "runSettings": {
     "runsetdisablebrainmods": "Отключить нейромоды",
-    "runsetdisablebrainmodsdsc": "Нейромоды и ящики с ними не будут появляться в этом забеге. Продавцы также не будут их продавать.",
-    "runsetwoodenstart": "Буратино",
-    "runsetwoodenstartdsc": "Начни с деревянными протезами на всех конечностях, кибернетическом глазом (без батарейки) и хрупким ножом. Твой интеллект будет 13 заместо 7 в одиночной игре."
+    "runsetdisablebrainmodsdsc": "Нейромоды и ящики с ними не будут появляться в этом забеге. Продавцы также не будут их продавать."
   },
   "settings": {
     "gamesetprosthetics_mod_UI": "Открыть меню кибернетики",
     "gamesetprosthetics_mod_flashlight": "Включить фонарь",
-    "gamesetprosthetics_mod_hook": "Использовать вживленную крюк-кошку"
+    "gamesetprosthetics_mod_hook": "Использовать вживленную крюк-кошку",
+    "runsetwoodenstart": "Буратино", // Автор сам запихнул настройки забега в кейбинды.
+    "runsetwoodenstartdsc": "Начни с деревянными протезами на всех конечностях, кибернетическом глазом (без батарейки) и хрупким ножом. Твой интеллект будет 13 заместо 7 в одиночной игре."
   },
   "talks": {
     "That tastes like poo": "На вкус как дерьмо"
   },
   "alerts": {
-    "Battery removed": {
-      "pattern": "Battery removed",
-      "translation": "Батарея извлечена."
-    },
-    "Battery installed": {
-      "pattern": "Battery installed",
-      "translation": "Батарея установлена."
-    },
-    "^Can't wear (.+) with two prosthetic (.+).$": {
-      "regex": true,
-      "pattern": "^Can't wear (.+) with two prosthetic (.+).$",
-      "translation": "Нельзя надеть $1 с двумя протезами $2."
-    },
-    "Can't modify another player's augment": {
-      "pattern": "Can't modify another player's augment",
-      "translation": "Нельзя установить имплант в гнездо другого игрока."
-    },
-    "Can't modify another player's prosthetic": {
-      "pattern": "Can't modify another player's prosthetic",
-      "translation": "Нельзя модифицировать протез другого игрока."
-    },
-    "Can't remove another player's prosthetic": {
-      "pattern": "Can't remove another player's prosthetic",
-      "translation": "Нельзя удалить протез другого игрока."
-    },
-    "Augment already has a battery": {
-      "pattern": "Augment already has a battery",
-      "translation": "В имплант уже установлена батарея."
-    },
-    "Install an augment first": {
-      "pattern": "Install an augment first",
-      "translation": "Сначала установи имплант."
-    },
-    "Arm augment can't be installed on a leg": {
-      "pattern": "Arm augment can't be installed on a leg",
-      "translation": "Нельзя установить имплант для руки на ногу."
-    },
-    "Leg augment can't be installed on an arm": {
-      "pattern": "Leg augment can't be installed on an arm",
-      "translation": "Нельзя установить имплант для ноги на руку."
-    },
-    "Arm mod slot already occupied": {
-      "pattern": "Arm mod slot already occupied",
-      "translation": "Гнездо для имплантов на руке уже занято."
-    },
-    "prosthetic_augment_leg_slot_occupied": {
-      "pattern": "Leg mod slot already occupied",
-      "translation": "Гнездо для имплантов на ноге уже занято."
-    },
-    "prosthetic_augment_installing_hint": {
-      "pattern": "Apply directly to an upper arm or thigh",
-      "translation": "Применяется только на плечо или бедро."
-    },
-    "prosthetic_grapplinghook_attach_battery": {
-      "pattern": "Grappling hook attached  - insert a battery to power",
-      "translation": "Крюк-кошка установлена. Не забудь вставить батарейку."
-    },
-    "prosthetic_grapplinghook_attach": {
-      "pattern": "Grappling hook attached",
-      "translation": "Крюк-кошка установлена."
-    },
-    "prosthetic_multihacking_attach_battery": {
-      "pattern": "Multi-Hacking attached  - insert a battery to power",
-      "translation": "\"Мульти-взлом\" установлен. Не забудь вставить батарейку."
-    },
-    "prosthetic_multihacking_attach": {
-      "pattern": "Multi-Hacking attached",
-      "translation": "\"Мульти-взлом\" установлен."
-    },
-    "prosthetic_steady_hand_attach_battery": {
-      "pattern": "Steady Hand attached  - insert a battery to power",
-      "translation": "\"Твёрдая рука\" установлена. Не забудь вставить батарейку."
-    },
-    "prosthetic_steady_hand_attach": {
-      "pattern": "Steady Hand attached",
-      "translation": "\"Твёрдая рука\" установлена."
-    },
-    "prosthetic_already_installed": {
-      "pattern": "Already installed on this limb",
-      "translation": "Уже установлено на этой конечности."
-    },
-    "prosthetic_augment_already_attach": {
-      "pattern": "Limb already has an augment slot",
-      "translation": "На конечности уже есть гнездо для имплантов."
-    },
-    "prosthetic_augment_slot_implanted": {
-      "pattern": "Augment slot implanted",
-      "translation": "Гнездо для имплантов вырезано."
-    },
-    "steve_jobs_no": {
-      "pattern": "Steve Jobs says NO to slow mo in multiplayer",
-      "translation": "Стив Джобс говорит НЕТ замедлению времени в мультиплеере."
-    },
-    "limb_already_prosthetic": {
-      "pattern": "This limb is already a prosthetic",
-      "translation": "Эта конечность уже протезирована."
-    },
-    "prosthetic_cant_use_tools": {
-      "pattern": "This prosthetic can't use tools.",
-      "translation": "Этот протез не может использовать инструменты."
-    },
-    "prosthetic_titanium_chain_incomplete": {
-      "pattern": "Chain incomplete  - disassembled into a titanium sheet",
-      "translation": "Ты не завершил цепь, протез разобран в титановый лист."
-    },
-    "prosthetic_titanium_too_damaged": {
-      "pattern": "Too damaged to safely remove  - fix it first",
-      "translation": "Протез слишком повреждён для безопасного удаления."
-    },
-    "prosthetic_takeoff_wrench": {
-      "pattern": "Use a wrench to take off a prosthetic",
-      "translation": "Для снятия протеза используй гаечный ключ."
-    },
-    "prosthetic_wood_biochem": {
-      "pattern": "Wooden prosthetic  - biochem heals it, a wrench takes it off",
-      "translation": "Биохимическая жидкость чинит деревянный протез. Снимается с помощью гаечного ключа."
-    },
-    "hook_cant_hold": {
-      "pattern": "You cant hold this with a hook, you can only hold containers on a hook",
-      "translation": "Крюком можно держать только контейнеры."
-    },
-    "prosthetic_on_prosthetic": {
-      "pattern": "Can't attach a prosthetic to another prosthetic",
-      "translation": "Нельзя присоединить протез к другому протезу."
-    },
-    "limb_is_missing": {
-      "pattern": "Limb is missing",
-      "translation": "Конечность ампутирована."
-    },
-    "limb_not_missing": {
-      "pattern": "Limb is not missing",
-      "translation": "Конечность не ампутирована."
-    },
-    "prosthetic_for_legs": {
-      "pattern": "This prosthetic is for legs",
-      "translation": "Этот протез для ног."
-    },
-    "prosthetic_for_arms": {
-      "pattern": "This prosthetic is for arms",
-      "translation": "Этот протез для рук."
-    },
-    "prosthetic_jaw_already_installed": {
-      "pattern": "Already wearing a copper jaw",
-      "translation": "У тебя уже установлена медная челюсть."
-    },
-    "Not missing a jaw": {
-      "pattern": "Not missing a jaw",
-      "translation": "У тебя есть челюсть."
-    },
-    "No empty eye sockets left": {
-      "pattern": "No empty eye sockets left",
-      "translation": "Все слоты для глаз заняты."
-    },
-    "Not missing an eye": {
-      "pattern": "Not missing an eye",
-      "translation": "У тебя есть оба глаза."
-    },
-    "Apply on the head": {
-      "pattern": "Apply on the head",
-      "translation": "Устанавливается только в голову."
-    },
-    "Drag onto a prosthetic leg to install": {
-      "pattern": "Drag onto a prosthetic leg to install",
-      "translation": "Устанавливается только в протез ноги."
-    },
-    "Drag onto a prosthetic arm to install": {
-      "pattern": "Drag onto a prosthetic arm to install",
-      "translation": "Устанавливается только в протез руки."
-    },
-    "Nothing in hand to scan": {
-      "pattern": "Nothing in hand to scan",
-      "translation": "Нечего сканировать. Предмет должен быть в руке."
-    },
-    "^Recipe scanned: (.+)$": {
-      "regex": true,
-      "pattern": "^Recipe scanned: (.+)$",
-      "translation": "Рецепт просканирован: $1"
-    },
-    "^Identified: (.+) \\(no recipe in the database\\)$": {
-      "regex": true,
-      "pattern": "^Identified: (.+) \\(no recipe in the database\\)$",
-      "translation": "Идентифицировано: $1 (рецепта нет в базе данных)"
-    }
+    "Battery removed": "Батарея извлечена.",
+    "Battery installed": "Батарея установлена.",
+    "^Can't wear (.+) with two prosthetic (.+).$": "Нельзя надеть $1 с двумя протезами $2.",
+    "Can't modify another player's augment": "Нельзя установить имплант в гнездо другого игрока.",
+    "Can't modify another player's prosthetic": "Нельзя модифицировать протез другого игрока.",
+    "Can't remove another player's prosthetic": "Нельзя удалить протез другого игрока.",
+    "Augment already has a battery": "В имплант уже установлена батарея.",
+    "Install an augment first": "Сначала установи имплант.",
+    "Arm augment can't be installed on a leg": "Нельзя установить имплант для руки на ногу.",
+    "Leg augment can't be installed on an arm": "Нельзя установить имплант для ноги на руку.",
+    "Arm mod slot already occupied": "Гнездо для имплантов на руке уже занято.",
+    "Leg mod slot already occupied": "Гнездо для имплантов на ноге уже занято.",
+    "Apply directly to an upper arm or thigh": "Применяется только на плечо или бедро.",
+    "Grappling hook attached  - insert a battery to power": "Крюк-кошка установлена. Не забудь вставить батарейку.",
+    "Grappling hook attached": "Крюк-кошка установлена.",
+    "Multi-Hacking attached  - insert a battery to power": "\"Мульти-взлом\" установлен. Не забудь вставить батарейку.",
+    "Multi-Hacking attached": "\"Мульти-взлом\" установлен.",
+    "Steady Hand attached  - insert a battery to power": "\"Твёрдая рука\" установлена. Не забудь вставить батарейку.",
+    "Steady Hand attached": "\"Твёрдая рука\" установлена.",
+    "Already installed on this limb": "Уже установлено на этой конечности.",
+    "Limb already has an augment slot": "На конечности уже есть гнездо для имплантов.",
+    "Augment slot implanted": "Гнездо для имплантов вырезано.",
+    "Steve Jobs says NO to slow mo in multiplayer": "Стив Джобс говорит НЕТ замедлению времени в мультиплеере.",
+    "This limb is already a prosthetic": "Эта конечность уже протезирована.",
+    "This prosthetic can't use tools.": "Этот протез не может использовать инструменты.",
+    "Chain incomplete  - disassembled into a titanium sheet": "Ты не завершил цепь, протез разобран в титановый лист.",
+    "Too damaged to safely remove  - fix it first": "Протез слишком повреждён для безопасного удаления.",
+    "Use a wrench to take off a prosthetic": "Для снятия протеза используй гаечный ключ.",
+    "Wooden prosthetic  - biochem heals it, a wrench takes it off": "Биохимическая жидкость чинит деревянный протез. Снимается с помощью гаечного ключа.",
+    "You cant hold this with a hook, you can only hold containers on a hook": "Крюком можно держать только контейнеры.",
+    "Can't attach a prosthetic to another prosthetic": "Нельзя присоединить протез к другому протезу.",
+    "Limb is missing": "Конечность ампутирована.",
+    "Limb is not missing": "Конечность не ампутирована.",
+    "This prosthetic is for legs": "Этот протез для ног.",
+    "This prosthetic is for arms": "Этот протез для рук.",
+    "Already wearing a copper jaw": "У тебя уже установлена медная челюсть.",
+    "Not missing a jaw": "У тебя есть челюсть.",
+    "No empty eye sockets left": "Все слоты для глаз заняты.",
+    "Not missing an eye": "У тебя есть оба глаза.",
+    "Eye removed": "Глаз вырезан.",
+    "Apply on the head": "Устанавливается только в голову.",
+    "Drag onto a prosthetic leg to install": "Устанавливается только в протез ноги.",
+    "Drag onto a prosthetic arm to install": "Устанавливается только в протез руки.",
+    "Nothing in hand to scan": "Нечего сканировать. Предмет должен быть в руке.",
+    "^Recipe scanned: (.+)$": "Рецепт просканирован: $1",
+    "^Identified: (.+) \\(no recipe in the database\\)$": "Идентифицировано: $1 (рецепта нет в базе данных)"
   },
-
   "items": {
     "prosthetic_arm_scrap": {
       "name": "Рука из металлолома",

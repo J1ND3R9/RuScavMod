@@ -1,14 +1,9 @@
-﻿using Newtonsoft.Json;
-using RuScavMods.TranslationClasses.Definitions;
+﻿using RuScavMods.TranslationClasses.Definitions;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Net.NetworkInformation;
 using System.Text.RegularExpressions;
 using TMPro;
 using static RuScavMods.TranslationClasses.Definitions.NativeTranslationFile;
-using static System.Net.Mime.MediaTypeNames;
 
 
 namespace RuScavMods.TranslationClasses.Managers
@@ -198,7 +193,7 @@ namespace RuScavMods.TranslationClasses.Managers
             }
         }
 
-        public static void ApplyGetStringTranslation(ref string __result, string str, Dictionary<string, ItemInfo> globalItems = null)
+        public static void ApplyGetStringTranslation(ref string __result, string str)
         {
             if (Settings.TryGetValue(str, out string text))
                 __result = text;

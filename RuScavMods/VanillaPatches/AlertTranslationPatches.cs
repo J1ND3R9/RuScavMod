@@ -12,7 +12,7 @@ namespace RuScavMods.Patches
         private static void DoAlertPrefix(ref string text)
         {
             if (string.IsNullOrEmpty(text)) return;
-            NativeTranslationManager.ApplyTalkTranslation(ref text);
+            NativeTranslationManager.ApplyAlertTranslation(ref text);
         }
     }
 }

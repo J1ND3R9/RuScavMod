@@ -1,0 +1,22 @@
+{
+  "type": "native",
+
+  "runSettings": {
+    "runsetminibarrel_multiplier": "Концентрация мини-бочек",
+    "runsetminibarrel_multiplierdsc": "Сколько мини-бочек появляется на каждом слое.",
+    "runsetenemy_multiplier": "Концентрация врагов",
+    "runsetenemy_multiplierdsc": "Сколько врагов появляется на каждом слое.",
+    "runsetgeyser_multiplier": "Концентрация гейзеров",
+    "runsetgeyser_multiplierdsc": "Сколько гейзеров появляется на каждом слое.",
+    "runsetplant_multiplier": "Концентрация растений",
+    "runsetplant_multiplierdsc": "Сколько растений появляется на каждом слое.",
+    "runsetfluid_multiplier": "Концентрация жидкостей",
+    "runsetfluid_multiplierdsc": "Сколько жидкости появляется в каждой луже.",
+    "runsetspawn_random_loot": "Спавн допольнительного лута",
+    "runsetspawn_random_lootdsc": "Спавнит дополнительный лут каждый слой.",
+    "runsetrandom_loot_multiplier": "Количество дополнительного лута",
+    "runsetrandom_loot_multiplierdsc": "Определяет количество случйных предметов для спавна. Работает только при активном дополнительном луте.",
+    "runsetminiclimbable_multiplier": "Концентрация карабкаемых",
+    "runsetminiclimbable_multiplierdsc": "Сколько объектов, по которым можно карабкаться (верёвка, лиана) на каждом слое."
+  }
+}

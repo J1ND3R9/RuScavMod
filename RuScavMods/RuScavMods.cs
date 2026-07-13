@@ -6,6 +6,9 @@ using HarmonyLib;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RuScavMods.ModPatches.AdditionalDescriptions;
+using RuScavMods.ModPatches.CUCoreLib;
+using RuScavMods.ModPatches.CUTarkovMedicine;
+using RuScavMods.ModPatches.KrokoshaMP;
 using RuScavMods.ModPatches.QoLUnknown;
 using RuScavMods.Patches;
 using RuScavMods.TranslationClasses.Definitions;
@@ -13,16 +16,17 @@ using RuScavMods.TranslationClasses.Managers;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using static BepInEx.BepInDependency;
 
 namespace RuScavMods
 {
-    [BepInPlugin("zzz_com.Floydba.ruscavmods", "RuScavMod", "2.0.0.0")]
+    [BepInPlugin("zzz_com.Floydba.ruscavmods", "RuScavMod", "2.1.0.0")]
     [BepInDependency("org.bepinex.plugins.qol_unknown", DependencyFlags.SoftDependency)]
+    // [BepInDependency("net.cucorelib", DependencyFlags.SoftDependency)]
     public class Plugin : BaseUnityPlugin
     {
-        internal static bool IsCUCoreLibInstalled => Chainloader.PluginInfos.ContainsKey("net.cucorelib");
         internal static ManualLogSource Log;
         private readonly static List<PatchClassProcessor> VanillaPatches = new List<PatchClassProcessor>();
 
@@ -38,6 +42,11 @@ namespace RuScavMods
         {
             var pluginsInfo = Chainloader.PluginInfos;
             var pathTranslations = Path.Combine(Paths.PluginPath, "RuScavMods", "Translations");
+            bool CCLIsInstalled = false;
+
+            if (Chainloader.PluginInfos.ContainsKey("com.rushellxyz.rshlib") && Chainloader.PluginInfos.ContainsKey("net.cucorelib")) // Скорее всего у юзера установлен RshCCL
+                CCLIsInstalled = Chainloader.PluginInfos["com.rushellxyz.rshlib"].Metadata.Name == "RshCCL";
+
             foreach (var plugin in pluginsInfo)
             {
                 var pluginId = plugin.Key;
@@ -46,14 +55,22 @@ namespace RuScavMods
                 {
                     try
                     {
+                        bool isHaveRshDependencyBridge = false;
+
+                        if (CCLIsInstalled)
+                            if (plugin.Value.Dependencies.Any(d => d.DependencyGUID == "com.rushellxyz.rshlib"))
+                                isHaveRshDependencyBridge = true;
+
                         string json = File.ReadAllText(translationFile);
                         TranslationType? type = GetJsonType(json) ?? throw new Exception("GetJsonType вернул null!");
-                        if (type == TranslationType.Custom)
-                            continue;
-                        if (type == TranslationType.Native)
+                        if (type == TranslationType.Native && isHaveRshDependencyBridge)
+                            LoadBridgeTranslation(json);
+                        else if (type == TranslationType.Native)
                             LoadNativeTranslation(json);
                         else if (type == TranslationType.CuCore)
                             LoadCuCoreTranslation(json);
+                        else
+                            continue;
                     }
                     catch (Exception ex)
                     {
@@ -79,8 +96,35 @@ namespace RuScavMods
 
         }
 
+        private CuCoreTranslationFile NativeToCuCoreTranslation(string json)
+        {
+            var translationData = JsonConvert.DeserializeObject<NativeTranslationFile>(json) ?? throw new Exception("Файл не был десериализован.");
+            CuCoreTranslationFile cuCorefile = new CuCoreTranslationFile();
+            Dictionary<string, string> itemsCuCore = new Dictionary<string, string>();
+            foreach (var item in translationData.Items)
+            {
+                itemsCuCore[item.Key] = item.Value.Name;
+                itemsCuCore[item.Key + "dsc"] = item.Value.Description;
+            }
+            cuCorefile.Items = itemsCuCore;
+            cuCorefile.Buildings = translationData.Buildings;
+            return cuCorefile;
+        }
+
+        private void LoadBridgeTranslation(string json)
+        {
+            var cuCoreFile = NativeToCuCoreTranslation(json);
+            var nativeTranslationData = JsonConvert.DeserializeObject<NativeTranslationFile>(json) ?? throw new Exception("Файл не был десериализован.");
+            nativeTranslationData.Items.Clear();
+            nativeTranslationData.Buildings.Clear();
+            NativeTranslationManager.Add(nativeTranslationData);
+            CuCoreTranslationManager.Add(cuCoreFile);
+
+        }
+
         private void LoadNativeTranslation(string json)
         {
+
             var translationData = JsonConvert.DeserializeObject<NativeTranslationFile>(json) ?? throw new Exception("Файл не был десериализован.");
             NativeTranslationManager.Add(translationData);
         }
@@ -105,9 +149,8 @@ namespace RuScavMods
                 case "cucore":
                     return TranslationType.CuCore;
                 default:
-                    break;
+                    return TranslationType.Native;
             }
-            return null;
         }
         private void ApplyVanillaPatches()
         {
@@ -126,12 +169,17 @@ namespace RuScavMods
                 }
             }
         }
-        
+
 
         private void ApplyModTranslations()
         {
             try
             {
+                if (Chainloader.PluginInfos.ContainsKey("KrokoshaCasualtiesMP"))
+                {
+                    KrokoshaMPTranslator.Translate();
+                    Log.LogInfo("Переводим Krokosha_MP_CU");
+                }
                 if (Chainloader.PluginInfos.ContainsKey("org.bepinex.plugins.qol_unknown"))
                 {
                     QoLTranslator.Translate();
@@ -143,12 +191,22 @@ namespace RuScavMods
                     Log.LogInfo("Переводим AdditionalDescriptions");
 
                 }
+                if (Chainloader.PluginInfos.ContainsKey("com.yourname.cu.tarkovmedicalmod"))
+                {
+                    CUTarkovMedicine.Translate();
+                    Log.LogInfo("Переводим Casualties: Unknown - Tarkov-Style Medical Mod");
+                }
+                if (Chainloader.PluginInfos.ContainsKey("net.cucorelib"))
+                {
+                    CUCoreTranslator.Translate();
+                    Log.LogInfo("Переводим моды на CuCoreLib");
+                }
             }
             catch (Exception ex)
             {
                 Log.LogError(ex.Message);
             }
-            
+
         }
     }
 }

@@ -18,8 +18,6 @@ namespace RuScavMods.Patches
             if (Item.GlobalItems == null) return;
             if (Item.GlobalItems.Count == 0) return;
             NativeTranslationManager.ApplyItemTranslation(Item.GlobalItems);
-            if (Plugin.IsCUCoreLibInstalled)
-                CuCoreTranslationManager.ApplyItemTranslation(Item.GlobalItems);
         }
     }
 }
