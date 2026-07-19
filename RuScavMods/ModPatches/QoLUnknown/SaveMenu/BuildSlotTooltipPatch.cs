@@ -8,6 +8,7 @@ namespace RuScavMods.ModPatches.QoLUnknown.SaveMenu
     {
         static MethodBase TargetMethod() => AccessTools.Method(QoLTranslator.SaveMenuPatcher, "BuildSlotTooltip");
 
+
         [HarmonyPostfix]
         static void Postfix(ref string tipName, ref string tipDesc)
         {

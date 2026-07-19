@@ -29,20 +29,19 @@ namespace RuScavMods.TranslationClasses.Managers
             Merge(file.Options);
             Merge(file.Liquids);
             Merge(file.Titles);
-
-        }
-
-        public static void AddNative(NativeTranslationFile file)
-        {
-            if (file == null) throw new Exception("Файл перевода пустой или не десериализован.");
-            
-
+            SendToNative(file.NativeTalks);
         }
         private static void Merge(Dictionary<string, string> source)
         {
             if (source == null) return;
             foreach (var pair in source)
                 CuCoreTranslations[pair.Key] = pair.Value;
+        }
+
+        private static void SendToNative(Dictionary<string, string> nativeTalks)
+        {
+            if (nativeTalks == null) return;
+            NativeTranslationManager.AddNativeTalks(nativeTalks);
         }
     }
 }

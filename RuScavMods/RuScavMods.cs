@@ -1,6 +1,5 @@
 ﻿using BepInEx;
 using BepInEx.Bootstrap;
-using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
 using Newtonsoft.Json;
@@ -8,28 +7,107 @@ using Newtonsoft.Json.Linq;
 using RuScavMods.ModPatches.AdditionalDescriptions;
 using RuScavMods.ModPatches.CUCoreLib;
 using RuScavMods.ModPatches.CUTarkovMedicine;
+using RuScavMods.ModPatches.extraDialogue;
+using RuScavMods.ModPatches.Gunsaw;
 using RuScavMods.ModPatches.KrokoshaMP;
 using RuScavMods.ModPatches.QoLUnknown;
+using RuScavMods.ModPatches.RshCCL;
 using RuScavMods.Patches;
 using RuScavMods.TranslationClasses.Definitions;
 using RuScavMods.TranslationClasses.Managers;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using static BepInEx.BepInDependency;
+using System.Runtime.InteropServices;
+
+//     ▓▒                                                     
+//    ░░░░░░░░░                                               
+//    ▓░  ░ ░░░░░▒             ▒▒▒▒▒▒░▒░   чзх!!!!!!!! экспи!!!! что ты тут делаешь!??!?!
+//    ▒░░ ░░ ░ ░ ░░░░   ▒▒▒░░░░░░░ ░░░░░                      
+//    ▒░ ░ ░░░░░░ ░░░░░░ ░ ░ ░ ░ ░ ░ ░░    глупенький зверь, это не новый слой!!!!!!! уходи из моего кода!!!!!!!                
+//    ▓░░░▒▒▒▒▒▒░ ░ ░ ░ ░░░ ░ ░ ░ ░ ░░░                    
+//     ░▒    ▒█▓░░ ░ ░ ░ ░▒▒▒▒░░ ░░░░░                     
+//     ▓▒   ███▓░░░ ░░░░▒▓░  █▓░░░░░                      
+//   ▓░░█▓▓████▓░ ░░ ░░▓▒   ░██▒░░░                        
+//   ▓░░█▓██░ ▒▒░░ ░ ░░░ ██████░▒▒▒▒                          
+//    ▒░▒░▓▓░ ▒▒ ░░ ░ ░▒ ▓█▓▒█▓░ ░▒                      
+//     ▓▒▓▓▒▒░░░ ░ ░░░░▒     █░░▒▒                            
+//       ▒▒░░ ░ ░ ░ ░ ░ ░▒▓█▓░▓                           
+//         ▓░░ ░░░ ░ ░ ░░░█                         
+//       ░▒▒▓░░▒▒░░░░░░ ░░░░▓                                 
+//  ▓▒░░▒░ ░░▒▓▒░▒▒▒▒░░▓▒░ ░ ░▒▒                              
+// ▒░░░ ░ ░ ░░░▒▒▒▒▒▒▒░░░ ░ ░ ░░░▒▓▓▒░                     
+// ▓░ ░░ ░░░░░░▒▓░░░░░ ░ ░░░░░ ░ ░ ░ ░▒                       
+//▒░░░ ░░ ░░▒▒░░▒▓░░░ ░ ░ ░░▓░░ ░░ ░░░░▒▓▒▒▒                  
+//    ▓ ░ ░░▒▓▒░░▒▒░░░ ░░ ░ ▓▒░░ ░░░▒▓▒▒░░▒       ░▒  ▒       
+//             ▒░ ░░ ░░ ░ ░░▒█▒░░ ░░▒▓░░ ░▒▓▒░▒▒              
+//             ░░░ ░ ▒░░ ░ ░▒▓░▒▒▒░░░░ ░░ ░░ ▒░              
+//              ▒░░ ░▓▒░░ ░ ░█░ ░ ░░ ░░ ░░ ░░     ░▒          
+//              ▒░ ░░▓▓░░░░░ ░▓▓░░ ░░ ░░░░▓                   
+//            ░▒░░░░▒  ░░ ░░░▓▒░▒  ░░░░░░░░░▒░        
+//             ░ ░   
 
 namespace RuScavMods
 {
-    [BepInPlugin("zzz_com.Floydba.ruscavmods", "RuScavMod", "2.1.0.0")]
-    [BepInDependency("org.bepinex.plugins.qol_unknown", DependencyFlags.SoftDependency)]
-    // [BepInDependency("net.cucorelib", DependencyFlags.SoftDependency)]
+    [BepInPlugin("zzz_com.Floydba.ruscavmods", "RuScavMod", "2.1.1.3")]
     public class Plugin : BaseUnityPlugin
     {
         internal static ManualLogSource Log;
         private readonly static List<PatchClassProcessor> VanillaPatches = new List<PatchClassProcessor>();
+        private readonly static Dictionary<string, string> BridgeCandidates = new Dictionary<string, string>();
+        public static bool RshCCLInstalled = File.Exists(Path.Combine(Paths.PluginPath, "RshLib.dll")) && AccessTools.TypeByName("RshLib.RshItemAdapter") != null; // У автора мода интересный случай: он удаляет себя из PluginInfos и, затем, пытается вернуть патчем. Но патч не срабатывает, поэтому он просто делитит себя, bruh.
+        internal sealed class ModTranslator
+        {
+            public string Guid { get; set; }
+            public string Name { get; set; }
+            public Action Translate { get; set; }
+        }
 
+        private static readonly List<ModTranslator> Translators = new List<ModTranslator>()
+        {
+            new ModTranslator()
+            {
+                Guid = "KrokoshaCasualtiesMP",
+                Name = "Krokosha_MP_CU",
+                Translate = KrokoshaMPTranslator.Translate
+            },
+            new ModTranslator()
+            {
+                Guid = "org.bepinex.plugins.qol_unknown",
+                Name = "QoL: Unknown",
+                Translate = QoLTranslator.Translate
+            },
+            new ModTranslator()
+            {
+                Guid = "noah.casualtiesunknown.additionaldescriptions",
+                Name = "AdditionalDescriptions",
+                Translate = AdditionalDescriptionsTranslator.Translate
+            },
+            new ModTranslator()
+            {
+                Guid = "com.yourname.cu.tarkovmedicalmod",
+                Name = "Tarkov Medical",
+                Translate = CUTarkovMedicine.Translate
+            },
+            new ModTranslator()
+            {
+                Guid = "GunsawGenetics",
+                Name = "Gunsaw Genetics",
+                Translate = GunsawGeneticsTranslator.Translate
+            },
+            new ModTranslator()
+            {
+                Guid = "furr.extraDialogue",
+                Name = "Extra Dialogue",
+                Translate = ExtraDialogueTranslator.Translate
+            },
+            new ModTranslator()
+            {
+                Guid = "net.cucorelib",
+                Name = "CUCore",
+                Translate = CUCoreTranslator.Translate
+            }
+        };
         private void Awake()
         {
             Plugin.Log = base.Logger;
@@ -42,11 +120,6 @@ namespace RuScavMods
         {
             var pluginsInfo = Chainloader.PluginInfos;
             var pathTranslations = Path.Combine(Paths.PluginPath, "RuScavMods", "Translations");
-            bool CCLIsInstalled = false;
-
-            if (Chainloader.PluginInfos.ContainsKey("com.rushellxyz.rshlib") && Chainloader.PluginInfos.ContainsKey("net.cucorelib")) // Скорее всего у юзера установлен RshCCL
-                CCLIsInstalled = Chainloader.PluginInfos["com.rushellxyz.rshlib"].Metadata.Name == "RshCCL";
-
             foreach (var plugin in pluginsInfo)
             {
                 var pluginId = plugin.Key;
@@ -55,17 +128,9 @@ namespace RuScavMods
                 {
                     try
                     {
-                        bool isHaveRshDependencyBridge = false;
-
-                        if (CCLIsInstalled)
-                            if (plugin.Value.Dependencies.Any(d => d.DependencyGUID == "com.rushellxyz.rshlib"))
-                                isHaveRshDependencyBridge = true;
-
                         string json = File.ReadAllText(translationFile);
                         TranslationType? type = GetJsonType(json) ?? throw new Exception("GetJsonType вернул null!");
-                        if (type == TranslationType.Native && isHaveRshDependencyBridge)
-                            LoadBridgeTranslation(json);
-                        else if (type == TranslationType.Native)
+                        if (type == TranslationType.Native)
                             LoadNativeTranslation(json);
                         else if (type == TranslationType.CuCore)
                             LoadCuCoreTranslation(json);
@@ -90,41 +155,11 @@ namespace RuScavMods
                 new PatchClassProcessor(harmony, typeof(LocaleTranslationPatches)),
                 new PatchClassProcessor(harmony, typeof(MoodleManagerPatches)),
                 new PatchClassProcessor(harmony, typeof(TalkTranslationPatches)),
-                new PatchClassProcessor(harmony, typeof(TutorialTranslationPatches)),
+                new PatchClassProcessor(harmony, typeof(TutorialTranslationPatches))
             });
-
-
         }
-
-        private CuCoreTranslationFile NativeToCuCoreTranslation(string json)
-        {
-            var translationData = JsonConvert.DeserializeObject<NativeTranslationFile>(json) ?? throw new Exception("Файл не был десериализован.");
-            CuCoreTranslationFile cuCorefile = new CuCoreTranslationFile();
-            Dictionary<string, string> itemsCuCore = new Dictionary<string, string>();
-            foreach (var item in translationData.Items)
-            {
-                itemsCuCore[item.Key] = item.Value.Name;
-                itemsCuCore[item.Key + "dsc"] = item.Value.Description;
-            }
-            cuCorefile.Items = itemsCuCore;
-            cuCorefile.Buildings = translationData.Buildings;
-            return cuCorefile;
-        }
-
-        private void LoadBridgeTranslation(string json)
-        {
-            var cuCoreFile = NativeToCuCoreTranslation(json);
-            var nativeTranslationData = JsonConvert.DeserializeObject<NativeTranslationFile>(json) ?? throw new Exception("Файл не был десериализован.");
-            nativeTranslationData.Items.Clear();
-            nativeTranslationData.Buildings.Clear();
-            NativeTranslationManager.Add(nativeTranslationData);
-            CuCoreTranslationManager.Add(cuCoreFile);
-
-        }
-
         private void LoadNativeTranslation(string json)
         {
-
             var translationData = JsonConvert.DeserializeObject<NativeTranslationFile>(json) ?? throw new Exception("Файл не был десериализован.");
             NativeTranslationManager.Add(translationData);
         }
@@ -149,7 +184,7 @@ namespace RuScavMods
                 case "cucore":
                     return TranslationType.CuCore;
                 default:
-                    return TranslationType.Native;
+                    return TranslationType.Custom;
             }
         }
         private void ApplyVanillaPatches()
@@ -160,7 +195,7 @@ namespace RuScavMods
                 try
                 {
                     processor.Patch();
-                    Log.LogError($"Патчим {processor}");
+                    Log.LogInfo($"Патчим {processor}");
 
                 }
                 catch (Exception ex)
@@ -173,310 +208,32 @@ namespace RuScavMods
 
         private void ApplyModTranslations()
         {
-            try
+            foreach (var translator in Translators)
             {
-                if (Chainloader.PluginInfos.ContainsKey("KrokoshaCasualtiesMP"))
-                {
-                    KrokoshaMPTranslator.Translate();
-                    Log.LogInfo("Переводим Krokosha_MP_CU");
-                }
-                if (Chainloader.PluginInfos.ContainsKey("org.bepinex.plugins.qol_unknown"))
-                {
-                    QoLTranslator.Translate();
-                    Log.LogInfo("Переводим QoL: Unknown");
-                }
-                if (Chainloader.PluginInfos.ContainsKey("noah.casualtiesunknown.additionaldescriptions"))
-                {
-                    AdditionalDescriptionsTranslator.Translate();
-                    Log.LogInfo("Переводим AdditionalDescriptions");
+                if (!Chainloader.PluginInfos.ContainsKey(translator.Guid))
+                    continue;
 
-                }
-                if (Chainloader.PluginInfos.ContainsKey("com.yourname.cu.tarkovmedicalmod"))
+                try
                 {
-                    CUTarkovMedicine.Translate();
-                    Log.LogInfo("Переводим Casualties: Unknown - Tarkov-Style Medical Mod");
+                    translator.Translate();
+                    Log.LogInfo($"Переводим {translator.Name}");
                 }
-                if (Chainloader.PluginInfos.ContainsKey("net.cucorelib"))
+                catch (Exception ex)
                 {
-                    CUCoreTranslator.Translate();
-                    Log.LogInfo("Переводим моды на CuCoreLib");
+                    Log.LogWarning($"Ошибка при переводе {translator.Name}: {ex}");
                 }
             }
-            catch (Exception ex)
+            if (RshCCLInstalled)
             {
-                Log.LogError(ex.Message);
+                try
+                {
+                    RshCCLTranslator.Translate();
+                }
+                catch (Exception ex)
+                {
+                    Log.LogError(ex);
+                }
             }
-
         }
     }
 }
-
-//using BepInEx;
-//using BepInEx.Bootstrap;
-//using BepInEx.Logging;
-//using HarmonyLib;
-//using Newtonsoft.Json;
-//using Newtonsoft.Json.Linq;
-//using RuScavMods.ReflectPatches;
-//using RuScavMods.TranslationClasses.Managers;
-//using System;
-//using System.Collections.Generic;
-//using System.IO;
-//using System.Linq;
-//using TMPro;
-//using UnityEngine.Assertions.Must;
-
-//namespace RuScavMods
-//{
-//    [BepInPlugin("zzz_com.Floydba.ruscavmods", "RuScavMod", "2.0.0.0")] // Нужен рефактор
-//    public class Plugin : BaseUnityPlugin
-//    {
-//        internal static ManualLogSource Log;
-//        internal static bool IsCUCoreLibInstalled => Chainloader.PluginInfos.ContainsKey("net.cucorelib");
-//        private void Awake()
-//        {
-//            Plugin.Log = base.Logger;
-//            Harmony harmony = new Harmony("zzz_com.Floydba.ruscavmods");
-//            LoadTranslationFiles();
-//            ApplyHarmonyPatches(harmony);
-//            ApplyLateTranslation();
-//        }
-//        private void LoadTranslationFiles()
-//        {
-//            var pluginsInfo = Chainloader.PluginInfos;
-//            foreach (var pluginInfo in pluginsInfo)
-//            {
-//                var pluginGuid = pluginInfo.Key;
-//                var pathTranslations = Path.Combine(Paths.PluginPath, "RuScavMods", "Translations");
-//                var translationFilePath = Path.Combine(pathTranslations, $"{pluginGuid}.json");
-
-//                if (File.Exists(translationFilePath))
-//                {
-//                    try
-//                    {
-//                        var translationContent = File.ReadAllText(translationFilePath);
-//                        var translationData = JsonConvert.DeserializeObject<TranslationFile>(translationContent);
-//                        if (translationData == null)
-//                        {
-//                            Log.LogError($"Файл перевода {pluginGuid} пустой или неверно форматирован.");
-//                            continue;
-//                        }
-//                        TranslationManager.Add(translationData);
-//                        Log.LogInfo($"Загружен файл перевода для мода {pluginInfo.Value.Metadata.Name}.");
-//                    }
-//                    catch (Exception ex)
-//                    {
-//                        Log.LogError($"Ошибка загрузки файла перевода {pluginGuid}. Ошибка: {ex.Message}");
-//                    }
-//                }
-
-//                {
-//                    if (IsCUCoreLibInstalled)
-//                    {
-//                        bool isCoreLibDependency = pluginInfo.Value.Dependencies.Any(p => p.DependencyGUID == "net.cucorelib");
-//                        if (isCoreLibDependency)
-//                        {
-//                            var pathTranslationsCoreLib = Path.Combine(Paths.PluginPath, "RuScavMods", "CUCoreTranslations");
-//                            var translationCoreLibFilePath = Path.Combine(pathTranslationsCoreLib, $"{pluginGuid}.json");
-//                            if (File.Exists(translationCoreLibFilePath))
-//                            {
-//                                try
-//                                {
-//                                    var translationContent = File.ReadAllText(translationCoreLibFilePath);
-//                                    var translationData = JsonConvert.DeserializeObject<TranslationFileCuCoreLib>(translationContent);
-//                                    if (translationData == null)
-//                                    {
-//                                        Log.LogError($"Файл перевода {pluginGuid} пустой или неверно форматирован.");
-//                                        continue;
-//                                    }
-//                                    TranslationCUCoreLibManager.Add(translationData);
-//                                    Log.LogInfo($"Загружен файл перевода для мода {pluginInfo.Value.Metadata.Name}.");
-//                                }
-//                                catch (Exception ex)
-//                                {
-//                                    Log.LogError($"Ошибка загрузки файла перевода {pluginGuid}. Ошибка: {ex.Message}");
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//        private void ApplyHarmonyPatches(Harmony harmony)
-//        {
-//            foreach (var type in typeof(Plugin).Assembly.GetTypes())
-//            {
-//                if (type.GetCustomAttributes(typeof(HarmonyPatch), false).Length == 0)
-//                    continue;
-//                try
-//                {
-//                    Log.LogInfo($"Патчим {type.FullName}");
-//                    harmony.CreateClassProcessor(type).Patch();
-//                }
-//                catch (Exception ex)
-//                {
-//                    Log.LogError($"Ошибка патча {type.FullName}");
-//                    Log.LogError(ex);
-//                }
-//            }
-//        }
-//        private void ApplyLateTranslation()
-//        {
-//            bool qolModInstalled = Chainloader.PluginInfos.ContainsKey("org.bepinex.plugins.qol_unknown");
-//            bool krokoshaMpInstalled = Chainloader.PluginInfos.ContainsKey("KrokoshaCasualtiesMP");
-//            bool gunsawGeneticsInstalled = Chainloader.PluginInfos.ContainsKey("GunsawGenetics");
-//            if (qolModInstalled)
-//                QoLTranslator.Translate();
-//            if (krokoshaMpInstalled)
-//                KrokoshaMPTranslator.Translate();
-//            if (gunsawGeneticsInstalled)
-//                GunsawGeneticsTranslator.Translate();
-//        }
-//    }
-
-//    [HarmonyPatch(typeof(Item))]
-//    [HarmonyPriority(Priority.Last)]
-//    internal class ItemTranslationPatches
-//    {
-//        [HarmonyPatch(nameof(Item.SetupItems))]
-//        [HarmonyPostfix]
-//        private static void SetupItemsPostfix()
-//        {
-//            TranslationManager.ApplyItemTranslations();
-//            TranslationManager.ApplyBuildingTranslations();
-//            TranslationManager.ApplyLiquidTranslations();
-//            if (Plugin.IsCUCoreLibInstalled)
-//                TranslationCUCoreLibManager.ApplyItemTranslation();
-//        }
-//    }
-
-//    [HarmonyPatch(typeof(PlayerCamera))]
-//    [HarmonyPriority(Priority.Last)]
-//    internal class AlertTranslationPatches
-//    {
-//        [HarmonyPatch(nameof(PlayerCamera.DoAlert))]
-//        [HarmonyPrefix]
-//        private static void DoAlertPrefix(ref string text)
-//        {
-//            TranslationManager.ApplyAlertTranslations(ref text);
-//        }
-//    }
-
-//    [HarmonyPatch(typeof(Talker))]
-//    [HarmonyPriority(Priority.Last)]
-//    internal class TalkTranslationPatches
-//    {
-//        [HarmonyPatch(nameof(Talker.Talk), new[] { typeof(string), typeof(Limb), typeof(bool), typeof(bool) })]
-//        [HarmonyPrefix]
-//        private static void TalkPrefix(ref string text)
-//        {
-//            TranslationManager.ApplyTalkTranslations(ref text);
-//        }
-//    }
-
-//    [HarmonyPatch(typeof(Locale))]
-//    [HarmonyPriority(Priority.Last)]
-//    internal class GetStringTranslationPatches
-//    {
-//        [HarmonyPatch(nameof(Locale.GetString))]
-//        [HarmonyPostfix]
-//        private static void GetStringPostfix(ref string __result, string str)
-//        {
-//            TranslationManager.ApplyUITranslations(ref __result, str);
-//            TranslationManager.ApplyLiquidTranslationsGetString(ref __result, str);
-//        }
-//    }
-
-//    [HarmonyPatch(typeof(Locale))]
-//    [HarmonyPriority(Priority.Last)]
-//    internal class LocaleTranslationPatches
-//    {
-//        [HarmonyPatch(nameof(Locale.LoadLanguage))]
-//        [HarmonyPostfix]
-//        private static void LoadLanguagePostfix()
-//        {
-//            AddCustomQuotes();
-//            TranslationManager.ApplyRunSettingsTranslations();
-//            if (Plugin.IsCUCoreLibInstalled)
-//                TranslationCUCoreLibManager.ApplyTranslation();
-//        }
-//        private static readonly List<string> CustomQuotes = new List<string>
-//        {
-//            //"Упал - вставай\nВстал - упай\nУпай - чокопай\nНе суди, не гуди, не будай\nВада буди дабуди дабудай.",
-//            //"В камине в 6 утра,",
-//            //"фотография твоя...",
-//            //"Чтобы поставить на паузу, скажите \"Бурмалда\".",
-//            //"Экспи не будет счастлив, смирись.",
-//            //"Это не Малевелон-Крик...",
-//            //"nah, i'd win.",
-//            //"ZA WARUDO!!!! TOKI WO TOMARE!!",
-//            //"Послушай меня, я не хочу быть твоим другом. Я хочу быть твоей тенью.",
-//            //"Мой любимый исполнитель - \"LAZZY2WICE\". Его треки отличаются агрессией, тяжелыми гитарными риффами и глубоким, мрачным басом. Мой любимый трек \"забракованный\".",
-//            //"Моя любимая книга - \"Божественная комедия\" Данте Алигьери. Она рассказывает о путешествии через Ад, Чистилище и Рай, и я нахожу её очень вдохновляющей.",
-//            #region "Также попробуйте" рекомендации
-//            "Также попробуйте Rain World!",
-//            "Также попробуйте The Binding of Isaac!",
-//            "Также попробуйте Barotrauma!",
-//            "Также попробуйте ULTRAKILL!",
-//            "Также попробуйте Loop Hero!",
-//            "Также попробуйте Euro Truck Simulator 2!",
-//            "Также попробуйте Lobotomy Corporation!",
-//            "Также попробуйте Noita!",
-//            "Не пробуйте Dota 2.",
-//            "Не пробуйте League of Legends.",
-//            "Не пробуйте Counter-Strike 2.",
-//            #endregion
-//            #region Стихи
-//            "«У Лукоморья дуб зелёный, золотая цепь на дубе том...»",
-//            "«Я помню чудное мгновенье: передо мной явилась ты, как мимолетное виденье, как гений чистой красоты.»",
-//            "«Мой дядя самых честных правил, когда не в шутку занемог, он уважать себя заставил и лучше выдумать не мог.»",
-//            "«Я вас любил: любовь ещё, быть может, в душе моей угасла не совсем; но пусть она вас больше не тревожит; я не хочу печалить вас ничем.»",
-//            "«Не жалею, не зову, не плачу, все пройдет, как с белых яблонь дым.»",
-//            "«Ты жива ещё, моя старушка? Жив и я. Привет тебе, привет!»",
-//            "«Если крикнет рать святая: \"Кинь ты Русь, живи в раю!\". Я скажу: \"Не надо рая, дайте родину мою\"»",
-//            #endregion
-//            #region Остальное
-//            "О, тебе нравится Экспи? Тогда жду в личных сообщениях топ 100 фактов о нём.",
-//            "Может быть по фентанилу?",
-//            "Сосал?",
-//            #endregion
-//        };
-//        private static void AddCustomQuotes()
-//        {
-//            Language currentLang = Locale.currentLang;
-//            foreach (var quote in CustomQuotes)
-//                currentLang.pauseQuotes.Add(quote);
-//        }
-
-//        [HarmonyPatch(nameof(Locale.GetPauseQuote))]
-//        [HarmonyPostfix]
-//        private static void GetPauseQuotePostfix(ref string __result)
-//        {
-//            TranslationManager.ApplyQuoteTranslations(ref __result);
-//        }
-//    }
-
-//    [HarmonyPatch(typeof(TutorialHandler))]
-//    [HarmonyPriority(Priority.Last)]
-//    internal class TutorialTranslationPatches
-//    {
-//        [HarmonyPatch(nameof(TutorialHandler.HandleCourseSelect))]
-//        [HarmonyPostfix]
-//        private static void HandleCourseSelectPostfix(List<TextMeshProUGUI> ___courseTexts)
-//        {
-//            TranslationManager.ApplyTutorialTranslations(___courseTexts);
-//        }
-//    }
-
-//    [HarmonyPatch(typeof(MoodleManager))]
-//    [HarmonyPriority(Priority.Last)]
-//    internal class MoodleManagerPatches
-//    {
-//        [HarmonyPatch(nameof(MoodleManager.AddMoodle))]
-//        [HarmonyPrefix]
-//        private static void AddMoodlePrefix(ref string name, ref string desc)
-//        {
-//            TranslationManager.ApplyMoodleTranslation(ref name, ref desc);
-//        }
-//    }
-//}

@@ -222,6 +222,24 @@ namespace RuScavMods.TranslationClasses.Managers
                     desc = translation.Description;
             }
         }
+
+        public static void AddNativeTalks(Dictionary<string, string> talks)
+        {
+            foreach (var talk in talks)
+            {
+                if (LooksLikeRegex(talk.Key))
+                {
+                    RegexTranslation regexTranslation = new RegexTranslation
+                    {
+                        Translation = talk.Value,
+                        CompiledRegex = new Regex(talk.Key, RegexOptions.Compiled)
+                    };
+                    RegexTalks.Add(regexTranslation);
+                }
+                else
+                    Talks[talk.Key] = talk.Value; 
+            }
+        }
     }
 }
 

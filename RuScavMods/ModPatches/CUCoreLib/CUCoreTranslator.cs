@@ -56,20 +56,8 @@ namespace RuScavMods.ModPatches.CUCoreLib
         {
             foreach (var pair in CuCoreTranslationManager.CuCoreTranslations)
             {
-                if (target.ContainsKey(pair.Key))
-                    target[pair.Key] = pair.Value;
+                target[pair.Key] = pair.Value;
             }
         }
     }
-
-    //[HarmonyPatch]
-    //internal static class I18nPatch
-    //{
-    //    static MethodBase TargetMethod() => AccessTools.Method(CUTarkovMedicine.I18n, "GetTranslationFilePath");
-    //    [HarmonyPostfix]
-    //    static void Postfix(ref string __result)
-    //    {
-    //        __result = Path.Combine(Paths.PluginPath, "RuScavMods", "Translations", "CUTarkovMedicalMod.json");
-    //    }
-    //}
 }

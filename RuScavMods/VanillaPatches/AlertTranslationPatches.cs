@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using BepInEx.Bootstrap;
+using HarmonyLib;
 using RuScavMods.TranslationClasses.Managers;
 
 namespace RuScavMods.Patches

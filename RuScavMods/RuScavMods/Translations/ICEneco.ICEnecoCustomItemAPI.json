@@ -1,4 +1,6 @@
-// https://www.nexusmods.com/scavprototype/mods/70
+// 1-34 https://www.nexusmods.com/scavprototype/mods/70 Galaxy Gray Technology
+// 39-55 https://www.nexusmods.com/scavprototype/mods/439 MoreRecipeAndCustomitems
+
 {
   "type": "cucore",
 
@@ -32,7 +34,7 @@
     "galaxymultitool": "Галактический мультитул",
     "galaxymultitooldsc": "Мощный и устрашающий многофункциональный набор инструментов. Можно использовать для ударов, резки, розжига огня, нагрева и так далее.\nКроме того, он автоматически заряжается и восстанавливается. С ним ты можешь избавиться от всех остальных инструментов.\n\n<color=\"red\">Может использоваться в панели здоровья для ампутации поражённых инфекцией конечностей.",
 
-    // Custom stuff
+    // MoreRecipeAndCustomitems
     "alcoholchunk": "Сухое горючее",
     "alcoholchunkdsc": "Таблетка спрессованного спирта. Используется как розжиг или в качестве легковоспломеняющегося материала в крафте.",
     "bathtowel": "Банное полотенце",

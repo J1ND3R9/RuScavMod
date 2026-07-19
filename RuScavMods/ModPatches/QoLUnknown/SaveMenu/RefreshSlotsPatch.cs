@@ -10,6 +10,7 @@ namespace RuScavMods.ModPatches.QoLUnknown.SaveMenu
     {
         static MethodBase TargetMethod() => AccessTools.Method(QoLTranslator.SaveMenuPatcher, "CreateSeedInput");
         private static readonly FieldInfo SlotContainerField = AccessTools.Field(QoLTranslator.SaveSaveMenuPatcher, "slotContainer");
+        [HarmonyPostfix]
         static void Postfix()
         {
             Transform slotContainer = (Transform)SlotContainerField.GetValue(null);

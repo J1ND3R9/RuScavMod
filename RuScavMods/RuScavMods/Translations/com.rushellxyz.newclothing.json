@@ -1,4 +1,7 @@
-// https://www.nexusmods.com/scavprototype/mods/43
+// 1-63 https://www.nexusmods.com/scavprototype/mods/43 New Clothing
+// 65-521 https://www.nexusmods.com/scavprototype/mods/59 Killer's Clothing and Armor
+// 523-551 https://www.nexusmods.com/scavprototype/mods/351 Orang Armor
+
 {
   "type": "native",
 
@@ -59,6 +62,7 @@
       "name": "Футболка",
       "description": "Футболка, закрывающая грудь, живот и плечи. Обеспечивает хорошую теплоизоляцию и небольшую защиту."
     },
+
     // KillerClothing
     "killerclothing.alloyedarmor": {
       "name": "Комплект легированной брони",
@@ -516,6 +520,7 @@
       "name": "Рулон термоматериала",
       "description": "Рулон термоматериала. Используется для пошива одежды."
     },
+
     // Orange armor
     "orangarmor.forearmplates": {
       "name": "Пластины предплечья",

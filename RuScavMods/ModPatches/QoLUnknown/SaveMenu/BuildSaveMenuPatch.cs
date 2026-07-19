@@ -15,6 +15,7 @@ namespace RuScavMods.ModPatches.QoLUnknown.SaveMenu
     {
         static MethodBase TargetMethod() => AccessTools.Method(QoLTranslator.SaveSaveMenuPatcher, "BuildSaveUI");
         private static readonly FieldInfo SlotContainerField = AccessTools.Field(QoLTranslator.SaveSaveMenuPatcher, "slotContainer");
+        [HarmonyPostfix]
         public static void Postfix()
         {
             Transform slotContainer = (Transform)SlotContainerField.GetValue(null);

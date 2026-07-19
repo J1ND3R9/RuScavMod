@@ -43,12 +43,18 @@
     <Reference Include="CUCoreLib">
       <HintPath>E:\SteamLibrary\steamapps\common\Casualties Unknown Demo\BepInEx\plugins\CUCoreLib.dll</HintPath>
     </Reference>
+    <Reference Include="extraDialogues">
+      <HintPath>E:\SteamLibrary\steamapps\common\Casualties Unknown Demo\BepInEx\plugins\ExtraDialogue\extraDialogues.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libraries\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="QoL.Unknown">
       <HintPath>E:\SteamLibrary\steamapps\common\Casualties Unknown Demo\BepInEx\plugins\QoL.Unknown.dll</HintPath>
+    </Reference>
+    <Reference Include="RshLib">
+      <HintPath>E:\SteamLibrary\steamapps\common\Casualties Unknown Demo\BepInEx\plugins\RshLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -72,6 +78,8 @@
     <Compile Include="ModPatches\AdditionalDescriptions\AdditionalDescriptionsTranslator.cs" />
     <Compile Include="ModPatches\CUCoreLib\CUCoreTranslator.cs" />
     <Compile Include="ModPatches\CUTarkovMedicine\CUTarkovMedicine.cs" />
+    <Compile Include="ModPatches\extraDialogue\ExtraDialogueTranslator.cs" />
+    <Compile Include="ModPatches\Gunsaw\GunsawGeneticsTranslator.cs" />
     <Compile Include="ModPatches\QoLUnknown\Camera\PlayerCameraPatches.cs" />
     <Compile Include="ModPatches\QoLUnknown\SaveMenu\BuildSaveMenuPatch.cs" />
     <Compile Include="ModPatches\QoLUnknown\SaveMenu\BuildSlotTooltipPatch.cs" />
@@ -81,6 +89,8 @@
     <Compile Include="ModPatches\QoLUnknown\Settings\ModOptionsTranslator.cs" />
     <None Include="RuScavMods\Translations\com.dragoon_103.regrowthserums.json" />
     <None Include="RuScavMods\Translations\CUTarkovMedicalMod.json" />
+    <Compile Include="ModPatches\RshCCL\RshCCLTranslator.cs" />
+    <None Include="RuScavMods\Translations\CUSuperArsenal.json" />
     <Compile Include="VanillaPatches\AlertTranslationPatches.cs" />
     <Compile Include="VanillaPatches\GetStringTranslationPatches.cs" />
     <Compile Include="VanillaPatches\ItemTranslationPatches.cs" />
@@ -94,6 +104,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="RuScavMods\Translations\com.rushellxyz.cigs.json" />
     <None Include="RuScavMods\Translations\com.rushellxyz.razor.json" />
+    <None Include="RuScavMods\Translations\extraDialogue.json" />
+    <None Include="RuScavMods\Translations\khy.pipebombs.json" />
     <None Include="RuScavMods\Translations\leftie.moreamputation.json" />
     <None Include="RuScavMods\Translations\lefty.expsneeze.json" />
     <Compile Include="TranslationClasses\Definitions\CuCoreTranslationFile.cs" />
@@ -102,6 +114,7 @@
     <Compile Include="TranslationClasses\Managers\CuCoreTranslationManager.cs" />
     <Compile Include="TranslationClasses\Managers\NativeTranslationManager.cs" />
     <None Include="RuScavMods\Translations\melncat.toomanysettings.json" />
+    <None Include="RuScavMods\Translations\net.cjendantix.SpinHat.json" />
     <None Include="RuScavMods\Translations\Yoshiko_G.DogThings.json" />
   </ItemGroup>
   <ItemGroup>

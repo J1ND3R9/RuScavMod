@@ -23,5 +23,7 @@ namespace RuScavMods.TranslationClasses.Definitions
         public Dictionary<string, string> Liquids { get; set; } = new Dictionary<string, string>();
         [JsonProperty("title")]
         public Dictionary<string, string> Titles { get; set; } = new Dictionary<string, string>();
+        [JsonProperty("native_talks")]
+        public Dictionary<string, string> NativeTalks { get; set; } = new Dictionary<string, string>();
     }
 }
