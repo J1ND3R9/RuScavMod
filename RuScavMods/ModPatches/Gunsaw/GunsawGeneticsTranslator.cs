@@ -1,4 +1,5 @@
 ﻿using BepInEx;
+using GunsawGenetics;
 using HarmonyLib;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -31,10 +32,12 @@ namespace RuScavMods.ModPatches.Gunsaw
     internal static class GunsawGeneticsTranslator
     {
         private readonly static List<PatchClassProcessor> GGPatches = new List<PatchClassProcessor>();
-        public static readonly Type Localization = AccessTools.TypeByName("GunsawGenetics.Localization");
-        public static readonly Type SpeciesPickerUI = AccessTools.TypeByName("GunsawGenetics.SpeciesPickerUI");
         public static Dictionary<string, string> Translations;
-        private static readonly FieldInfo StringsField = AccessTools.Field(GunsawGeneticsTranslator.Localization, "Strings");
+        private static readonly FieldInfo StringsField = AccessTools.Field(typeof(GunsawGenetics.Localization), "Strings");
+        //private static readonly Dictionary<string, AbilityEntry[]> AbilityEntriesTranslation = new Dictionary<string, AbilityEntry[]>
+        //{
+        //    "Velvet", 
+        //};
         public static void Translate()
         {
             if (Translations == null)
@@ -74,6 +77,11 @@ namespace RuScavMods.ModPatches.Gunsaw
             {
                 strings[pair.Key] = pair.Value;
             }
+
+            foreach (var specie in GunsawGenetics.SpeciesData.AllSpecies)
+            {
+
+            }
         }
         private static void FillTranslatedStrings()
         {
@@ -86,10 +94,10 @@ namespace RuScavMods.ModPatches.Gunsaw
         }
     }
 
-    [HarmonyPatch]
+    [HarmonyPatch(typeof(GunsawGenetics.Localization))]
     internal static class LoadLanguagePatch
     {
-        static MethodBase TargetMethod() => AccessTools.Method(GunsawGeneticsTranslator.Localization, "LoadLanguage");
+        [HarmonyPatch(nameof(GunsawGenetics.Localization.LoadLanguage))]
         [HarmonyPostfix]
         static void Postfix()
         {
@@ -97,11 +105,11 @@ namespace RuScavMods.ModPatches.Gunsaw
         }
     }
 
-    [HarmonyPatch]
+    [HarmonyPatch(typeof(GunsawGenetics.SpeciesPickerUI))]
     internal static class FindFontPatch
     {
         private static TMP_FontAsset _russianFont;
-        static MethodBase TargetMethod() => AccessTools.Method(GunsawGeneticsTranslator.SpeciesPickerUI, "FindFont");
+        [HarmonyPatch("FindFont")]
         [HarmonyPostfix]
         static void Postfix(ref TMP_FontAsset ___gameFont)
         {

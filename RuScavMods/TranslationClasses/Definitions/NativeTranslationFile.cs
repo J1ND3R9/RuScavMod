@@ -32,7 +32,7 @@ namespace RuScavMods.TranslationClasses.Definitions
         [JsonProperty("liquids")]
         public Dictionary<string, ItemTranslation> Liquids { get; set; } = new Dictionary<string, ItemTranslation>();
         [JsonProperty("moodles")]
-        public Dictionary<string, NameDescription> Moodles { get; set; } = new Dictionary<string, NameDescription>();
+        public Dictionary<string, string> Moodles { get; set; } = new Dictionary<string, string>();
         [JsonProperty("alerts")]
         public Dictionary<string, string> Alerts { get; set; } = new Dictionary<string, string>();
         [JsonProperty("talks")]

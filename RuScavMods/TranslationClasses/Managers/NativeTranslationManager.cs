@@ -1,9 +1,11 @@
 ﻿using RuScavMods.TranslationClasses.Definitions;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text.RegularExpressions;
 using TMPro;
 using static RuScavMods.TranslationClasses.Definitions.NativeTranslationFile;
+using static System.Net.Mime.MediaTypeNames;
 
 
 namespace RuScavMods.TranslationClasses.Managers
@@ -17,11 +19,12 @@ namespace RuScavMods.TranslationClasses.Managers
         }
         public static Dictionary<string, ItemTranslation> Items { get; set; } = new Dictionary<string, ItemTranslation>();
         public static Dictionary<string, ItemTranslation> Liquids { get; set; } = new Dictionary<string, ItemTranslation>();
-        public static Dictionary<string, NameDescription> Moodles { get; set; } = new Dictionary<string, NameDescription>();
+        public static Dictionary<string, string> Moodles { get; set; } = new Dictionary<string, string>();
         public static Dictionary<string, string> Alerts { get; set; } = new Dictionary<string, string>();
         public static Dictionary<string, string> Talks { get; set; } = new Dictionary<string, string>();
         public static List<RegexTranslation> RegexAlerts { get; set; } = new List<RegexTranslation>();
         public static List<RegexTranslation> RegexTalks { get; set; } = new List<RegexTranslation>();
+        public static List<RegexTranslation> RegexMoodles { get; set; } = new List<RegexTranslation>();
         public static Dictionary<string, string> Settings { get; set; } = new Dictionary<string, string>();
         public static Dictionary<string, string> RunSettings { get; set; } = new Dictionary<string, string>();
         public static Dictionary<string, string> Quotes { get; set; } = new Dictionary<string, string>();
@@ -34,6 +37,7 @@ namespace RuScavMods.TranslationClasses.Managers
             //AddDictionary(file.Liquids, Liquids);
             AddDictionaryRegex(file.Alerts, Alerts, RegexAlerts);
             AddDictionaryRegex(file.Talks, Talks, RegexTalks);
+            AddDictionaryRegex(file.Moodles, Moodles, RegexMoodles);
             AddDictionary(file.Moodles, Moodles);
             AddDictionary(file.Settings, Settings);
             AddDictionary(file.RunSettings, RunSettings);
@@ -214,12 +218,26 @@ namespace RuScavMods.TranslationClasses.Managers
         }
         public static void ApplyMoodleTranslation(ref string name, ref string desc)
         {
-            if (Moodles.TryGetValue(name, out var translation))
+            bool nameTranslated = false;
+            bool descTranslated = false;
+
+            if (Moodles.TryGetValue(name, out var translationName))
             {
-                if (!string.IsNullOrEmpty(translation.Name))
-                    name = translation.Name;
-                if (!string.IsNullOrEmpty(translation.Description))
-                    desc = translation.Description;
+                name = translationName;
+                nameTranslated = true;
+            }
+            if (Moodles.TryGetValue(desc, out var translationDesc))
+            {
+                desc = translationDesc;
+                descTranslated = true;
+            }
+            if (!nameTranslated || !descTranslated)
+            {
+                foreach (var regex in RegexMoodles)
+                {
+                    TranslateRegex(ref name, regex);
+                    TranslateRegex(ref desc, regex);
+                }
             }
         }
 
@@ -237,7 +255,25 @@ namespace RuScavMods.TranslationClasses.Managers
                     RegexTalks.Add(regexTranslation);
                 }
                 else
-                    Talks[talk.Key] = talk.Value; 
+                    Talks[talk.Key] = talk.Value;
+            }
+        }
+
+        public static void AddNativeAlerts(Dictionary<string, string> alerts)
+        {
+            foreach (var alert in alerts)
+            {
+                if (LooksLikeRegex(alert.Key))
+                {
+                    RegexTranslation regexTranslation = new RegexTranslation
+                    {
+                        Translation = alert.Value,
+                        CompiledRegex = new Regex(alert.Key, RegexOptions.Compiled)
+                    };
+                    RegexAlerts.Add(regexTranslation);
+                }
+                else
+                    Alerts[alert.Key] = alert.Value;
             }
         }
     }

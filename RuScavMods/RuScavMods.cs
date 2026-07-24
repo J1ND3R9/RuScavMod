@@ -1,5 +1,6 @@
 ﻿using BepInEx;
 using BepInEx.Bootstrap;
+using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
 using Newtonsoft.Json;
@@ -49,7 +50,7 @@ using System.Runtime.InteropServices;
 
 namespace RuScavMods
 {
-    [BepInPlugin("zzz_com.Floydba.ruscavmods", "RuScavMod", "2.1.1.3")]
+    [BepInPlugin("zzz_com.Floydba.ruscavmods", "RuScavMod", "2.1.2.0")]
     public class Plugin : BaseUnityPlugin
     {
         internal static ManualLogSource Log;
@@ -110,10 +111,13 @@ namespace RuScavMods
         };
         private void Awake()
         {
+            
             Plugin.Log = base.Logger;
+            PluginConfig.Init(Config);
             LoadTranslationFiles();
             ApplyVanillaPatches();
             ApplyModTranslations();
+            Log.LogWarning("Если при переключении языка русификатор все ещё работает, перезайдите в игру.");
         }
 
         private void LoadTranslationFiles()
@@ -124,6 +128,7 @@ namespace RuScavMods
             {
                 var pluginId = plugin.Key;
                 var translationFile = Path.Combine(pathTranslations, $"{pluginId}.json");
+                //Plugin.Log.LogInfo($"Плагин {plugin.Value.Metadata.Name} загружен.");
                 if (File.Exists(translationFile))
                 {
                     try
@@ -195,12 +200,11 @@ namespace RuScavMods
                 try
                 {
                     processor.Patch();
-                    Log.LogInfo($"Патчим {processor}");
 
                 }
                 catch (Exception ex)
                 {
-                    Log.LogError($"Ошибка патча {processor}: {ex.Message}");
+                    Log.LogError($"Ошибка патча ванильной функции: {ex.Message}");
                 }
             }
         }
@@ -215,8 +219,9 @@ namespace RuScavMods
 
                 try
                 {
-                    translator.Translate();
                     Log.LogInfo($"Переводим {translator.Name}");
+                    translator.Translate();
+                    Log.LogInfo($"Перевод {translator.Name} завершён!");
                 }
                 catch (Exception ex)
                 {
@@ -234,6 +239,17 @@ namespace RuScavMods
                     Log.LogError(ex);
                 }
             }
+        }
+    }
+
+    internal static class PluginConfig
+    {
+        public static ConfigEntry<bool> EnableFunnyQuotes;
+        public static ConfigEntry<bool> EnableCurrentLangCheck;
+        public static void Init(ConfigFile config)
+        {
+            EnableFunnyQuotes = config.Bind("Settings", "EnableFunnyQuotes", false, "Enables the appearance of funny quotes in the pause menu.\nВключает возможность появления в меню паузы смешных цитат.");
+            EnableCurrentLangCheck = config.Bind("Settings", "EnableCurrentLangCheck", true, "Enable the check for the Russian language. It's not working for now.\nВключает проверку на русский язык при запуске плагина. Пока-что не работает.");
         }
     }
 }

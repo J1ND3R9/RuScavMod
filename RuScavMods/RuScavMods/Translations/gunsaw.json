@@ -447,7 +447,7 @@
     },
     {
       "key": "species_velvet_traits",
-      "value": "Placeholder for Velvet revamp"
+      "value": "Плейсхолдер :) Ожидайте реворка Вельвет"
     },
 
     {
@@ -5741,7 +5741,7 @@
     },
     {
       "key": "dialogue_milky_chr2_traderseegun8",
-      "value": "Дюна бо-ять-ся... Ор-р-у-жые?.. Боль... Не по-ни-мать..." // В оригинале тоже специально допущенная ошибка.
+      "value": "Дюна бо-ять-ся... Ор-р-у-жые?.. Боль... Не по-ни-мать..."
     },
     {
       "key": "dialogue_milky_chr2_traderseegun9",
@@ -9447,1033 +9447,1035 @@
       "value": "Дю-на не знает как помочь..."
     },
 
+    // Поясняю: я решил перевести Вельвет как женщину, т.к. в описании Gunsaw сказано, что она женственная.
+    // Да, это не значит что это именно женский пол, но хочется добавить изюминку в игру.
     {
       "key": "dialogue_velvet_seeGravel1",
-      "value": "Oh. So this is where they put us."
+      "value": "О. Так вот куда их отправляли."
     },
     {
       "key": "dialogue_velvet_seeGravel2",
-      "value": "Gray, cold, and open. I can work with this."
+      "value": "Серо, холодно и просторно. С этим я справлюсь."
     },
     {
       "key": "dialogue_velvet_seeGravel3",
-      "value": "No white tiles. No glass walls. How refreshing."
+      "value": "Ни белой плитки. Ни стеклянных стен. Как освежает."
     },
     {
       "key": "dialogue_velvet_seeGravel4",
-      "value": "I suppose I should go down, then."
+      "value": "Что ж, полагаю, стоит начать спуск."
     },
     {
       "key": "dialogue_velvet_seeGravel5",
-      "value": "A cave system. Lovely. Plenty of places to anchor a line."
+      "value": "Пещерная система. Прелестно. Столько мест, чтобы закрепить нить."
     },
     {
       "key": "dialogue_velvet_seeGravel6",
-      "value": "They sent me here with nothing? How rude."
+      "value": "Отправили меня сюда без ничего? Как невежливо."
     },
     {
       "key": "dialogue_velvet_seeGravel7",
-      "value": "Mmh... I smell stone, dust, and fear."
+      "value": "Ммм... Пахнет камнем, пылью и страхом."
     },
     {
       "key": "dialogue_velvet_seeGravel8",
-      "value": "Straight down. That is what they want, yes?"
+      "value": "Прямо вниз. Ведь этого они и хотят, да?"
     },
     {
       "key": "dialogue_velvet_seeGravel9",
-      "value": "I wonder how many little friends are already here."
+      "value": "Интересно, сколько маленьких друзей уже здесь."
     },
     {
       "key": "dialogue_velvet_seeGravel10",
-      "value": "This place feels less like a mission and more like a nest."
+      "value": "Это место больше похоже не на миссию, а на гнездо."
     },
     {
       "key": "dialogue_velvet_seeGravel11",
-      "value": "I am alive. That is a pleasant start."
+      "value": "Я жива. Приятное начало."
     },
     {
       "key": "dialogue_velvet_seeGravel12",
-      "value": "No handlers. No protocol. No screaming staff. Wonderful."
+      "value": "Ни кураторов. Ни протоколов. Ни визжащего персонала. Чудесно."
     },
     {
       "key": "dialogue_velvet_seeGravel13",
-      "value": "I should keep moving. Standing still makes me think."
+      "value": "Пожалуй, стоит двигаться дальше. От неподвижности у меня появляются мысли."
     },
     {
       "key": "dialogue_velvet_seeGravel14",
-      "value": "So much empty space. I could fill it."
+      "value": "Столько пустого пространства. Я могла бы его заполнить."
     },
     {
       "key": "dialogue_velvet_seeGravel15",
-      "value": "One leg at a time... Or could I make use of all of them now?"
+      "value": "Одна лапа здесь... Или пустить в ход сразу все?"
     },
 
     {
       "key": "dialogue_velvet_eatGood1",
-      "value": "Mmh... lovely."
+      "value": "Ммм... прелестно."
     },
     {
       "key": "dialogue_velvet_eatGood2",
-      "value": "That will do nicely."
+      "value": "Вполне сойдёт, и весьма недурно."
     },
     {
       "key": "dialogue_velvet_eatGood3",
-      "value": "Warmth in the belly. Very good."
+      "value": "Тепло разливается внутри. Очень хорошо."
     },
     {
       "key": "dialogue_velvet_eatGood4",
-      "value": "Satisfying."
+      "value": "Насыщает."
     },
     {
       "key": "dialogue_velvet_eatGood5",
-      "value": "I needed that."
+      "value": "Как раз то, что мне было нужно."
     },
     {
       "key": "dialogue_velvet_eatGood6",
-      "value": "How pleasant."
+      "value": "Как приятно."
     },
     {
       "key": "dialogue_velvet_eatGood7",
-      "value": "That tasted better than expected."
+      "value": "Вкуснее, чем я ожидала."
     },
     {
       "key": "dialogue_velvet_eatGood8",
-      "value": "Good. I feel steadier."
+      "value": "Хорошо. Чувствую себя увереннее."
     },
     {
       "key": "dialogue_velvet_eatGood9",
-      "value": "I could have more of that."
+      "value": "Я бы не отказалась от добавки."
     },
     {
       "key": "dialogue_velvet_eatGood10",
-      "value": "A kind little meal."
+      "value": "Славное маленькое угощение."
     },
 
     {
       "key": "dialogue_velvet_eatMediocre1",
-      "value": "Acceptable."
+      "value": "Приемлемо."
     },
     {
       "key": "dialogue_velvet_eatMediocre2",
-      "value": "Not lovely, but useful."
+      "value": "Не прелесть, но сгодится."
     },
     {
       "key": "dialogue_velvet_eatMediocre3",
-      "value": "Hm. Texture needs work."
+      "value": "Хм. С текстурой стоит поработать."
     },
     {
       "key": "dialogue_velvet_eatMediocre4",
-      "value": "I have eaten worse things."
+      "value": "Ела и похуже."
     },
     {
       "key": "dialogue_velvet_eatMediocre5",
-      "value": "It fills the space."
+      "value": "Хотя бы заполняет пустоту в желудке."
     },
     {
       "key": "dialogue_velvet_eatMediocre6",
-      "value": "A little disappointing."
+      "value": "Немного разочаровывает."
     },
     {
       "key": "dialogue_velvet_eatMediocre7",
-      "value": "Food is food, I suppose."
+      "value": "Еда есть еда, полагаю."
     },
     {
       "key": "dialogue_velvet_eatMediocre8",
-      "value": "Mmh... no. Not awful. Just sad."
+      "value": "Ммм... нет. Не ужасно. Просто грустно."
     },
     {
       "key": "dialogue_velvet_eatMediocre9",
-      "value": "I expected more from the smell."
+      "value": "По запаху ожидала большего."
     },
     {
       "key": "dialogue_velvet_eatMediocre10",
-      "value": "It will keep me moving."
+      "value": "Сойдёт, чтобы не останавливаться."
     },
 
     {
       "key": "dialogue_velvet_eatBad1",
-      "value": "Oh. That was cruel."
+      "value": "О. Это было жестоко."
     },
     {
       "key": "dialogue_velvet_eatBad2",
-      "value": "No, no. Out of my mouth."
+      "value": "Нет, нет. Вон из моего рта."
     },
     {
       "key": "dialogue_velvet_eatBad3",
-      "value": "That tasted diseased."
+      "value": "На вкус — сплошная дрянь."
     },
     {
       "key": "dialogue_velvet_eatBad4",
-      "value": "I regret trusting that."
+      "value": "Зря я этому доверилась."
     },
     {
       "key": "dialogue_velvet_eatBad5",
-      "value": "Awful little thing."
+      "value": "Мерзкая мелкая дрянь."
     },
     {
       "key": "dialogue_velvet_eatBad6",
-      "value": "That was not food. That was a trick."
+      "value": "Это была не еда. Это была подлость."
     },
     {
       "key": "dialogue_velvet_eatBad7",
-      "value": "I should have smelled it longer."
+      "value": "Стоило понюхать подольше."
     },
     {
       "key": "dialogue_velvet_eatBad8",
-      "value": "Vile."
+      "value": "Мерзость."
     },
     {
       "key": "dialogue_velvet_eatBad9",
-      "value": "My stomach is offended."
+      "value": "Мой желудок оскорблён."
     },
     {
       "key": "dialogue_velvet_eatBad10",
-      "value": "Never again, unless desperate."
+      "value": "Никогда больше. Разве что от отчаяния."
     },
 
     {
       "key": "dialogue_velvet_refuseEat1",
-      "value": "No. Even I have standards."
+      "value": "Нет. Даже у меня есть принципы."
     },
     {
       "key": "dialogue_velvet_refuseEat2",
-      "value": "That is not going inside me."
+      "value": "Это не окажется у меня во рту."
     },
     {
       "key": "dialogue_velvet_refuseEat3",
-      "value": "It smells wrong."
+      "value": "Пахнет как-то неправильно."
     },
     {
       "key": "dialogue_velvet_refuseEat4",
-      "value": "I would rather stay hungry."
+      "value": "Лучше уж останусь голодной."
     },
     {
       "key": "dialogue_velvet_refuseEat5",
-      "value": "No, dear. Not that."
+      "value": "Нет, милый. Только не это."
     },
     {
       "key": "dialogue_velvet_refuseEat6",
-      "value": "I am not putting that in my mouth."
+      "value": "Я не собираюсь брать это в рот."
     },
     {
       "key": "dialogue_velvet_refuseEat7",
-      "value": "Some things should be left alone."
+      "value": "Некоторые вещи лучше не есть."
     },
     {
       "key": "dialogue_velvet_refuseEat8",
-      "value": "I refuse."
+      "value": "Отказываюсь."
     },
 
     {
       "key": "dialogue_velvet_tired1",
-      "value": "*yawn*"
+      "value": "*зевок*"
     },
     {
       "key": "dialogue_velvet_tired2",
-      "value": "A rest would be nice."
+      "value": "Отдых был бы кстати."
     },
     {
       "key": "dialogue_velvet_tired3",
-      "value": "I could curl up somewhere for a while."
+      "value": "Я бы свернулась где-нибудь ненадолго."
     },
     {
       "key": "dialogue_velvet_tired4",
-      "value": "All my legs are getting heavy."
+      "value": "Все мои лапы становятся тяжелыми..."
     },
     {
       "key": "dialogue_velvet_tired5",
-      "value": "Sleep soon, perhaps."
+      "value": "Может, скоро посплю."
     },
     {
       "key": "dialogue_velvet_tired6",
-      "value": "I should find somewhere safe to rest."
+      "value": "Стоит найти безопасное место для отдыха."
     },
     {
       "key": "dialogue_velvet_tired7",
-      "value": "A little nap would be harmless."
+      "value": "Небольшой сон никому не навредит."
     },
     {
       "key": "dialogue_velvet_tired8",
-      "value": "I am getting drowsy."
+      "value": "Меня клонит в сон."
     },
     {
       "key": "dialogue_velvet_tired9",
-      "value": "Time to fold myself somewhere quiet."
+      "value": "Пора свернуться где-нибудь в тишине."
     },
     {
       "key": "dialogue_velvet_tired10",
-      "value": "Rest sounds pleasant."
+      "value": "Отдых звучит заманчиво."
     },
 
     {
       "key": "dialogue_velvet_verytired1",
-      "value": "I need to sleep..."
+      "value": "Мне нужно поспать..."
     },
     {
       "key": "dialogue_velvet_verytired2",
-      "value": "My eyes will not stay open..."
+      "value": "Глаза сами закрываются..."
     },
     {
       "key": "dialogue_velvet_verytired3",
-      "value": "Too tired to think properly..."
+      "value": "Слишком устала, чтобы соображать..."
     },
     {
       "key": "dialogue_velvet_verytired4",
-      "value": "I want to curl up and sleep..."
+      "value": "Хочу свернуться и уснуть..."
     },
     {
       "key": "dialogue_velvet_verytired5",
-      "value": "My body is dragging behind me..."
+      "value": "Тело будто волочится за мной..."
     },
     {
       "key": "dialogue_velvet_verytired6",
-      "value": "Sleep. Please..."
+      "value": "Сон. Пожалуйста..."
     },
     {
       "key": "dialogue_velvet_verytired7",
-      "value": "I can barely hold myself up..."
+      "value": "Едва держусь на ногах..."
     },
     {
       "key": "dialogue_velvet_verytired8",
-      "value": "No more walking... Rest..."
+      "value": "Больше не могу идти... Отдых..."
     },
     {
       "key": "dialogue_velvet_verytired9",
-      "value": "Everything is soft around the edges..."
+      "value": "Всё вокруг расплывается..."
     },
     {
       "key": "dialogue_velvet_verytired10",
-      "value": "I need a safe corner..."
+      "value": "Нужен безопасный уголок..."
     },
 
     {
       "key": "dialogue_velvet_confused1",
-      "value": "What happened..?"
+      "value": "Что случилось..?"
     },
     {
       "key": "dialogue_velvet_confused2",
-      "value": "My thoughts slipped..."
+      "value": "Мои мысли ускользнули..."
     },
     {
       "key": "dialogue_velvet_confused3",
-      "value": "Where was I going..?"
+      "value": "Куда я шла..?"
     },
     {
       "key": "dialogue_velvet_confused4",
-      "value": "Focus, Velvet..."
+      "value": "Соберись, Вельвет..."
     },
     {
       "key": "dialogue_velvet_confused5",
-      "value": "It's like my head is full of silk..."
+      "value": "Будто голова набита шёлком..."
     },
     {
       "key": "dialogue_velvet_confused6",
-      "value": "No, no... Stay alert."
+      "value": "Нет, нет... Оставайся начеку."
     },
     {
       "key": "dialogue_velvet_confused7",
-      "value": "That rattled me..."
+      "value": "Вот это меня встряхнуло..."
     },
     {
       "key": "dialogue_velvet_confused8",
-      "value": "Think..."
+      "value": "Думай..."
     },
     {
       "key": "dialogue_velvet_confused9",
-      "value": "Something is wrong with my head..."
+      "value": "Что-то не так с моей головой..."
     },
 
     {
       "key": "dialogue_velvet_wakeup1",
-      "value": "Mm... awake again."
+      "value": "Мм... снова проснулась."
     },
     {
       "key": "dialogue_velvet_wakeup2",
-      "value": "Still here. Good."
+      "value": "Всё ещё здесь. Хорошо."
     },
     {
       "key": "dialogue_velvet_wakeup3",
-      "value": "The warmth is gone. Shame."
+      "value": "Тепло ушло. Жаль."
     },
     {
       "key": "dialogue_velvet_wakeup4",
-      "value": "Time to move."
+      "value": "Пора двигаться."
     },
     {
       "key": "dialogue_velvet_wakeup5",
-      "value": "Uncurl and continue."
+      "value": "Разворачиваемся и продолжаем спуск..."
     },
     {
       "key": "dialogue_velvet_wakeup6",
-      "value": "Morning, little body."
+      "value": "С добрым утром, тельце."
     },
     {
       "key": "dialogue_velvet_wakeup7",
-      "value": "How long was I folded up?"
+      "value": "Сколько я пролежала свернувшись?"
     },
     {
       "key": "dialogue_velvet_wakeup8",
-      "value": "I slept... Well enough."
+      "value": "Поспала... довольно неплохо."
     },
     {
       "key": "dialogue_velvet_wakeup9",
-      "value": "Back to work."
+      "value": "Снова за дело."
     },
     {
       "key": "dialogue_velvet_wakeup10",
-      "value": "Another day in the gray."
+      "value": "Ещё один день в серости."
     },
 
     {
       "key": "dialogue_velvet_sick1",
-      "value": "My stomach is unsettled."
+      "value": "Желудок неспокоен."
     },
     {
       "key": "dialogue_velvet_sick2",
-      "value": "I feel ill..."
+      "value": "Меня мутит..."
     },
     {
       "key": "dialogue_velvet_sick3",
-      "value": "Something inside me is disagreeing."
+      "value": "Что-то внутри меня бунтует."
     },
     {
       "key": "dialogue_velvet_sick4",
-      "value": "Nausea... Unpleasant."
+      "value": "Тошнота... Неприятно."
     },
     {
       "key": "dialogue_velvet_sick5",
-      "value": "I may have eaten poorly."
+      "value": "Кажется, я съела что-то не то."
     },
     {
       "key": "dialogue_velvet_sick6",
-      "value": "My body is not pleased."
+      "value": "Моё тело недовольно."
     },
     {
       "key": "dialogue_velvet_sick7",
-      "value": "I feel queasy."
+      "value": "Меня подташнивает."
     },
     {
       "key": "dialogue_velvet_sick8",
-      "value": "I should be careful what I swallow."
+      "value": "Стоит быть осторожнее с тем, чем я питаюсь."
     },
     {
       "key": "dialogue_velvet_sick9",
-      "value": "My belly hurts..."
+      "value": "Живот болит..."
     },
     {
       "key": "dialogue_velvet_sick10",
-      "value": "This sickness is distracting..."
+      "value": "Эта тошнота отвлекает..."
     },
 
     {
       "key": "dialogue_velvet_verysick1",
-      "value": "I am going to vomit..."
+      "value": "Меня сейчас вырвет..."
     },
     {
       "key": "dialogue_velvet_verysick2",
-      "value": "My stomach is twisting..."
+      "value": "Желудок выворачивает..."
     },
     {
       "key": "dialogue_velvet_verysick3",
-      "value": "This is worse than nausea..."
+      "value": "Это хуже, чем просто тошнота..."
     },
     {
       "key": "dialogue_velvet_verysick4",
-      "value": "I feel poisoned..."
+      "value": "Я траванулась... точно траванулась..."
     },
     {
       "key": "dialogue_velvet_verysick5",
-      "value": "Something is very wrong inside me..."
+      "value": "Что-то совсем не так внутри меня..."
     },
     {
       "key": "dialogue_velvet_verysick6",
-      "value": "I need to stop moving..."
+      "value": "Мне нужно остановиться..."
     },
     {
       "key": "dialogue_velvet_verysick7",
-      "value": "My body wants this out..."
+      "value": "Моё тело хочет от этого избавиться..."
     },
     {
       "key": "dialogue_velvet_verysick8",
-      "value": "I feel awful..."
+      "value": "Мне ужасно плохо..."
     },
     {
       "key": "dialogue_velvet_verysick9",
-      "value": "I cannot focus through this..."
+      "value": "Не могу сосредоточиться из-за этого..."
     },
     {
       "key": "dialogue_velvet_verysick10",
-      "value": "Mmh... no. Bad. Very bad..."
+      "value": "Ммм... нет. Плохо. Очень плохо..."
     },
 
     {
       "key": "dialogue_velvet_vomit1",
-      "value": "...Ugh... disgusting."
+      "value": "...Тьфу... мерзость."
     },
     {
       "key": "dialogue_velvet_vomit2",
-      "value": "...There it goes."
+      "value": "...Ну вот и всё."
     },
     {
       "key": "dialogue_velvet_vomit3",
-      "value": "...That was unpleasant."
+      "value": "...Это было неприятно."
     },
     {
       "key": "dialogue_velvet_vomit4",
-      "value": "...My stomach is empty now."
+      "value": "...Теперь желудок пуст."
     },
     {
       "key": "dialogue_velvet_vomit5",
-      "value": "...No dignity in that."
+      "value": "...Ни капли достоинства в этом."
     },
     {
       "key": "dialogue_velvet_vomit6",
-      "value": "...I need to rinse my mouth."
+      "value": "...Нужно прополоскать рот."
     },
     {
       "key": "dialogue_velvet_vomit7",
-      "value": "...Horrid."
+      "value": "...Отвратительно."
     },
     {
       "key": "dialogue_velvet_vomit8",
-      "value": "...My body rejected that quite firmly."
+      "value": "...Моё тело весьма решительно это отвергло."
     },
     {
       "key": "dialogue_velvet_vomit9",
-      "value": "...That tasted worse coming back."
+      "value": "...На \"обратном пути\" было ещё хуже на вкус."
     },
     {
       "key": "dialogue_velvet_vomit10",
-      "value": "...Enough of that."
+      "value": "...Хватит с меня этого."
     },
 
     {
       "key": "dialogue_velvet_vomitblood1",
-      "value": "...Oh. Blood."
+      "value": "...О. Кровь."
     },
     {
       "key": "dialogue_velvet_vomitblood2",
-      "value": "...That is not good."
+      "value": "...Это плохо."
     },
     {
       "key": "dialogue_velvet_vomitblood3",
-      "value": "...I am bleeding inside."
+      "value": "...У меня внутреннее кровотечение."
     },
     {
       "key": "dialogue_velvet_vomitblood4",
-      "value": "...Blood from the mouth. Bad sign."
+      "value": "...Кровь изо рта. Дурной знак."
     },
     {
       "key": "dialogue_velvet_vomitblood5",
-      "value": "...No, no... That was blood."
+      "value": "...Нет, нет... Это была кровь."
     },
     {
       "key": "dialogue_velvet_vomitblood6",
-      "value": "...Something tore where I cannot reach."
+      "value": "...Что-то ранено там, куда мне лапами не дотянуться."
     },
     {
       "key": "dialogue_velvet_vomitblood7",
-      "value": "...I need help. Or supplies."
+      "value": "...Мне нужна помощь. Или припасы."
     },
     {
       "key": "dialogue_velvet_vomitblood8",
-      "value": "...Internal damage. Lovely."
+      "value": "...Внутренние повреждения. Прелестно."
     },
     {
       "key": "dialogue_velvet_vomitblood9",
-      "value": "...That should not happen."
+      "value": "...Этого быть не должно."
     },
     {
       "key": "dialogue_velvet_vomitblood10",
-      "value": "...I need to fix this quickly."
+      "value": "...Нужно быстро с этим разобраться."
     },
 
     {
       "key": "dialogue_velvet_full1",
-      "value": "Full. Calm."
+      "value": "Сыта. Спокойна."
     },
     {
       "key": "dialogue_velvet_full2",
-      "value": "That is enough."
+      "value": "Этого достаточно"
     },
     {
       "key": "dialogue_velvet_full3",
-      "value": "I feel wonderfully heavy."
+      "value": "Приятная тяжесть внутри."
     },
     {
       "key": "dialogue_velvet_full4",
-      "value": "No more for now."
+      "value": "Пока хватит."
     },
     {
       "key": "dialogue_velvet_full5",
-      "value": "Satiated. Lovely."
+      "value": "Насыщена. Чудесно."
     },
     {
       "key": "dialogue_velvet_full6",
-      "value": "My body is quiet again."
+      "value": "Тело снова притихло."
     },
     {
       "key": "dialogue_velvet_full7",
-      "value": "Enough. I should save the rest."
+      "value": "Достаточно. Остальное стоит приберечь."
     },
     {
       "key": "dialogue_velvet_full8",
-      "value": "Mmh... I feel better."
+      "value": "Ммм... мне уже лучше."
     },
     {
       "key": "dialogue_velvet_full9",
-      "value": "That settled me."
+      "value": "Это меня успокоило."
     },
     {
       "key": "dialogue_velvet_full10",
-      "value": "I can think clearly now."
+      "value": "Теперь я мыслю четче."
     },
 
     {
       "key": "dialogue_velvet_hungry1",
-      "value": "I could eat."
+      "value": "Я бы поела."
     },
     {
       "key": "dialogue_velvet_hungry2",
-      "value": "My stomach is starting to ask questions."
+      "value": "Мой желудок начинает задавать вопросы."
     },
     {
       "key": "dialogue_velvet_hungry3",
-      "value": "A small meal would be nice."
+      "value": "Небольшой перекус был бы кстати."
     },
     {
       "key": "dialogue_velvet_hungry4",
-      "value": "I should find food before I start thinking strangely."
+      "value": "Стоит найти еду, пока мысли не приняли странный оборот."
     },
     {
       "key": "dialogue_velvet_hungry5",
-      "value": "Hungry. Tolerable, for now."
+      "value": "Голодна. Пока терпимо."
     },
     {
       "key": "dialogue_velvet_hungry6",
-      "value": "Something warm would settle me."
+      "value": "Что-нибудь тёплое меня бы успокоило."
     },
     {
       "key": "dialogue_velvet_hungry7",
-      "value": "I need nourishment."
+      "value": "Мне нужна пища."
     },
     {
       "key": "dialogue_velvet_hungry8",
-      "value": "Food first."
+      "value": "Сначала еда."
     },
     {
       "key": "dialogue_velvet_hungry9",
-      "value": "I should eat while I still feel polite."
+      "value": "Стоит поесть, пока я ещё вежлива."
     },
     {
       "key": "dialogue_velvet_hungry10",
-      "value": "Mmh... I am getting peckish."
+      "value": "Ммм... я проголодалась."
     },
 
     {
       "key": "dialogue_velvet_starving1",
-      "value": "I need food... Soon..."
+      "value": "Мне нужна еда... Быстрей..."
     },
     {
       "key": "dialogue_velvet_starving2",
-      "value": "Everything is starting to smell edible..."
+      "value": "Всё вокруг начинает пахнуть съедобным..."
     },
     {
       "key": "dialogue_velvet_starving3",
-      "value": "I am very hungry now..."
+      "value": "Я очень голодна сейчас..."
     },
     {
       "key": "dialogue_velvet_starving4",
-      "value": "...This hunger is becoming difficult to ignore."
+      "value": "...Этот голод становится трудно игнорировать."
     },
     {
       "key": "dialogue_velvet_starving5",
-      "value": "...I should not be around others with hunger like this."
+      "value": "...Мне не стоит быть рядом с другими в таком голоде."
     },
     {
       "key": "dialogue_velvet_starving6",
-      "value": "My stomach hurts... My head is getting quiet."
+      "value": "Живот болит... В голове становится тихо."
     },
     {
       "key": "dialogue_velvet_starving7",
-      "value": "Find food. Any food..."
+      "value": "Найти еду. Любую..."
     },
     {
       "key": "dialogue_velvet_starving8",
-      "value": "...I am beginning to starve."
+      "value": "...Я начинаю голодать по-настоящему."
     },
     {
       "key": "dialogue_velvet_starving9",
-      "value": "...No, no. Keep moving... Find something proper."
+      "value": "...Нет, нет. Не останавливаться... Найти что-то стоящее."
     },
     {
       "key": "dialogue_velvet_starving10",
-      "value": "I can feel myself getting... Less patient."
+      "value": "Чувствую, как во мне... тает терпение."
     },
 
     {
       "key": "dialogue_velvet_thirsty1",
-      "value": "I need a drink."
+      "value": "Мне нужно попить."
     },
     {
       "key": "dialogue_velvet_thirsty2",
-      "value": "My mouth is dry."
+      "value": "Во рту пересохло."
     },
     {
       "key": "dialogue_velvet_thirsty3",
-      "value": "Water would be kind."
+      "value": "Вода была бы кстати."
     },
     {
       "key": "dialogue_velvet_thirsty4",
-      "value": "I should look for something clean to drink."
+      "value": "Стоит поискать что-нибудь чистое для питья."
     },
     {
       "key": "dialogue_velvet_thirsty5",
-      "value": "Thirsty."
+      "value": "Хочется пить."
     },
     {
       "key": "dialogue_velvet_thirsty6",
-      "value": "I need moisture."
+      "value": "Мне нужна влага."
     },
     {
       "key": "dialogue_velvet_thirsty7",
-      "value": "A drink, then. Soon."
+      "value": "Что ж, нужно попить."
     },
     {
       "key": "dialogue_velvet_thirsty8",
-      "value": "My throat feels rough."
+      "value": "В горле пересохло."
     },
     {
       "key": "dialogue_velvet_thirsty9",
-      "value": "I should check my supplies for a drink."
+      "value": "Стоит проверить припасы на предмет питья."
     },
     {
       "key": "dialogue_velvet_thirsty10",
-      "value": "Something cold would be lovely."
+      "value": "Что-нибудь холодное было бы прелестно."
     },
 
     {
       "key": "dialogue_velvet_dehydrated1",
-      "value": "Water. Now..."
+      "value": "Воды. Немедленно..."
     },
     {
       "key": "dialogue_velvet_dehydrated2",
-      "value": "I am drying out..."
+      "value": "Я иссыхаю..."
     },
     {
       "key": "dialogue_velvet_dehydrated3",
-      "value": "My tongue feels wrong..."
+      "value": "Язык не слушается..."
     },
     {
       "key": "dialogue_velvet_dehydrated4",
-      "value": "I need a drink before I get careless..."
+      "value": "Нужно выпить, пока я не потеряла осторожность..."
     },
     {
       "key": "dialogue_velvet_dehydrated5",
-      "value": "This thirst is becoming dangerous..."
+      "value": "Эта жажда становится опасной..."
     },
     {
       "key": "dialogue_velvet_dehydrated6",
-      "value": "I can barely swallow..."
+      "value": "Едва могу глотать..."
     },
     {
       "key": "dialogue_velvet_dehydrated7",
-      "value": "Find water. No time for distractions..."
+      "value": "Найти воду. Не время отвлекаться..."
     },
     {
       "key": "dialogue_velvet_dehydrated8",
-      "value": "I am parched..."
+      "value": "Меня иссушает жажда..."
     },
     {
       "key": "dialogue_velvet_dehydrated9",
-      "value": "Anything clean... Anything wet..."
+      "value": "Что угодно чистое... Что угодно мокрое..."
     },
     {
       "key": "dialogue_velvet_dehydrated10",
-      "value": "My body is starting to complain loudly..."
+      "value": "Моё тело начинает громко жаловаться..."
     },
 
     {
       "key": "dialogue_velvet_limbmuscle1",
-      "value": "My <limb> is not moving correctly."
+      "value": "Моя <limb> движется неправильно."
     },
     {
       "key": "dialogue_velvet_limbmuscle2",
-      "value": "These muscles are damaged."
+      "value": "Мышцы повреждены."
     },
     {
       "key": "dialogue_velvet_limbmuscle3",
-      "value": "My <limb> feels weak."
+      "value": "Моя <limb> ослабла."
     },
     {
       "key": "dialogue_velvet_limbmuscle4",
-      "value": "I should not rely on that <limb>."
+      "value": "Моя <limb> ненадежна."
     },
     {
       "key": "dialogue_velvet_limbmuscle5",
-      "value": "Something pulled wrong..."
+      "value": "Что-то потянула..."
     },
     {
       "key": "dialogue_velvet_limbmuscle6",
-      "value": "My <limb> hurts to move."
+      "value": "Моя <limb> болит при движении."
     },
     {
       "key": "dialogue_velvet_limbmuscle7",
-      "value": "My <limb> needs rest."
+      "value": "Моей <limb> нужен отдых."
     },
     {
       "key": "dialogue_velvet_limbmuscle8",
-      "value": "I damaged my <limb>."
+      "value": "Я повредила свою <limb>."
     },
     {
       "key": "dialogue_velvet_limbmuscle9",
-      "value": "Unpleasant. Is my <limb> still usable?"
+      "value": "Неприятно. Моя <limb> ещё годится?"
     },
     {
       "key": "dialogue_velvet_limbmuscle10",
-      "value": "My <limb> is failing me."
+      "value": "Моя <limb> подводит меня."
     },
 
     {
       "key": "dialogue_velvet_limbinfected1",
-      "value": "My <limb> feels warm."
+      "value": "Моя <limb> горячая на ощупь."
     },
     {
       "key": "dialogue_velvet_limbinfected2",
-      "value": "Infection. I dislike that."
+      "value": "Заражение. Не люблю такое."
     },
     {
       "key": "dialogue_velvet_limbinfected3",
-      "value": "This needs cleaning."
+      "value": "Это нужно продезенфицировать."
     },
     {
       "key": "dialogue_velvet_limbinfected4",
-      "value": "My <limb> is swelling."
+      "value": "Моя <limb> опухает."
     },
     {
       "key": "dialogue_velvet_limbinfected5",
-      "value": "Something is growing where it should not."
+      "value": "Что-то разрастается там, где не должно."
     },
     {
       "key": "dialogue_velvet_limbinfected6",
-      "value": "Antiseptic would be wise."
+      "value": "Антисептик был бы кстати."
     },
     {
       "key": "dialogue_velvet_limbinfected7",
-      "value": "That wound is turning against me."
+      "value": "Эта рана оборачивается против меня."
     },
     {
       "key": "dialogue_velvet_limbinfected8",
-      "value": "Clean the <limb>. Quickly."
+      "value": "Очистить <limb>. Быстро."
     },
     {
       "key": "dialogue_velvet_limbinfected9",
-      "value": "My <limb> smells wrong."
+      "value": "Моя <limb> пахнет неправильно."
     },
     {
       "key": "dialogue_velvet_limbinfected10",
-      "value": "I need to disinfect this."
+      "value": "Мне нужно это продезинфицировать."
     },
 
     {
       "key": "dialogue_velvet_limbskin1",
-      "value": "My <limb> is torn."
+      "value": "Моя <limb> разорвана."
     },
     {
       "key": "dialogue_velvet_limbskin2",
-      "value": "That looks ugly."
+      "value": "Выглядит скверно."
     },
     {
       "key": "dialogue_velvet_limbskin3",
-      "value": "I should wrap my <limb>."
+      "value": "Стоит перевязать свою <limb>."
     },
     {
       "key": "dialogue_velvet_limbskin4",
-      "value": "The skin is open."
+      "value": "Кожа рассечена."
     },
     {
       "key": "dialogue_velvet_limbskin5",
-      "value": "My <limb> needs care."
+      "value": "Моя <limb> нуждается в уходе."
     },
     {
       "key": "dialogue_velvet_limbskin6",
-      "value": "That wound will dirty quickly."
+      "value": "Эта рана быстро загрязнится."
     },
     {
       "key": "dialogue_velvet_limbskin7",
-      "value": "I dislike seeing myself opened."
+      "value": "Не люблю видеть себя вскрытой."
     },
     {
       "key": "dialogue_velvet_limbskin8",
-      "value": "Bandage the <limb>."
+      "value": "Забинтовать <limb>."
     },
     {
       "key": "dialogue_velvet_limbskin9",
-      "value": "Messy, but manageable."
+      "value": "Неаккуратно, но терпимо."
     },
     {
       "key": "dialogue_velvet_limbskin10",
-      "value": "My <limb> looks rather poor."
+      "value": "Моя <limb> выглядит довольно плачевно."
     },
 
     {
       "key": "dialogue_velvet_sad1",
-      "value": "Mm..."
+      "value": "Мм..."
     },
     {
       "key": "dialogue_velvet_sad2",
-      "value": "...It is quiet."
+      "value": "...Здесь тихо."
     },
     {
       "key": "dialogue_velvet_sad3",
-      "value": "...No matter. Keep moving..."
+      "value": "...Неважно. Продолжай двигаться..."
     },
     {
       "key": "dialogue_velvet_sad4",
-      "value": "...I should not dwell."
+      "value": "...Не стоит на этом зацикливаться."
     },
     {
       "key": "dialogue_velvet_sad5",
-      "value": "...Something feels empty."
+      "value": "...Внутри как-то пусто."
     },
     {
       "key": "dialogue_velvet_sad6",
-      "value": "...I need a distraction."
+      "value": "...Мне нужно отвлечься."
     },
     {
       "key": "dialogue_velvet_sad7",
-      "value": "A little company would be nice."
+      "value": "Немного компании было бы приятно."
     },
     {
       "key": "dialogue_velvet_sad8",
-      "value": "I am fine... Mostly."
+      "value": "Я в порядке... В основном."
     },
     {
       "key": "dialogue_velvet_sad9",
-      "value": "This place is unkind..."
+      "value": "Это место безжалостно..."
     },
     {
       "key": "dialogue_velvet_sad10",
-      "value": "Smile, Velvet. I've heard it helps."
+      "value": "Улыбнись, Вельвет. Говорят, это помогает."
     },
 
     {
       "key": "dialogue_velvet_gloomy1",
-      "value": "This mood is... Souring."
+      "value": "Настроение... портится."
     },
     {
       "key": "dialogue_velvet_gloomy2",
-      "value": "...I need something pleasant."
+      "value": "...Мне нужно что-то приятное."
     },
     {
       "key": "dialogue_velvet_gloomy3",
-      "value": "I dislike this feeling."
+      "value": "Не люблю это чувство."
     },
     {
       "key": "dialogue_velvet_gloomy4",
-      "value": "...A little kindness would help."
+      "value": "...Немного уюта не помешало бы."
     },
     {
       "key": "dialogue_velvet_gloomy5",
-      "value": "...Everything feels heavy."
+      "value": "...Всё кажется таким тяжёлым."
     },
     {
       "key": "dialogue_velvet_gloomy6",
-      "value": "...I should find someone."
+      "value": "...Стоит кого-нибудь найти."
     },
     {
       "key": "dialogue_velvet_gloomy7",
-      "value": "...N-no. Keep composed."
+      "value": "...Н-нет. Держи себя в руках."
     },
     {
       "key": "dialogue_velvet_gloomy8",
-      "value": "...This place is getting to me."
+      "value": "...Это место начинает на меня влиять."
     },
     {
       "key": "dialogue_velvet_gloomy9",
-      "value": "I need warmth... Food... Company... Something."
+      "value": "Мне нужно тепло... Еда... Компания... Хоть что-то."
     },
     {
       "key": "dialogue_velvet_gloomy10",
-      "value": "...Do not sink."
+      "value": "...Не опускайся."
     },
 
     {
       "key": "dialogue_velvet_depressed1",
-      "value": "Bites."
+      "value": "Кусает."
     },
     {
       "key": "dialogue_velvet_depressed2",
-      "value": "I do not like where my thoughts are going..."
+      "value": "Мне не нравится, куда движутся мои мысли..."
     },
     {
       "key": "dialogue_velvet_depressed3",
-      "value": "Something needs to change. I'll make it change."
+      "value": "Что-то должно измениться. Я это изменю."
     },
     {
       "key": "dialogue_velvet_depressed4",
-      "value": "My mind bites."
+      "value": "Мой разум кусает."
     },
     {
       "key": "dialogue_velvet_depressed5",
-      "value": "Biting."
+      "value": "Укусить."
     },
     {
       "key": "dialogue_velvet_depressed6",
-      "value": "I need bite-... Comfort... Hm?"
+      "value": "Мне нужен уку-... Утешение... Хм?"
     },
     {
       "key": "dialogue_velvet_depressed7",
-      "value": "I need to stop shaking."
+      "value": "Мне нужно перестать дрожать."
     },
     {
       "key": "dialogue_velvet_depressed8",
-      "value": "I need something to quiet me... A bite..? What?"
+      "value": "Мне нужно что-то, чтобы утихнуть... Укус..? Что?"
     },
     {
       "key": "dialogue_velvet_depressed9",
-      "value": "This body is too loud right now."
+      "value": "Это тело сейчас слишком шумит."
     },
 
     {
       "key": "dialogue_velvet_miserable1",
-      "value": "I cannot stand this feeling... A bite..."
+      "value": "Не могу вынести это чувство... Укус..."
     },
     {
       "key": "dialogue_velvet_miserable2",
-      "value": "I need it quiet... Now."
+      "value": "Хочу тишины... Сейчас же."
     },
     {
       "key": "dialogue_velvet_miserable3",
-      "value": "Everything is wrong... Ehuhuhu!"
+      "value": "Всё не так... Эхухуху!"
     },
     {
       "key": "dialogue_velvet_miserable4",
-      "value": "Biting. Biting. Biting. Ehuhu!"
+      "value": "Кусать. Кусать. Кусать. Эхуху!"
     },
     {
       "key": "dialogue_velvet_miserable5",
-      "value": "Too much biting. Too much biting."
+      "value": "Слишком много укусов. Слишком много укусов."
     },
     {
       "key": "dialogue_velvet_miserable6",
-      "value": "Hahahahaha!"
+      "value": "Хахахахаха!"
     },
     {
       "key": "dialogue_velvet_miserable7",
-      "value": "Biting... Biting..?"
+      "value": "Кусать... Кусать..?"
     },
     {
       "key": "dialogue_velvet_miserable8",
-      "value": "Biting..? I'm not hungry, Ehuhuhu! Biting!"
+      "value": "Кусать..? Я не голодна, Эхухуху! Кусать!"
     },
     {
       "key": "dialogue_velvet_miserable9",
-      "value": "My thoughts are biting. Biting, biting!"
+      "value": "Мои мысли кусают. Кусают, кусают!"
     },
     {
       "key": "dialogue_velvet_miserable10",
-      "value": "Make it stop."
+      "value": "Пусть это прекратится."
     },
 
     {
@@ -10483,72 +10485,72 @@
 
     {
       "key": "dialogue_velvet_bleeding1",
-      "value": "I am bleeding."
+      "value": "Я истекаю кровью."
     },
     {
       "key": "dialogue_velvet_bleeding2",
-      "value": "That blood is mine."
+      "value": "Это моя кровь."
     },
     {
       "key": "dialogue_velvet_bleeding3",
-      "value": "I should close that wound."
+      "value": "Нужно закрыть эту рану."
     },
     {
       "key": "dialogue_velvet_bleeding4",
-      "value": "A bandage would be useful."
+      "value": "Бинт бы пригодился."
     },
     {
       "key": "dialogue_velvet_bleeding5",
-      "value": "Dripping everywhere. Messy."
+      "value": "Капает повсюду. Неаккуратно."
     },
     {
       "key": "dialogue_velvet_bleeding6",
-      "value": "I need to wrap this wound."
+      "value": "Нужно перевязать эту рану."
     },
     {
       "key": "dialogue_velvet_bleeding7",
-      "value": "That is too much red."
+      "value": "Слишком много красного."
     },
     {
       "key": "dialogue_velvet_bleeding8",
-      "value": "Not severe yet. Fix it anyway."
+      "value": "Пока не серьёзно. Но всё равно стоит заняться."
     },
     {
       "key": "dialogue_velvet_bleeding9",
-      "value": "My body is leaking."
+      "value": "Моё тело подтекает."
     },
     {
       "key": "dialogue_velvet_bleeding10",
-      "value": "Bandage. Dressing. Anything."
+      "value": "Бинт. Повязка. Хоть что-нибудь."
     },
 
     {
       "key": "dialogue_velvet_bleedingheavy1",
-      "value": "Too much blood... Too much blood loss..."
+      "value": "Слишком много крови... Слишком большая потеря крови..."
     },
     {
       "key": "dialogue_velvet_bleedingheavy2",
-      "value": "I am losing too much blood..."
+      "value": "Я теряю слишком много крови..."
     },
     {
       "key": "dialogue_velvet_bleedingheavy3",
-      "value": "No... Close... Close the wound now..."
+      "value": "Нет... Закрыть... Закрыть рану немедленно..."
     },
     {
       "key": "dialogue_velvet_bleedingheavy4",
-      "value": "Apply pressure..."
+      "value": "Прижать сильнее..."
     },
     {
       "key": "dialogue_velvet_bleedingheavy5",
-      "value": "I am bleeding out..."
+      "value": "Я сейчас... истеку кровью..."
     },
     {
       "key": "dialogue_velvet_bleedingheavy6",
-      "value": "Bandage... Now..."
+      "value": "Бинт... Сейчас же..."
     },
     {
       "key": "dialogue_velvet_bleedingheavy7",
-      "value": "Stay standing... Seal it..."
+      "value": "Держаться на ногах... Запечатать рану..."
     },
     {
       "key": "dialogue_velvet_bleedingheavy8",

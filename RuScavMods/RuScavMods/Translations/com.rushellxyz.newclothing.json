@@ -1,6 +1,7 @@
 // 1-63 https://www.nexusmods.com/scavprototype/mods/43 New Clothing
 // 65-521 https://www.nexusmods.com/scavprototype/mods/59 Killer's Clothing and Armor
 // 523-551 https://www.nexusmods.com/scavprototype/mods/351 Orang Armor
+//554-557 https://www.nexusmods.com/scavprototype/mods/132 maid dress
 
 {
   "type": "native",
@@ -549,6 +550,11 @@
     "orangarmor.vest": {
       "name": "Бронежилет",
       "description": "Жилет для защиты грудной клетки и брюшной полости, предназначенный для уменьшения урона от снарядов. Менне эффективен против других видов повреждений."
+    },
+    //maid dress
+    "maiddress": {
+      "name": "Платье горничной",
+      "description": "Это платье горничной."
     }
   }
 }

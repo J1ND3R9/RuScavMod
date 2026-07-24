@@ -4,30 +4,22 @@
   "type": "native",
 
   "moodles": {
-    "Irritated Wounds": {
-      "name": "Раздражённые раны",
-      "description": "К открытым ранам Экспи прикасаются или трут, причиняя ему сильную боль!"
-    },
-    "Petting Satiety": {
-      "name": "Насыщение от поглаживания",
-      "description": "Экспи так часто гладили, что теперь он совершенно равнодушен. Поглаживания больше не улучшают настроение."
-    },
-    "Satiating Petting": {
-      "name": "Слишком частые поглаживания",
-      "description": "Экспи начинает уставать от поглаживаний, из-за чего успокаивающий эффект ослабевает."
-    },
-    "Being Petted": {
-      "name": "Гладят",
-      "description": "Экспи получает мягкие, успокаивающие физические прикосновения! Снижается уровень стресса и уменьшается боль. Это так мило~"
-    }
+    "Irritated Wounds": "Раздражённые раны",
+    "This expie's raw skin wounds are being touched or rubbed, causing intense physical distress!": "К открытым ранам Экспи прикасаются или трут, причиняя ему сильную боль!",
+    "Petting Satiety": "Насыщение от поглаживания",
+    "This expie has been petted so much that they are now permanently indifferent. Petting grants no mood boost.": "Экспи так часто гладили, что теперь он совершенно равнодушен. Поглаживания больше не улучшают настроение.",
+    "Satiating Petting": "Слишком частые поглаживания",
+    "This expie is starting to get tired of being petted, reducing the comforting effect.": "Экспи начинает уставать от поглаживаний, из-за чего успокаивающий эффект ослабевает.",
+    "Being Petted": "Гладят",
+    "This expie is actively receiving gentle, comforting physical contact, lowering stress and reducing pain.": "Экспи получает мягкие, успокаивающие физические прикосновения! Снижается уровень стресса и уменьшается боль. Это так мило~"
   },
   "talks": {
     "*sighs happily*": "*счастливо вздыхает*",
     "*feels comforted*": "*комфортненько*",
     "*purrs softly*": "*тихо мурлычет*",
-    "*coos": "*кайфушечки*",
+    "*coos*": "*кайфушечки*",
     "Thank you...": "Спасибочки...",
-    "*leans into your hand*": "*прижимается к твоей руке*",
+    "*leans into your hand*": "*прижимается*",
     "*rests quietly*": "*тихо отдыхает*",
     "*feels safe*": "*чувствует безопасность*",
     "*soft smile*": "*мягкая улыбочка*",

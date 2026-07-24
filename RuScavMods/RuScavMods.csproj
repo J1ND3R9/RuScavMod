@@ -13,6 +13,9 @@
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
+  <PropertyGroup>
+    <GameDir>E:\SteamLibrary\steamapps\common\Casualties Unknown Demo</GameDir>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -40,21 +43,31 @@
     <Reference Include="BepInEx">
       <HintPath>..\Libraries\BepInEx.dll</HintPath>
     </Reference>
-    <Reference Include="CUCoreLib">
-      <HintPath>E:\SteamLibrary\steamapps\common\Casualties Unknown Demo\BepInEx\plugins\CUCoreLib.dll</HintPath>
+    <Reference Include="CUCoreLib, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\CUCoreLib.dll</HintPath>
     </Reference>
-    <Reference Include="extraDialogues">
-      <HintPath>E:\SteamLibrary\steamapps\common\Casualties Unknown Demo\BepInEx\plugins\ExtraDialogue\extraDialogues.dll</HintPath>
+    <Reference Include="extraDialogue, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\extraDialogue.dll</HintPath>
+    </Reference>
+    <Reference Include="GunsawGenetics">
+      <HintPath>..\Libraries\GunsawGenetics.dll</HintPath>
+    </Reference>
+    <Reference Include="KrokoshaCasualtiesMP">
+      <HintPath>..\Libraries\KrokoshaCasualtiesMP.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libraries\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="QoL.Unknown">
-      <HintPath>E:\SteamLibrary\steamapps\common\Casualties Unknown Demo\BepInEx\plugins\QoL.Unknown.dll</HintPath>
+    <Reference Include="QoL Unknown, Version=1.0.4.8, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\QoL Unknown.dll</HintPath>
     </Reference>
-    <Reference Include="RshLib">
-      <HintPath>E:\SteamLibrary\steamapps\common\Casualties Unknown Demo\BepInEx\plugins\RshLib.dll</HintPath>
+    <Reference Include="RshLib, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\RshLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -87,7 +100,16 @@
     <Compile Include="ModPatches\QoLUnknown\SaveMenu\CreateSeedInputTextPatch.cs" />
     <Compile Include="ModPatches\QoLUnknown\SaveMenu\RefreshSlotsPatch.cs" />
     <Compile Include="ModPatches\QoLUnknown\Settings\ModOptionsTranslator.cs" />
+    <None Include="RuScavMods\Translations\com.aiser.omnimod.json" />
+    <None Include="RuScavMods\Translations\com.alexx_.medicalbrutalism.json" />
+    <None Include="RuScavMods\Translations\com.carlo.casualtiesunknown.antigravbag.json" />
+    <None Include="RuScavMods\Translations\com.carlo.casualtiesunknown.izaswarfood.json" />
     <None Include="RuScavMods\Translations\com.dragoon_103.regrowthserums.json" />
+    <None Include="RuScavMods\Translations\com.Elysian.MakeExpieHappyAgain.json" />
+    <None Include="RuScavMods\Translations\com.gouxi.gouxisfunnyshit.json" />
+    <None Include="RuScavMods\Translations\com.yourname.newgun.json" />
+    <None Include="RuScavMods\Translations\overthetoprealism.casualtiesunknown.mod.json" />
+    <None Include="RuScavMods\Translations\pain.ceilingturrets.khy.json" />
     <None Include="RuScavMods\Translations\CUTarkovMedicalMod.json" />
     <Compile Include="ModPatches\RshCCL\RshCCLTranslator.cs" />
     <None Include="RuScavMods\Translations\CUSuperArsenal.json" />
@@ -106,6 +128,7 @@
     <None Include="RuScavMods\Translations\com.rushellxyz.razor.json" />
     <None Include="RuScavMods\Translations\extraDialogue.json" />
     <None Include="RuScavMods\Translations\khy.pipebombs.json" />
+    <None Include="RuScavMods\Translations\leftie.leftyexpie.json" />
     <None Include="RuScavMods\Translations\leftie.moreamputation.json" />
     <None Include="RuScavMods\Translations\lefty.expsneeze.json" />
     <Compile Include="TranslationClasses\Definitions\CuCoreTranslationFile.cs" />
@@ -115,6 +138,7 @@
     <Compile Include="TranslationClasses\Managers\NativeTranslationManager.cs" />
     <None Include="RuScavMods\Translations\melncat.toomanysettings.json" />
     <None Include="RuScavMods\Translations\net.cjendantix.SpinHat.json" />
+    <None Include="RuScavMods\Translations\Sholopie.WearableCrystals.json" />
     <None Include="RuScavMods\Translations\Yoshiko_G.DogThings.json" />
   </ItemGroup>
   <ItemGroup>
@@ -128,4 +152,7 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="PostBuild" AfterTargets="Build">
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GameDir)\BepInEx\plugins\" SkipUnchangedFiles="true" />
+  </Target>
 </Project>

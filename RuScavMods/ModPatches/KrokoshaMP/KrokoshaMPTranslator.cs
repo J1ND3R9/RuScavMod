@@ -1,11 +1,20 @@
-﻿using HarmonyLib;
+﻿using BepInEx;
+using HarmonyLib;
+using KrokoshaCasualtiesMP;
+using RuScavMods.ModPatches.CUTarkovMedicine;
+using RuScavMods.ModPatches.QoLUnknown;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
+using TMPro;
+using UnityEngine;
 
 namespace RuScavMods.ModPatches.KrokoshaMP
 {
     internal static class KrokoshaMPTranslator
     {
+        internal static List<PatchClassProcessor> KrokoshaMPPatches = new List<PatchClassProcessor>();
         internal static Dictionary<string, string> TranslationDictionary = new Dictionary<string, string>
         {
             { "loaderror_possible_nonascii_path", "Убедись, что в пути к игре содержатся только английские символы:" },
@@ -41,7 +50,7 @@ namespace RuScavMods.ModPatches.KrokoshaMP
             { "plrint_inventory", "Инвентарь" },
             { "plrint_inv_allowed", "Украсть вещи!" },
             { "plrint_inv_no", "Нет доступа - он проснулся." },
-            { "plrint_useitem", "Использовать предмет" },
+            { "plrint_useitem", "Использовать\nпредмет." },
             { "plrint_useitem_wearable", "Одеть" },
             { "plrint_useitem_food", "Накормить" },
             { "plrint_useitem_water", "Напоить" },
@@ -50,7 +59,7 @@ namespace RuScavMods.ModPatches.KrokoshaMP
             { "plrint_carry", "Нести" },
             { "plrint_carry_allow", "Нести этого игрока." },
             { "plrint_carry_no", "Ты можешь носить только недееспособных игроков." },
-            { "plrint_piggyback", "Кататься на спине" },
+            { "plrint_piggyback", "Взабраться\nна спину" },
             { "plrint_piggyback_allow", "Забраться на его спину." },
             { "plrint_piggyback_no", "У него есть проблемы побольше." },
             { "piggyback_stop", "Слезть со спины" },
@@ -115,12 +124,12 @@ namespace RuScavMods.ModPatches.KrokoshaMP
             { "mainmenu_mainbutton", "Открыть меню мультиплеера" },
             { "mainmenu_mainbutton_close", "Закрыть меню мультиплеера" },
             { "mm_apply", "Применить" },
-            { "mmtb_directconnect", "Подключение" },
+            { "mmtb_directconnect", "Лобби" },
             { "mmtb_settings", "Настройки" },
             { "mmtb_about", "О нас" },
             { "mmtb_serverbrowser", "Список серверов" },
             { "mmta_og_download", "Официальная страница скачивания мода: " },
-            { "mmta_discord", "Casualties: Together Mod Discord: " },
+            { "mmta_discord", "Casualties: Together Discord: " },
             { "mmta_credits", "Создатели:" },
             { "mmta_link_copied", "Ссылка скопирована!" },
             { "mmta_link_open", "Открыть ссылку" },
@@ -157,15 +166,15 @@ namespace RuScavMods.ModPatches.KrokoshaMP
             { "mmct_presetsave", "Сохранить" },
             { "mmct_presetremove", "Удалить" },
             { "mmct_presetselect", "Выбранный пресет:" },
-            { "mmct_plr_vc_vol", "Громкость ГС" },
+            { "mmct_plr_vc_vol", "ГС" },
             { "mmct_plr_ping", "пинг:" },
-            { "mmct_plr_setcolor", "Установить цвет" },
+            { "mmct_plr_setcolor", "Цвет игрока" },
             { "mmct_plr_kick", "Кикнуть" },
             { "mmct_plr_ban", "Забанить" },
             { "mmct_plr_ipban", "Забанить по IP" },
             { "mmct_plr_tcmute", "Замутить ТС" },
             { "mmct_plr_vcmute", "Замутить ГС" },
-            { "mmct_bankicksafety", "Безопасно забанить/кикнуть" },
+            { "mmct_bankicksafety", "Безопасный бан/кик" },
             { "mmct_plr_steamprofile", "Профиль" },
             { "mmct_plr_mutelabel", "Мут:" },
             { "mmct_plr_tcmuted", "ТС замучен" },
@@ -232,7 +241,7 @@ namespace RuScavMods.ModPatches.KrokoshaMP
             { "mmst_button_deactivate_mp_desc", "ЭТО ПЕРЕЗАПУСТИТ ИГРУ!\nНо перезапустит в обычном состоянии.\nМод можно будет снова включить через кнопку \"MP MOD\" снизу слева." },
             { "mmst_button_deactivate_mp_desc_disabled", "Ты уже в игре.\nОтключись и вернись в главное меню." },
             { "mainmenu_mp_button_tooltip_lastresort_disable_mod", "Принудительно отключить мультиплеер мод" },
-            { "mainmenu_mp_button_tooltip_lastresort_enable_mod", "Включить мультиплеер мод. (Это перезапустит игру!)" },
+            { "mainmenu_mp_button_tooltip_lastresort_enable_mod", "Включить мультиплеер мод. (Перезапуск)" },
             { "freecam_keybindalert", "Используй стрелки чтобы двигаться." },
             { "rule_desc_sv_cheats", "Разблокирует все консольные команды на сервере." },
             { "rule_desc_Teams", "Игроки с одинаковым цветом считаются одной командой.\nФункция разброса игроков работает только для вашей команды.\nПВП работает только против других команд." },
@@ -384,27 +393,38 @@ namespace RuScavMods.ModPatches.KrokoshaMP
         };
         public static void Translate()
         {
-            var log = Plugin.Log;
-            try
+            var dictField = AccessTools.Field(typeof(Lang), "dict");
+            var dict = (Dictionary<string, Dictionary<string, string>>)dictField.GetValue(null);
+            if (dict.TryGetValue("RU", out var ru))
             {
-                var langType = AccessTools.TypeByName("KrokoshaCasualtiesMP.Lang");
-                var dictField = AccessTools.Field(langType, "dict");
-                var dict = (Dictionary<string, Dictionary<string, string>>)dictField.GetValue(null);
-
-                if (dict.TryGetValue("EN", out var en)) // Автор ещё не реализовал RU, поэтому приходится менять английский.
+                dict["ru-RU"] = dict["RU"];
+                dict["RU_RUSF"] = dict["RU"];
+                dict["RU_by_Furryshka"] = dict["RU"];
+                foreach (var pair in TranslationDictionary)
                 {
-                    foreach (var pair in TranslationDictionary)
-                    {
-                        en[pair.Key] = pair.Value;
-                    }
+                    ru[pair.Key] = pair.Value;
                 }
-                log.LogInfo("Перевод KrokoshaMP загружен!");
-            }
-            catch (Exception ex)
-            {
-                log.LogError($"Ошибка перевода KrokoshaMP: " + ex.Message);
-                return;
             }
         }
+
+        //private static void RegisterPatches()
+        //{
+        //    var harmony = new Harmony("zzz_com.Floydba.ruscavmods.krokoshamptranslate");
+        //    KrokoshaMPPatches.AddRange(new[]
+        //    {
+        //        new PatchClassProcessor(harmony, typeof(GetPatch)),
+        //    });
+        //}
     }
+
+    //[HarmonyPatch]
+    //internal static class _GUI___DrawPlayerInListPatch
+    //{
+    //    static MethodBase TargetMethod() => AccessTools.Method(typeof(KrokoshaCasualtiesMP.UIMainMenu), "_GUI___DrawPlayerInList");
+    //    [HarmonyPostfix]
+    //    public static void Postfix(Rect r, NetPlayer plr)
+    //    {
+    //        plr.
+    //    }
+    //}
 }

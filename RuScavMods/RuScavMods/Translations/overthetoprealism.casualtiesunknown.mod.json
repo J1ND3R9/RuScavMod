@@ -1,0 +1,38 @@
+{
+    "type": "native",
+
+    "moodles": {
+        "Cardiovascular Stroke Risk": "Риск инсульта",
+        "^High heart rate has induced a stroke risk of (.+)%\\. Rest immediately to lower strain!$": "Высокий пульс вызвает риск инсульта ($1%). Немедленно отдохните, чтобы снизить нагрузку!",
+        "Compound Leg Fracture": "Открытый перелом ноги",
+        "A fractured bone has ruptured your muscle and skin! Walking is causing catastrophic tissue damage, bleeding, and intense agony.": "Сломанная кость разорвала мышцу и кожу! Ходьба вызывает повреждение тканей, кровотечение и сильную агонию.",
+        "Unsplinted Leg Fracture": "Незафиксированный перелом ноги",
+        "A weight-bearing leg bone is fractured and completely unsupported! Heavy movement causes immense pain, shock, and bleeding.": "Опорная кость ноги сломана и не зафиксирована! Активное движение вызывает сильную боль, шок и кровотечение.",
+        "Splinted Leg Fracture": "Зафикисированный перелом ноги",
+        "Your leg fracture is stabilized with a splint. Avoid high falls or jumping to prevent the splint from snapping.": "Перелом ноги зафиксирован шиной. Избегаите падений с высоты и прыжков, чтобы шина не сломалась.",
+        "Extreme Pain Shock": "Экстремальный болевой шок",
+        "^Average body pain is at a critical (.+)%\\. High risk of sudden traumatic fainting and collapse!$": "Боль в теле достигает критических значений ($1%). Высокий риск внезапного обморока и коллапса!",
+        "Extreme Fatigue": "Крайнее истощение",
+        "^Energy levels are depleted to (.+)%\\. Severe risk of sudden micro-nap blackouts!$": "Уровень энергии истощён ($1%). Серьёзный риск внезапного провала в сон!",
+        "Systemic Septic Shock": "Септический шок",
+        "^Septic shock levels are at (.+)% from wound contamination, inducing high systemic fever!$": "Уровень септического шока достиг высокого значения из-за заражения раны, вызывая сильный жар! ($1%)",
+        "Concussive Vertigo": "Головокружение от сотрясения",
+        "^Severe head trauma has dazed you \\((.+)% concussion\\)\\. Jumping or sprinting may cause sudden blackouts!$": "Тяжёлая травма головы оглушила тебя ($1% сотрясения). Прыжки или бег могут вызвать внезапную потерю сознания!",
+        "Dehydration Cramps": "Судороги от обезвоживания",
+        "^Thirst is at a critical (.+)%\\. Electrolyte collapse may cause agonizing cramps and force-drop items!$": "Жажда достигла критических значений ($1%). Электролитный дисбаланс может вызвать мучительные судороги!",
+        "Severe Hypothermia": "Тяжёлое переохлаждение",
+        "^Core temperature is (.+)°C\\. Shivering jitters, double stamina drain, and frostbite tissue damage active!$": "Внутренняя температура тела достигла низких значений ($1°C). У тебя начинается обморожение тканей, дрожь и удвоенный расход выносливости!",
+        "Suffocation Panic": "Паника от удушья",
+        "^Oxygen levels are critically low \\((.+)%\\)\\. High adrenaline panic and asphyxiation blackouts imminent!$": "Уровень кислорода критически низок ($1%). У тебя начинается паническо-адреналиновая атака и потеря сознания от удушья!",
+        "Painkiller Toxicity": "Интоксикация обезболивающими",
+        "^Severe opiate overdose \\((.+) mg\\)\\. Experiencing dangerous central nervous system and respiratory depression!$": "Тяжёлая передозировка опиатами ($1мг.). Начинается уничтожение центральной нервной системы и дыхания!",
+        "Opiate Withdrawal Chills": "Озноб от опиатной ломки",
+        "^Agonizing opioid withdrawal \\((.+)%\\)\\. Experiencing muscle tremors, cold sweats, and temperature dysregulation!$": "Мучительная опиоидная ломка ($1%). У тебя наблюдется мышечный тремор, холодный пот и нарушение терморегуляции!",
+        "Lethal Drug Interaction": "Летальная передозировка препаратами",
+        "Mixed opioid and sedative painkillers in bloodstream! Severe synergistic CNS depression is causing rapid respiratory failure!": "В крови смешаны опиоидные и седативные обезболивающие! Тяжёлое совместное угнетение ЦНС вызывает стремительную дыхательную недостаточность!",
+        "Stimulant Over-Toxicity": "Передозировка стимуляторами",
+        "Dangerous level of stimulant consumption! High risk of sudden ventricular fibrillation or severe cardiac arrhythmia!": "Опасный уровень потребления стимуляторов! Высокий риск внезапной фибрилляции желудочков или тяжёлой сердечной аритмии!",
+        "Stimulant Crash": "Спад после стимуляторов",
+        "^Stimulants are wearing off \\(Caffeine: (.+)%\\)\\. Suffering from severe energy drainage and sluggishness.$": "Действие стимуляторов ослабевает (Кофеин: $1%). У тебя сильный упадок сил и вялость."
+    }
+}

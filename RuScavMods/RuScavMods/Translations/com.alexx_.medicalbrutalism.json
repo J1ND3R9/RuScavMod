@@ -1,0 +1,78 @@
+{
+    "type": "native",
+
+    "moodles": {
+        "Pneumothorax": "Пневмоторакс",
+        "A puncture in the chest cavity caused air to get sucked in it, making breathing painful and rather difficult. Decompression needed.": "Прокол в грудной полости привёл к засасыванию воздуха внутрь, из-за чего дыхание стало болезненным и довольно затруднённым. Требуется декомпрессия.",
+
+        "Back pain": "Боль в спине",
+        "Persistent lower back pain from overexertion or poor sleep. Reduces mobility and causes constant discomfort.": "Постоянная боль в пояснице из-за перенапряжения или плохого сна. Снижает подвижность и вызывает постоянный дискомфорт.",
+
+        "Mild contusion": "Лёгкий ушиб",
+        "A mild brain injury causing tinnitus occasional disorientation and confusion.": "Лёгкая травма мозга, вызывающая шум в ушах, периодическую дезориентацию и спутанность сознания.",
+
+        "Contusion": "Ушиб",
+        "Moderate brain trauma causing frequent disorientation and severe headaches.": "Умеренная травма мозга, вызывающая частую дезориентацию и сильные головные боли.",
+
+        "Brain liquidification": "Разжижение мозга",
+        "Catastrophic brain damage. High risk of stroke, constant disorientation and loss of motor control.": "Катастрофическое повреждение мозга. Высокий риск инсульта, постоянная дезориентация и потеря контроля над моторикой.",
+
+        "Seizure": "Судорожный припадок",
+
+        "Severe hemolytic reaction": "Тяжёлая гемолитическая реакция",
+        "Hemolytic reaction": "Гемолитическая реакция",
+        "Mild hemolytic reaction, slight blood pressure drop, fever, and stomach ache.": "Лёгкая гемолитическая реакция, небольшое падение давления, жар и боль в животе.",
+        "Moderate hemolytic reaction, possible health complications, fever, pain, lowered Sp02.": "Умеренная гемолитическая реакция, возможны осложнения для здоровья, жар, боль, пониженный SpO2.",
+        "Severe hemolytic reaction, critical blood pressure drop and organ disfunction, you are actively dying.": "Тяжёлая гемолитическая реакция, критическое падение давления и нарушение работы органов — ты активно умираешь.",
+
+        "Hyperviscosity": "Гипервязкость",
+        "Blood viscosity slightly above normal.": "Вязкость крови немного выше нормы.",
+        "Blood viscosity moderately above normal, something is wrong.": "Вязкость крови умеренно выше нормы, что-то не так.",
+        "Severely elevated blood viscosity, something is very wrong with your blood.": "Сильно повышенная вязкость крови, с твоей кровью что-то серьёзно не так.",
+        "Critically high blood viscosity, risk of pulmonary embolism is imminent.": "Критически высокая вязкость крови, риск лёгочной эмболии неминуем.",
+
+        "Hypoviscosity": "Гиповязкость",
+        "Blood viscosity slightly below normal.": "Вязкость крови немного ниже нормы.",
+        "Blood viscosity moderately below normal, something is wrong.": "Вязкость крови умеренно ниже нормы, что-то не так.",
+        "Severely lowered blood viscosity, something is very wrong with your blood.": "Сильно пониженная вязкость крови, с твоей кровью что-то серьёзно не так.",
+        "Life-threating low blood viscosity, oxygen delivery is severely impaired.": "Опасно низкая вязкость крови, доставка кислорода серьёзно нарушена.",
+
+        "Lethal insomnia": "Летальная бессонница",
+        "Insomnia": "Бессонница",
+        "Your body is giving up from exhaustion, if you don't find a way to sleep this will most likely be lethal.": "Твоё тело сдаётся от истощения — если не найдёшь способ уснуть, это, скорее всего, закончится смертью.",
+        "You can't sleep. Your mind is racing, and your body refuses to rest.": "Ты не можешь уснуть. Мысли несутся вскачь, а тело отказывается отдыхать.",
+
+        "Lazarus syndrome": "Синдром Лазаря",
+        "By all means, you should've been dead, but seemingly you've lucked out. ": "По всем признакам ты должен был быть мёртв, но, похоже, тебе повезло.",
+
+        "Liver disfunction": "Дисфункция печени",
+        "Terminal liver failure": "Терминальная печёночная недостаточность",
+
+        "Spinal cord rupture": "Разрыв спинного мозга",
+        "Irreversible spinal cord rupture paralyzing your limbs from chest down. You might never walk again.": "Необратимый разрыв спинного мозга, парализующий конечности ниже груди. Возможно, ты больше никогда не сможешь ходить.",
+
+        "Fractured neck": "Перелом шеи",
+        "Your neck is broken. Moving around is agonizing and has a chance to sever your spinal cord if it's not already. Physically weaker from the neck down. Eating is painful.": "Твоя шея сломана. Передвижение мучительно и может привести к разрыву спинного мозга, если он ещё цел. Тело ниже шеи физически слабее. Приём пищи причиняет боль.",
+
+        "Disclocated spine": "Смещение позвоночника",
+        "Your spine is dislocated. Moving around is painful and has a chance to sever your spinal cord if it's not already. Physically weaker from the waist down.": "Твой позвоночник смещён. Передвижение болезненно и может привести к разрыву спинного мозга, если он ещё цел. Тело ниже пояса физически слабее.",
+
+        "Systemic infection": "Системная инфекция",
+        "Terminal systemic infection. Your body is shutting down slowly. Death is imminent. Antibiotics won't help with this one...": "Терминальная стадия системной инфекции. Твоё тело медленно отказывает. Смерть неминуема. Антибиотики тут уже не помогут...",
+        "Systemic infection evolved into critical stage, you feel like the end is near, perhaps it is. Using antibiotics are essential to reset infection's progress. <color=grey>(": "Системная инфекция перешла в критическую стадию, ты чувствуешь, что конец близок — возможно, так и есть. Приём антибиотиков необходим, чтобы сбросить прогресс инфекции. <color=grey>(",
+        "Systemic infection worsened. You feel even worse than before, something is wrong on the inside. Using antibiotics are essential to reset infection's progress. <color=grey>(": "Системная инфекция усугубилась. Тебе стало ещё хуже, чем раньше, что-то не так внутри. Приём антибиотиков необходим, чтобы сбросить прогресс инфекции. <color=grey>(",
+        "Systemic infection settled in. You feel sluggish, and warmer than usual. Using antibiotics are essential to reset infection's progress. <color=grey>(": "Системная инфекция закрепилась. Ты чувствуешь вялость и жар сильнее обычного. Приём антибиотиков необходим, чтобы сбросить прогресс инфекции. <color=grey>(",
+        "Your insides feel weird, you better take some antibiotics before it gets worse. <color=grey>(": "Внутри что-то не так, лучше принять антибиотики, пока не стало хуже. <color=grey>(",
+
+        "You caught a cold. Wont take much and long to recover.": "Ты простудился. Восстановление не займёт много сил и времени.",
+        "Your cold is getting worse. Frequent sneezing, fever, and weakness.": "Простуда усиливается. Частое чихание, жар и слабость.",
+        "Severe flu. You're losing fluids rapidly, vomiting occasionally. Immediate care needed.": "Тяжёлый грипп. Ты быстро теряешь жажду, периодически рвёт. Требуется немедленная помощь.",
+
+        "Your liver is failing causing nausea, pain, and weakness. Seek treatment.": "Твоя печень отказывает, вызывая тошноту, боль и слабость. Обратись за лечением.",
+        "Severe liver failure. Your body is yellowing, energy fading, and sickness worsening.": "Тяжёлая печёночная недостаточность. Тело желтеет, силы уходят, болезнь усугубляется.",
+        "Terminal liver failure. Your organs are shutting down. Death is nearing in.": "Терминальная печёночная недостаточность. Твои органы отказывают. Смерть приближается.",
+
+        "Bilateral pneumothorax": "Двусторонний пневмоторакс",
+        "Air in the chest cavity makes breathing practically impossible, lethal if not treated. Decompression essential.": "Воздух в грудной полости делает дыхание практически невозможным, смертельно без лечения. Необходима декомпрессия."
+    }
+}

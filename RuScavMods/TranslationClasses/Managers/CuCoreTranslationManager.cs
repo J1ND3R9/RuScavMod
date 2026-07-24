@@ -7,15 +7,6 @@ namespace RuScavMods.TranslationClasses.Managers
 {
     internal class CuCoreTranslationManager
     {
-        //private static Dictionary<string, string> Items { get; set; } = new Dictionary<string, string>();
-        //private static Dictionary<string, string> Buildings { get; set; } = new Dictionary<string, string>();
-        //private static Dictionary<string, string> Moodles { get; set; } = new Dictionary<string, string>();
-        //private static Dictionary<string, string> Others { get; set; } = new Dictionary<string, string>();
-        //private static Dictionary<string, string> Logs { get; set; } = new Dictionary<string, string>();
-        //private static Dictionary<string, string> Commands { get; set; } = new Dictionary<string, string>();
-        //private static Dictionary<string, string> Options { get; set; } = new Dictionary<string, string>();
-        //private static Dictionary<string, string> Liquids { get; set; } = new Dictionary<string, string>();
-        //private static Dictionary<string, string> Titles { get; set; } = new Dictionary<string, string>();
         public static Dictionary<string, string> CuCoreTranslations { get; } = new Dictionary<string, string>();
         public static void Add(CuCoreTranslationFile file)
         {
@@ -29,7 +20,9 @@ namespace RuScavMods.TranslationClasses.Managers
             Merge(file.Options);
             Merge(file.Liquids);
             Merge(file.Titles);
-            SendToNative(file.NativeTalks);
+            SendTalksToNative(file.NativeTalks);
+            SendAlertsToNative(file.NativeAlerts);
+            SendNoRegexToNative(file.NativeBuildings, NativeTranslationManager.Buildings);
         }
         private static void Merge(Dictionary<string, string> source)
         {
@@ -38,10 +31,22 @@ namespace RuScavMods.TranslationClasses.Managers
                 CuCoreTranslations[pair.Key] = pair.Value;
         }
 
-        private static void SendToNative(Dictionary<string, string> nativeTalks)
+        private static void SendTalksToNative(Dictionary<string, string> nativeTalks)
         {
             if (nativeTalks == null) return;
             NativeTranslationManager.AddNativeTalks(nativeTalks);
+        }
+        private static void SendAlertsToNative(Dictionary<string, string> nativeAlerts)
+        {
+            if (nativeAlerts == null) return;
+            NativeTranslationManager.AddNativeAlerts(nativeAlerts);
+        }
+        private static void SendNoRegexToNative(Dictionary<string, string> source, Dictionary<string, string> target)
+        {
+            foreach (var item in source)
+            {
+                target[item.Key] = item.Value;
+            }
         }
     }
 }
