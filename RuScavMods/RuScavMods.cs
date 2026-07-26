@@ -50,7 +50,7 @@ using System.Runtime.InteropServices;
 
 namespace RuScavMods
 {
-    [BepInPlugin("zzz_com.Floydba.ruscavmods", "RuScavMod", "2.1.2.0")]
+    [BepInPlugin("zzz_com.Floydba.ruscavmods", "RuScavMod", "2.1.2.1")]
     public class Plugin : BaseUnityPlugin
     {
         internal static ManualLogSource Log;

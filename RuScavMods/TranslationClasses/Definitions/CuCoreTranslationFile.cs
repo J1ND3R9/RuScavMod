@@ -27,6 +27,8 @@ namespace RuScavMods.TranslationClasses.Definitions
         public Dictionary<string, string> NativeTalks { get; set; } = new Dictionary<string, string>();
         [JsonProperty("native_alerts")]
         public Dictionary<string, string> NativeAlerts { get; set; } = new Dictionary<string, string>();
+        [JsonProperty("native_moodles")]
+        public Dictionary<string, string> NativeMoodles { get; set; } = new Dictionary<string, string>();
         [JsonProperty("native_buildings")]
         public Dictionary<string, string> NativeBuildings { get; set; } = new Dictionary<string, string>();
     }

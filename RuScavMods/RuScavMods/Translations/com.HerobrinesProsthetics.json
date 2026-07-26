@@ -12,12 +12,27 @@
   "other": {
     "runsetdisablebrainmods": "Отключить нейромоды",
     "runsetdisablebrainmodsdsc": "Нейромоды и ящики с ними не будут появляться в этом забеге. Продавцы также не будут их продавать.",
-    "weldingMinigameGuide": "Веди лазерную дрель по серой линии чтобы починить протез. Если отклонишься от линии - то зря потратишь заряд.",
     "gamesetprosthetics_mod_UI": "Открыть меню кибернетики",
     "gamesetprosthetics_mod_flashlight": "Включить фонарь",
     "gamesetprosthetics_mod_hook": "Использовать вживленную крюк-кошку",
     "runsetwoodenstart": "Буратино",
     "runsetwoodenstartdsc": "Начни с деревянными протезами на всех конечностях, кибернетическом глазом (без батарейки) и хрупким ножом. Твой интеллект будет 13 заместо 7 в одиночной игре."
+  },
+  "get_string": {
+    "weldingMinigameGuide": "Веди лазерную дрель по серой линии чтобы починить протез. Если отклонишься от линии - то зря потратишь заряд."
+  },
+  "native_moodles": {
+    "\n\n<color=\"red\">Dead flesh": "\n\n<color=\"red\">Мёртвая плоть",
+    "Your body no longer regenerates on its own and is dependent on the medical augment you have installed. If its charge falls below 20%, you won't be able to heal even from smaller injuries without medical care.": "",
+
+    "Waterlogged prosthetic legs": "",
+    "Damaged prosthetic shell leaves the leg wiring unprotected from outside hazards — water is getting in and the wiring is malfunctioning. Legs move slower until dried off or the shell is patched up.": "",
+
+    "Waterlogged prosthetic arms": "",
+    "Damaged prosthetic shell leaves the arm wiring unprotected from outside hazards — water is getting in and the wiring is malfunctioning. Strikes land weaker until dried off or the shell is patched up.": "",
+
+    "Damaged prosthetic arms": "",
+    "The internal wiring of the prosthetic arm is damaged — strikes land weaker until the wiring is repaired.": ""
   },
   "native_talks": {
     "That tastes like poo": "На вкус как дерьмо"

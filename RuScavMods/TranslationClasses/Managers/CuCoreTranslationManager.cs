@@ -22,6 +22,7 @@ namespace RuScavMods.TranslationClasses.Managers
             Merge(file.Titles);
             SendTalksToNative(file.NativeTalks);
             SendAlertsToNative(file.NativeAlerts);
+            SendMoodlesToNative(file.NativeMoodles);
             SendNoRegexToNative(file.NativeBuildings, NativeTranslationManager.Buildings);
         }
         private static void Merge(Dictionary<string, string> source)
@@ -40,6 +41,12 @@ namespace RuScavMods.TranslationClasses.Managers
         {
             if (nativeAlerts == null) return;
             NativeTranslationManager.AddNativeAlerts(nativeAlerts);
+        }
+
+        private static void SendMoodlesToNative(Dictionary<string ,string> nativeMoodles)
+        {
+            if (nativeMoodles == null) return;
+            NativeTranslationManager.AddMoodleAlerts(nativeMoodles);
         }
         private static void SendNoRegexToNative(Dictionary<string, string> source, Dictionary<string, string> target)
         {

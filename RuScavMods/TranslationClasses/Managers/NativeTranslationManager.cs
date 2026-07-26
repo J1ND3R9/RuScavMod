@@ -276,6 +276,24 @@ namespace RuScavMods.TranslationClasses.Managers
                     Alerts[alert.Key] = alert.Value;
             }
         }
+
+        public static void AddMoodleAlerts(Dictionary<string, string> moodles)
+        {
+            foreach (var moodle in moodles)
+            {
+                if (LooksLikeRegex(moodle.Key))
+                {
+                    RegexTranslation regexTranslation = new RegexTranslation
+                    {
+                        Translation = moodle.Value,
+                        CompiledRegex = new Regex(moodle.Key, RegexOptions.Compiled)
+                    };
+                    RegexMoodles.Add(regexTranslation);
+                }
+                else
+                    Moodles[moodle.Key] = moodle.Value;
+            }
+        }
     }
 }
 
