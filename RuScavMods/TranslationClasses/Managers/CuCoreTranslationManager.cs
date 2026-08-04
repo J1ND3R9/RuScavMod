@@ -7,29 +7,34 @@ namespace RuScavMods.TranslationClasses.Managers
 {
     internal class CuCoreTranslationManager
     {
-        public static Dictionary<string, string> CuCoreTranslations { get; } = new Dictionary<string, string>();
+        public static Dictionary<string, Dictionary<string, string>> CuCoreTranslations { get; } = new Dictionary<string, Dictionary<string, string>>();
         public static void Add(CuCoreTranslationFile file)
         {
             if (file == null) throw new Exception("Файл перевода пустой или не десериализован.");
-            Merge(file.Items);
-            Merge(file.Buildings);
-            Merge(file.Moodles);
-            Merge(file.Others);
-            Merge(file.Logs);
-            Merge(file.Commands);
-            Merge(file.Options);
-            Merge(file.Liquids);
-            Merge(file.Titles);
+            Merge("item", file.Items);
+            Merge("building", file.Buildings);
+            Merge("moodle", file.Moodles);
+            Merge("other", file.Others);
+            Merge("log", file.Logs);
+            Merge("command", file.Commands);
+            Merge("option", file.Options);
+            Merge("liquid", file.Liquids);
+            Merge("title", file.Titles);
             SendTalksToNative(file.NativeTalks);
             SendAlertsToNative(file.NativeAlerts);
             SendMoodlesToNative(file.NativeMoodles);
             SendNoRegexToNative(file.NativeBuildings, NativeTranslationManager.Buildings);
         }
-        private static void Merge(Dictionary<string, string> source)
+        private static void Merge(string key, Dictionary<string, string> source)
         {
-            if (source == null) return;
-            foreach (var pair in source)
-                CuCoreTranslations[pair.Key] = pair.Value;
+            if (source == null) 
+                return;
+
+            if (!CuCoreTranslations.ContainsKey(key))
+                CuCoreTranslations[key] = new Dictionary<string, string>();
+
+            foreach (KeyValuePair<string, string> pair in source)
+                CuCoreTranslations[key][pair.Key] = pair.Value;
         }
 
         private static void SendTalksToNative(Dictionary<string, string> nativeTalks)
@@ -43,14 +48,14 @@ namespace RuScavMods.TranslationClasses.Managers
             NativeTranslationManager.AddNativeAlerts(nativeAlerts);
         }
 
-        private static void SendMoodlesToNative(Dictionary<string ,string> nativeMoodles)
+        private static void SendMoodlesToNative(Dictionary<string, string> nativeMoodles)
         {
             if (nativeMoodles == null) return;
-            NativeTranslationManager.AddMoodleAlerts(nativeMoodles);
+            NativeTranslationManager.AddNativeMoodles(nativeMoodles);
         }
         private static void SendNoRegexToNative(Dictionary<string, string> source, Dictionary<string, string> target)
         {
-            foreach (var item in source)
+            foreach (KeyValuePair<string, string> item in source)
             {
                 target[item.Key] = item.Value;
             }

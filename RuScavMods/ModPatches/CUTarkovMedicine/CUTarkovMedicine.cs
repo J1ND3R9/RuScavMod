@@ -1,17 +1,9 @@
 ﻿using BepInEx;
 using HarmonyLib;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using RuScavMods.ModPatches.QoLUnknown;
-using RuScavMods.ModPatches.QoLUnknown.SaveMenu;
-using RuScavMods.TranslationClasses.Definitions;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 namespace RuScavMods.ModPatches.CUTarkovMedicine
 {
     internal static class CUTarkovMedicine
@@ -23,7 +15,7 @@ namespace RuScavMods.ModPatches.CUTarkovMedicine
         {
             RegisterPatches();
             // FillDictionary();
-            foreach (var processor in CUTarkovMedicinePatches)
+            foreach (PatchClassProcessor processor in CUTarkovMedicinePatches)
             {
                 try
                 {
@@ -37,7 +29,7 @@ namespace RuScavMods.ModPatches.CUTarkovMedicine
         }
         private static void RegisterPatches()
         {
-            var harmony = new Harmony("zzz_com.Floydba.ruscavmods.cutarkovmedicinetranslate");
+            Harmony harmony = new Harmony("zzz_com.Floydba.ruscavmods.cutarkovmedicinetranslate");
             CUTarkovMedicinePatches.AddRange(new[]
             {
                 new PatchClassProcessor(harmony, typeof(I18nPatch)),

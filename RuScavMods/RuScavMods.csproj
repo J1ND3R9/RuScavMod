@@ -57,6 +57,9 @@
     <Reference Include="KrokoshaCasualtiesMP">
       <HintPath>..\Libraries\KrokoshaCasualtiesMP.dll</HintPath>
     </Reference>
+    <Reference Include="MakeshiftProsthetics">
+      <HintPath>..\Libraries\MakeshiftProsthetics.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libraries\Newtonsoft.Json.dll</HintPath>
@@ -93,6 +96,7 @@
     <Compile Include="ModPatches\CUTarkovMedicine\CUTarkovMedicine.cs" />
     <Compile Include="ModPatches\extraDialogue\ExtraDialogueTranslator.cs" />
     <Compile Include="ModPatches\Gunsaw\GunsawGeneticsTranslator.cs" />
+    <Compile Include="ModPatches\MakeshiftProsthetics\MakeshiftProstheticsTranslator.cs" />
     <Compile Include="ModPatches\QoLUnknown\Camera\PlayerCameraPatches.cs" />
     <Compile Include="ModPatches\QoLUnknown\SaveMenu\BuildSaveMenuPatch.cs" />
     <Compile Include="ModPatches\QoLUnknown\SaveMenu\BuildSlotTooltipPatch.cs" />
@@ -100,14 +104,17 @@
     <Compile Include="ModPatches\QoLUnknown\SaveMenu\CreateSeedInputTextPatch.cs" />
     <Compile Include="ModPatches\QoLUnknown\SaveMenu\RefreshSlotsPatch.cs" />
     <Compile Include="ModPatches\QoLUnknown\Settings\ModOptionsTranslator.cs" />
+    <None Include="RuScavMods\Translations\casualtiesunknown.cugrenades.json" />
     <None Include="RuScavMods\Translations\com.aiser.omnimod.json" />
     <None Include="RuScavMods\Translations\com.alexx_.medicalbrutalism.json" />
     <None Include="RuScavMods\Translations\com.carlo.casualtiesunknown.antigravbag.json" />
     <None Include="RuScavMods\Translations\com.carlo.casualtiesunknown.izaswarfood.json" />
     <None Include="RuScavMods\Translations\com.dragoon_103.regrowthserums.json" />
     <None Include="RuScavMods\Translations\com.Elysian.MakeExpieHappyAgain.json" />
+    <None Include="RuScavMods\Translations\com.frequency39.casualtiesundertheinfluence.json" />
     <None Include="RuScavMods\Translations\com.gouxi.gouxisfunnyshit.json" />
     <None Include="RuScavMods\Translations\com.yourname.newgun.json" />
+    <None Include="RuScavMods\Translations\meds.json" />
     <None Include="RuScavMods\Translations\overthetoprealism.casualtiesunknown.mod.json" />
     <None Include="RuScavMods\Translations\pain.ceilingturrets.khy.json" />
     <None Include="RuScavMods\Translations\CUTarkovMedicalMod.json" />
@@ -150,7 +157,9 @@
     <None Include="RuScavMods\Translations\expiepettingmod.casualtiesunknown.mod.json" />
     <None Include="RuScavMods\Translations\org.bepinex.plugins.qol_unknown.json" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="RuScavMods\Translations\nyaruqwq.makeshiftprosthetics.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="PostBuild" AfterTargets="Build">
     <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GameDir)\BepInEx\plugins\" SkipUnchangedFiles="true" />

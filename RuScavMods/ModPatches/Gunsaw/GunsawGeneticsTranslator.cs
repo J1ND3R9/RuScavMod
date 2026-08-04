@@ -1,21 +1,12 @@
 ﻿using BepInEx;
-using GunsawGenetics;
 using HarmonyLib;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using QoL_Unknown;
-using RuScavMods.ModPatches.QoLUnknown;
-using RuScavMods.ModPatches.QoLUnknown.Camera;
-using RuScavMods.ModPatches.QoLUnknown.SaveMenu;
-using RuScavMods.TranslationClasses.Definitions;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.Remoting.Metadata.W3cXsd2001;
-using System.Text;
-using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 
@@ -43,7 +34,7 @@ namespace RuScavMods.ModPatches.Gunsaw
             if (Translations == null)
                 FillTranslatedStrings();
             RegisterPatches();
-            foreach (var processor in GGPatches)
+            foreach (PatchClassProcessor processor in GGPatches)
             {
                 try
                 {
@@ -59,7 +50,7 @@ namespace RuScavMods.ModPatches.Gunsaw
 
         private static void RegisterPatches()
         {
-            var harmony = new Harmony("zzz_com.Floydba.ruscavmods.gunsawgeneticstranslate");
+            Harmony harmony = new Harmony("zzz_com.Floydba.ruscavmods.gunsawgeneticstranslate");
             GGPatches.AddRange(new[]
             {
                 new PatchClassProcessor(harmony, typeof(LoadLanguagePatch)),
@@ -69,26 +60,21 @@ namespace RuScavMods.ModPatches.Gunsaw
 
         public static void ApplyTranslations()
         {
-            var strings = (Dictionary<string, string>)StringsField.GetValue(null);
+            Dictionary<string, string> strings = (Dictionary<string, string>)StringsField.GetValue(null);
             if (strings == null)
                 return;
 
-            foreach (var pair in Translations)
+            foreach (KeyValuePair<string, string> pair in Translations)
             {
                 strings[pair.Key] = pair.Value;
-            }
-
-            foreach (var specie in GunsawGenetics.SpeciesData.AllSpecies)
-            {
-
             }
         }
         private static void FillTranslatedStrings()
         {
-            var translatePath = Path.Combine(Paths.PluginPath, "RuScavMods", "Translations", "gunsaw.json");
+            string translatePath = Path.Combine(Paths.PluginPath, "RuScavMods", "Translations", "gunsaw.json");
             if (!File.Exists(translatePath)) return;
-            var json = File.ReadAllText(translatePath);
-            var jObject = JObject.Parse(json);
+            string json = File.ReadAllText(translatePath);
+            JObject jObject = JObject.Parse(json);
             Translations = jObject["translations"]?.ToObject<List<GunsawTranslationDef>>()?.ToDictionary(x => x.Key, x => x.Value) ?? throw new Exception("Секция translations не найдена или пуста.");
 
         }

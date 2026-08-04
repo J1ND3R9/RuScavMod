@@ -1,12 +1,9 @@
 ﻿using HarmonyLib;
 using RshLib;
-using RuScavMods.ModPatches.CUTarkovMedicine;
+using RuScavMods.TranslationClasses.Definitions;
 using RuScavMods.TranslationClasses.Managers;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RuScavMods.ModPatches.RshCCL
 {
@@ -16,7 +13,7 @@ namespace RuScavMods.ModPatches.RshCCL
         public static void Translate()
         {
             RegisterPatches();
-            foreach (var processor in RshCCLPatches)
+            foreach (PatchClassProcessor processor in RshCCLPatches)
             {
                 try
                 {
@@ -30,7 +27,7 @@ namespace RuScavMods.ModPatches.RshCCL
         }
         private static void RegisterPatches()
         {
-            var harmony = new Harmony("zzz_com.Floydba.ruscavmods.rshccltranslate");
+            Harmony harmony = new Harmony("zzz_com.Floydba.ruscavmods.rshccltranslate");
             RshCCLPatches.AddRange(new[]
             {
                 new PatchClassProcessor(harmony, typeof(RshItemAdapterPatch)),
@@ -44,7 +41,7 @@ namespace RuScavMods.ModPatches.RshCCL
         [HarmonyPrefix]
         private static void RegisterItemPrefix(string itemId, RshItem rshItem)
         {
-            if (NativeTranslationManager.Items.TryGetValue(itemId, out var item))
+            if (NativeTranslationManager.Items.TryGetValue(itemId, out NativeTranslationFile.ItemTranslation item))
             {
                 if (!string.IsNullOrEmpty(item.Name))
                     rshItem.info.fullName = item.Name;

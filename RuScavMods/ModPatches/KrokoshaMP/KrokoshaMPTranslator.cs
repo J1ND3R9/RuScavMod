@@ -1,14 +1,7 @@
-﻿using BepInEx;
-using HarmonyLib;
+﻿using HarmonyLib;
 using KrokoshaCasualtiesMP;
-using RuScavMods.ModPatches.CUTarkovMedicine;
-using RuScavMods.ModPatches.QoLUnknown;
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Reflection;
-using TMPro;
-using UnityEngine;
 
 namespace RuScavMods.ModPatches.KrokoshaMP
 {
@@ -144,15 +137,15 @@ namespace RuScavMods.ModPatches.KrokoshaMP
             { "mmct_canthostinworld", "Вернись в главное меню чтобы создать игру или подключиться!" },
             { "mmct_starthost", "Начать хостить" },
             { "mmct_startserver", "Запустить сервер" },
-            { "mmct_startclient", "Client Connect" },
-            { "mmct_serveroptions", "Конфигурация сервера" },
-            { "mmct_copylobbycode", "Скопировать лобби Id" },
+            { "mmct_startclient", "Подключиться как клиент" },
+            { "mmct_serveroptions", "Конфиг" },
+            { "mmct_copylobbycode", "Код лобби" },
             { "mmct_disconnect_abort", "Отменить" },
             { "mmct_disconnect", "Отключиться" },
             { "mmct_disconnect_server", "Остановить сервер" },
             { "mmct_last_status_msg", "Последнее сообщение о состоянии:" },
             { "mmct_directconnecttitle", "Прямое подключение по IP" },
-            { "mmct_gotorunsettings", "Меню запуска" },
+            { "mmct_gotorunsettings", "Меню забега" },
             { "mmct_gotomainmenu", "Вернуться в главное меню" },
             { "mmct_colornotvalid", "Неверный цвет!" },
             { "mmct_colortoodark", "Слишком темный!" },
@@ -365,7 +358,7 @@ namespace RuScavMods.ModPatches.KrokoshaMP
             { "mmst_button_checkupdate", "Проверить обновления" },
             { "mmst_button_checkupdate_desc", "Автоматически устанавливает новую версию мультиплеер мода, если она доступна." },
             { "setting_bugreport_delayscreenshot", "Отложенный скриншот" },
-            { "setting_bugreport_delayscreenshot_desc", "Нажмите \"SСообщить о баге\" чтобы войти в режим скриншота.\nЗатем нажмите F1 чтобы сделать скриншот и отправить репорт." },
+            { "setting_bugreport_delayscreenshot_desc", "Нажмите \"Сообщить о баге\" чтобы войти в режим скриншота.\nЗатем нажмите F1 чтобы сделать скриншот и отправить репорт." },
             { "mmst_bugreport", "Сообщить о баге" },
             { "mmbr_send_tooltip", "" },
             { "mmbr_send_tooltip_desc", "Пожалуйста, проявляйте уважение.\nРепортьте то, что, возможно, уже известно. Но не спамьте.\nПоступление одинаковых репортах повышает приоритет для исправления бага" },
@@ -393,14 +386,14 @@ namespace RuScavMods.ModPatches.KrokoshaMP
         };
         public static void Translate()
         {
-            var dictField = AccessTools.Field(typeof(Lang), "dict");
-            var dict = (Dictionary<string, Dictionary<string, string>>)dictField.GetValue(null);
-            if (dict.TryGetValue("RU", out var ru))
+            FieldInfo dictField = AccessTools.Field(typeof(Lang), "dict");
+            Dictionary<string, Dictionary<string, string>> dict = (Dictionary<string, Dictionary<string, string>>)dictField.GetValue(null);
+            if (dict.TryGetValue("RU", out Dictionary<string, string> ru))
             {
                 dict["ru-RU"] = dict["RU"];
                 dict["RU_RUSF"] = dict["RU"];
                 dict["RU_by_Furryshka"] = dict["RU"];
-                foreach (var pair in TranslationDictionary)
+                foreach (KeyValuePair<string, string> pair in TranslationDictionary)
                 {
                     ru[pair.Key] = pair.Value;
                 }

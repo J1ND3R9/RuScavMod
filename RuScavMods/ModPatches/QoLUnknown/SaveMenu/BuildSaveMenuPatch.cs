@@ -1,10 +1,5 @@
 ﻿using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 
@@ -19,11 +14,11 @@ namespace RuScavMods.ModPatches.QoLUnknown.SaveMenu
         public static void Postfix()
         {
             Transform slotContainer = (Transform)SlotContainerField.GetValue(null);
-            var header = slotContainer.Find("Header");
+            Transform header = slotContainer.Find("Header");
 
             if (header != null)
             {
-                var text = header.GetComponent<TextMeshProUGUI>();
+                TextMeshProUGUI text = header.GetComponent<TextMeshProUGUI>();
                 text.text = "СЛОТЫ СОХРАНЕНИЙ";
             }
         }

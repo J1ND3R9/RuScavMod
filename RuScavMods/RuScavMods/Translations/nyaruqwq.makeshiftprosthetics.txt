@@ -1,0 +1,479 @@
+# Items
+item.unknown_artificial_limb = some kind of artificial limb
+item.crude_peg_leg.name = ПОООЛНААЯ ХУЙНЯЯЯЯЯЯЯЯ
+item.crude_peg_leg.description = A rough wooden replacement for a missing lower leg. Awkward, unreliable, and better than nothing.
+item.wooden_foot.name = Wooden foot
+item.wooden_foot.description = A rough wooden replacement for a missing foot. Awkward, unreliable, and better than nothing.
+item.crude_hook.name = Crude hook
+item.crude_hook.description = A crude hook for a missing hand. Strong, simple, and useless for delicate work.
+item.elbow_hook.name = Makeshift hook
+item.makeshift_gripper.name = Makeshift gripper
+item.makeshift_gripper.description = A makeshift forearm and gripping hand. It holds simple objects, but lacks a precise touch. It reminds you of someone named Raynor...
+item.makeshift_full_leg.name = Makeshift full leg
+item.makeshift_full_leg.description = A rough replacement for an entire missing leg. Stronger than a peg leg, but still unreliable.
+item.cable_arm.name = Cable arm prosthesis
+item.cable_arm.description = A cable-driven arm prosthesis that restores grip and most hand functions.
+item.cable_leg.name = Cable leg prosthesis
+item.cable_leg.description = A cable-driven leg prosthesis that restores most leg functions.
+item.veteran_thorn_hook.name = Veteran cable hook-hand
+item.veteran_thorn_hook.description = A cable arm rebuilt around a Thornback Elder fang. It trades grip for mobility and violence.
+item.thornback_elder_fang.name = Thornback Elder fang
+item.thornback_elder_fang.description = A trophy torn from a Thornback Elder killed in close combat. Valuable in trade and special crafts.
+item.eye_bandage.name = Eye bandage
+item.eye_bandage.description = A field-made bandage for an injured or missing eye. Crude protection is better than none.
+item.eye_patch.name = Veteran eye patch
+item.eye_patch.description = A hardened eye patch for an empty socket. It sharpens instinct and may shield the remaining eye.
+item.wooden_jaw.name = Crude wooden jaw
+item.wooden_jaw.description = A rough replacement for a missing jaw. Speech and chewing remain awkward, but the mouth works again.
+item.amputation_acid.name = Draught of Horrible Agony
+item.amputation_acid.description = A vicious amputation brew. On the head it destroys eyes, dressings, worn items, and facial prostheses instead of severing the head. Drinking it is fatal.
+item.amputation_acid.short_description = A vicious amputation brew. Drinking it is fatal.
+
+# Crafting
+crafting.repair = Repair {0}
+
+# Run settings
+run.option_banned = Banned by your game setting.
+run.amputated_hand.name = Allow minigames with an amputated hand
+run.amputated_hand.description = Allows a selected amputated arm to enter vanilla minigames without a working hand. Some tasks may remain impossible to complete. Difficulty presets never enable this option; it remains manual.
+run.prosthetic_limits.name = Enforce prosthetic minigame limits
+run.prosthetic_limits.description = Checks the selected hand when a minigame starts or the player switches hands. Unsuitable prostheses cannot perform precision tasks. Enabled by every vanilla difficulty preset.
+run.permanent_prosthetic_damage.name = Permanent prosthetic damage
+run.permanent_prosthetic_damage.description = Converts 1-4% of damage actually taken by a prosthetic into lasting loss of the affected layer's maximum health. Proper repair restores the lost maximum. Damage from water, wetness, liquid contact, and dirt never causes permanent damage. Enabled by Relaxed, Normal, Desolate, and Unchipped presets.
+run.catastrophic_injuries.name = Catastrophic limb loss
+run.catastrophic_injuries.description = Enables traumatic amputations and vascular complications after fractures, dislocations, crushing impacts, explosions, and sound-cannon hits. Damaged limbs may heal Twisted or deteriorate into permanent Mangled tissue. Disabled by the vanilla Censor Pain setting. Enabled by Normal, Desolate, and Unchipped presets.
+run.skip_twisted.name = Skip twisted injuries
+run.skip_twisted.description = Replaces each successful new Twisted outcome with the permanent Mangled condition. Other injury and deterioration rules are unchanged. Difficulty presets never enable this option; it remains manual.
+run.self_amputation.name = Low-morale self-amputation
+run.self_amputation.description = At very low morale, a character carrying a cutting tool may warn and then attempt to amputate a random living limb. Requires vanilla Low Mood Events and is disabled by Censor Mood. Enabled by Normal, Desolate, and Unchipped presets.
+run.hatred_of_flesh.name = Hatred of Flesh
+run.hatred_of_flesh.description = Adds a permanent hatred of organic flesh that restricts mood and gradually improves prosthetic control. Requires vanilla Low Mood Events and is disabled by Censor Mood. Enabled by Desolate and Unchipped presets.
+run.start_scenario.name = Starting scenario
+run.start_scenario.description = Choose a special Makeshift Prosthetics start.
+run.start_scenario.none = None
+run.start_scenario.broken_capsule = Broken capsule survivor
+run.start_scenario.pirate = Pirate
+run.start_scenario.hatred_of_flesh = Hatred of Flesh (option required)
+run.start_layer.name = Broken capsule start layer
+run.start_layer.description = Starting layer for Broken capsule survivor.
+
+# Alerts
+alert.cannot_hold = You cannot hold this with this prosthesis.
+alert.cannot_perform_action = This prosthesis cannot perform this action.
+alert.cannot_switch_minigame_hand = The other hand cannot perform this minigame.
+alert.cannot_use_on_prosthetic = This cannot be used on a prosthetic limb.
+alert.cannot_wear_on_prosthetic = This cannot be worn on a prosthetic limb.
+alert.use_on_head = Use this on the head.
+alert.missing_eye_required = You are not worthy yet.
+alert.missing_jaw_required = The jaw must be missing.
+alert.already_installed = This prosthesis is already installed.
+alert.cannot_repair = This prosthesis cannot be repaired.
+alert.wrong_repair_material = This material cannot repair this prosthesis.
+alert.no_repair_needed = This prosthesis does not need repair.
+alert.invalid_limb = This cannot be used on this limb.
+alert.item_empty = This item is empty.
+alert.wooden_jaw_removed = Wooden jaw removed.
+alert.repaired = Prosthesis repaired: {0} +{1}
+repair_layer.casing = casing
+repair_layer.mechanics = mechanics
+
+# Health panel
+wound_view.limb.arm = ERR://NONBIO/Arm
+wound_view.limb.forearm = ERR://NONBIO/Forearm
+wound_view.limb.hand = ERR://NONBIO/Hand
+wound_view.limb.thigh = ERR://NONBIO/Thigh
+wound_view.limb.crus = ERR://NONBIO/Crus
+wound_view.limb.foot = ERR://NONBIO/Foot
+wound_view.limb.unknown = ERR://NONBIO/Limb
+wound_view.condition.title = [NO BIOLOGICAL SIGNAL] PROSTHETIC CONDITION
+wound_view.condition.description = Combined casing and mechanical integrity.
+wound_view.casing.title = [NO BIOLOGICAL SIGNAL] CASING
+wound_view.casing.description = External shell integrity.
+wound_view.mechanics.title = [NO BIOLOGICAL SIGNAL] MECHANICS
+wound_view.mechanics.description = Internal functional integrity.
+
+# Moodles
+wooden_jaw.moodle.title = Wooden jaw
+wooden_jaw.moodle.description = Tight straps hold both halves of the prosthesis together. You still speak poorly, but can hold objects in your mouth. Eating efficiency is reduced.
+injured_limb.twisted.title = Twisted limb
+injured_limb.twisted.description = As the limb knit and healed, some arteries were constricted, limiting its effectiveness. It is not dangerous, but be careful.
+injured_limb.mangled.title = Mangled limb
+injured_limb.mangled.description = Major blood vessels were crushed or destroyed. The flesh will not recover.
+prosthetic_status.casing.title = Prosthetic casing damaged
+prosthetic_status.casing.light = The casing is worn but serviceable.
+prosthetic_status.casing.medium = The casing is badly damaged.
+prosthetic_status.casing.heavy = The casing is critical. Breakage is imminent.
+prosthetic_status.casing.default = The casing is damaged.
+prosthetic_status.mechanics.title = Prosthetic mechanics damaged
+prosthetic_status.mechanics.light = The mechanics are weakened but functional.
+prosthetic_status.mechanics.medium = The mechanics are badly degraded.
+prosthetic_status.mechanics.heavy = The mechanics are critical. Failure is imminent.
+prosthetic_status.mechanics.default = The mechanics are damaged.
+hatred_of_flesh.moodle.title = Hatred of Flesh
+hatred_of_flesh.moodle.description = Organic flesh suppresses your mood. As less remains, prosthetic control and durability improve.\nMood cap: {0:0.#}. Organic segments: {1}/{2}. Efficiency: +{3:0}%. Damage resistance: {4:0.#}%.
+
+# Minigames
+prosthetic_fitting.guide = Fit the prosthetic. Hold steady until the fitting is complete.
+self_amputation.guide.approach = Force the knife closer. {0} clicks remain.
+self_amputation.guide.hold = Hold still.
+self_amputation.guide.cutting = Saw the flesh away. Do not stop until it comes free.
+
+# Self-amputation warning
+self_amputation.warning.emotional.01 = I cannot keep carrying all of this. Something has to leave.
+self_amputation.warning.emotional.02 = Please... let one piece of me finally be quiet.
+self_amputation.warning.emotional.03 = I am so tired of begging this body to stop hurting.
+self_amputation.warning.emotional.04 = The blade is here. I only have to be brave once.
+self_amputation.warning.emotional.05 = Do not pull away. I cannot survive another failure.
+self_amputation.warning.emotional.06 = I am sorry. I just need there to be less of me.
+self_amputation.warning.clinical.01 = Continued retention has become psychologically intolerable.
+self_amputation.warning.clinical.02 = The selected segment is the nearest removable source of distress.
+self_amputation.warning.clinical.03 = No acceptable non-destructive correction remains available.
+self_amputation.warning.clinical.04 = A cutting instrument provides the only immediate intervention.
+self_amputation.warning.clinical.05 = Motor resistance must be suppressed until removal begins.
+self_amputation.warning.clinical.06 = Corrective excision is now unavoidable.
+
+# Self-amputation warning: suicidal stage
+self_amputation.warning.suicidal.emotional.01 = You wanted me dead. Fine. I will decide what dies first.
+self_amputation.warning.suicidal.emotional.02 = This body took everything and still demands to be spared.
+self_amputation.warning.suicidal.emotional.03 = I begged it to stop. Now it gets no mercy.
+self_amputation.warning.suicidal.emotional.04 = I am not dying for this meat. It can die for me.
+self_amputation.warning.suicidal.emotional.05 = Hold still, you hateful thing. I am done grieving for you.
+self_amputation.warning.suicidal.emotional.06 = One of us is leaving this room in pieces.
+self_amputation.warning.suicidal.clinical.01 = Total self-termination is unnecessary when the offending structure can be removed first.
+self_amputation.warning.suicidal.clinical.02 = Grief has isolated the organic segment as the immediate hostile component.
+self_amputation.warning.suicidal.clinical.03 = Preservation priority for the selected tissue is now zero.
+self_amputation.warning.suicidal.clinical.04 = The organism will sacrifice a component instead of the entire system.
+self_amputation.warning.suicidal.clinical.05 = Resistance from the target is irrelevant and will be overcome.
+self_amputation.warning.suicidal.clinical.06 = Hostile excision begins now.
+
+# Self-amputation cutting
+self_amputation.cutting.emotional.01 = Please come free. Please let this be enough.
+self_amputation.cutting.emotional.02 = I cannot stop now. I cannot go back.
+self_amputation.cutting.emotional.03 = Almost... almost...
+self_amputation.cutting.emotional.04 = Just a little more.
+self_amputation.cutting.clinical.01 = Pain is escalating. The operation must still continue.
+self_amputation.cutting.clinical.02 = The tissue remains attached. Continue separation.
+self_amputation.cutting.clinical.03 = Correction is progressing.
+self_amputation.cutting.clinical.04 = Removal is nearly complete.
+
+# Self-amputation cutting: suicidal stage
+self_amputation.cutting.suicidal.emotional.01 = Tear, damn you. I hate you. I hate every piece of you.
+self_amputation.cutting.suicidal.emotional.02 = You do not get to keep me trapped in you.
+self_amputation.cutting.suicidal.clinical.01 = The hostile tissue is resisting. Increase force and continue.
+self_amputation.cutting.suicidal.clinical.02 = Systemic grief is being redirected into irreversible excision.
+
+# Self-amputation aftermath
+self_amputation.aftermath.emotional.01 = It is gone... God, please let that be enough.
+self_amputation.aftermath.emotional.02 = I can breathe. I still hurt, but I can breathe.
+self_amputation.aftermath.emotional.03 = I did it. I actually did it. What have I done?
+self_amputation.aftermath.emotional.04 = There is less pain now. Or maybe there is only different pain.
+self_amputation.aftermath.emotional.05 = I am still here. I do not know whether that is mercy.
+self_amputation.aftermath.clinical.01 = Removal complete. Acute distress has temporarily decreased.
+self_amputation.aftermath.clinical.02 = Organic burden reduced. Psychological stabilization is uncertain.
+self_amputation.aftermath.clinical.03 = Excision succeeded. Consequences remain irreversible.
+self_amputation.aftermath.clinical.04 = The target is absent. The underlying distress remains measurable.
+self_amputation.aftermath.clinical.05 = Correction complete. Adaptation is now mandatory.
+
+# Self-amputation aftermath: suicidal stage
+self_amputation.aftermath.suicidal.emotional.01 = You wanted all of me. You only got that piece.
+self_amputation.aftermath.suicidal.emotional.02 = I am still alive, and I am furious about it.
+self_amputation.aftermath.suicidal.emotional.03 = It is gone. The grief is not. Nothing is ever enough.
+self_amputation.aftermath.suicidal.emotional.04 = I spared the rest of this body. It should be grateful.
+self_amputation.aftermath.suicidal.emotional.05 = I chose the wound. The world did not get to choose my grave.
+self_amputation.aftermath.suicidal.clinical.01 = Total termination was displaced into a limited but irreversible loss.
+self_amputation.aftermath.suicidal.clinical.02 = The system remains alive. Hostility toward the remaining organic structure persists.
+self_amputation.aftermath.suicidal.clinical.03 = Segment removal succeeded. Grief reduction is incomplete.
+self_amputation.aftermath.suicidal.clinical.04 = One component was sacrificed to prevent total shutdown.
+self_amputation.aftermath.suicidal.clinical.05 = Survival has been retained without resolving the underlying rejection.
+
+# Hatred of Flesh speech
+hatred_of_flesh.speech.emotional.01 = I keep waiting to feel like myself inside this body. It never happens.
+hatred_of_flesh.speech.emotional.02 = Every heartbeat sounds like something begging me not to give up.
+hatred_of_flesh.speech.emotional.03 = I miss being able to touch myself without feeling trapped.
+hatred_of_flesh.speech.emotional.04 = There is too much of me left, and none of it feels worth saving.
+hatred_of_flesh.speech.emotional.05 = My bones feel buried under someone else's life.
+hatred_of_flesh.speech.emotional.06 = I hate the warmth because it proves this miserable flesh is still alive.
+hatred_of_flesh.speech.emotional.07 = I can hear the blood moving and I cannot escape it.
+hatred_of_flesh.speech.emotional.08 = This hand keeps reaching for a future I no longer believe in.
+hatred_of_flesh.speech.emotional.09 = I keep thinking one clean loss might finally make the rest bearable.
+hatred_of_flesh.speech.emotional.10 = The flesh clings to life harder than I do.
+hatred_of_flesh.speech.emotional.11 = I would give anything for one quiet minute under my skin.
+hatred_of_flesh.speech.emotional.12 = Metal would not remember every place I failed.
+hatred_of_flesh.speech.emotional.13 = I hate my flesh because it survived everything that broke me.
+hatred_of_flesh.speech.emotional.14 = Every organic piece feels like grief that learned how to breathe.
+hatred_of_flesh.speech.emotional.15 = I am terrified there will still be something human left when I am done.
+hatred_of_flesh.speech.clinical.01 = Subjective identity remains irreconcilable with the current organic structure.
+hatred_of_flesh.speech.clinical.02 = Each cardiac cycle reinforces a state of continuous psychological distress.
+hatred_of_flesh.speech.clinical.03 = Tactile ownership of the body cannot be established.
+hatred_of_flesh.speech.clinical.04 = Remaining organic mass exceeds the amount the psyche can tolerate.
+hatred_of_flesh.speech.clinical.05 = The skeleton is perceived as confined within foreign biological material.
+hatred_of_flesh.speech.clinical.06 = Body heat provides constant evidence of unwanted survival.
+hatred_of_flesh.speech.clinical.07 = Circulation is perceived as inescapable internal noise.
+hatred_of_flesh.speech.clinical.08 = The limb continues performing survival-oriented actions without consent.
+hatred_of_flesh.speech.clinical.09 = Controlled loss is repeatedly evaluated as preferable to continued embodiment.
+hatred_of_flesh.speech.clinical.10 = Organic self-preservation now exceeds the subject's own desire to persist.
+hatred_of_flesh.speech.clinical.11 = The absence of internal sensation is treated as an unattainable form of relief.
+hatred_of_flesh.speech.clinical.12 = Synthetic replacement is associated with freedom from traumatic memory.
+hatred_of_flesh.speech.clinical.13 = Surviving tissue is interpreted as evidence of personal failure rather than resilience.
+hatred_of_flesh.speech.clinical.14 = Each organic segment functions as an autonomous reservoir of grief.
+hatred_of_flesh.speech.clinical.15 = Complete biological absence is desired and simultaneously feared.
+
+# Hatred of Flesh activation: suicidal stage
+hatred_of_flesh.speech.suicidal.emotional.01 = I was ready to kill all of me for this body. Now I want the body to pay instead.
+hatred_of_flesh.speech.suicidal.emotional.02 = I do not want to die. I want every hateful piece of this flesh to stop owning me.
+hatred_of_flesh.speech.suicidal.emotional.03 = Grief asked for my life. It can have the meat and leave me the rest.
+hatred_of_flesh.speech.suicidal.emotional.04 = I am done mourning this body. From now on, it loses.
+hatred_of_flesh.speech.suicidal.clinical.01 = Suicidal intent has reorganized into directed hostility toward organic embodiment.
+hatred_of_flesh.speech.suicidal.clinical.02 = Global self-destruction has been replaced by selective biological rejection.
+hatred_of_flesh.speech.suicidal.clinical.03 = Grief no longer targets consciousness; it targets the tissue containing it.
+hatred_of_flesh.speech.suicidal.clinical.04 = Continued survival is now conditional on reducing organic ownership.
+
+# Organic trauma outcome speech
+organic_trauma.outcome.mangled.emotional.01 = No... it is still attached, but it is gone.
+organic_trauma.outcome.mangled.emotional.02 = I cannot feel it right. Something in there is ruined.
+organic_trauma.outcome.mangled.clinical.01 = The limb remains attached, but functional tissue integrity has collapsed.
+organic_trauma.outcome.mangled.clinical.02 = Catastrophic damage confirmed. Salvage prognosis is negligible.
+organic_trauma.outcome.traumatic_amputation.emotional.01 = It is gone! Fuck—my limb is gone!
+organic_trauma.outcome.traumatic_amputation.emotional.02 = No, no, no—there was no time, it just tore away!
+organic_trauma.outcome.traumatic_amputation.clinical.01 = Traumatic separation confirmed. The appendage is no longer attached.
+organic_trauma.outcome.traumatic_amputation.clinical.02 = Complete limb detachment occurred during the impact.
+
+# Trader reactions: character 0
+trader_prosthetic_reaction.0.0.trader = Wha-what happened to you?
+trader_prosthetic_reaction.0.0.player = I survived. That's what happened.
+trader_prosthetic_reaction.0.1.trader = Those parts... did you make them yourself?
+trader_prosthetic_reaction.0.1.player = Had to. Nobody else was going to.
+trader_prosthetic_reaction.0.2.trader = Does it hurt?
+trader_prosthetic_reaction.0.2.player = Less than what used to be there.
+trader_prosthetic_reaction.0.3.trader = You look like you've been through a grinder.
+trader_prosthetic_reaction.0.3.player = The grinder lost.
+trader_prosthetic_reaction.0.4.trader = I don't know whether to be impressed or worried.
+trader_prosthetic_reaction.0.4.player = Both would be fair.
+
+# Trader reactions: character 1
+trader_prosthetic_reaction.1.0.trader = Crude, asymmetrical, and somehow functional. How unfortunate.
+trader_prosthetic_reaction.1.0.player = Functional is the part that matters.
+trader_prosthetic_reaction.1.1.trader = You replaced living tissue with that scrap?
+trader_prosthetic_reaction.1.1.player = The tissue stopped being useful.
+trader_prosthetic_reaction.1.2.trader = I suppose proper medicine was beyond you.
+trader_prosthetic_reaction.1.2.player = Proper medicine wasn't there.
+trader_prosthetic_reaction.1.3.trader = Your gait is an engineering complaint.
+trader_prosthetic_reaction.1.3.player = It still carried me here.
+trader_prosthetic_reaction.1.4.trader = Fascinating. Repulsive, but fascinating.
+trader_prosthetic_reaction.1.4.player = You can stare after we trade.
+
+# Trader reactions: Dune
+trader_prosthetic_reaction.2.0.trader = Y-you... B-broke...
+trader_prosthetic_reaction.2.0.player = I got fixed.
+trader_prosthetic_reaction.2.1.trader = M-metal leg... C-cold...?
+trader_prosthetic_reaction.2.1.player = Only when the cave is.
+trader_prosthetic_reaction.2.2.trader = Wh-where... M-meat go...?
+trader_prosthetic_reaction.2.2.player = Gone.
+trader_prosthetic_reaction.2.3.trader = Th-that hand... N-not hand...
+trader_prosthetic_reaction.2.3.player = It does the job.
+trader_prosthetic_reaction.2.4.trader = C-can bite... M-metal...?
+trader_prosthetic_reaction.2.4.player = Don't.
+dune_bite.silence = ...
+dune_bite.metal_reject.0 = M-metal... N-not tasty... T-teeth hurt... M-mouth h-hurts...
+dune_bite.metal_reject.1 = H-hard... T-tooth h-hurts... M-metal bad...
+dune_bite.wood_reject.0 = W-wood... D-dry... N-not meat... T-teeth hurt...
+dune_bite.wood_reject.1 = W-wood... H-hard... C-can't chew...
+
+# Console
+console.refresh.description = Hard-rebuilds all prosthetic runtime state.
+console.check.description = Validates prosthetic state, runtime segments, joints, sprites, and HUD ownership without rebuilding anything.
+console.heal.description = Fully heals the player's organic body. Installed prosthetic segments are ignored.
+console.repair.description = Fully repairs every installed prosthesis. Destroyed prostheses cannot be restored.
+console.repair.result = Repaired {0} installed prostheses.
+console.repair.none = No installed prostheses needed repair.
+console.repair.destroyed = {0} prostheses were already missing a segment and were destroyed instead of repaired.
+console.repair.no_body = Repair failed: player body is not ready.
+console.repair.failed = Prosthetic repair failed. See the BepInEx log.
+
+# Item wear display
+item.prosthetic_wear = Permanent wear: {0:0.#}%  //  remaining resource: {1:0.#}%
+
+# Prosthetic condition speech
+prosthetic_warning.casing.01 = The casing is coming apart.
+prosthetic_warning.casing.02 = This prosthesis needs repairs.
+prosthetic_warning.mechanics.01 = The mechanism is failing.
+prosthetic_warning.mechanics.02 = Something inside this prosthesis is grinding.
+prosthetic_warning.general.01 = This prosthesis is in bad shape.
+prosthetic_warning.general.02 = I need to repair this prosthesis.
+
+# Main menu settings panel
+main_menu.action.reset_balance = RESET ALL BALANCE VALUES
+main_menu.debug.allow_balance_override = Allow balance override (+50% UI limits)
+main_menu.debug.developer_hud = Developer debug HUD
+main_menu.debug.environmental_wear_log = Environmental wear log
+main_menu.debug.minigame_routing_log = Minigame routing log
+main_menu.debug.overhaul_guard_log = Overhaul guard log
+main_menu.debug.prosthetic_hp_log = Prosthetic HP damage log
+main_menu.debug.visual_isolation_log = Visual isolation log
+main_menu.debug.whole_body_hp_log = Whole-body HP damage log
+main_menu.option.cable_arm.minigame_speed = Medical minigame action speed
+main_menu.option.crude_gripper.advanced_minigames = Advanced medical minigames
+main_menu.option.crude_hook.wall_slide = Enable wall slide
+main_menu.option.crude_hook.wall_slide_wear = Wall-slide condition loss per second
+main_menu.option.environmental_wear.circuit_multiplier = Circuit moisture multiplier
+main_menu.option.environmental_wear.dirt = Dirt mechanics damage per second
+main_menu.option.environmental_wear.liquid = Direct liquid mechanics damage per second
+main_menu.option.environmental_wear.non_circuit_multiplier = Non-circuit moisture multiplier
+main_menu.option.environmental_wear.wetness = Wetness mechanics damage per second
+main_menu.option.eye_patch.active_pulse = Pulse active threats
+main_menu.option.eye_patch.both_eyes_radius = Both-eyes-lost detection radius
+main_menu.option.eye_patch.detect_hostiles = Detect hostile creatures
+main_menu.option.eye_patch.detect_nests = Detect cave tick nests
+main_menu.option.eye_patch.detect_plants = Detect dangerous plants
+main_menu.option.eye_patch.detect_sound_cannon = Detect Sound Cannon
+main_menu.option.eye_patch.detect_traps = Detect mechanical traps
+main_menu.option.eye_patch.detect_turrets = Detect turrets
+main_menu.option.eye_patch.enable_instinct = Enable instinct ability
+main_menu.option.eye_patch.head_armor = Head armor
+main_menu.option.eye_patch.one_eye_radius = One-eye detection radius
+main_menu.option.eye_patch.passive_pulse = Pulse passive threats
+main_menu.option.eye_patch.protection_condition_loss = Condition loss on protection
+main_menu.option.eye_patch.reduced_flashing = Reduced flashing
+main_menu.option.eye_patch.second_eye_protection = Second-eye protection chance
+main_menu.option.eye_patch.sound_cannon_arrow = Off-screen Sound Cannon arrow
+main_menu.option.eye_patch.suppress_qol_indicator = Suppress QoL Sound Cannon indicator
+main_menu.option.eye_patch.threat_halos = Post-vision threat halos
+main_menu.option.eye_patch.turret_screen_pulse = Turret screen pulse
+main_menu.option.eye_patch.world_glow = World Light2D glow
+main_menu.option.hatred.maximum_outcome = Maximum outcome chance
+main_menu.option.hatred.minimum_outcome = Minimum outcome chance
+main_menu.option.hatred.per_alienation_point = Outcome chance per alienation point
+main_menu.option.hatred.segment_amputation = Episode segment amputation chance
+main_menu.option.hatred.suicidal_bonus = Suicidal-stage Hatred outcome bonus
+main_menu.option.hook.crafting_cutting_tool = Use as crafting cutting tool
+main_menu.option.hook.cutting_quality = Cutting quality
+main_menu.option.hook.wall_slide_fall_speed = Wall-slide maximum fall speed
+main_menu.option.legs.passive_casing_wear = Passive casing wear per second
+main_menu.option.legs.passive_mechanics_wear = Passive mechanics wear per second
+main_menu.option.legs.peg_break_shrapnel = Peg Leg break creates shrapnel
+main_menu.option.legs.peg_break_shrapnel_count = Peg Leg break shrapnel count
+main_menu.option.legs.peg_install_loss = Peg Leg install condition loss
+main_menu.option.mangled.minigame_speed = Mangled medical minigame speed
+main_menu.option.mangled.muscle_cap = Mangled Muscle Health cap
+main_menu.option.mangled.skin_cap = Mangled Skin Health cap
+main_menu.option.organic_trauma.amputation_multiplier = Traumatic amputation multiplier
+main_menu.option.organic_trauma.dislocation_deterioration = Twisted deterioration: dislocation
+main_menu.option.organic_trauma.fracture_deterioration = Twisted deterioration: fracture
+main_menu.option.organic_trauma.mangled_multiplier = Mangled chance multiplier
+main_menu.option.organic_trauma.new_twisted_chance = Какойто там шанс бля...
+main_menu.option.organic_trauma.sound_cannon_twisted_chance = Sound Cannon Twisted chance
+main_menu.option.permanent_damage.maximum = Maximum permanent damage
+main_menu.option.permanent_damage.minimum = Minimum permanent damage
+main_menu.option.prosthetic.crafting_hammering_tool = Use as crafting hammering tool
+main_menu.option.prosthetic.hammering_quality = Hammering quality
+main_menu.option.prosthetic.unarmed_multiplier = Unarmed attack multiplier
+main_menu.option.prosthetic_damage.base_unarmed = Base unarmed damage
+main_menu.option.prosthetic_damage.global_casing = Global casing damage
+main_menu.option.prosthetic_damage.global_mechanics = Global mechanics damage
+main_menu.option.prosthetic_damage.held_item_wear = Held-item use wear
+main_menu.option.prosthetic_damage.mechanics_to_casing = Mechanical loss to casing wear
+main_menu.option.prosthetic_damage.use_casing_fraction = Use wear: casing fraction
+main_menu.option.prosthetic_damage.use_mechanics_fraction = Use wear: mechanics fraction
+main_menu.option.prosthetic_damage.world_impact = World impact damage
+main_menu.option.self_harm.maximum_chance = Maximum self-amputation chance
+main_menu.option.self_harm.minimum_chance = Minimum self-amputation chance
+main_menu.option.self_harm.per_alienation_point = Chance per alienation point
+main_menu.option.self_harm.suicidal_bonus = Suicidal-stage self-amputation bonus
+main_menu.option.sound.enable_feedback = Enable prosthetic sound feedback
+main_menu.option.sound.master_volume = Sound master volume
+main_menu.option.sound.spatial_blend = Sound spatial blend
+main_menu.option.twisted.minigame_speed = Twisted medical minigame speed
+main_menu.option.twisted.muscle_cap = Twisted Muscle Health cap
+main_menu.option.twisted.skin_cap = Twisted Skin Health cap
+main_menu.option.veteran_hook.enable_abilities = Enable veteran abilities
+main_menu.option.veteran_hook.horizontal_velocity = Horizontal velocity retained
+main_menu.option.warnings.enable_moodles = Enable status warning moodles
+main_menu.option.warnings.heavy_threshold = Heavy warning threshold
+main_menu.option.warnings.light_threshold = Light warning threshold
+main_menu.option.warnings.medium_threshold = Medium warning threshold
+main_menu.option.wooden_jaw.custom_moodle = Enable custom moodle
+main_menu.option.wooden_jaw.eating_efficiency = Eating efficiency
+main_menu.option.wooden_jaw.food_mood_multiplier = Positive food mood multiplier
+main_menu.option.wooden_jaw.suppress_disfigurement = Suppress vanilla disfigurement
+main_menu.panel.back = BACK
+main_menu.panel.tab.balance = BALANCE
+main_menu.panel.tab.debug = DEBUG
+main_menu.panel.title = MAKESHIFT PROSTHETICS
+main_menu.result.action_failed = Action failed: {0}
+main_menu.result.defaults_restored = All displayed balance values restored to defaults.
+main_menu.result.ready = Ready.
+main_menu.section.balance_config = BALANCE / CONFIG
+main_menu.section.cable_arm = CABLE ARM
+main_menu.section.crude_gripper = CRUDE GRIPPER
+main_menu.section.crude_hook = CRUDE HOOK
+main_menu.section.debug_switches = DEBUG SWITCHES
+main_menu.section.environmental_wear = ENVIRONMENTAL WEAR
+main_menu.section.eye_patch = EYE PATCH
+main_menu.section.hatred_of_flesh = HATRED OF FLESH
+main_menu.section.leg_prosthetics = LEG PROSTHETICS
+main_menu.section.organic_trauma = ORGANIC TRAUMA
+main_menu.section.permanent_damage = PERMANENT DAMAGE
+main_menu.section.prosthetic_damage = PROSTHETIC DAMAGE
+main_menu.section.self_harm = SELF HARM
+main_menu.section.sound_warnings = SOUND & WARNINGS
+main_menu.section.twisted_mangled = TWISTED / MANGLED
+main_menu.section.veteran_thorn_hook = VETERAN THORN HOOK
+main_menu.section.wooden_jaw = WOODEN JAW
+main_menu.state.off = OFF
+main_menu.state.on = ON
+main_menu.unit.multiplier = x
+main_menu.unit.per_second = /s
+main_menu.unit.percent = %
+main_menu.unit.tiles =  tiles
+
+# Organic trauma balance expansion
+main_menu.section.organic_trauma_thresholds = ORGANIC TRAUMA — THRESHOLDS
+main_menu.section.organic_trauma_progression = ORGANIC TRAUMA — PROGRESSION
+main_menu.section.mangled_outcomes = MANGLED OUTCOMES
+main_menu.section.amputation_outcomes = TRAUMATIC AMPUTATION OUTCOMES
+main_menu.section.wip_experimental = WIP / EXPERIMENTAL
+main_menu.debug.wip_water_shock = WIP: damaged cable prosthesis water shock
+main_menu.debug.wip_cable_batteries = WIP: cable prosthesis batteries
+main_menu.unit.hp =  HP
+main_menu.unit.damage =  damage
+main_menu.unit.seconds =  s
+main_menu.option.organic_trauma.critical_threshold = Critical HP crossing threshold
+main_menu.option.organic_trauma.direct_loss_threshold = Catastrophic direct-loss threshold
+main_menu.option.organic_trauma.sudden_loss_threshold = One-hit muscle loss required for catastrophic crossing
+main_menu.option.organic_trauma.sound_cannon_loss_threshold = Sound Cannon muscle-loss threshold
+main_menu.option.organic_trauma.twisted_development = Twisted development time after healing
+main_menu.option.organic_trauma.mangled_deterioration = Twisted deterioration time to Mangled
+main_menu.option.organic_trauma.mangled_infection_interval = Mangled infection tick interval
+main_menu.option.organic_trauma.deteriorating_muscle_cap = Fully deteriorated Muscle Health cap
+main_menu.option.organic_trauma.deteriorating_skin_cap = Fully deteriorated Skin Health cap
+main_menu.option.organic_trauma.deteriorating_minigame_speed = Fully deteriorated minigame speed
+main_menu.option.organic_trauma.propagation_delay = Downstream Mangled delay per segment
+main_menu.option.organic_trauma.propagation_duration = Downstream Mangled development time
+main_menu.option.mangled.explosion_priority = Explosion priority: immediate Mangled
+main_menu.option.mangled.direct_normal = Direct catastrophe: healthy limb, no new injury
+main_menu.option.mangled.direct_normal_injured = Direct catastrophe: healthy limb with new injury
+main_menu.option.mangled.direct_twisted = Direct catastrophe: Twisted limb, no new injury
+main_menu.option.mangled.direct_twisted_injured = Direct catastrophe: Twisted limb with new injury
+main_menu.option.mangled.critical_muscle = Severe muscle burst: normal Mangled chance
+main_menu.option.mangled.muscle_destroyed = Severe muscle burst: Twisted Mangled chance
+main_menu.option.amputation.normal_fracture = Normal limb: new fracture
+main_menu.option.amputation.normal_critical = Normal limb: critical HP crossing
+main_menu.option.amputation.normal_heavy = Normal limb: heavy collision
+main_menu.option.amputation.explosion_priority = Explosion priority: traumatic amputation
+main_menu.option.amputation.twisted_fracture = Twisted limb: new fracture
+main_menu.option.amputation.twisted_critical = Twisted limb: critical HP crossing
+main_menu.option.amputation.twisted_heavy = Twisted limb: heavy collision
+main_menu.option.amputation.deteriorated_fracture = Fully deteriorated limb: new fracture
+main_menu.option.amputation.deteriorated_critical = Fully deteriorated limb: critical HP crossing
+main_menu.option.amputation.deteriorated_heavy = Fully deteriorated limb: heavy collision
+main_menu.option.amputation.mangled_fracture = Mangled limb: new fracture
+main_menu.option.amputation.mangled_critical = Mangled limb: critical HP crossing
+main_menu.option.amputation.mangled_heavy = Mangled limb: heavy collision
+main_menu.option.wip.battery_drain = Cable battery drain
+main_menu.option.wip.empty_battery_function = Empty cable battery function
+main_menu.option.wip.water_shock_consciousness = Water shock consciousness loss
+main_menu.option.wip.water_shock_cooldown = Water shock cooldown
+main_menu.option.wip.water_shock_pain = Water shock pain per limb
+main_menu.option.wip.water_shock_shock = Water shock body shock gain
+main_menu.option.wip.water_shock_threshold = Water shock segment HP threshold
+main_menu.unit.percent_per_minute = %/min

@@ -13,7 +13,7 @@ namespace RuScavMods.ModPatches.QoLUnknown.Camera
             Transform sort = __instance.radialMenu.Find("sort");
             if (sort == null) return;
 
-            var tooltip = sort.GetComponent<UITooltip>();
+            UITooltip tooltip = sort.GetComponent<UITooltip>();
 
             tooltip.tipName = "Сортировать";
             tooltip.tipDesc = "Сортирует твой инвентарь для минимизации веса";

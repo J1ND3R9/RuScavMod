@@ -11,6 +11,7 @@ using RuScavMods.ModPatches.CUTarkovMedicine;
 using RuScavMods.ModPatches.extraDialogue;
 using RuScavMods.ModPatches.Gunsaw;
 using RuScavMods.ModPatches.KrokoshaMP;
+using RuScavMods.ModPatches.MakeshiftProsthetics;
 using RuScavMods.ModPatches.QoLUnknown;
 using RuScavMods.ModPatches.RshCCL;
 using RuScavMods.Patches;
@@ -19,7 +20,6 @@ using RuScavMods.TranslationClasses.Managers;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.InteropServices;
 
 //     ▓▒                                                     
 //    ░░░░░░░░░                                               
@@ -50,12 +50,11 @@ using System.Runtime.InteropServices;
 
 namespace RuScavMods
 {
-    [BepInPlugin("zzz_com.Floydba.ruscavmods", "RuScavMod", "2.1.2.1")]
+    [BepInPlugin("zzz_com.Floydba.ruscavmods", "RuScavMod", "2.1.3.0 ")]
     public class Plugin : BaseUnityPlugin
     {
         internal static ManualLogSource Log;
         private readonly static List<PatchClassProcessor> VanillaPatches = new List<PatchClassProcessor>();
-        private readonly static Dictionary<string, string> BridgeCandidates = new Dictionary<string, string>();
         public static bool RshCCLInstalled = File.Exists(Path.Combine(Paths.PluginPath, "RshLib.dll")) && AccessTools.TypeByName("RshLib.RshItemAdapter") != null; // У автора мода интересный случай: он удаляет себя из PluginInfos и, затем, пытается вернуть патчем. Но патч не срабатывает, поэтому он просто делитит себя, bruh.
         internal sealed class ModTranslator
         {
@@ -107,27 +106,33 @@ namespace RuScavMods
                 Guid = "net.cucorelib",
                 Name = "CUCore",
                 Translate = CUCoreTranslator.Translate
+            },
+            new ModTranslator()
+            {
+                Guid = "nyaruqwq.makeshiftprosthetics",
+                Name = "Makeshift Prosthetics",
+                Translate = MakeshiftProstheticsTranslator.Translate
             }
         };
+
         private void Awake()
         {
-            
+
             Plugin.Log = base.Logger;
             PluginConfig.Init(Config);
             LoadTranslationFiles();
             ApplyVanillaPatches();
             ApplyModTranslations();
-            Log.LogWarning("Если при переключении языка русификатор все ещё работает, перезайдите в игру.");
         }
 
         private void LoadTranslationFiles()
         {
-            var pluginsInfo = Chainloader.PluginInfos;
-            var pathTranslations = Path.Combine(Paths.PluginPath, "RuScavMods", "Translations");
-            foreach (var plugin in pluginsInfo)
+            Dictionary<string, PluginInfo> pluginsInfo = Chainloader.PluginInfos;
+            string pathTranslations = Path.Combine(Paths.PluginPath, "RuScavMods", "Translations");
+            foreach (KeyValuePair<string, PluginInfo> plugin in pluginsInfo)
             {
-                var pluginId = plugin.Key;
-                var translationFile = Path.Combine(pathTranslations, $"{pluginId}.json");
+                string pluginId = plugin.Key;
+                string translationFile = Path.Combine(pathTranslations, $"{pluginId}.json");
                 //Plugin.Log.LogInfo($"Плагин {plugin.Value.Metadata.Name} загружен.");
                 if (File.Exists(translationFile))
                 {
@@ -165,12 +170,12 @@ namespace RuScavMods
         }
         private void LoadNativeTranslation(string json)
         {
-            var translationData = JsonConvert.DeserializeObject<NativeTranslationFile>(json) ?? throw new Exception("Файл не был десериализован.");
+            NativeTranslationFile translationData = JsonConvert.DeserializeObject<NativeTranslationFile>(json) ?? throw new Exception("Файл не был десериализован.");
             NativeTranslationManager.Add(translationData);
         }
         private void LoadCuCoreTranslation(string json)
         {
-            var translationData = JsonConvert.DeserializeObject<CuCoreTranslationFile>(json) ?? throw new Exception("Файл не был десериализован.");
+            CuCoreTranslationFile translationData = JsonConvert.DeserializeObject<CuCoreTranslationFile>(json) ?? throw new Exception("Файл не был десериализован.");
             CuCoreTranslationManager.Add(translationData);
         }
 
@@ -178,8 +183,12 @@ namespace RuScavMods
         {
             JObject obj = JObject.Parse(json);
             string type = obj["type"]?.ToString();
+
             if (type == null)
+            {
                 return null;
+            }
+
             switch (type)
             {
                 case "native":
@@ -195,7 +204,7 @@ namespace RuScavMods
         private void ApplyVanillaPatches()
         {
             RegisterVanillaPatches();
-            foreach (var processor in VanillaPatches)
+            foreach (PatchClassProcessor processor in VanillaPatches)
             {
                 try
                 {
@@ -212,10 +221,12 @@ namespace RuScavMods
 
         private void ApplyModTranslations()
         {
-            foreach (var translator in Translators)
+            foreach (ModTranslator translator in Translators)
             {
                 if (!Chainloader.PluginInfos.ContainsKey(translator.Guid))
+                {
                     continue;
+                }
 
                 try
                 {

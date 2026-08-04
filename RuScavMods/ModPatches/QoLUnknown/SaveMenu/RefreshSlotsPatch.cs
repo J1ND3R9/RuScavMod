@@ -18,7 +18,7 @@ namespace RuScavMods.ModPatches.QoLUnknown.SaveMenu
 
             for (int i = 1; i < slotContainer.childCount; i++)
             {
-                var info = slotContainer.GetChild(i)
+                Transform info = slotContainer.GetChild(i)
                     ?.Find("Content")
                     ?.Find("Info");
 

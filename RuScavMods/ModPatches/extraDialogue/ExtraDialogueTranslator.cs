@@ -1,8 +1,6 @@
 ﻿using BepInEx;
 using extraDialogue;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System;
 using System.IO;
 
 namespace RuScavMods.ModPatches.extraDialogue
@@ -12,7 +10,7 @@ namespace RuScavMods.ModPatches.extraDialogue
         const bool IsOld = true;
         public static void Translate()
         {
-            var translatePath = Path.Combine(Paths.PluginPath, "RuScavMods", "Translations", "extraDialogue.json");
+            string translatePath = Path.Combine(Paths.PluginPath, "RuScavMods", "Translations", "extraDialogue.json");
             if (IsOld)
             {
                 JObject jobject = JObject.Parse(File.ReadAllText(translatePath));

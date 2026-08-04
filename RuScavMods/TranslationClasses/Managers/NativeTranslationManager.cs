@@ -1,11 +1,9 @@
 ﻿using RuScavMods.TranslationClasses.Definitions;
 using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 using System.Text.RegularExpressions;
 using TMPro;
 using static RuScavMods.TranslationClasses.Definitions.NativeTranslationFile;
-using static System.Net.Mime.MediaTypeNames;
 
 
 namespace RuScavMods.TranslationClasses.Managers
@@ -49,7 +47,7 @@ namespace RuScavMods.TranslationClasses.Managers
         private static void AddDictionary<TKey, Value>(Dictionary<TKey, Value> source, Dictionary<TKey, Value> destination, Action<Value> beforeAdd = null)
         {
             if (source == null) return;
-            foreach (var kvp in source)
+            foreach (KeyValuePair<TKey, Value> kvp in source)
             {
                 beforeAdd?.Invoke(kvp.Value);
                 destination[kvp.Key] = kvp.Value;
@@ -59,7 +57,7 @@ namespace RuScavMods.TranslationClasses.Managers
         private static void AddDictionaryRegex(Dictionary<string, string> source, Dictionary<string, string> destination, List<RegexTranslation> regexList)
         {
             if (source == null) return;
-            foreach (var kvp in source)
+            foreach (KeyValuePair<string, string> kvp in source)
             {
                 if (LooksLikeRegex(kvp.Key))
                 {
@@ -80,11 +78,11 @@ namespace RuScavMods.TranslationClasses.Managers
 
         public static void ApplyItemTranslation(Dictionary<string, ItemInfo> globalItems)
         {
-            foreach (var itemDef in Items)
+            foreach (KeyValuePair<string, ItemTranslation> itemDef in Items)
             {
-                if (globalItems.TryGetValue(itemDef.Key, out var itemInfo))
+                if (globalItems.TryGetValue(itemDef.Key, out ItemInfo itemInfo))
                 {
-                    var itemTranslation = itemDef.Value;
+                    ItemTranslation itemTranslation = itemDef.Value;
                     if (!string.IsNullOrEmpty(itemTranslation.Name)) itemInfo.fullName = itemTranslation.Name;
                     if (!string.IsNullOrEmpty(itemTranslation.Description)) itemInfo.description = itemTranslation.Description;
                     else if (itemTranslation.DescriptionPattern.Count > 0)
@@ -102,11 +100,11 @@ namespace RuScavMods.TranslationClasses.Managers
                 }
             }
 
-            foreach (var liquidDef in Liquids)
+            foreach (KeyValuePair<string, ItemTranslation> liquidDef in Liquids)
             {
-                if (globalItems.TryGetValue(liquidDef.Key.Replace("dsc", ""), out var liquidInfo))
+                if (globalItems.TryGetValue(liquidDef.Key.Replace("dsc", ""), out ItemInfo liquidInfo))
                 {
-                    var liquidTranslation = liquidDef.Value;
+                    ItemTranslation liquidTranslation = liquidDef.Value;
                     if (!string.IsNullOrEmpty(liquidTranslation.Name)) liquidInfo.fullName = liquidTranslation.Name;
                     if (!string.IsNullOrEmpty(liquidTranslation.Description)) liquidInfo.description = liquidTranslation.Description;
                     else if (liquidTranslation.DescriptionPattern.Count > 0)
@@ -127,7 +125,7 @@ namespace RuScavMods.TranslationClasses.Managers
 
         public static void ApplyBuildingTranslation(Language lang)
         {
-            foreach (var building in Buildings)
+            foreach (KeyValuePair<string, string> building in Buildings)
             {
                 if (lang.buildings.TryGetValue(building.Key, out _))
                 {
@@ -139,22 +137,22 @@ namespace RuScavMods.TranslationClasses.Managers
 
         public static void ApplyAlertTranslation(ref string text)
         {
-            if (Alerts.TryGetValue(text, out var translatedText))
+            if (Alerts.TryGetValue(text, out string translatedText))
                 text = translatedText;
             else
             {
-                foreach (var regexAlert in RegexAlerts)
+                foreach (RegexTranslation regexAlert in RegexAlerts)
                     if (TranslateRegex(ref text, regexAlert)) return;
             }
         }
 
         public static void ApplyTalkTranslation(ref string text)
         {
-            if (Talks.TryGetValue(text, out var translatedText))
+            if (Talks.TryGetValue(text, out string translatedText))
                 text = translatedText;
             else
             {
-                foreach (var regexTalk in RegexTalks)
+                foreach (RegexTranslation regexTalk in RegexTalks)
                     if (TranslateRegex(ref text, regexTalk)) return;
             }
         }
@@ -162,7 +160,7 @@ namespace RuScavMods.TranslationClasses.Managers
         {
             if (regexTranslation.CompiledRegex != null)
             {
-                var match = regexTranslation.CompiledRegex.Match(text);
+                Match match = regexTranslation.CompiledRegex.Match(text);
                 if (match != null && match.Success)
                 {
                     text = regexTranslation.Translation;
@@ -178,7 +176,7 @@ namespace RuScavMods.TranslationClasses.Managers
         }
         public static void ApplyLocaleTranslation(Language lang)
         {
-            foreach (var translation in RunSettings)
+            foreach (KeyValuePair<string, string> translation in RunSettings)
             {
                 if (lang.other.TryGetValue(translation.Key, out _))
                 {
@@ -187,7 +185,7 @@ namespace RuScavMods.TranslationClasses.Managers
                 }
             }
 
-            foreach (var translation in Settings) // Бывает что ещё настройки заливают в other
+            foreach (KeyValuePair<string, string> translation in Settings) // Бывает что ещё настройки заливают в other
             {
                 if (lang.other.TryGetValue(translation.Key, out _))
                 {
@@ -204,15 +202,15 @@ namespace RuScavMods.TranslationClasses.Managers
         }
         public static void ApplyPauseQuoteTranslation(ref string __result)
         {
-            if (Quotes.TryGetValue(__result, out var text))
+            if (Quotes.TryGetValue(__result, out string text))
                 __result = text;
         }
 
         public static void ApplyTutorialTranslation(List<TextMeshProUGUI> courseTexts)
         {
-            foreach (var courseText in courseTexts)
+            foreach (TextMeshProUGUI courseText in courseTexts)
             {
-                if (Tutorials.TryGetValue(courseText.text, out var tutorialName))
+                if (Tutorials.TryGetValue(courseText.text, out string tutorialName))
                     courseText.text = tutorialName;
             }
         }
@@ -221,19 +219,19 @@ namespace RuScavMods.TranslationClasses.Managers
             bool nameTranslated = false;
             bool descTranslated = false;
 
-            if (Moodles.TryGetValue(name, out var translationName))
+            if (Moodles.TryGetValue(name, out string translationName))
             {
                 name = translationName;
                 nameTranslated = true;
             }
-            if (Moodles.TryGetValue(desc, out var translationDesc))
+            if (Moodles.TryGetValue(desc, out string translationDesc))
             {
                 desc = translationDesc;
                 descTranslated = true;
             }
             if (!nameTranslated || !descTranslated)
             {
-                foreach (var regex in RegexMoodles)
+                foreach (RegexTranslation regex in RegexMoodles)
                 {
                     TranslateRegex(ref name, regex);
                     TranslateRegex(ref desc, regex);
@@ -243,7 +241,7 @@ namespace RuScavMods.TranslationClasses.Managers
 
         public static void AddNativeTalks(Dictionary<string, string> talks)
         {
-            foreach (var talk in talks)
+            foreach (KeyValuePair<string, string> talk in talks)
             {
                 if (LooksLikeRegex(talk.Key))
                 {
@@ -261,7 +259,7 @@ namespace RuScavMods.TranslationClasses.Managers
 
         public static void AddNativeAlerts(Dictionary<string, string> alerts)
         {
-            foreach (var alert in alerts)
+            foreach (KeyValuePair<string, string> alert in alerts)
             {
                 if (LooksLikeRegex(alert.Key))
                 {
@@ -277,9 +275,9 @@ namespace RuScavMods.TranslationClasses.Managers
             }
         }
 
-        public static void AddMoodleAlerts(Dictionary<string, string> moodles)
+        public static void AddNativeMoodles(Dictionary<string, string> moodles)
         {
-            foreach (var moodle in moodles)
+            foreach (KeyValuePair<string, string> moodle in moodles)
             {
                 if (LooksLikeRegex(moodle.Key))
                 {

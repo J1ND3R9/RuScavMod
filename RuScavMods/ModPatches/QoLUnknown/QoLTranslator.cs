@@ -1,14 +1,9 @@
 ﻿using HarmonyLib;
-using QoL_Unknown;
 using RuScavMods.ModPatches.QoLUnknown.Camera;
 using RuScavMods.ModPatches.QoLUnknown.SaveMenu;
 using RuScavMods.ModPatches.QoLUnknown.Settings;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
-using TMPro;
-using UnityEngine;
 
 namespace RuScavMods.ModPatches.QoLUnknown
 {
@@ -21,7 +16,7 @@ namespace RuScavMods.ModPatches.QoLUnknown
         public static void Translate()
         {
             RegisterPatches();
-            foreach (var processor in QoLPatches)
+            foreach (PatchClassProcessor processor in QoLPatches)
             {
                 try
                 {
@@ -37,7 +32,7 @@ namespace RuScavMods.ModPatches.QoLUnknown
 
         private static void RegisterPatches()
         {
-            var harmony = new Harmony("zzz_com.Floydba.ruscavmods.qolunknowntranslate");
+            Harmony harmony = new Harmony("zzz_com.Floydba.ruscavmods.qolunknowntranslate");
             QoLPatches.AddRange(new[]
             {
                 new PatchClassProcessor(harmony, typeof(BuildSlotTooltipPatch)),
@@ -66,7 +61,7 @@ namespace RuScavMods.ModPatches.QoLUnknown
 
 //namespace RuScavMods.ReflectPatches
 //{
-                                                                                                                                                                                                   
+
 //    internal static class QoLTranslator
 //    {
 //        private static readonly Type ModOptionsMenu = AccessTools.TypeByName("QoL_Unknown.ModOptionsMenu");

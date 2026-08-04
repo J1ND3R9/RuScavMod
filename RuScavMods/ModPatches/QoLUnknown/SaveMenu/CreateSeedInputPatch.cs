@@ -11,7 +11,7 @@ namespace RuScavMods.ModPatches.QoLUnknown.SaveMenu
         [HarmonyPostfix]
         static void Postfix(Transform canvas)
         {
-            foreach (var text in canvas.GetComponentsInChildren<UITooltip>(true))
+            foreach (UITooltip text in canvas.GetComponentsInChildren<UITooltip>(true))
             {
                 if (text.tipName == "Seed")
                     text.tipName = "Сид";

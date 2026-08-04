@@ -1,12 +1,8 @@
 ﻿using HarmonyLib;
-using QoL_Unknown;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RuScavMods.ModPatches.AdditionalDescriptions
 {
@@ -30,18 +26,18 @@ namespace RuScavMods.ModPatches.AdditionalDescriptions
         public static void Translate()
         {
             FillDictionaryTranslation();
-            var fluidDescriptions = (IDictionary)DescriptionsField.GetValue(null);
-            var itemDescriptions = (IDictionary)ItemDescriptionsField.GetValue(null);
+            IDictionary fluidDescriptions = (IDictionary)DescriptionsField.GetValue(null);
+            IDictionary itemDescriptions = (IDictionary)ItemDescriptionsField.GetValue(null);
             foreach (DictionaryEntry fluid in fluidDescriptions)
             {
-                if (!FluidTranslations.TryGetValue((string)fluid.Key, out var translation))
+                if (!FluidTranslations.TryGetValue((string)fluid.Key, out FluidTranslation translation))
                     continue;
                 object fluidDescription = fluid.Value;
                 if (!string.IsNullOrEmpty(translation.Drink)) DrinkField.SetValue(fluidDescription, translation.Drink);
                 if (!string.IsNullOrEmpty(translation.Inject)) InjectField.SetValue(fluidDescription, translation.Inject);
                 if (translation.ExtraLines != null && translation.ExtraLines.Length != 0)
                 {
-                    var extraLines = (Array)ExtraLinesField.GetValue(fluidDescription);
+                    Array extraLines = (Array)ExtraLinesField.GetValue(fluidDescription);
                     int count = Math.Min(extraLines.Length, translation.ExtraLines.Length); // На всякий случай
                     for (int i = 0; i < count; i++)
                     {
@@ -52,11 +48,11 @@ namespace RuScavMods.ModPatches.AdditionalDescriptions
             }
             foreach (DictionaryEntry item in itemDescriptions)
             {
-                if (!ItemDescriptionTranslations.TryGetValue((string)item.Key, out var translation))
+                if (!ItemDescriptionTranslations.TryGetValue((string)item.Key, out DescriptionTranslation[] translation))
                     continue;
                 if (translation.Length != 0 && translation != null)
                 {
-                    var descriptionLines = (Array)item.Value;
+                    Array descriptionLines = (Array)item.Value;
                     int count = Math.Min(descriptionLines.Length, translation.Length); // На всякий случай
 
                     for (int i = 0; i < count; i++)
@@ -617,7 +613,7 @@ namespace RuScavMods.ModPatches.AdditionalDescriptions
         {
             if (text.StartsWith("Внимание:"))
             {
-                var coloredText = "<color=#ff4d4d>" + text + "</color>";
+                string coloredText = "<color=#ff4d4d>" + text + "</color>";
                 Text = coloredText;
             }
             else

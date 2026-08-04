@@ -1,19 +1,11 @@
-﻿using BepInEx;
-using CUCoreLib.Data;
+﻿using CUCoreLib.Data;
 using CUCoreLib.Registries;
 using HarmonyLib;
-using KrokoshaCasualtiesMP;
-using RuScavMods.ModPatches.QoLUnknown.Camera;
-using RuScavMods.ModPatches.QoLUnknown.SaveMenu;
+using Newtonsoft.Json.Linq;
 using RuScavMods.TranslationClasses.Managers;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace RuScavMods.ModPatches.CUCoreLib
@@ -26,7 +18,7 @@ namespace RuScavMods.ModPatches.CUCoreLib
         public static void Translate()
         {
             RegisterPatches();
-            foreach (var processor in CUCorePatches)
+            foreach (PatchClassProcessor processor in CUCorePatches)
             {
                 try
                 {
@@ -42,33 +34,33 @@ namespace RuScavMods.ModPatches.CUCoreLib
 
         private static void RegisterPatches()
         {
-            var harmony = new Harmony("zzz_com.Floydba.ruscavmods.cucoretranslation");
+            Harmony harmony = new Harmony("zzz_com.Floydba.ruscavmods.cucoretranslation");
 
             CUCorePatches.AddRange(new[] {
-                new PatchClassProcessor(harmony, typeof(LocaleLoaderMergeSectionPatch)),
-                new PatchClassProcessor(harmony, typeof(LocaleRegisterPatch)),
-                new PatchClassProcessor(harmony, typeof(LocaleLoaderGetLocalizedTextPatch))
+                new PatchClassProcessor(harmony, typeof(LocaleLoaderMergeLocaleJsonPatch)),
+                //new PatchClassProcessor(harmony, typeof(LocaleRegisterPatch)),
+                new PatchClassProcessor(harmony, typeof(LocaleLoaderGetLocalizedTextPatch)),
+                new PatchClassProcessor(harmony, typeof(MoodleRegistryAddMoodlePatch))
             });
         }
 
         private static void TranslateBuildings()
         {
-            // fucking hardcode, please just use LOCALE FILES, U STUPID JFDSPOFJK0-239RU[SADOFJ=0WEFJSDF
-            var field = AccessTools.Field(typeof(BuildingEntityRegistry), "RegisteredDefinitions");
+            FieldInfo field = AccessTools.Field(typeof(BuildingEntityRegistry), "RegisteredDefinitions");
 
-            var defs = (Dictionary<string, CustomBuildingEntityDefinition>)field.GetValue(null);
+            Dictionary<string, CustomBuildingEntityDefinition> defs = (Dictionary<string, CustomBuildingEntityDefinition>)field.GetValue(null);
 
-            foreach (var pair in defs)
+            foreach (KeyValuePair<string, CustomBuildingEntityDefinition> pair in defs)
             {
                 bool changed = false;
 
-                if (CuCoreTranslationManager.CuCoreTranslations.TryGetValue(pair.Key, out var name))
+                if (CuCoreTranslationManager.CuCoreTranslations["building"].TryGetValue(pair.Key, out string name))
                 {
                     pair.Value.Name = name;
                     changed = true;
                 }
 
-                if (CuCoreTranslationManager.CuCoreTranslations.TryGetValue(pair.Key + "dsc", out var desc))
+                if (CuCoreTranslationManager.CuCoreTranslations["building"].TryGetValue(pair.Key + "dsc", out string desc))
                 {
                     pair.Value.Description = desc;
                     changed = true;
@@ -80,34 +72,47 @@ namespace RuScavMods.ModPatches.CUCoreLib
                     LocaleRegistry.Register("building", pair.Key + "dsc", pair.Value.Description);
                 }
             }
-
         }
     }
 
     [HarmonyPatch]
-    internal static class LocaleLoaderMergeSectionPatch
+    internal static class LocaleLoaderMergeLocaleJsonPatch
     {
-        static MethodBase TargetMethod() => AccessTools.Method(CUCoreTranslator.LocaleLoader, "MergeSection");
+        static MethodBase TargetMethod() => AccessTools.Method(CUCoreTranslator.LocaleLoader, "MergeLocaleJson");
 
-        [HarmonyPostfix]
-        private static void Postfix(Dictionary<string, string> target)
+        [HarmonyPrefix]
+        private static void Prefix(ref JObject source)
         {
-            foreach (var pair in CuCoreTranslationManager.CuCoreTranslations)
+            foreach (KeyValuePair<string, Dictionary<string, string>> category in CuCoreTranslationManager.CuCoreTranslations)
             {
-                target[pair.Key] = pair.Value;
+                if (source[category.Key] == null)
+                    source[category.Key] = new JObject();
+
+                JObject section = (JObject)source[category.Key];
+
+                foreach (KeyValuePair<string, string> pair in category.Value)
+                {
+                    section[pair.Key] = pair.Value;
+                }
             }
         }
     }
 
-    [HarmonyPatch(typeof(LocaleRegistry))]
-    internal static class LocaleRegisterPatch
+    [HarmonyPatch(typeof(MoodleRegistry))]
+    internal static class MoodleRegistryAddMoodlePatch
     {
-        [HarmonyPatch(nameof(LocaleRegistry.Register), new[] { typeof(LocaleRegistry.LocaleCategory), typeof(string), typeof(string) })]
-        [HarmonyPrefix]
-        private static void Prefix(string key, ref string text)
+        [HarmonyPatch(nameof(MoodleRegistry.AddMoodle), new[] { typeof(int), typeof(Sprite), typeof(string), typeof(string), typeof(bool), typeof(bool), typeof(bool), typeof(string), typeof(float) })]
+        [HarmonyPostfix]
+        private static void AddMoodlePostfix(ref string name, ref string description)
         {
-            if (CuCoreTranslationManager.CuCoreTranslations.TryGetValue(key, out var translation))
-                text = translation;
+            if (CuCoreTranslationManager.CuCoreTranslations["moodle"].TryGetValue(name, out string translatedName))
+            {
+                name = translatedName;
+            }
+            if (CuCoreTranslationManager.CuCoreTranslations["moodle"].TryGetValue(name + "dsc", out string translatedDescription))
+            {
+                description = translatedDescription;
+            }
         }
     }
 
@@ -121,10 +126,16 @@ namespace RuScavMods.ModPatches.CUCoreLib
         static MethodBase TargetMethod() => AccessTools.Method(CUCoreTranslator.LocaleLoader, "GetLocalizedText");
 
         [HarmonyPostfix]
-        private static void Postfix(string key, ref string __result)
+        private static void Postfix(string category, string key, ref string __result)
         {
-            if (CuCoreTranslationManager.CuCoreTranslations.TryGetValue(key, out var value))
+            if (category == null)
+                return;
+
+            if (CuCoreTranslationManager.CuCoreTranslations.TryGetValue(category, out Dictionary<string, string> dict) &&
+                dict.TryGetValue(key, out string value))
+            {
                 __result = value;
+            }
         }
     }
 }
