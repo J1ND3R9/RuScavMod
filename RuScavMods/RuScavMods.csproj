@@ -113,7 +113,9 @@
     <None Include="RuScavMods\Translations\com.Elysian.MakeExpieHappyAgain.json" />
     <None Include="RuScavMods\Translations\com.frequency39.casualtiesundertheinfluence.json" />
     <None Include="RuScavMods\Translations\com.gouxi.gouxisfunnyshit.json" />
+    <None Include="RuScavMods\Translations\com.yourname.enderpearl.json" />
     <None Include="RuScavMods\Translations\com.yourname.newgun.json" />
+    <None Include="RuScavMods\Translations\GunsawGenetics.json" />
     <None Include="RuScavMods\Translations\meds.json" />
     <None Include="RuScavMods\Translations\overthetoprealism.casualtiesunknown.mod.json" />
     <None Include="RuScavMods\Translations\pain.ceilingturrets.khy.json" />
