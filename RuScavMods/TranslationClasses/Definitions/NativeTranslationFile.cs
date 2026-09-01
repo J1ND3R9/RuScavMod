@@ -42,5 +42,9 @@ namespace RuScavMods.TranslationClasses.Definitions
         public Dictionary<string, string> Tutorials { get; set; } = new Dictionary<string, string>();
         [JsonProperty("buildings")]
         public Dictionary<string, string> Buildings { get; set; } = new Dictionary<string, string>();
+        [JsonProperty("wound_views")]
+        public Dictionary<string, string> WoundViews { get; set; } = new Dictionary<string, string>();
+        [JsonProperty("minigames")]
+        public Dictionary<string, string> Minigames { get; set; } = new Dictionary<string, string>();
     }
 }

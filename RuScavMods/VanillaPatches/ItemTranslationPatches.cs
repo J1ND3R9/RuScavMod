@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RuScavMods.TranslationClasses.Managers;
+using System;
 
 namespace RuScavMods.Patches
 {

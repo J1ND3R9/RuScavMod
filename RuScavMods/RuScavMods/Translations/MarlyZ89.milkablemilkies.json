@@ -1,0 +1,31 @@
+{
+  "type": "cucore",
+
+  // Жидкости захардкодены, поэтому тут их нет))
+
+  "native_alerts": {
+    "Your liquid containers are full.": "Твоя емкость заполнена.",
+    "You need a liquid container, in hands, or mouth to milk the Milky.": "Тебе нужна емкость в руках или во рту, чтобы подоить Милки.",
+    "The host could not work out who was milking.": "Хост не смог понять, кто доит.",
+    "This Milky is in no state to be milked.": "Этот Милки не годится для дойки.",
+    "The Milky refuses to be milked.": "Милки отказывается от дойки!",
+    "^The Milky needs another (.+)s.$": "Милки нужно отдохнуть ещё $1 секунд",
+    "^Collected (.+)mL of Milkiest Milk.$": "Собрано $1 мл. молока Милки.",
+    "^Collected (.+)mL of Milkiest Milk. \\(\\+(.+) reputation\\)$": "Собрано $1 мл. молока Милки. (+$2 репутации)"
+  },
+
+  "native_talks": {
+    "...Fine. But we never speak of this again.": "...Ладно. Но мы больше никогда это не будем обсуждать, лады?",
+    "Careful with that. It is worth more than you are.": "Аккуратнее с этим. Оно намного ценнее, чем ты сам.",
+    "Hold the container steady, would you.": "Держи емкость аккуратнее.",
+    "You are lucky I like you.": "Тебе повезло что ты мне нравишься.",
+    "This is a professional arrangement. Nothing more.": "Это деловая договоренность, и не более.",
+    "...That one is not supposed to come out. Keep it. Please.": "...Это не должно было выйти наружу. Оставь это себе, пожалуйста.",
+    "Oh. Oh no. Take it. Take it and say nothing.": "О... О нет. Забирай. Забирай, блять, и ничего не говори!",
+    "That is the wrong one. I am so sorry. Consider us square.": "Это не то молоко. Прошу прощения. Будем считать, что мы в расчете.",
+    "You saw nothing. In fact, I owe you one.": "Ты ничего не видел. На самом деле, я у тебя в долгу.",
+    "Absolutely not.": "Категорически нет.",
+    "Put that container away.": "Убери эту бутылку!",
+    "Try that again and we are done trading.": "Попробуешь ещё раз и мы закончим торговлю."
+  }
+}

@@ -18,24 +18,43 @@
     "runsetwoodenstart": "Буратино",
     "runsetwoodenstartdsc": "Начни с деревянными протезами на всех конечностях, кибернетическом глазом (без батарейки) и хрупким ножом. Твой интеллект будет 13 заместо 7 в одиночной игре."
   },
-  "get_string": {
+  "native_minigames": {
     "weldingMinigameGuide": "Веди лазерную дрель по серой линии чтобы починить протез. Если отклонишься от линии - то зря потратишь заряд."
   },
   "native_moodles": {
-    "\n\n<color=\"red\">Dead flesh": "\n\n<color=\"red\">Мёртвая плоть",
-    "Your body no longer regenerates on its own and is dependent on the medical augment you have installed. If its charge falls below 20%, you won't be able to heal even from smaller injuries without medical care.": "",
+    "\n\n<color=\"red\">Dead flesh": "<color=\"red\">Мёртвая плоть",
+    "Your body no longer regenerates on its own and is dependent on the medical augment you have installed. If its charge falls below 20%, you won't be able to heal even from smaller injuries without medical care.": "Твой организм больше не восстанавливается сам по себе и теперь зависит от установленного медицинского имплантата. Если уровень заряда имланта упадёт ниже 20%, то ты больше не сможешь залечить даже самые незначительные раны без медицинской помощи.",
 
-    "Waterlogged prosthetic legs": "",
-    "Damaged prosthetic shell leaves the leg wiring unprotected from outside hazards — water is getting in and the wiring is malfunctioning. Legs move slower until dried off or the shell is patched up.": "",
+    "Waterlogged prosthetic legs": "Промокшие протезы ног",
+    "^Damaged prosthetic shell leaves the leg wiring unprotected from outside hazards — water is getting in and the wiring is malfunctioning. Legs move slower until dried off or the shell is patched up.(.+)$": "Из-за повреждения протеза ноги, проводка в протезе незащищена от внешних воздействий. Внутрь попадает вода и возникают сбои в работе. Ноги начинают двигаться медленнее, пока их они не просушатся или пока ты не починишь корпус.$1",
 
-    "Waterlogged prosthetic arms": "",
-    "Damaged prosthetic shell leaves the arm wiring unprotected from outside hazards — water is getting in and the wiring is malfunctioning. Strikes land weaker until dried off or the shell is patched up.": "",
+    "Waterlogged prosthetic arms": "Промокшие протезы рук",
+    "^Damaged prosthetic shell leaves the arm wiring unprotected from outside hazards — water is getting in and the wiring is malfunctioning. Strikes land weaker until dried off or the shell is patched up.(.+)$": "Из-за повреждения протеза рук, проводка в протезе незащищена от внешних воздействий. Внутрь попадает вода и возникают сбои в работе. Удары становятся слабее, пока их они не просушатся или пока ты не починишь корпус.$1",
 
-    "Damaged prosthetic arms": "",
-    "The internal wiring of the prosthetic arm is damaged — strikes land weaker until the wiring is repaired.": ""
+    "Damaged prosthetic arms": "Повреждённые протезы рук",
+    "The internal wiring of the prosthetic arm is damaged — strikes land weaker until the wiring is repaired.": "Внутренняя проводка протеза руки повреждена. Удары будут слабее, пока ты не починишь проводку.",
+
+    "^(.+)back arm(.+)$": "$1плечо$2",
+    "^(.+)front arm(.+)$": "$1предплечье$2",
+    "^(.+)back leg(.+)$": "$1бедро$2",
+    "^(.+)front leg(.+)$": "$1голень$2",
+
+    "^(.+)speed$": "к скорости",
+    "^(.+)strike power$": "к силе ударов"
   },
   "native_talks": {
-    "That tastes like poo": "На вкус как дерьмо"
+    "That tastes like poo": "На вкус как дерьмо",
+    "How awfull it must be for you, You know what? I can spare one item for you, pick any": "Должно быть, тебе ужасно тяжело. Знаешь что? Забирай одну вещь. Любую.",
+    "I'm sorry you have to go further like this, I'll give you a discount though": "Мне жаль, что тебе приходится продолжать путь... таким. Я сделаю тебе скидку.",
+    "You scared me, knock next time.": "Ты меня напугал. В следующий раз стучись.",
+    "a power reactor in your chest, may I take a look?": "У тебя в груди стоит мощный реактор? Я могу взглянуть?",
+    "Impressive eye tech, where did you get it?": "Впечатляющая технология глаза, откуда ты её взял?",
+    "Impressive....": "Впечатляет....",
+    "I guess you are the smartest of your kind, which doesn't say a lot": "Полагаю, ты самый умный из своих сородичей. Впрочем, это не достижение.",
+    "you do look like a fool, amusing": "ты выглядишь как идиот, забавно.",
+    "Fri-endd has stro-ngg tee-eth. Dune like-ss stro--ng frien-d-d!": "Др-уг имеет сильн-ые зубы. Дюне нра-вится сильн-ый дру-уг!",
+    "Frien-ddd! Frien-dd has little meat, saddd": "Др-у-уг! Ма-ало мя-са, груст-но",
+    "CCC-omputer Fri--end?? Comput-er tastes bad-dd......": "Желе-езззнныый друууг? Желе-зо на вк-ус плооххоооо..."
   },
   "native_alerts": {
     "Battery removed": "Батарея извлечена.",
@@ -51,12 +70,16 @@
     "Arm mod slot already occupied": "Гнездо для имплантов на руке уже занято.",
     "Leg mod slot already occupied": "Гнездо для имплантов на ноге уже занято.",
     "Apply directly to an upper arm, thigh, or torso": "Применяется только на плечо, бедро или грудь.",
+
     "Grappling hook attached  - insert a battery to power": "Крюк-кошка установлена. Не забудь вставить батарейку.",
     "Grappling hook attached": "Крюк-кошка установлена.",
     "Multi-Hacking attached  - insert a battery to power": "\"Мульти-взлом\" установлен. Не забудь вставить батарейку.",
     "Multi-Hacking attached": "\"Мульти-взлом\" установлен.",
     "Steady Hand attached  - insert a battery to power": "\"Твёрдая рука\" установлена. Не забудь вставить батарейку.",
     "Steady Hand attached": "\"Твёрдая рука\" установлена.",
+    "Treadmill attached  - insert a battery to charge": "\"Гриндер\" установлен. Не забудь вставить батарейку.",
+    "Treadmill attached": "\"Гриндер\" установлен.",
+
     "Already installed on this limb": "Уже установлено на этой конечности.",
     "Limb already has an augment slot": "На конечности уже есть гнездо для имплантов.",
     "Augment slot implanted": "Гнездо для имплантов вырезано.",
@@ -84,7 +107,13 @@
     "Drag onto a prosthetic arm to install": "Устанавливается только в протез руки.",
     "Nothing in hand to scan": "Нечего сканировать. Предмет должен быть в руке.",
     "^Recipe scanned: (.+)$": "Рецепт просканирован: $1",
-    "^Identified: (.+) \\(no recipe in the database\\)$": "Идентифицировано: $1 (рецепта нет в базе данных)"
+    "^Identified: (.+) \\(no recipe in the database\\)$": "Идентифицировано: $1 (рецепта нет в базе данных)",
+    "Regeneration: depleted": "Регенерация: исчерпана",
+    "Regeneration: no charge — recharge with the RTG": "Регенерация: нет заряда — заряди с помощью RTG",
+    "Torso augments go on the torso": "Импланты для груди устанавливаются на грудь",
+    "Torso augment slot opened": "Гнездо для имплантов на груди вырезано",
+    "^(.+) attached$": "$1 установлен",
+    "^(.+) attached - insert a battery to power$": "$1 установлен. Не забудь вставить батарейку"
   },
   "item": {
     "prosthetic_arm_scrap": "Рука из металлолома",
@@ -116,9 +145,9 @@
     "augment_rtg": "Модиф. \"РТ Генератор\"",
     "augment_rtgdsc": "Радиоизотопный термоэлектрический генератор, вмонтируемый в грудь. При активации генератор начинает медленно подзаряжать все установленные на теле аккумуляторы и энергетические ячейки одновременно — в руках, ногах, биопротезах и других модификациях груди. Во время работы устройство излучает радиацию и светится синим, а по завершении зарядки автоматически отключается.\n\n<color=\"red\">Пермаментный. При имплантации удалить уже будет невозможно, только если ты каким-то образом ампутируешь себе грудь.</color>",
     "augment_ballistic": "Модиф. \"BFF-Field\"", // ????
-    "augment_ballisticdsc": "\n\n<i>Ты никогда не видел ничего пдобного, похоже, это продвинутый имплант. На него приклеен белый стикер:</i>\n\n<color=\"yellow\">ЭКСПЕРИМЕНТАЛЬНО! защищает тело от ударов. Не пробуй без меня!</color>\n\n<color=\"red\">Пермаментный. При имплантации удалить уже будет невозможно, только если ты каким-то образом ампутируешь себе грудь.</color>",
+    "augment_ballisticdsc": "\n\n<i>Ты никогда не видел ничего подобного, похоже, это продвинутый имплант. На него приклеен белый стикер:</i>\n\n<color=\"yellow\">ЭКСПЕРИМЕНТАЛЬНО! защищает тело от ударов. Не пробуй без меня!</color>\n\n<color=\"red\">Пермаментный. При имплантации удалить уже будет невозможно, только если ты каким-то образом ампутируешь себе грудь.</color>",
     "augment_regen": "Модиф. \"MYX-Vat\"", // ????
-    "augment_regendsc": "\n\n<i>Ты никогда не видел ничего пдобного, похоже, это продвинутый имплант. На него приклеен белый стикер:</i>\n\n<color=\"yellow\">ЭКСПЕРИМЕНТАЛЬНО! заставляет тело само себя \"сшивать\" и восстанавливать. Если кожа посереет - это нормально. Помни что оно питается тобой. Не пробуй без меня!</color>\n\n<color=\"red\">Пермаментный. При имплантации удалить уже будет невозможно, только если ты каким-то образом ампутируешь себе грудь.</color>",
+    "augment_regendsc": "\n\n<i>Ты никогда не видел ничего подобного, похоже, это продвинутый имплант. На него приклеен белый стикер:</i>\n\n<color=\"yellow\">ЭКСПЕРИМЕНТАЛЬНО! заставляет тело само себя \"сшивать\" и восстанавливать. Если кожа посереет - это нормально. Помни что оно питается тобой. Не пробуй без меня!</color>\n\n<color=\"red\">Пермаментный. При имплантации удалить уже будет невозможно, только если ты каким-то образом ампутируешь себе грудь.</color>",
     "augment_implant_tool": "Установщик имплантов",
     "augment_implant_tooldsc": "Вырезает одно гнездо для имплантов в биологической руке или ноге. Позволяет устанавливать модификации избегая полного протезирования. Применяется в панели здоровья на плече или бедре.\n\n<color=\"red\">Одноразовый. Гнездо исчезает при ампутации.",
     "neuromod_painblock": "Нейромод \"Анальгетик\"",

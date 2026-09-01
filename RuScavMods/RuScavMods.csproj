@@ -51,7 +51,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libraries\extraDialogue.dll</HintPath>
     </Reference>
-    <Reference Include="GunsawGenetics">
+    <Reference Include="GunsawGenetics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libraries\GunsawGenetics.dll</HintPath>
     </Reference>
     <Reference Include="KrokoshaCasualtiesMP">
@@ -97,6 +98,7 @@
     <Compile Include="ModPatches\extraDialogue\ExtraDialogueTranslator.cs" />
     <Compile Include="ModPatches\Gunsaw\GunsawGeneticsTranslator.cs" />
     <Compile Include="ModPatches\MakeshiftProsthetics\MakeshiftProstheticsTranslator.cs" />
+    <Compile Include="ModPatches\MilkableMilkies\MilkableMilkiesTranslator.cs" />
     <Compile Include="ModPatches\QoLUnknown\Camera\PlayerCameraPatches.cs" />
     <Compile Include="ModPatches\QoLUnknown\SaveMenu\BuildSaveMenuPatch.cs" />
     <Compile Include="ModPatches\QoLUnknown\SaveMenu\BuildSlotTooltipPatch.cs" />
@@ -104,18 +106,24 @@
     <Compile Include="ModPatches\QoLUnknown\SaveMenu\CreateSeedInputTextPatch.cs" />
     <Compile Include="ModPatches\QoLUnknown\SaveMenu\RefreshSlotsPatch.cs" />
     <Compile Include="ModPatches\QoLUnknown\Settings\ModOptionsTranslator.cs" />
+    <Compile Include="VanillaPatches\MinigameTranslationPatches.cs" />
+    <Compile Include="VanillaPatches\WoundViewTranslationPatches.cs" />
     <None Include="RuScavMods\Translations\casualtiesunknown.cugrenades.json" />
+    <None Include="RuScavMods\Translations\com.a4kk.enhancedtools.json" />
     <None Include="RuScavMods\Translations\com.aiser.omnimod.json" />
     <None Include="RuScavMods\Translations\com.alexx_.medicalbrutalism.json" />
+    <None Include="RuScavMods\Translations\com.asserto.hearingconservation.json" />
     <None Include="RuScavMods\Translations\com.carlo.casualtiesunknown.antigravbag.json" />
     <None Include="RuScavMods\Translations\com.carlo.casualtiesunknown.izaswarfood.json" />
     <None Include="RuScavMods\Translations\com.dragoon_103.regrowthserums.json" />
     <None Include="RuScavMods\Translations\com.Elysian.MakeExpieHappyAgain.json" />
     <None Include="RuScavMods\Translations\com.frequency39.casualtiesundertheinfluence.json" />
+    <None Include="RuScavMods\Translations\com.frequency39.expielegs.json" />
     <None Include="RuScavMods\Translations\com.gouxi.gouxisfunnyshit.json" />
     <None Include="RuScavMods\Translations\com.yourname.enderpearl.json" />
     <None Include="RuScavMods\Translations\com.yourname.newgun.json" />
     <None Include="RuScavMods\Translations\GunsawGenetics.json" />
+    <None Include="RuScavMods\Translations\MarlyZ89.milkablemilkies.json" />
     <None Include="RuScavMods\Translations\meds.json" />
     <None Include="RuScavMods\Translations\overthetoprealism.casualtiesunknown.mod.json" />
     <None Include="RuScavMods\Translations\pain.ceilingturrets.khy.json" />

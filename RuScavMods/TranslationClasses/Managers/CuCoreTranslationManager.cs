@@ -24,6 +24,8 @@ namespace RuScavMods.TranslationClasses.Managers
             SendAlertsToNative(file.NativeAlerts);
             SendMoodlesToNative(file.NativeMoodles);
             SendNoRegexToNative(file.NativeBuildings, NativeTranslationManager.Buildings);
+            SendNoRegexToNative(file.NativeWoundViews, NativeTranslationManager.WoundViews);
+            SendNoRegexToNative(file.NativeMinigames, NativeTranslationManager.Minigames);
         }
         private static void Merge(string key, Dictionary<string, string> source)
         {

@@ -12,11 +12,13 @@ using RuScavMods.ModPatches.extraDialogue;
 using RuScavMods.ModPatches.Gunsaw;
 using RuScavMods.ModPatches.KrokoshaMP;
 using RuScavMods.ModPatches.MakeshiftProsthetics;
+using RuScavMods.ModPatches.MilkableMilkies;
 using RuScavMods.ModPatches.QoLUnknown;
 using RuScavMods.ModPatches.RshCCL;
 using RuScavMods.Patches;
 using RuScavMods.TranslationClasses.Definitions;
 using RuScavMods.TranslationClasses.Managers;
+using RuScavMods.VanillaPatches;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -50,7 +52,7 @@ using System.IO;
 
 namespace RuScavMods
 {
-    [BepInPlugin("zzz_com.Floydba.ruscavmods", "RuScavMod", "2.1.3.2")]
+    [BepInPlugin("zzz_com.Floydba.ruscavmods", "RuScavMod", "2.1.4.2")]
     public class Plugin : BaseUnityPlugin
     {
         internal static ManualLogSource Log;
@@ -112,6 +114,12 @@ namespace RuScavMods
                 Guid = "nyaruqwq.makeshiftprosthetics",
                 Name = "Makeshift Prosthetics",
                 Translate = MakeshiftProstheticsTranslator.Translate
+            },
+            new ModTranslator()
+            {
+                Guid = "MarlyZ89.milkablemilkies",
+                Name = "Milkable Milkies",
+                Translate = MilkableMilkiesTranslator.Translate
             }
         };
 
@@ -133,7 +141,6 @@ namespace RuScavMods
             {
                 string pluginId = plugin.Key;
                 string translationFile = Path.Combine(pathTranslations, $"{pluginId}.json");
-                //Plugin.Log.LogInfo($"Плагин {plugin.Value.Metadata.Name} загружен.");
                 if (File.Exists(translationFile))
                 {
                     try
@@ -165,7 +172,9 @@ namespace RuScavMods
                 new PatchClassProcessor(harmony, typeof(LocaleTranslationPatches)),
                 new PatchClassProcessor(harmony, typeof(MoodleManagerPatches)),
                 new PatchClassProcessor(harmony, typeof(TalkTranslationPatches)),
-                new PatchClassProcessor(harmony, typeof(TutorialTranslationPatches))
+                new PatchClassProcessor(harmony, typeof(TutorialTranslationPatches)),
+                new PatchClassProcessor(harmony, typeof(WoundViewTranslationPatches)),
+                new PatchClassProcessor(harmony, typeof(MinigameTranslationPatches)),
             });
         }
         private void LoadNativeTranslation(string json)

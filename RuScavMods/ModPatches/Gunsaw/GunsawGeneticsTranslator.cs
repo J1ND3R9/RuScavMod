@@ -96,8 +96,8 @@ namespace RuScavMods.ModPatches.Gunsaw
 
             textEffectPresets["гордыню"] = TextEffectPresets.All["Prideful"];
 
-            textEffectPresets["малой паутины"] = TextEffectPresets.All["small web"];
-            textEffectPresets["длинной паутины"] = TextEffectPresets.All["long web"];
+            textEffectPresets["пучка паутины"] = TextEffectPresets.All["small web"];
+            textEffectPresets["каната из паутины"] = TextEffectPresets.All["long web"];
             textEffectPresets["Психопатия"] = TextEffectPresets.All["psychopathy"];
             textEffectPresets["каннибала"] = TextEffectPresets.All["cannibal"];
 
@@ -110,6 +110,14 @@ namespace RuScavMods.ModPatches.Gunsaw
             textEffectPresets["Реформация"] = TextEffectPresets.All["Reformation"];
             textEffectPresets["Обмен сознанием"] = TextEffectPresets.All["Mindswap"];
             textEffectPresets["Опустошение"] = TextEffectPresets.All["Hollow"];
+
+            textEffectPresets["Торпор"] = TextEffectPresets.All["Torpor"];
+            textEffectPresets["замерзать"] = TextEffectPresets.All["Frozen"];
+
+            textEffectPresets["Отращивание"] = TextEffectPresets.All["Regrowth"];
+            textEffectPresets["Полу-травоядное"] = TextEffectPresets.All["Semi-Herbivore"];
+
+            textEffectPresets["Травоядный"] = TextEffectPresets.All["Herbivore"];
         }
 
         private static void ApplySettingsTranslations()
@@ -133,6 +141,10 @@ namespace RuScavMods.ModPatches.Gunsaw
             Locale.currentLang.other["gamesetgunsaw_texteffectsdsc"] = "Включает анимированные цвета или анимации для {Ключевых} статусных текстов. Если эта функция отключена, ключевые слова будут подчеркиваться.";
             Locale.currentLang.other["gamesetgunsaw_tendrilmode"] = "Режим щупалец";
             Locale.currentLang.other["gamesetgunsaw_tendrilmodedsc"] = "Включает показ конечностей-щупалец Вельвет в меню осмотра.";
+            Locale.currentLang.other["gamesetgunsaw_disabletailsprites"] = "Отключить отображение хвоста";
+            Locale.currentLang.other["gamesetgunsaw_disabletailspritesdsc"] = "Отключает отображение хвоста в меню осмотра.";
+            Locale.currentLang.other["gamesetgunsaw_disablediets"] = "Отключить диету";
+            Locale.currentLang.other["gamesetgunsaw_disabledietsdsc"] = "Отключает все ограничения в рационе и связанные с ними штрафы для видов. Бонусы к питанию от вида (например, толерантность Липи к листве) остаются без изменений.";
             Locale.currentLang.other["gamesetgunsaw_language"] = "Язык мода";
             Locale.currentLang.other["gamesetgunsaw_languagedsc"] = "Лучше всего это не трогать и оставить RMT, т.к. я че, зря переводил что-ли? Выбор русского подгрузит другой недописанный файл.";
             Locale.currentLang.other["gamesetgunsaw_languageenglish"] = "RMT";
