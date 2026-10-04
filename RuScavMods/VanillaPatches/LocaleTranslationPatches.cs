@@ -126,5 +126,12 @@ namespace RuScavMods.Patches
             else 
                 NativeTranslationManager.ApplyPauseQuoteTranslation(ref __result);
         }
+
+        [HarmonyPatch(nameof(Locale.GetOther))]
+        [HarmonyPostfix]
+        private static void GetOtherPostfix(string str, ref string __result)
+        {
+            NativeTranslationManager.ApplyGetOtherTranslation(ref __result, str);
+        }
     }
 }

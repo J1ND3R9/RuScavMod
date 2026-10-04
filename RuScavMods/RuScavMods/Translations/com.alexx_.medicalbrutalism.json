@@ -28,7 +28,7 @@
     "Your DNA is slightly damaged. Immune system and regeneration are impaired.": "Твоя ДНК незначительно повреждена. Иммунная система и регенерация ослаблены.",
 
     "Moderate DNA damage. Your body is struggling to repair itself.": "Умеренное повреждение ДНК. Организм с трудом восстанавливается.",
-    "That's strange that you didn't turn into a puddle.": "Странно, что ты ещё не превратился в лужу.",
+    "<i>That's strange that you didn't turn into a puddle.</i>": "<i>Странно, что ты ещё не превратился в лужу.</i>",
 
     "Seizure": "Припадок",
 
@@ -79,20 +79,211 @@
 
     "Systemic infection": "Системная инфекция",
     "^Your insides feel weird, you better take some antibiotics before it gets worse. <color=grey>(.+)</color>$": "Внутри странное ощущение, лучше прими антибиотики, пока не стало хуже. <color=grey>$1</color>",
-    "^Systemic infection settled in. You feel sluggish, and warmer than usual. Using antibiotics are essential to reset infection's progress. <color=grey>(.+)</color>$": "Системная инфекция укоренилась. Ты чувствуешь вялость и жар. Приём антибиотиков необходим, чтобы сбросить прогресс инфекции. <color=grey>$1</color>",
-    "^Systemic infection worsened. You feel even worse than before, something is wrong on the inside. Using antibiotics are essential to reset infection's progress. <color=grey>(.+)</color>$": "Системная инфекция обострилась. Самочувствие ухудшилось, внутри происходит что-то не то. Приём антибиотиков необходим, чтобы сбросить прогресс инфекции. <color=grey>$1</color>",
-    "^Systemic infection evolved into critical stage, you feel like the end is near, perhaps it is. Using antibiotics are essential to reset infection's progress. <color=grey>(.+)</color>$": "Системная инфекция перешла в критическую стадию. Кажется, конец близок... и, возможно, так оно и есть. Приём антибиотиков необходим, чтобы сбросить прогресс инфекции. <color=grey>$1</color>",
+    "^Systemic infection settled in. You feel sluggish, and warmer than usual. Using antibiotics are essential to reset infection's progress. <color=grey>(.+)</color>$": "Системная инфекция укоренилась. Ты чувствуешь вялость и жар. Приём антибиотиков необходим, чтобы сбросить прогресс инфекции. <color=grey>($1)</color>",
+    "^Systemic infection worsened. You feel even worse than before, something is wrong on the inside. Using antibiotics are essential to reset infection's progress. <color=grey>(.+)</color>$": "Системная инфекция обострилась. Самочувствие ухудшилось, внутри происходит что-то не то. Приём антибиотиков необходим, чтобы сбросить прогресс инфекции. <color=grey>($1)</color>",
+    "^Systemic infection evolved into critical stage, you feel like the end is near, perhaps it is. Using antibiotics are essential to reset infection's progress. <color=grey>(.+)</color>$": "Системная инфекция перешла в критическую стадию. Кажется, конец близок... и, возможно, так оно и есть. Приём антибиотиков необходим, чтобы сбросить прогресс инфекции. <color=grey>($1)</color>",
     "Terminal systemic infection. Your body is shutting down slowly. Death is imminent. Antibiotics won't help with this one...": "Терминальная системная инфекция. Организм медленно угасает. Смерть неизбежна. Антибиотики здесь уже не помогут...",
     "Unknown stage": "Неизвестная стадия",
 
     "Bilateral pneumothorax": "Двусторонний пневмоторакс",
-    "Air in the chest cavity makes breathing practically impossible, lethal if not treated. Decompression essential.": "Воздух в грудной полости делает дыхание практически невозможным, смертельно без лечения. Необходима декомпрессия."
+    "Air in the chest cavity makes breathing practically impossible, lethal if not treated. Decompression essential.": "Воздух в грудной полости делает дыхание практически невозможным, смертельно без лечения. Необходима декомпрессия",
+
+    "Feeling": "Предчувствие",
+    "You feel a strange presence nearby. Someone is in need of help...": "Ты чувствуешь поблизости странное присутствие. Кому-то нужна помощь...",
+
+    "Trace toxins": "Следы токсинов",
+    "Toxins": "Токсины",
+    "Severe intoxication": "Тяжёлая интоксикация",
+    "Critical intoxication": "Критическая интоксикация",
+
+    "^Trace amounts of toxins have entered your bloodstream. You feel slightly off. (.+)$": "Малое количество токсинов попали в кровоток. Ты чувствуешь лёгкое недомогание. ($1)",
+    "^Toxins are building up in your system. Mild nausea and sluggishness. Move away from the source or find treatment. (.+)$": "Токсины накапливаются в организме. Лёгкая тошнота и вялость. Отойди от источника или найди лечение. ($1)",
+    "^Toxins have accumulated significantly. Nausea, weakness and disorientation. Get clean air, fast. (.+)$": "Токсины накопились значительно. Тошнота, слабость и дезориентация. Срочно найди чистый воздух. ($1)",
+    "^Severe toxicity. Your body is being slowly worn down. Find treatment or leave the area soon. (.+)$": "Тяжёлая токсичность. Твоё тело медленно разрушается. Найди лечение или покинь зону в ближайшее время. ($1)",
+
+    "Left kidney removed": "Левая почка удалена",
+    "Your left kidney was surgically removed.": "Твою левую почку удалили хирургически.",
+
+    "Right kidney removed": "Правая почка удалена",
+    "Your right kidney was surgically removed.": "Твою правую почку удалили хирургически.",
+
+    "^Powerful experimental drug in bloodstream. Regeneration boosted and consciousness protection acquired. <color=grey>(.+)</color>$": "Мощный экспериментальный препарат в кровотоке. Регенерация усилена, защита сознания приобретена. <color=grey>($1)</color>",
+
+    "Drug overdose": "Передозировка",
+    "You have overdosed on a non-opioid drug. Health complications likely.": "У тебя передозировка неопиоидным препаратом. Вероятны осложнения со здоровьем.",
+
+    "Healthy liver": "Здоровая печень",
+    "Your liver is functioning well. Toxin clearance and sickness recovery are improved while you stay well fed and healthy.": "Твоя печень функционирует хорошо. Очистка от токсинов и выздоровление ускоряются, пока ты сыт и здоров.",
+
+    "Laceration": "Рваная рана",
+    "A deep cut. Hurts and is prone to infection.": "Глубокая рана. Болит и склонна к заражению.",
+
+    "Healthy kidneys": "Здоровые почки",
+    "Both kidneys are functioning well and actively filtering your blood. Sickness recovery and blood pressure stability are improved.": "Обе почки функционируют хорошо и активно фильтруют кровь. Выздоровление и стабильность давления улучшены.",
+
+    "Left kidney disfunction": "Дисфункция левой почки",
+    "Right kidney disfunction": "Дисфункция правой почки",
+    "Your left kidney is struggling. Mild fatigue, reduced toxin clearance and slight fluid retention. Seek treatment.": "Твоя левая почка с трудом справляется. Лёгкая усталость, сниженная очистка от токсинов и небольшая задержка жидкости. Найди лечение.",
+    "Your right kidney is struggling. Mild fatigue, reduced toxin clearance and slight fluid retention. Seek treatment.": "Твоя правая почка с трудом справляется. Лёгкая усталость, сниженная очистка от токсинов и небольшая задержка жидкости. Найди лечение.",
+
+    "Left kidney failure": "Недостаточность левой почки",
+    "Right kidney failure": "Недостаточность правой почки",
+    "Your left kidney is failing. Noticeable sickness, elevated blood pressure and impaired toxin clearance. Treatment is important.": "Твоя левая почка отказывает. Заметная слабость, повышенное давление и нарушенная очистка от токсинов. Лечение важно.",
+    "Your right kidney is failing. Noticeable sickness, elevated blood pressure and impaired toxin clearance. Treatment is important.": "Твоя правая почка отказывает. Заметная слабость, повышенное давление и нарушенная очистка от токсинов. Лечение важно.",
+
+    "Severe left kidney failure": "Тяжелая недостаточность левой почки",
+    "Severe right kidney failure": "Тяжёлая недостаточность правой почки",
+    "Severe left kidney failure. Your body is retaining fluid and waste, consciousness is clouding. Medical attention is essential.": "Тяжёлая недостаточность левой почки. Твоё тело задерживает жидкость и отходы, сознание затуманивается. Медицинская помощь необходима.",
+    "Severe right kidney failure. Your body is retaining fluid and waste, consciousness is clouding. Medical attention is essential.": "Тяжёлая недостаточность правой почки. Твоё тело задерживает жидкость и отходы, сознание затуманивается. Медицинская помощь необходима.",
+
+    "Terminal left kidney failure": "Отказ левой почки",
+    "Terminal right kidney failure": "Отказ правой почки",
+    "Terminal left kidney failure. Toxins are accumulating in your blood, organ damage is progressing. Urgent treatment needed.": "Полный отказ левой почки. Токсины накапливаются в крови, повреждение органов прогрессирует. Срочно нужно лечение.",
+    "Terminal right kidney failure. Toxins are accumulating in your blood, organ damage is progressing. Urgent treatment needed.": "Полный отказ правой почки. Токсины накапливаются в крови, повреждение органов прогрессирует. Срочно нужно лечение.",
+
+    "Iron deficiency": "Дефицит железа",
+    "^Mild iron deficiency. You feel slightly tired and weak. (.+)$": "Лёгкий дефицит железа. Ты чувствуешь небольшую усталость и слабость. ($1)",
+    "^Moderate iron deficiency. Fatigue and occasional weakness. Your body is struggling. (.+)$": "Умеренный дефицит железа. Усталость и периодическая слабость. Твоё тело с трудом справляется. ($1)",
+    "^Severe iron deficiency. Extreme fatigue and risk of fainting. Immediate attention needed. (.+)$": "Тяжёлый дефицит железа. Сильная усталость и риск обморока. Нужна немедленная помощь. ($1)",
+
+    "Hemochromatosis": "Гемохроматоз",
+    "^Mild haemochromatosis. Slight joint discomfort and fatigue. (.+)$": "Лёгкий гемохроматоз. Небольшой дискомфорт в суставах и усталость. ($1)",
+    "^Moderate haemochromatosis. Joint pain, fatigue, and elevated blood pressure. Iron overload is damaging tissues. (.+)$": "Умеренный гемохроматоз. Боль в суставах, усталость и повышенное давление. Перегрузка железом повреждает ткани. ($1)",
+    "^Severe haemochromatosis. Organ damage is occurring. Brain and liver function are impaired. Urgent treatment needed. (.+)$": "Тяжёлый гемохроматоз. Происходит повреждение органов. Функции мозга и печени нарушены. Срочно нужно лечение. ($1)",
+
+    "Myocardial infarction": "Инфаркт миокарда",
+    "Irreversible myocardial infarction. The heart is failing. Death is inevitable.": "Необратимый инфаркт миокарда. Сердце отказывает. Смерть неизбежна.",
+    "^Massive blood clot broke off and lodged itself in massive heart artery cutting off it's blood supply. Seek treatment. Use streptokinase to break the clot. (.+)$": "Огромный тромб оторвался и застрял в крупной сердечной артерии, перекрыв кровоснабжение. Найди лечение. Используй стрептокиназу, чтобы разрушить тромб. ($1)",
+    "^Moderate heart attack. Your heart is starting to necrose slowly. You NEED to break the clot somehow. (.+)$": "Умеренный сердечный приступ. Твоё сердце начинает медленно некротизироваться. Тебе НУЖНО как-то разрушить тромб. ($1)",
+    "^Severe heart attack. Life-threatening heart necrosis imminent, immediate treatment needed. (.+)$": "Тяжёлый сердечный приступ. Угрожающий жизни некроз сердца неминуем, нужно немедленное лечение. ($1)",
+    "^Critical myocardial infarction. Heart muscle is dying rapidly. Prepare for cardiac arrest. (.+)$": "Критический инфаркт миокарда. Сердечная мышца быстро отмирает. Готовься к остановке сердца. ($1)",
+
+    "Hypoviscosity": "Гиповязкость",
+    "Blood viscosity slightly below normal.": "Вязкость крови немного ниже нормы.",
+    "Blood viscosity moderately below normal.": "Вязкость крови умеренно ниже нормы.",
+    "Severely lowered blood viscosity, something is very wrong with your blood.": "Сильно пониженная вязкость крови, с твоей кровью что-то очень не так.",
+    "Life-threating low blood viscosity, oxygen delivery is severely impaired.": "Угрожающе низкая вязкость крови, доставка кислорода серьёзно нарушена.",
+
+    "Frostbite": "Обморожение",
+    "One of your limbs got frostbited. At risk of losing all functionality if left untreated.": "Одна из твоих конечностей обморожена. Риск полной потери функциональности без лечения.",
+
+    "Mehh.. condition": "Так себе состояние",
+    "Concerning condition": "Тревожное состояние",
+    "Bad condition": "Плохое состояние",
+    "Critical condition": "Критическое состояние",
+
+    "Your condition is mildly concerning.": "Твоё состояние немного тревожно.",
+    "Your condition is worsening. Some vital signs are abnormal.": "Твоё состояние ухудшается. Некоторые жизненные показатели отклонены от нормы.",
+    "Your condition is severe. Immediate medical attention needed.": "Твоё состояние тяжёлое. Нужна немедленная медицинская помощь.",
+    "Your condition is critical. You are at risk of death.": "Твоё состояние критическое. Ты рискуешь умереть.",
+
+    "CALAMITY": "КАРА",
+    "^<color=#e00d11>IN A STATE OF PURE VIOLENCE. PAIN IS GONE, BUT YOUR BODY IS BEING TORN APART FROM WITHIN.</color> <color=grey>(.+)</color>$": "<color=#e00d11>В СОСТОЯНИИ ЧИСТОГО НАСИЛИЯ. БОЛЬ УШЛА, НО ТВОЁ ТЕЛО РАЗРЫВАЕТСЯ ИЗНУТРИ.</color> <color=grey>($1)</color>",
+
+    "Burning": "Горишь",
+    "You are on fire! Submerge in any liquid or roll on the ground to ditch the flames.": "Ты горишь! Погрузись в любую жидкость или покатайся по земле, чтобы сбить пламя.",
+
+    "Greasy": "Жирный",
+    "Very greasy": "Очень жирный",
+    "Drenched in grease": "Пропитан жиром",
+
+    "^Your fur feels slightly slick. (.+)$": "Твоя шерсть слегка скользкая. ($1)",
+    "^Your body is noticeably coated in grease. (.+)$": "Твоё тело заметно покрыто жиром. ($1)",
+    "^You are soaked in grease. (.+)$": "Ты промок в жире. ($1)",
+    "^Every strand of fur drips with oil. A single spark will turn you into a torch. Wash this off NOW. (.+)$": "Каждый клочок твоей шерсти пропитан нефтью. Одна искра превратит тебя в факел. Смой это НЕМЕДЛЕННО. ($1)",
+
+    "Bruise": "Ушиб",
+    "One of your limbs are bruised. Chilling it might help.": "Одна из твоих конечностей ушиблена. Охлаждение может помочь.",
+
+    "Arterial bleeding": "Артериальное кровотечение",
+    "Multiple arteries have been severed. You're losing blood PRETTY fast.": "Несколько артерий перерезаны. Ты теряешь кровь ДОВОЛЬНО быстро.",
+    "An artery has been severed. The wound will keep bleeding until properly closed..": "Артерия перерезана. Рана будет кровоточить, пока её как следует не закрыть...",
+
+    "Parasites": "Паразиты",
+    "Parasites feasting on a limb. Painful and damaging.": "Паразиты поедают эту конечность. Это больно и повреждает конечность.",
+
+    "Heart tamponade": "Тампонада сердца",
+    "^Mild heart tamponade. Blood is accumulating in the pericardium. (.+)$": "Умеренная тампонада сердца. В полости перикарда скапливается кровь. ($1)",
+    "^Moderate heart tamponade. Heart is being compressed, reducing output. (.+)$": "Тампонада сердца. Сердце сдавлено, что приводит к снижению потока крови. ($1)",
+    "^Severe heart tamponade. Heart output severely reduced, risk of cardiac arrest. (.+)$": "Тяжёлая тампонада сердца. Поток крови сильно снижен, риск остановки сердца. ($1)",
+    "^Critical heart tamponade. Heart is nearly crushed, heart failure imminent. (.+)$": "Критическая тампонада сердца. Сердце практически сдавлено, отказ сердца неизбежен. ($1)",
+
+    "transgender <3": "трансгендер <3",
+    "your now a cute little whoever you wish to be, press Q to perform a dash or E to perform a stomp\n<color=white>(powered by <color=#abe7ff>n<color=#ffc4f0>y<color=white>a</color>r</color>u</color>'s makeshift prosthetics)</color>\nwe support your transition, stay strong and love yourself!": "теперь ты — самое милое создание, кем бы ты ни захотел стать. нажми Q для рывка или E для топота\n<color=white>(работает на <color=#abe7ff>n<color=#ffc4f0>y<color=white>a</color>r</color>u</color> makeshift prosthetics)</color>\nмы поддерживаем твой переход! держись и люби себя!",
+
+    "Crooked bone": "Искривлённая кость",
+    "One of your bones healed into a crooked shape, limiting it's effectiveness and making it painful to use. You need to re-break it and let it heal properly via splint.": "Одна из твоих костей срослась криво, ограничивая её эффективность и причиняя боль при использовании. Нужно сломать её заново и дать ей правильно срастись с помощью шины.",
+
+    "Panic": "Паника",
+    "Total panic. You are acting on pure animal instinct.": "Полная паника. Ты действуешь на чистых животных инстинктах.",
+    "Panic has taken hold. Adrenaline floods your system, pain is heavily numbed.": "Паника взяла верх. Адреналин затопил организм, боль сильно притуплена.",
+    "A sharp spike of fear. Your heart races and pain fades": "Резкий всплеск страха. Сердце колотится, боль угасает",
+
+    "Allergic reaction": "Аллергическая реакция",
+    "An allergic reaction is underway. Severity scales with the amount consumed and your body response.": "Аллергическая реакция в разгаре. Тяжесть зависит от количества употреблённого и реакции твоего организма.",
+
+    "Hyperoxia": "Гипероксия",
+    "^Dangerous oxygen saturation. Seizures and brain damage are imminent. (.+)$": "Опасная сатурация кислорода. Судороги и повреждение мозга неминуемы. ($1)",
+    "^High blood oxygen saturation. Complications can occur. (.+)$": "Высокая сатурация кислорода в крови. Возможны осложнения. ($1)",
+    "^Sp02 is above normal. (.+)$": "SpO2 выше нормы. ($1)"
   },
+
+  "items": {
+    "pills": {
+      "name": "Флакон",
+      "description": "Маленький флакон с таблетками. На флаконе отсутствует наименование. Каждая таблетка - 5мл."
+    }
+  },
+
   "wound_views": {
     "Remove parasites": "Удалить паразитов",
-    "Claw out the parasites feasting on this limb.": "Выковыряй паразитов, пирующих на этой конечности."
+    "Claw out the parasites feasting on this limb.": "Выковыряй паразитов, пирующих на этой конечности.",
+
+    "Surgery": "Хирургия",
+    "Operate on organs in your CHEST.": "Выполни операцию на органах ГРУДНОЙ КЛЕТКИ.",
+    "Operate on organs in your ABDOMEN.": "Выполни операцию на органах БРЮШНОЙ ОБЛАСТИ.",
+
+    "Re-break bone": "Заново сломать кость",
+    "Strike the crooked bone with your wrench.": "Ударь по искривлённой кости своим ключом.",
+    "Re-break the crooked bone with your bare hands. Consider using a wrench for that.": "Заново сломай искривлённую кость голыми руками. Подумай об использовании ключа для этого."
   },
+
   "minigames": {
-    "Hold LMB and drag over parasites to claw them out.": "Удерживай ЛКМ и проведи курсором по паразитам, чтобы вырвать их."
+    "Hold LMB and drag over parasites to claw them out.": "Удерживай ЛКМ и проведи курсором по паразитам, чтобы вырвать их.",
+    "Hold LMB and drag along the moving line. Straying off it hurts.": "Удерживай ЛКМ и проведи курсором по линии. Каждое отклонение от линии будет вызывать боль."
+  },
+
+  "talks": {
+    "*sneezes*": "*апчхи!*"
+  },
+
+  "alerts": {
+    "Item too dull.": "Предмет слишком тупой.",
+    "Lung stitched.": "Лёгкое сшито."
+  },
+
+  "other": {
+    "Calamity serum": "Сыворотка Кары",
+    "Calamity serumdsc": "Таинственная сыворотка, вызывающая состояние чистой ярости. В некоторых случаях может привести к передозировке и смерти. Дозировка неизвестна.\n\n<i>Ты чувствуешь угрозу, исходящую от неё.</i>",
+    "amoxcilin": "Амоксициллин",
+    "amoxcilindsc": "Антибиотик для лечения системной инфекции. При употреблении сбрасывает прогресс инфекции.",
+    "augmentin": "Аугментин",
+    "augmentindsc": "Мощный антибиотик, временно останавливающий системную инфекцию и замедляющий прогрессирование обычных инфекций.",
+    "i4sds": "I4S-DS",
+    "i4sdsdsc": "Мощное регенеративное соединение. Должно вводиться непосредственно в кровоток. Дозировка около 35 мл.",
+    "koldera mix": "Смесь Колдера",
+    "koldera mixdsc": "Транквилизирующее средство, вызывающее состояние покоя и облегчения. Дозировка около 20 мл.",
+    "ketamine": "Кетамин",
+    "ketaminedsc": "Диссоциативный препарат с сильными обезболивающими свойствами. Вводится малыми дозами.",
+    "paracetamol": "Парацетамол",
+    "paracetamoldsc": "Обычное обезболивающее и жаропонижающее. Обеспечивает лёгкое облегчение боли и может снизить температуру. Безопасен для большинства пациентов, но чрезмерные дозы могут вызвать повреждение печени.",
+    "sodium bicarbonate": "Бикарбонат натрия",
+    "sodium bicarbonatedsc": "Буферное средство для лечения ацидоза. Быстро корректирует кислотно-щелочной баланс, но при передозировке может вызвать алкалоз.",
+    "desomorphine": "Дезоморфин",
+    "desomorphinedsc": "Чрезвычайно мощный синтетический опиоид. Иногда называется «Крокодилом». Обеспечивает облегчение боли, но вызывает тяжёлую ломку и повреждение тканей. Крайне вызывающий зависимость.",
+    "adenosene": "Аденозен",
+    "adenosenedsc": "Мощный сердечный депрессант, используемый для стабилизации аритмий или замедления слишком быстрого сердцебиения.\nМожет вызвать кратковременную асистолию с последующей рефлекторной реанимацией.",
+    "perftoran": "Перфторан",
+    "perftorandsc": "Синтетический кровезаменитель, переносящий кислород. Восстанавливает меньший объём, чем настоящая кровь, но не вызывает гемолитической реакции."
   }
 }

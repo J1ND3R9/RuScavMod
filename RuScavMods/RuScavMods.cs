@@ -12,7 +12,9 @@ using RuScavMods.ModPatches.extraDialogue;
 using RuScavMods.ModPatches.Gunsaw;
 using RuScavMods.ModPatches.KrokoshaMP;
 using RuScavMods.ModPatches.MakeshiftProsthetics;
+using RuScavMods.ModPatches.MedicalBrutalism;
 using RuScavMods.ModPatches.MilkableMilkies;
+using RuScavMods.ModPatches.Psychology;
 using RuScavMods.ModPatches.QoLUnknown;
 using RuScavMods.ModPatches.RshCCL;
 using RuScavMods.Patches;
@@ -52,9 +54,10 @@ using System.IO;
 
 namespace RuScavMods
 {
-    [BepInPlugin("zzz_com.Floydba.ruscavmods", "RuScavMod", "2.1.4.3")]
+    [BepInPlugin("zzz_com.Floydba.ruscavmods", "RuScavMod", ModVersion)]
     public class Plugin : BaseUnityPlugin
     {
+        internal const string ModVersion = "2.1.5.1";
         internal static ManualLogSource Log;
         private readonly static List<PatchClassProcessor> VanillaPatches = new List<PatchClassProcessor>();
         public static bool RshCCLInstalled = File.Exists(Path.Combine(Paths.PluginPath, "RshLib.dll")) && AccessTools.TypeByName("RshLib.RshItemAdapter") != null; // У автора мода интересный случай: он удаляет себя из PluginInfos и, затем, пытается вернуть патчем. Но патч не срабатывает, поэтому он просто делитит себя, bruh.
@@ -120,6 +123,18 @@ namespace RuScavMods
                 Guid = "MarlyZ89.milkablemilkies",
                 Name = "Milkable Milkies",
                 Translate = MilkableMilkiesTranslator.Translate
+            },
+            new ModTranslator()
+            {
+                Guid = "com.alexx_.medicalbrutalism",
+                Name = "Medical Brutalism",
+                Translate = MedicalBrutalismTranslator.Translate
+            },
+            new ModTranslator()
+            {
+                Guid = "com.carlo.casualtiesunknown.psychology",
+                Name = "Casualty Psychology",
+                Translate = PsychologyTranslator.Translate
             }
         };
 
@@ -242,6 +257,10 @@ namespace RuScavMods
                     Log.LogInfo($"Переводим {translator.Name}");
                     translator.Translate();
                     Log.LogInfo($"Перевод {translator.Name} завершён!");
+                    if (translator.Name == "Medical Brutalism")
+                    {
+                        Log.LogInfo("Саша, молю, сделай локали.");
+                    }
                 }
                 catch (Exception ex)
                 {

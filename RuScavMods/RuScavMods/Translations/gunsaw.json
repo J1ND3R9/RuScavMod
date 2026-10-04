@@ -381,43 +381,7 @@
       "key": "species_orange_desc",
       "value": "Медлительный и тупой громила. Опасно живучий. Стойкий."
     },
-    {
-      "key": "species_orange_traits",
-      "value": "[НЕЗАВЕРШЁН] - Этот вид ещё не завершён."
-    },
-
-    {
-      "key": "speciesinfo_orange_clumsy_header",
-      "value": "Неуклюжий"
-    },
-    {
-      "key": "speciesinfo_orange_clumsy_desc",
-      "value": "В мини-играх сила влияет на результат с задержкой. Удары руками наносятся сильнее, а инструментами - слабее."
-    },
-    {
-      "key": "speciesinfo_orange_sensitive_header",
-      "value": "Чувствительный"
-    },
-    {
-      "key": "speciesinfo_orange_sensitive_desc",
-      "value": "Колебания настроения становятся более резкими и разнонаправленными. Настроение сильнее влияет на репутацию с торговцами при первом контакте."
-    },
-    {
-      "key": "speciesinfo_orange_general_header",
-      "value": "Общее"
-    },
-    {
-      "key": "speciesinfo_orange_general_desc",
-      "value": "Кости и вывихи заживают вдвое быстрее, а недавние травмы причиняют меньше боли при повторном повреждении."
-    },
-    {
-      "key": "speciesinfo_orange_unfinished_header",
-      "value": "Незавершенный"
-    },
-    {
-      "key": "speciesinfo_orange_unfinished_desc",
-      "value": "Этот вид пока незавершён. Жди его обновления в будущем!"
-    },
+    
 
     // Милки
     {
@@ -2189,11 +2153,11 @@
     },
     {
       "key": "dialogue_milky_limbmuscle2",
-      "value": "Моя <limb> болит."
+      "value": "Моя <limb:imn> болит."
     },
     {
       "key": "dialogue_milky_limbmuscle3",
-      "value": "Моя <limb> травмирована."
+      "value": "Моя <limb:imn> травмирована."
     },
     {
       "key": "dialogue_milky_limbmuscle4",
@@ -2213,7 +2177,7 @@
     },
     {
       "key": "dialogue_milky_limbmuscle8",
-      "value": "Моя <limb> отказывает."
+      "value": "Моя <limb:imn> отказывает."
     },
     {
       "key": "dialogue_milky_limbmuscle9",
@@ -2234,11 +2198,11 @@
 
     {
       "key": "dialogue_milky_limbinfected1",
-      "value": "Моя <limb> опухла."
+      "value": "Моя <limb:imn> опухла."
     },
     {
       "key": "dialogue_milky_limbinfected2",
-      "value": "Моя <limb> чувствуется странно."
+      "value": "Моя <limb:imn> чувствуется странно."
     },
     {
       "key": "dialogue_milky_limbinfected3",
@@ -2250,11 +2214,11 @@
     },
     {
       "key": "dialogue_milky_limbinfected5",
-      "value": "Моя <limb> горит. Это точно инфекция."
+      "value": "Моя <limb:imn> горит. Это точно инфекция."
     },
     {
       "key": "dialogue_milky_limbinfected6",
-      "value": "Такое чувство, будто моя <limb> гниёт."
+      "value": "Такое чувство, будто моя <limb:imn> гниёт."
     },
     {
       "key": "dialogue_milky_limbinfected7",
@@ -2266,7 +2230,7 @@
     },
     {
       "key": "dialogue_milky_limbinfected9",
-      "value": "Моя <limb> выглядит хуево. Мне нужно продезинфицировать её."
+      "value": "Моя <limb:imn> выглядит хуево. Мне нужно продезинфицировать её."
     },
     {
       "key": "dialogue_milky_limbinfected10",
@@ -2291,11 +2255,11 @@
 
     {
       "key": "dialogue_milky_limbskin1",
-      "value": "Моя <limb> буквально изуродована."
+      "value": "Моя <limb:imn> буквально изуродована."
     },
     {
       "key": "dialogue_milky_limbskin2",
-      "value": "Моя <limb> ранена."
+      "value": "Моя <limb:imn> ранена."
     },
     {
       "key": "dialogue_milky_limbskin3",
@@ -2311,7 +2275,7 @@
     },
     {
       "key": "dialogue_milky_limbskin6",
-      "value": "Моя <limb> разодрана в клочья."
+      "value": "Моя <limb:imn> разодрана в клочья."
     },
     {
       "key": "dialogue_milky_limbskin7",
@@ -2319,11 +2283,11 @@
     },
     {
       "key": "dialogue_milky_limbskin8",
-      "value": "Моя <limb> вся горит..."
+      "value": "Моя <limb:imn> вся горит..."
     },
     {
       "key": "dialogue_milky_limbskin9",
-      "value": "Моя <limb> выглядит скверно."
+      "value": "Моя <limb:imn> выглядит скверно."
     },
     {
       "key": "dialogue_milky_limbskin10",
@@ -2331,19 +2295,19 @@
     },
     {
       "key": "dialogue_milky_limbskin11",
-      "value": "Моя <limb> выглядит повреждённой."
+      "value": "Моя <limb:imn> выглядит повреждённой."
     },
     {
       "key": "dialogue_milky_limbskin12",
-      "value": "Похоже, моя <limb> изранена."
+      "value": "Похоже, моя <limb:imn> изранена."
     },
     {
       "key": "dialogue_milky_limbskin13",
-      "value": "Моя <limb> выглядит не лучшим образом."
+      "value": "Моя <limb:imn> выглядит не лучшим образом."
     },
     {
       "key": "dialogue_milky_limbskin14",
-      "value": "Моя <limb> вся в крови..."
+      "value": "Моя <limb:imn> вся в крови..."
     },
     {
       "key": "dialogue_milky_limbskin15",
@@ -3975,7 +3939,7 @@
     },
     {
       "key": "dialogue_milky_pain5",
-      "value": "Моя <limb>... Ай..."
+      "value": "Моя <limb:imn>... Ай..."
     },
     {
       "key": "dialogue_milky_pain6",
@@ -3995,19 +3959,19 @@
     },
     {
       "key": "dialogue_milky_pain10",
-      "value": "Моя <limb> болит..."
+      "value": "Моя <limb:imn> болит..."
     },
     {
       "key": "dialogue_milky_pain11",
-      "value": "Ай! Моя <limb>!"
+      "value": "Ай! Моя <limb:imn>!"
     },
     {
       "key": "dialogue_milky_pain12",
-      "value": "Моя <limb>!!"
+      "value": "Моя <limb:imn>!!"
     },
     {
       "key": "dialogue_milky_pain13",
-      "value": "Моя <limb> сильно повреждена..."
+      "value": "Моя <limb:imn> сильно повреждена..."
     },
     {
       "key": "dialogue_milky_pain14",
@@ -4015,27 +3979,27 @@
     },
     {
       "key": "dialogue_milky_pain15",
-      "value": "Акх! Моя <limb>!"
+      "value": "Акх! Моя <limb:imn>!"
     },
     {
       "key": "dialogue_milky_pain16",
-      "value": "Моя <limb> ранена!"
+      "value": "Моя <limb:imn> ранена!"
     },
     {
       "key": "dialogue_milky_pain17",
-      "value": "<limb>..."
+      "value": "<limb:imn>..."
     },
     {
       "key": "dialogue_milky_pain18",
-      "value": "Проклятье... Моя <limb>!"
+      "value": "Проклятье... Моя <limb:imn>!"
     },
     {
       "key": "dialogue_milky_pain19",
-      "value": "Моя <limb>..."
+      "value": "Моя <limb:imn>..."
     },
     {
       "key": "dialogue_milky_pain20",
-      "value": "Моя <limb> ноет..."
+      "value": "Моя <limb:imn> ноет..."
     },
     {
       "key": "dialogue_milky_pain21",
@@ -4047,11 +4011,11 @@
     },
     {
       "key": "dialogue_milky_pain23",
-      "value": "Надо сбавить темп... Моя <limb> ужасно болит."
+      "value": "Надо сбавить темп... Моя <limb:imn> ужасно болит."
     },
     {
       "key": "dialogue_milky_pain24",
-      "value": "Это царапина... Царапина?! Твоя <limb> на земле!... А это что?... Бывало и похуже... Хотел бы я еще раз глянуть \"поиски Святого Грааля...\""
+      "value": "Это царапина... Царапина?! Твоя <limb:imn> на земле!... А это что?... Бывало и похуже... Хотел бы я еще раз глянуть \"поиски Святого Грааля...\""
     },
 
     {
@@ -7020,11 +6984,11 @@
 
     {
       "key": "dialogue_dune_limbmuscle1",
-      "value": "<limb>... не... дви-гаться"
+      "value": "<limb:imn>... не... дви-гаться"
     },
     {
       "key": "dialogue_dune_limbmuscle2",
-      "value": "<limb> бо-леть..."
+      "value": "<limb:imn> бо-леть..."
     },
     {
       "key": "dialogue_dune_limbmuscle3",
@@ -7032,28 +6996,28 @@
     },
     {
       "key": "dialogue_dune_limbmuscle4",
-      "value": "<limb> не... ра-ботать"
+      "value": "<limb:imn> не... ра-ботать"
     },
     {
       "key": "dialogue_dune_limbmuscle5",
-      "value": "Дю-на... лю-бить, ког-да... <limb> ра-ботать. Дю-на грус-тить"
+      "value": "Дю-на... лю-бить, ког-да... <limb:imn> ра-ботать. Дю-на грус-тить"
     },
     {
       "key": "dialogue_dune_limbmuscle6",
-      "value": "<limb> Дюны... пло-хо се-бя чув-ствовать..."
+      "value": "<limb:imn> Дюны... пло-хо се-бя чув-ствовать..."
     },
     {
       "key": "dialogue_dune_limbmuscle7",
-      "value": "<limb> Дюны... не ра-ботать..."
+      "value": "<limb:imn> Дюны... не ра-ботать..."
     },
 
     {
       "key": "dialogue_dune_limbinfected1",
-      "value": "<limb>... стать... стран-ным"
+      "value": "<limb:imn>... стать... стран-ным"
     },
     {
       "key": "dialogue_dune_limbinfected2",
-      "value": "По-чему <limb> боль-ше?"
+      "value": "По-чему <limb:imn> боль-ше?"
     },
     {
       "key": "dialogue_dune_limbinfected3",
@@ -7061,28 +7025,28 @@
     },
     {
       "key": "dialogue_dune_limbinfected4",
-      "value": "<limb>... го-ря-чий...?"
+      "value": "<limb:imn>... го-ря-чий...?"
     },
     {
       "key": "dialogue_dune_limbinfected5",
-      "value": "<limb>... за-ра-же-но?"
+      "value": "<limb:imn>... за-ра-же-но?"
     },
 
     {
       "key": "dialogue_dune_limbskin1",
-      "value": "<limb>... весь... в... кро-ви."
+      "value": "<limb:imn>... весь... в... кро-ви."
     },
     {
       "key": "dialogue_dune_limbskin2",
-      "value": "<limb>... от-крыта"
+      "value": "<limb:imn>... от-крыта"
     },
     {
       "key": "dialogue_dune_limbskin3",
-      "value": "<limb> Дюны... сло-маться"
+      "value": "<limb:imn> Дюны... сло-маться"
     },
     {
       "key": "dialogue_dune_limbskin4",
-      "value": "<limb>... вы-глядеть... крова-во..."
+      "value": "<limb:imn>... вы-глядеть... крова-во..."
     },
 
     {
@@ -7686,11 +7650,11 @@
     },
     {
       "key": "dialogue_dune_pain8",
-      "value": "<limb>!"
+      "value": "<limb:imn>!"
     },
     {
       "key": "dialogue_dune_pain9",
-      "value": "<limb> болит"
+      "value": "<limb:imn> болит"
     },
     {
       "key": "dialogue_dune_pain10",
@@ -10994,7 +10958,7 @@
 
     {
       "key": "dialogue_velvet_limbmuscle1",
-      "value": "Моя <limb> движется неправильно."
+      "value": "Моя <limb:imn> движется неправильно."
     },
     {
       "key": "dialogue_velvet_limbmuscle2",
@@ -11002,11 +10966,11 @@
     },
     {
       "key": "dialogue_velvet_limbmuscle3",
-      "value": "Моя <limb> ослабла."
+      "value": "Моя <limb:imn> ослабла."
     },
     {
       "key": "dialogue_velvet_limbmuscle4",
-      "value": "Моя <limb> ненадежна."
+      "value": "Моя <limb:imn> ненадежна."
     },
     {
       "key": "dialogue_velvet_limbmuscle5",
@@ -11014,7 +10978,7 @@
     },
     {
       "key": "dialogue_velvet_limbmuscle6",
-      "value": "Моя <limb> болит при движении."
+      "value": "Моя <limb:imn> болит при движении."
     },
     {
       "key": "dialogue_velvet_limbmuscle7",
@@ -11026,16 +10990,16 @@
     },
     {
       "key": "dialogue_velvet_limbmuscle9",
-      "value": "Неприятно. Моя <limb> ещё годится?"
+      "value": "Неприятно. Моя <limb:imn> ещё годится?"
     },
     {
       "key": "dialogue_velvet_limbmuscle10",
-      "value": "Моя <limb> подводит меня."
+      "value": "Моя <limb:imn> подводит меня."
     },
 
     {
       "key": "dialogue_velvet_limbinfected1",
-      "value": "Моя <limb> горячая на ощупь."
+      "value": "Моя <limb:imn> горячая на ощупь."
     },
     {
       "key": "dialogue_velvet_limbinfected2",
@@ -11047,7 +11011,7 @@
     },
     {
       "key": "dialogue_velvet_limbinfected4",
-      "value": "Моя <limb> опухает."
+      "value": "Моя <limb:imn> опухает."
     },
     {
       "key": "dialogue_velvet_limbinfected5",
@@ -11067,7 +11031,7 @@
     },
     {
       "key": "dialogue_velvet_limbinfected9",
-      "value": "Моя <limb> пахнет неправильно."
+      "value": "Моя <limb:imn> пахнет неправильно."
     },
     {
       "key": "dialogue_velvet_limbinfected10",
@@ -11076,7 +11040,7 @@
 
     {
       "key": "dialogue_velvet_limbskin1",
-      "value": "Моя <limb> разорвана."
+      "value": "Моя <limb:imn> разорвана."
     },
     {
       "key": "dialogue_velvet_limbskin2",
@@ -11092,7 +11056,7 @@
     },
     {
       "key": "dialogue_velvet_limbskin5",
-      "value": "Моя <limb> нуждается в уходе."
+      "value": "Моя <limb:imn> нуждается в уходе."
     },
     {
       "key": "dialogue_velvet_limbskin6",
@@ -11112,7 +11076,7 @@
     },
     {
       "key": "dialogue_velvet_limbskin10",
-      "value": "Моя <limb> выглядит довольно плачевно."
+      "value": "Моя <limb:imn> выглядит довольно плачевно."
     },
 
     {
@@ -12037,7 +12001,7 @@
     },
     {
       "key": "dialogue_velvet_pain4",
-      "value": "Моя <limb>..."
+      "value": "Моя <limb:imn>..."
     },
     {
       "key": "dialogue_velvet_pain5",
@@ -17135,11 +17099,11 @@
     },
     {
       "key": "dialogue_orange_limbmuscle2",
-      "value": "Аггх, моя <limb> болит!"
+      "value": "Аггх, моя <limb:imn> болит!"
     },
     {
       "key": "dialogue_orange_limbmuscle3",
-      "value": "Уфф... <limb> побаливает, хехех..."
+      "value": "Уфф... <limb:imn> побаливает, хехех..."
     },
     {
       "key": "dialogue_orange_limbmuscle4",
@@ -17151,11 +17115,11 @@
     },
     {
       "key": "dialogue_orange_limbmuscle6",
-      "value": "Моя <limb> так болит! Гррх..."
+      "value": "Моя <limb:imn> так болит! Гррх..."
     },
     {
       "key": "dialogue_orange_limbmuscle7",
-      "value": "Моя <limb> вся не в порядке!"
+      "value": "Моя <limb:imn> вся не в порядке!"
     },
     {
       "key": "dialogue_orange_limbmuscle8",
@@ -17163,7 +17127,7 @@
     },
     {
       "key": "dialogue_orange_limbmuscle9",
-      "value": "Хрм... <limb> как-то побаливает."
+      "value": "Хрм... <limb:imn> как-то побаливает."
     },
     {
       "key": "dialogue_orange_limbmuscle10",
@@ -17171,15 +17135,15 @@
     },
     {
       "key": "dialogue_orange_limbmuscle11",
-      "value": "<limb> болит... надо идти дальше."
+      "value": "<limb:imn> болит... надо идти дальше."
     },
     {
       "key": "dialogue_orange_limbmuscle12",
-      "value": "Моя <limb> странно себя чувствует... да ладно, не страшно."
+      "value": "Моя <limb:imn> странно себя чувствует... да ладно, не страшно."
     },
     {
       "key": "dialogue_orange_limbmuscle13",
-      "value": "Моя <limb> не работает! Гррф...!"
+      "value": "Моя <limb:imn> не работает! Гррф...!"
     },
     {
       "key": "dialogue_orange_limbmuscle14",
@@ -17200,11 +17164,11 @@
 
     {
       "key": "dialogue_orange_limbinfected1",
-      "value": "Моя <limb> вся какая-то опухшая."
+      "value": "Моя <limb:imn> вся какая-то опухшая."
     },
     {
       "key": "dialogue_orange_limbinfected2",
-      "value": "Моя <limb> прямо горячая на ощупь."
+      "value": "Моя <limb:imn> прямо горячая на ощупь."
     },
     {
       "key": "dialogue_orange_limbinfected3",
@@ -17216,7 +17180,7 @@
     },
     {
       "key": "dialogue_orange_limbinfected5",
-      "value": "Моя <limb> тёплая."
+      "value": "Моя <limb:imn> тёплая."
     },
     {
       "key": "dialogue_orange_limbinfected6",
@@ -17224,7 +17188,7 @@
     },
     {
       "key": "dialogue_orange_limbinfected7",
-      "value": "Моя <limb> ощущается противно."
+      "value": "Моя <limb:imn> ощущается противно."
     },
     {
       "key": "dialogue_orange_limbinfected8",
@@ -17232,11 +17196,11 @@
     },
     {
       "key": "dialogue_orange_limbinfected9",
-      "value": "Моя <limb> горячая и зудит... Ууфф..."
+      "value": "Моя <limb:imn> горячая и зудит... Ууфф..."
     },
     {
       "key": "dialogue_orange_limbinfected10",
-      "value": "Моя <limb> ощущается реально мерзко."
+      "value": "Моя <limb:imn> ощущается реально мерзко."
     },
     {
       "key": "dialogue_orange_limbinfected11",
@@ -17244,16 +17208,16 @@
     },
     {
       "key": "dialogue_orange_limbinfected12",
-      "value": "Моя <limb> болит и странно себя ведёт!!"
+      "value": "Моя <limb:imn> болит и странно себя ведёт!!"
     },
     {
       "key": "dialogue_orange_limbinfected13",
-      "value": "Ммгх... моя <limb> ощущается противно!"
+      "value": "Ммгх... моя <limb:imn> ощущается противно!"
     },
 
     {
       "key": "dialogue_orange_limbskin1",
-      "value": "Моя <limb> выглядит как-то не очень."
+      "value": "Моя <limb:imn> выглядит как-то не очень."
     },
     {
       "key": "dialogue_orange_limbskin2",
@@ -17277,7 +17241,7 @@
     },
     {
       "key": "dialogue_orange_limbskin7",
-      "value": "Моя <limb> ощущается как-то... сыро?"
+      "value": "Моя <limb:imn> ощущается как-то... сыро?"
     },
     {
       "key": "dialogue_orange_limbskin8",
@@ -17297,7 +17261,7 @@
     },
     {
       "key": "dialogue_orange_limbskin12",
-      "value": "Моя <limb> чертовски болит."
+      "value": "Моя <limb:imn> чертовски болит."
     },
     {
       "key": "dialogue_orange_limbskin13",
@@ -17305,7 +17269,7 @@
     },
     {
       "key": "dialogue_orange_limbskin14",
-      "value": "Моя <limb> печёт."
+      "value": "Моя <limb:imn> печёт."
     },
 
     {
@@ -17958,7 +17922,7 @@
     },
     {
       "key": "dialogue_orange_bleeding4",
-      "value": "Помогите, пожалуйста! Моя <limb> кровоточит!"
+      "value": "Помогите, пожалуйста! Моя <limb:imn> кровоточит!"
     },
     {
       "key": "dialogue_orange_bleeding5",
@@ -19253,7 +19217,7 @@
     },
     {
       "key": "dialogue_orange_pain6",
-      "value": "Аугх, моя <limb>."
+      "value": "Аугх, моя <limb:imn>."
     },
     {
       "key": "dialogue_orange_pain7",
@@ -19281,11 +19245,11 @@
     },
     {
       "key": "dialogue_orange_pain13",
-      "value": "Моя <limb> как-то ноет."
+      "value": "Моя <limb:imn> как-то ноет."
     },
     {
       "key": "dialogue_orange_pain14",
-      "value": "Бляя, моя <limb>..."
+      "value": "Бляя, моя <limb:imn>..."
     },
     {
       "key": "dialogue_orange_pain15",
@@ -22870,7 +22834,7 @@
 
     {
       "key": "dialogue_voyager_limbmuscle1",
-      "value": "Моя <limb> работает неправильно."
+      "value": "Моя <limb:imn> работает неправильно."
     },
     {
       "key": "dialogue_voyager_limbmuscle2",
@@ -22878,7 +22842,7 @@
     },
     {
       "key": "dialogue_voyager_limbmuscle3",
-      "value": "Моя <limb> перенапряжена."
+      "value": "Моя <limb:imn> перенапряжена."
     },
     {
       "key": "dialogue_voyager_limbmuscle4",
@@ -22895,7 +22859,7 @@
     },
     {
       "key": "dialogue_voyager_limbinfected2",
-      "value": "Моя <limb> заражена."
+      "value": "Моя <limb:imn> заражена."
     },
     {
       "key": "dialogue_voyager_limbinfected3",
@@ -22912,7 +22876,7 @@
 
     {
       "key": "dialogue_voyager_limbskin1",
-      "value": "Моя <limb> ранена."
+      "value": "Моя <limb:imn> ранена."
     },
     {
       "key": "dialogue_voyager_limbskin2",
@@ -22920,7 +22884,7 @@
     },
     {
       "key": "dialogue_voyager_limbskin3",
-      "value": "Моя <limb> изранена."
+      "value": "Моя <limb:imn> изранена."
     },
     {
       "key": "dialogue_voyager_limbskin4",
@@ -22979,7 +22943,7 @@
     },
     {
       "key": "dialogue_voyager_pain2",
-      "value": "Моя <limb>..."
+      "value": "Моя <limb:imn>..."
     },
     {
       "key": "dialogue_voyager_pain3",
@@ -22987,7 +22951,7 @@
     },
     {
       "key": "dialogue_voyager_pain4",
-      "value": "Моя <limb> болит."
+      "value": "Моя <limb:imn> болит."
     },
     {
       "key": "dialogue_voyager_pain5",
@@ -22995,11 +22959,11 @@
     },
     {
       "key": "dialogue_voyager_pain6",
-      "value": "Моя <limb> ноет."
+      "value": "Моя <limb:imn> ноет."
     },
     {
       "key": "dialogue_voyager_pain7",
-      "value": "Это не пустяк. Моя <limb> реально болит."
+      "value": "Это не пустяк. Моя <limb:imn> реально болит."
     },
 
     {
@@ -23012,7 +22976,7 @@
     },
     {
       "key": "dialogue_voyager_bigpain3",
-      "value": "МОЯ <limb>!"
+      "value": "МОЯ <limb:imn>!"
     },
     {
       "key": "dialogue_voyager_bigpain4",
@@ -27296,7 +27260,7 @@
 
     {
       "key": "dialogue_roza_limbmuscle1",
-      "value": "М-моя <limb> так болит..."
+      "value": "М-моя <limb:imn> так болит..."
     },
     {
       "key": "dialogue_roza_limbmuscle2",
@@ -27304,11 +27268,11 @@
     },
     {
       "key": "dialogue_roza_limbmuscle3",
-      "value": "Моя <limb> очень болит..."
+      "value": "Моя <limb:imn> очень болит..."
     },
     {
       "key": "dialogue_roza_limbmuscle4",
-      "value": "Моя... <limb>... болит..."
+      "value": "Моя... <limb:imn>... болит..."
     },
     {
       "key": "dialogue_roza_limbmuscle5",
@@ -27329,15 +27293,15 @@
 
     {
       "key": "dialogue_roza_limbinfected1",
-      "value": "Эм... Почему моя <limb> такая странная?"
+      "value": "Эм... Почему моя <limb:imn> такая странная?"
     },
     {
       "key": "dialogue_roza_limbinfected2",
-      "value": "Моя <limb> заражена?!... Э-это плохо..."
+      "value": "Моя <limb:imn> заражена?!... Э-это плохо..."
     },
     {
       "key": "dialogue_roza_limbinfected3",
-      "value": "О-ох нет... Кажется, моя <limb> заражена!"
+      "value": "О-ох нет... Кажется, моя <limb:imn> заражена!"
     },
     {
       "key": "dialogue_roza_limbinfected4",
@@ -27345,11 +27309,11 @@
     },
     {
       "key": "dialogue_roza_limbinfected5",
-      "value": "О-оууу... Моя <limb>... Она такая странная..."
+      "value": "О-оууу... Моя <limb:imn>... Она такая странная..."
     },
     {
       "key": "dialogue_roza_limbinfected6",
-      "value": "Моя <limb> выглядит странно...."
+      "value": "Моя <limb:imn> выглядит странно...."
     },
 
     {
@@ -27362,7 +27326,7 @@
     },
     {
       "key": "dialogue_roza_limbskin3",
-      "value": "Угх... М-моя <limb> выглядит не очень хорошо."
+      "value": "Угх... М-моя <limb:imn> выглядит не очень хорошо."
     },
     {
       "key": "dialogue_roza_limbskin4",
@@ -27370,15 +27334,15 @@
     },
     {
       "key": "dialogue_roza_limbskin5",
-      "value": "Э-эта <limb> выглядит неправильно..."
+      "value": "Э-эта <limb:imn> выглядит неправильно..."
     },
     {
       "key": "dialogue_roza_limbskin6",
-      "value": "Ой, моя <limb> вся в синяках и царапинах..."
+      "value": "Ой, моя <limb:imn> вся в синяках и царапинах..."
     },
     {
       "key": "dialogue_roza_limbskin7",
-      "value": "Моя <limb> так болит.... так больно...."
+      "value": "Моя <limb:imn> так болит.... так больно...."
     },
     {
       "key": "dialogue_roza_limbskin8",
@@ -28938,19 +28902,19 @@
     },
     {
       "key": "dialogue_roza_pain3",
-      "value": "Моя <limb> очень болит..."
+      "value": "Моя <limb:imn> очень болит..."
     },
     {
       "key": "dialogue_roza_pain4",
-      "value": "Моя <limb> болит..."
+      "value": "Моя <limb:imn> болит..."
     },
     {
       "key": "dialogue_roza_pain5",
-      "value": "Ай, моя <limb> болит..."
+      "value": "Ай, моя <limb:imn> болит..."
     },
     {
       "key": "dialogue_roza_pain6",
-      "value": "Э-это больно... Моя <limb>."
+      "value": "Э-это больно... Моя <limb:imn>."
     },
     {
       "key": "dialogue_roza_pain7",
@@ -28958,7 +28922,7 @@
     },
     {
       "key": "dialogue_roza_pain8",
-      "value": "Моя <limb> так мучительно болит..."
+      "value": "Моя <limb:imn> так мучительно болит..."
     },
     {
       "key": "dialogue_roza_pain9",
@@ -28970,7 +28934,7 @@
     },
     {
       "key": "dialogue_roza_pain11",
-      "value": "ИИИП! Моя <limb>...."
+      "value": "ИИИП! Моя <limb:imn>...."
     },
     {
       "key": "dialogue_roza_pain12",
@@ -28978,11 +28942,11 @@
     },
     {
       "key": "dialogue_roza_pain13",
-      "value": "Г-господи, моя <limb> так болит."
+      "value": "Г-господи, моя <limb:imn> так болит."
     },
     {
       "key": "dialogue_roza_pain14",
-      "value": "Почему моя <limb> так сильно болит?..."
+      "value": "Почему моя <limb:imn> так сильно болит?..."
     },
 
     {
@@ -32679,7 +32643,7 @@
 
     {
       "key": "dialogue_baron_limbmuscle1",
-      "value": "Моя <limb> сильно перенапряжена."
+      "value": "Моя <limb:imn> сильно перенапряжена."
     },
     {
       "key": "dialogue_baron_limbmuscle2",
@@ -32687,7 +32651,7 @@
     },
     {
       "key": "dialogue_baron_limbmuscle3",
-      "value": "Моя <limb> не работает должным образом."
+      "value": "Моя <limb:imn> не работает должным образом."
     },
     {
       "key": "dialogue_baron_limbmuscle4",
@@ -32695,11 +32659,11 @@
     },
     {
       "key": "dialogue_baron_limbmuscle5",
-      "value": "Эта <limb> требует внимания."
+      "value": "Эта <limb:imn> требует внимания."
     },
     {
       "key": "dialogue_baron_limbmuscle6",
-      "value": "Моя <limb> получила значительные повреждения."
+      "value": "Моя <limb:imn> получила значительные повреждения."
     },
     {
       "key": "dialogue_baron_limbmuscle7",
@@ -32711,7 +32675,7 @@
     },
     {
       "key": "dialogue_baron_limbmuscle9",
-      "value": "Моя <limb> слабее, чем должна быть..."
+      "value": "Моя <limb:imn> слабее, чем должна быть..."
     },
     {
       "key": "dialogue_baron_limbmuscle10",
@@ -32719,7 +32683,7 @@
     },
     {
       "key": "dialogue_baron_limbmuscle11",
-      "value": "Гх... моя <limb>."
+      "value": "Гх... моя <limb:imn>."
     },
     {
       "key": "dialogue_baron_limbmuscle12",
@@ -32728,7 +32692,7 @@
 
     {
       "key": "dialogue_baron_limbinfected1",
-      "value": "Моя <limb>, похоже, заражена..."
+      "value": "Моя <limb:imn>, похоже, заражена..."
     },
     {
       "key": "dialogue_baron_limbinfected2",
@@ -32744,7 +32708,7 @@
     },
     {
       "key": "dialogue_baron_limbinfected5",
-      "value": "Моя <limb> начинает опухать..."
+      "value": "Моя <limb:imn> начинает опухать..."
     },
     {
       "key": "dialogue_baron_limbinfected6",
@@ -32777,7 +32741,7 @@
 
     {
       "key": "dialogue_baron_limbskin1",
-      "value": "Моя <limb> ранена..."
+      "value": "Моя <limb:imn> ранена..."
     },
     {
       "key": "dialogue_baron_limbskin2",
@@ -32789,7 +32753,7 @@
     },
     {
       "key": "dialogue_baron_limbskin4",
-      "value": "Моя <limb> довольно сильно оголена..."
+      "value": "Моя <limb:imn> довольно сильно оголена..."
     },
     {
       "key": "dialogue_baron_limbskin5",
@@ -32813,7 +32777,7 @@
     },
     {
       "key": "dialogue_baron_limbskin10",
-      "value": "Моя <limb> нуждается в уходе."
+      "value": "Моя <limb:imn> нуждается в уходе."
     },
     {
       "key": "dialogue_baron_limbskin11",
@@ -34025,7 +33989,7 @@
     },
     {
       "key": "dialogue_baron_pain4",
-      "value": "Моя <limb>..."
+      "value": "Моя <limb:imn>..."
     },
     {
       "key": "dialogue_baron_pain5",
@@ -34037,7 +34001,7 @@
     },
     {
       "key": "dialogue_baron_pain7",
-      "value": "Моя <limb> плохо это перенесла..."
+      "value": "Моя <limb:imn> плохо это перенесла..."
     },
     {
       "key": "dialogue_baron_pain8",
@@ -34049,7 +34013,7 @@
     },
     {
       "key": "dialogue_baron_pain10",
-      "value": "Моя <limb> болит..."
+      "value": "Моя <limb:imn> болит..."
     },
     {
       "key": "dialogue_baron_pain11",

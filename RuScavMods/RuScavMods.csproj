@@ -37,11 +37,19 @@
     <Reference Include="0Harmony">
       <HintPath>..\Libraries\0Harmony.dll</HintPath>
     </Reference>
+    <Reference Include="Alexx__sMedicalBrutalism, Version=4.5.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\Alexx__sMedicalBrutalism.dll</HintPath>
+    </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\Libraries\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx">
       <HintPath>..\Libraries\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="CasualtyPsychology, Version=2.0.3.25, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\CasualtyPsychology.dll</HintPath>
     </Reference>
     <Reference Include="CUCoreLib, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -98,7 +106,9 @@
     <Compile Include="ModPatches\extraDialogue\ExtraDialogueTranslator.cs" />
     <Compile Include="ModPatches\Gunsaw\GunsawGeneticsTranslator.cs" />
     <Compile Include="ModPatches\MakeshiftProsthetics\MakeshiftProstheticsTranslator.cs" />
+    <Compile Include="ModPatches\MedicalBrutalism\MedicalBrutalismTranslator.cs" />
     <Compile Include="ModPatches\MilkableMilkies\MilkableMilkiesTranslator.cs" />
+    <Compile Include="ModPatches\Psychology\PsychologyTranslator.cs" />
     <Compile Include="ModPatches\QoLUnknown\Camera\PlayerCameraPatches.cs" />
     <Compile Include="ModPatches\QoLUnknown\SaveMenu\BuildSaveMenuPatch.cs" />
     <Compile Include="ModPatches\QoLUnknown\SaveMenu\BuildSlotTooltipPatch.cs" />
@@ -116,6 +126,7 @@
     <None Include="RuScavMods\Translations\com.asserto.hearingconservation.json" />
     <None Include="RuScavMods\Translations\com.carlo.casualtiesunknown.antigravbag.json" />
     <None Include="RuScavMods\Translations\com.carlo.casualtiesunknown.izaswarfood.json" />
+    <None Include="RuScavMods\Translations\com.carlo.casualtiesunknown.psychology.json" />
     <None Include="RuScavMods\Translations\com.dragoon_103.regrowthserums.json" />
     <None Include="RuScavMods\Translations\com.Elysian.MakeExpieHappyAgain.json" />
     <None Include="RuScavMods\Translations\com.frequency39.casualtiesundertheinfluence.json" />
@@ -159,6 +170,7 @@
     <Compile Include="TranslationClasses\Managers\NativeTranslationManager.cs" />
     <None Include="RuScavMods\Translations\melncat.toomanysettings.json" />
     <None Include="RuScavMods\Translations\net.cjendantix.SpinHat.json" />
+    <None Include="RuScavMods\Translations\psychology.json" />
     <None Include="RuScavMods\Translations\Sholopie.WearableCrystals.json" />
     <None Include="RuScavMods\Translations\Yoshiko_G.DogThings.json" />
   </ItemGroup>
@@ -174,6 +186,7 @@
   <ItemGroup>
     <Content Include="RuScavMods\Translations\nyaruqwq.makeshiftprosthetics.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="PostBuild" AfterTargets="Build">
     <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GameDir)\BepInEx\plugins\" SkipUnchangedFiles="true" />

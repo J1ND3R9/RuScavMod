@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using RuScavMods;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -29,5 +30,5 @@ using System.Runtime.InteropServices;
 //      Номер сборки
 //      Редакция
 //
-[assembly: AssemblyVersion("2.1.4.3")]
-[assembly: AssemblyFileVersion("2.1.4.3")]
+[assembly: AssemblyVersion(Plugin.ModVersion)]
+[assembly: AssemblyFileVersion(Plugin.ModVersion)]

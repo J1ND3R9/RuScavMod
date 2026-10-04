@@ -1,5 +1,7 @@
 ﻿using HarmonyLib;
+using JetBrains.Annotations;
 using RuScavMods.TranslationClasses.Managers;
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
@@ -15,6 +17,7 @@ namespace RuScavMods.Patches
             {
                 ["рука"] = new Dictionary<string, string>
                 {
+                    ["imn"] = "рука",
                     ["rod"] = "руки",
                     ["dat"] = "руке",
                     ["vin"] = "руку",
@@ -23,6 +26,7 @@ namespace RuScavMods.Patches
                 },
                 ["нога"] = new Dictionary<string, string>
                 {
+                    ["imn"] = "нога",
                     ["rod"] = "ноги",
                     ["dat"] = "ноге",
                     ["vin"] = "ногу",
@@ -31,6 +35,7 @@ namespace RuScavMods.Patches
                 },
                 ["кисть"] = new Dictionary<string, string>
                 {
+                    ["imn"] = "кисть",
                     ["rod"] = "кисти",
                     ["dat"] = "кисти",
                     ["vin"] = "кисть",
@@ -39,6 +44,7 @@ namespace RuScavMods.Patches
                 },
                 ["лапа"] = new Dictionary<string, string>
                 {
+                    ["imn"] = "лапа",
                     ["rod"] = "лапы",
                     ["dat"] = "лапе",
                     ["vin"] = "лапу",
@@ -47,6 +53,7 @@ namespace RuScavMods.Patches
                 },
                 ["грудь"] = new Dictionary<string, string>
                 {
+                    ["imn"] = "грудь",
                     ["rod"] = "груди",
                     ["dat"] = "груди",
                     ["vin"] = "грудь",
@@ -55,17 +62,43 @@ namespace RuScavMods.Patches
                 },
                 ["голова"] = new Dictionary<string, string>
                 {
+                    ["imn"] = "голова",
                     ["rod"] = "головы",
                     ["dat"] = "голове",
                     ["vin"] = "голову",
                     ["tvr"] = "головой",
                     ["prd"] = "голове",
+                },
+                ["живот"] = new Dictionary<string, string>
+                {
+                    ["imn"] = "живот",
+                    ["rod"] = "живота",
+                    ["dat"] = "животу",
+                    ["vin"] = "живот",
+                    ["tvr"] = "животом",
+                    ["prd"] = "животе",
                 }
+            };
+
+            static readonly Dictionary<string, string> KeyReplaces = new Dictionary<string, string>
+            {
+                { "оя голова", "голова" },
+                { "оя грудь", "грудь" },
+                { "ой живот", "живот" },
+                { "оя рука", "рука" },
+                { "оя лапа", "лапа" },
+                { "оя нога", "нога" }
             };
 
             public static string Get(string shortName, string caseCode)
             {
                 string key = shortName.ToLower();
+
+                if (KeyReplaces.ContainsKey(key))
+                {
+                    key = KeyReplaces[key];
+                }
+
                 if (Table.TryGetValue(key, out Dictionary<string, string> forms) && forms.TryGetValue(caseCode, out string word))
                 {
                     return word;
@@ -92,6 +125,7 @@ namespace RuScavMods.Patches
             if (limb == null || lines == null || lines.Count == 0) return;
 
             bool anyTag = false;
+
             foreach (string line in lines)
             {
                 if (LimbTagRegex.IsMatch(line))

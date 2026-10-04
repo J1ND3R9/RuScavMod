@@ -30,6 +30,7 @@ namespace RuScavMods.TranslationClasses.Managers
         public static Dictionary<string, string> Buildings { get; set; } = new Dictionary<string, string>();
         public static Dictionary<string, string> WoundViews { get; set; } = new Dictionary<string, string>();
         public static Dictionary<string, string> Minigames { get; set; } = new Dictionary<string, string>();
+        public static Dictionary<string, string> Other { get; set; } = new Dictionary<string, string>();
         public static void Add(NativeTranslationFile file)
         {
             if (file == null) throw new Exception("Файл перевода пустой или не десериализован.");
@@ -46,6 +47,7 @@ namespace RuScavMods.TranslationClasses.Managers
             AddDictionary(file.Buildings, Buildings);
             AddDictionary(file.WoundViews, WoundViews);
             AddDictionary(file.Minigames, Minigames);
+            AddDictionary(file.Other, Other);
         }
 
         private static void AddDictionary<TKey, Value>(Dictionary<TKey, Value> source, Dictionary<TKey, Value> destination, Action<Value> beforeAdd = null)
@@ -203,6 +205,11 @@ namespace RuScavMods.TranslationClasses.Managers
         {
             if (Settings.TryGetValue(str, out string text))
                 __result = text;
+        }
+        public static void ApplyGetOtherTranslation(ref string __result, string str)
+        {
+            if (Other.TryGetValue(str, out string other))
+                __result = other;
         }
         public static void ApplyPauseQuoteTranslation(ref string __result)
         {
