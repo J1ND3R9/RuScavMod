@@ -2,6 +2,21 @@
   "type": "native",
 
   "moodles": {
+    "Tremor": "Тремор",
+    "Uncontrollable limb shake, reduces limb's force and motor capacity.": "Неконтролируемая дрожь в конечности. Снижает силу и двигательные возможности.",
+
+    "^Your stomach feels a bit full. ((.+))$": "Ты чувствуешь, что твой желудок немного полон. ($1)",
+    "^Your stomach is full. ((.+))$": "Твой желудок полон. ($1)",
+    "^Your stomach is completely stuffed. ((.+))$": "Твой желудок набит до отказа. ($1)",
+    "^You've eaten past full and feel uncomfortable. ((.+))$": "Ты съел больше, чем нужно, и теперь чувствуешь дискомфорт. ($1)",
+    "^You're overeaten. Feels bad. ((.+))$": "Ты переел. Плохое самочувствие. ($1)",
+    "^You're severely overeaten. Vomiting is likely. ((.+))$": "Ты сильно переел. Вероятна рвота. ($1)",
+    "^You're critically overeaten. You're going to be sick. ((.+))$": "Ты критически переел. Тебя сейчас стошнит. ($1)",
+
+    "Something is growing inside you.": "Внутри тебя что-то растёт.",
+    "Parasites have settled into your gut.": "В твоем кишечнике поселились паразиты.",
+    "Severe infestation. Your stomach is being eaten from the inside.": "Сильное заражение. Твой желудок пожирают изнутри.",
+
     "Alkalosis": "Алкалоз",
     "Mild alkalosis. Muscle twitching and slight confusion.": "Лёгкий алкалоз. Подёргивание мышц и лёгкая спутанность сознания.",
     "Moderate alkalosis. Severe muscle cramps and breathing difficulties.": "Умеренный алкалоз. Сильные мышечные судороги и затруднённое дыхание.",

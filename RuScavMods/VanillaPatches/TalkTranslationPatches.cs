@@ -1,7 +1,5 @@
 ﻿using HarmonyLib;
-using JetBrains.Annotations;
 using RuScavMods.TranslationClasses.Managers;
-using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
@@ -77,7 +75,16 @@ namespace RuScavMods.Patches
                     ["vin"] = "живот",
                     ["tvr"] = "животом",
                     ["prd"] = "животе",
-                }
+                },
+                ["хвост"] = new Dictionary<string, string>
+                {
+                    ["imn"] = "хвост",
+                    ["rod"] = "хвоста",
+                    ["dat"] = "хвосту",
+                    ["vin"] = "хвост",
+                    ["tvr"] = "хвостом",
+                    ["prd"] = "хвосте",
+                },
             };
 
             static readonly Dictionary<string, string> KeyReplaces = new Dictionary<string, string>
@@ -89,6 +96,24 @@ namespace RuScavMods.Patches
                 { "оя лапа", "лапа" },
                 { "оя нога", "нога" }
             };
+            static readonly Dictionary<string, string> FemininePossessive = new Dictionary<string, string>
+            {
+                ["tvr"] = "моей",
+                ["imn"] = "моя",
+                ["rod"] = "моей",
+                ["dat"] = "моей",
+                ["vin"] = "мою",
+                ["prd"] = "моей"
+            };
+            static readonly Dictionary<string, string> MasculinePossessive = new Dictionary<string, string>
+            {
+                ["imn"] = "мой",
+                ["tvr"] = "моим",
+                ["rod"] = "моего",
+                ["dat"] = "моему",
+                ["vin"] = "мой",
+                ["prd"] = "моём"
+            };
 
             public static string Get(string shortName, string caseCode)
             {
@@ -99,16 +124,37 @@ namespace RuScavMods.Patches
                     key = KeyReplaces[key];
                 }
 
+                if (string.IsNullOrEmpty(caseCode)) caseCode = "imn";
+
                 if (Table.TryGetValue(key, out Dictionary<string, string> forms) && forms.TryGetValue(caseCode, out string word))
                 {
                     return word;
                 }
+
                 return shortName;
+            }
+
+            public static string Agree(string shortName, string caseCode, string possession)
+            {
+                string key = shortName.ToLower();
+
+                if (KeyReplaces.ContainsKey(key))
+                {
+                    key = KeyReplaces[key];
+                }
+
+                if (key != "живот" && key != "хвост") return possession;
+
+                if (string.IsNullOrEmpty(caseCode)) caseCode = "imn";
+
+                if (MasculinePossessive.TryGetValue(caseCode, out string newPosession))
+                    return newPosession;
+
+                return possession;
             }
         }
 
-        static readonly Regex LimbTagRegex = new Regex(@"<limb:(?:(\w+))?>", RegexOptions.Compiled);
-
+        static readonly Regex LimbTagRegex = new Regex(@"(?:(моей|моя)\s+)?<limb:(?:(\w+))?>", RegexOptions.Compiled);
 
         [HarmonyPatch(nameof(Talker.Talk), new[] { typeof(string), typeof(Limb), typeof(bool), typeof(bool) })]
         [HarmonyPrefix]
@@ -142,13 +188,24 @@ namespace RuScavMods.Patches
             {
                 newLines.Add(LimbTagRegex.Replace(line, m =>
                 {
-                    string caseCode = m.Groups[1].Success ? m.Groups[1].Value : "";
-                    return Decline(limb, caseCode);
+                    string possessive = m.Groups[1].Success ? m.Groups[1].Value : null;
+                    string caseCode = m.Groups[2].Success ? m.Groups[2].Value : "";
+
+                    string declined = Decline(limb, caseCode);
+
+                    if (possessive != null)
+                    {
+                        string agreed = AgreePossessive(limb, caseCode, possessive);
+                        return agreed + " " + declined;
+                    }
+                    return declined;
                 }));
             }
 
             lines = newLines;
         }
+
+        private static string AgreePossessive(Limb limb, string caseCode, string originalPossessive) => LimbDeclensions.Agree(limb.shortName, caseCode, originalPossessive);
 
         private static string Decline(Limb limb, string caseCode) => LimbDeclensions.Get(limb.shortName, caseCode);
     }

@@ -9,11 +9,13 @@ using RuScavMods.ModPatches.AdditionalDescriptions;
 using RuScavMods.ModPatches.CUCoreLib;
 using RuScavMods.ModPatches.CUTarkovMedicine;
 using RuScavMods.ModPatches.extraDialogue;
+using RuScavMods.ModPatches.FurReal;
 using RuScavMods.ModPatches.Gunsaw;
 using RuScavMods.ModPatches.KrokoshaMP;
 using RuScavMods.ModPatches.MakeshiftProsthetics;
 using RuScavMods.ModPatches.MedicalBrutalism;
 using RuScavMods.ModPatches.MilkableMilkies;
+using RuScavMods.ModPatches.Prosthetics;
 using RuScavMods.ModPatches.Psychology;
 using RuScavMods.ModPatches.QoLUnknown;
 using RuScavMods.ModPatches.RshCCL;
@@ -57,7 +59,7 @@ namespace RuScavMods
     [BepInPlugin("zzz_com.Floydba.ruscavmods", "RuScavMod", ModVersion)]
     public class Plugin : BaseUnityPlugin
     {
-        internal const string ModVersion = "2.1.5.1";
+        internal const string ModVersion = "2.1.6.1";
         internal static ManualLogSource Log;
         private readonly static List<PatchClassProcessor> VanillaPatches = new List<PatchClassProcessor>();
         public static bool RshCCLInstalled = File.Exists(Path.Combine(Paths.PluginPath, "RshLib.dll")) && AccessTools.TypeByName("RshLib.RshItemAdapter") != null; // У автора мода интересный случай: он удаляет себя из PluginInfos и, затем, пытается вернуть патчем. Но патч не срабатывает, поэтому он просто делитит себя, bruh.
@@ -72,8 +74,8 @@ namespace RuScavMods
         {
             new ModTranslator()
             {
-                Guid = "KrokoshaCasualtiesMP",
-                Name = "Krokosha_MP_CU",
+                Guid = "CasualtiesMP",
+                Name = "Together",
                 Translate = KrokoshaMPTranslator.Translate
             },
             new ModTranslator()
@@ -135,6 +137,18 @@ namespace RuScavMods
                 Guid = "com.carlo.casualtiesunknown.psychology",
                 Name = "Casualty Psychology",
                 Translate = PsychologyTranslator.Translate
+            },
+            new ModTranslator()
+            {
+                Guid = "com.nocturnal.furreal",
+                Name = "Fur Real",
+                Translate = FurRealTranslator.Translate
+            },
+            new ModTranslator()
+            {
+                Guid = "com.HerobrinesProsthetics",
+                Name = "HerobrinesProsthetics",
+                Translate = ProstheticsTranslator.Translate
             }
         };
 

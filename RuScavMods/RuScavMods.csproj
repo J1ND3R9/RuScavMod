@@ -47,6 +47,9 @@
     <Reference Include="BepInEx">
       <HintPath>..\Libraries\BepInEx.dll</HintPath>
     </Reference>
+    <Reference Include="CasualtiesMP">
+      <HintPath>..\Libraries\CasualtiesMP.dll</HintPath>
+    </Reference>
     <Reference Include="CasualtyPsychology, Version=2.0.3.25, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libraries\CasualtyPsychology.dll</HintPath>
@@ -63,15 +66,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libraries\GunsawGenetics.dll</HintPath>
     </Reference>
-    <Reference Include="KrokoshaCasualtiesMP">
-      <HintPath>..\Libraries\KrokoshaCasualtiesMP.dll</HintPath>
-    </Reference>
     <Reference Include="MakeshiftProsthetics">
       <HintPath>..\Libraries\MakeshiftProsthetics.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libraries\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="prosthetics">
+      <HintPath>..\Libraries\prosthetics.dll</HintPath>
     </Reference>
     <Reference Include="QoL Unknown, Version=1.0.4.8, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -104,10 +107,12 @@
     <Compile Include="ModPatches\CUCoreLib\CUCoreTranslator.cs" />
     <Compile Include="ModPatches\CUTarkovMedicine\CUTarkovMedicine.cs" />
     <Compile Include="ModPatches\extraDialogue\ExtraDialogueTranslator.cs" />
+    <Compile Include="ModPatches\FurReal\FurRealTranslator.cs" />
     <Compile Include="ModPatches\Gunsaw\GunsawGeneticsTranslator.cs" />
     <Compile Include="ModPatches\MakeshiftProsthetics\MakeshiftProstheticsTranslator.cs" />
     <Compile Include="ModPatches\MedicalBrutalism\MedicalBrutalismTranslator.cs" />
     <Compile Include="ModPatches\MilkableMilkies\MilkableMilkiesTranslator.cs" />
+    <Compile Include="ModPatches\Prosthetics\ProstheticsTranslator.cs" />
     <Compile Include="ModPatches\Psychology\PsychologyTranslator.cs" />
     <Compile Include="ModPatches\QoLUnknown\Camera\PlayerCameraPatches.cs" />
     <Compile Include="ModPatches\QoLUnknown\SaveMenu\BuildSaveMenuPatch.cs" />
@@ -124,6 +129,7 @@
     <None Include="RuScavMods\Translations\com.alexx_.medicalbrutalism.json" />
     <None Include="RuScavMods\Translations\com.asserto.euphoric.json" />
     <None Include="RuScavMods\Translations\com.asserto.hearingconservation.json" />
+    <None Include="RuScavMods\Translations\com.asserto.tailor.json" />
     <None Include="RuScavMods\Translations\com.carlo.casualtiesunknown.antigravbag.json" />
     <None Include="RuScavMods\Translations\com.carlo.casualtiesunknown.izaswarfood.json" />
     <None Include="RuScavMods\Translations\com.carlo.casualtiesunknown.psychology.json" />
@@ -134,6 +140,8 @@
     <None Include="RuScavMods\Translations\com.frequency39.expielegs.json" />
     <None Include="RuScavMods\Translations\com.gouxi.gouxisfunnyshit.json" />
     <None Include="RuScavMods\Translations\com.lyricly.diabetes.json" />
+    <None Include="RuScavMods\Translations\com.nocturnal.furreal.json" />
+    <None Include="RuScavMods\Translations\com.TheBigT.CUClothing.json" />
     <None Include="RuScavMods\Translations\com.yourname.enderpearl.json" />
     <None Include="RuScavMods\Translations\com.yourname.newgun.json" />
     <None Include="RuScavMods\Translations\GunsawGenetics.json" />
@@ -171,6 +179,7 @@
     <None Include="RuScavMods\Translations\melncat.toomanysettings.json" />
     <None Include="RuScavMods\Translations\net.cjendantix.SpinHat.json" />
     <None Include="RuScavMods\Translations\psychology.json" />
+    <None Include="RuScavMods\Translations\Sholopie.hodgepodgeofQoLitems.json" />
     <None Include="RuScavMods\Translations\Sholopie.WearableCrystals.json" />
     <None Include="RuScavMods\Translations\Yoshiko_G.DogThings.json" />
   </ItemGroup>

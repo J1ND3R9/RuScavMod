@@ -1,0 +1,31 @@
+{
+  "type": "cucore",
+
+  "other": {
+    "runsetcom.nocturnal.furreal.growthrate": "Скорость роста шерсти",
+    "runsetcom.nocturnal.furreal.growthratedsc": "Множитель скорости отрастания шерсти, включая кератин бустеры. 1x - норма; 0 - останавливает рост шерсти.",
+    "runsetcom.nocturnal.furreal.sheddingrate": "Интенсивность линьки",
+    "runsetcom.nocturnal.furreal.sheddingratedsc": "Множитель потери шерсти, зависящий от климат, радиации и повреждений кожи. 1x - норма; 0 - останавливает естественную линьку.",
+    "runsetcom.nocturnal.furreal.pantcooling": "Охлаждение пыхтением",
+    "runsetcom.nocturnal.furreal.pantcoolingdsc": "Заменяет пот от жары на пыхтение и звук. Выключение оставляет стандартный пот. Не действует в режиме только визуал.",
+    "runsetcom.nocturnal.furreal.visualonly": "Только визуал шерсти",
+    "runsetcom.nocturnal.furreal.visualonlydsc": "Сохраняет рост, линьку, стрижку и внешний вид шерсти, но отключает изменения геймплея и мудлы, связанные с ней."
+  },
+
+  "native_moodles": {
+    "Bald": "Облысение",
+    "Coat almost gone. Expect difficulty maintaining body heat.": "Шерсть почти сошла. Ожидай трудностей с удержанием тепла тела.",
+
+    "Trim": "Подстрижен",
+    "Coat trimmed short. Easier to cool, harder to keep warm.": "Шерсть коротко подстрижена. Легче охлаждаться, труднее сохранять тепло.",
+
+    "Shaggy": "Лохматый",
+    "Coat very long. It will keep you warm, but be more difficult to clean and dry.": "Шерсть очень длинная. Она будет согревать, но её труднее чистить и сушить.",
+
+    "Rapid fur growth": "Быстрый рост шерсти",
+    "Fur growth unusually rapid; likely the effect of a Keratin booster.": "Рост шерсти необычайно быстр. Вероятно, эффект кератинового бустера.",
+
+    "Heavy shedding": "Сильная линька",
+    "Fur loss unusually rapid. Is it hot in here, or is something wrong with your skin?": "Потеря шерсти необычайно быстра. Здесь жарко, или с твоей кожей что-то не так?"
+  }
+}

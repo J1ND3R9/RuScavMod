@@ -88,7 +88,7 @@ namespace RuScavMods.ModPatches.Gunsaw
 
         private static void AddTextEffectPresets()
         {
-            var textEffectPresets = TextEffectPresets.All;
+            Dictionary<string, TextEffectPreset> textEffectPresets = TextEffectPresets.All;
 
             textEffectPresets["маскировку"] = TextEffectPresets.All["cloaking"];
             textEffectPresets["Обожание"] = TextEffectPresets.All["Idolatry"];
@@ -118,12 +118,16 @@ namespace RuScavMods.ModPatches.Gunsaw
             textEffectPresets["Полу-травоядное"] = TextEffectPresets.All["Semi-Herbivore"];
 
             textEffectPresets["Травоядный"] = TextEffectPresets.All["Herbivore"];
+
+            textEffectPresets["Четыре руки"] = TextEffectPresets.All["Four Arms"];
+            textEffectPresets["Перепады настроения"] = TextEffectPresets.All["Mood Swings"];
+            textEffectPresets["Дизрегуляцией"] = TextEffectPresets.All["Dysregulation"];
         }
 
         private static void ApplySettingsTranslations()
         {
             Language currentLang = Locale.currentLang;
-            if (((currentLang != null) ? currentLang.other : null) == null)
+            if ((currentLang?.other) == null)
             {
                 return;
             }
